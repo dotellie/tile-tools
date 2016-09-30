@@ -1,0 +1,24 @@
+{
+  "name": "dtile-tilemap",
+  "version": "0.1.0",
+  "description": "A representation of a tilemap with very basic functionality.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magnonellie/dtile-tilemap.git"
+  },
+  "keywords": [
+    "game",
+    "tilemap",
+    "tile"
+  ],
+  "author": "magnonellie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/magnonellie/dtile-tilemap/issues"
+  },
+  "homepage": "https://github.com/magnonellie/dtile-tilemap#readme"
+}
