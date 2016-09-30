@@ -4,7 +4,8 @@
   "description": "A representation of a tilemap with very basic functionality.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "esdoc -c ./esdoc.json"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/magnonellie/dtile-tilemap/issues"
   },
-  "homepage": "https://github.com/magnonellie/dtile-tilemap#readme"
+  "homepage": "https://github.com/magnonellie/dtile-tilemap#readme",
+  "devDependencies": {
+    "esdoc": "^0.4.8"
+  }
 }
