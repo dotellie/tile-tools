@@ -4,7 +4,7 @@
   "description": "A representation of a tilemap with very basic functionality.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --compilers js:babel-register",
     "doc": "esdoc -c ./esdoc.json"
   },
   "repository": {
@@ -23,6 +23,10 @@
   },
   "homepage": "https://github.com/magnonellie/dtile-tilemap#readme",
   "devDependencies": {
-    "esdoc": "^0.4.8"
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.16.0",
+    "babel-register": "^6.16.3",
+    "chai": "^3.5.0",
+    "esdoc": "^0.4.8",
+    "mocha": "^3.1.0"
   }
 }
