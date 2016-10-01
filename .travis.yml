@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "6"
+after_success:
+  - "npm run doc"
+deploy:
+    provider: npm
+    api_key:
+        secure: eOPStdCfzemp6HGsyF+rLsH+OO/Gk3kI2L5JgkSTqRGcLoaISZG2A5Or2644TyC17pZ060Ru9cH0w1jysExKhZPEaSVMoboDdVvyo+ciUyxh8pQIZaRWGJTvcYr3NEAvgLE+a+kJVdSMwCUmbOfrWjrX1dx6VSzzEKkIfUEIRariqBuxZY2ptl2qg9Id6RTfnODevtBm5YBlrYWiVZm2q8Yv2jEFS7p6bGw4qHXZ/3cKshnCJwQud5K/gOuiH+R6TOMFFcui8tq4+u7G9Ffn0k3Si6+/NvUfobDPG6wmU3hVLiNpbR7xcAyUEPAw3djSIj7B6+EmitwjirERK38be4ODhJfTdlNFJ2OslPNpSmKuStTEXm6dmL2Pqpm6HT3Nb9IwEclpMWOLbq9YlmQjBIU/TwNPtIgy5fcfuaX3xsNlAiwKXP/WWpx778BlHDYsp0rRHXRi4yYEdQ1FGe2GDEYxCzeEW/LUMLN8hvjl4XRBSU1d6UC3+Z9+X29Y+OzXZvKNmQtkd6bPFNRDMwx4eyhDefwsr1HMUFrQFPZxJqvHwXcOYyL8HMo1EEP68jEUqjCnOdKdBvlzoLPKol2SjF+EKWmBSHy2F/GKqunc6jLNCB7qb+tRUFB+xZOpOeBSfJ4HVS5xTd1Di6yBarmGirsolqKFu2fSL79AO2fDrFY=
+    on:
+        branch: production
