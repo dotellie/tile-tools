@@ -7,7 +7,9 @@ env:
       - ENCRYPTION_LABEL="7fcdedc5f15b"
       - COMMIT_AUTHOR_EMAIL="realmagnon@gmail.com"
 
-script: "npm run build"
+script:
+  - "npm run build"
+  - "npm test"
 
 after_success:
   - "npm run coverage"

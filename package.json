@@ -6,8 +6,8 @@
   "scripts": {
     "build": "babel src -d out/js",
     "lint": "eslint ./src ./test",
-    "test": "npm run lint && nyc mocha --compilers js:babel-register",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "test": "npm run lint && nyc --reporter=text mocha --compilers js:babel-register",
+    "coverage": "nyc report --reporter=text-lcov",
     "doc": "esdoc -c ./esdoc.json"
   },
   "repository": {
