@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/magnonellie/dtile-tilemap#readme",
   "devDependencies": {
+    "babel-cli": "^6.16.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.16.0",
     "babel-register": "^6.16.3",
     "chai": "^3.5.0",
