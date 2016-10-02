@@ -60,4 +60,18 @@ export class TileMap {
 		this.layers.push(layer);
 		return layer;
 	}
+
+	/**
+	 * Converts this tilemap to a JSON string.
+	 *
+	 * @returns {string} - The JSON serialization of this tilemap.
+	 */
+	getJSON() {
+		return JSON.stringify(this, (key, value) => {
+			if (key.indexOf("_") === 0) {
+				return undefined;
+			}
+			return value;
+		});
+	}
 }

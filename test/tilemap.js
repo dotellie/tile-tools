@@ -53,4 +53,10 @@ describe("TileMap", () => {
 			tilemap.layers[0].name.should.be.a("string");
 		});
 	});
+
+	describe("#toJSON", () => {
+		it("returns a valid JSON string", () => {
+			JSON.parse(tilemap.getJSON());
+		});
+	});
 });
