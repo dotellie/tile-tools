@@ -1,6 +1,7 @@
 # DTile Tilemap
 [![Build Status](https://travis-ci.org/magnonellie/dtile-tilemap.svg?branch=master)](https://travis-ci.org/magnonellie/dtile-tilemap)
 [![Documentation](https://magnonellie.github.io/dtile-tilemap/badge.svg)](https://magnonellie.github.io/dtile-tilemap/)
+[![devDependencies Status](https://david-dm.org/magnonellie/dtile-tilemap/dev-status.svg)](https://david-dm.org/magnonellie/dtile-tilemap?type=dev)
 
 A library made for handling the data of tilemaps. While first and foremost
 developed for DTile, it could just as easily be used for any other project.
