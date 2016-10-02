@@ -6,7 +6,8 @@
   "scripts": {
     "build": "babel src -d out/js",
     "lint": "eslint ./src ./test",
-    "test": "npm run lint && mocha --compilers js:babel-register",
+    "test": "npm run lint && nyc mocha --compilers js:babel-register",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "doc": "esdoc -c ./esdoc.json"
   },
   "repository": {
@@ -29,8 +30,10 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.16.0",
     "babel-register": "^6.16.3",
     "chai": "^3.5.0",
+    "coveralls": "^2.11.14",
     "esdoc": "^0.4.8",
     "eslint": "^3.7.0",
-    "mocha": "^3.1.0"
+    "mocha": "^3.1.0",
+    "nyc": "^8.3.0"
   }
 }

@@ -10,6 +10,7 @@ env:
 script: "npm run build"
 
 after_success:
+  - "npm run coverage"
   - "chmod +x deployDocumentation.sh"
   - "bash ./deployDocumentation.sh"
 deploy:
