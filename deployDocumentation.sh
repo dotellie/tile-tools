@@ -31,10 +31,14 @@ SHA=`git rev-parse --verify HEAD`
 git clone $REPO out/esdoc
 cd out/esdoc
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-cd ../..
 
 # Clean out existing contents
-rm -rf out/esdoc/
+git rm -rf .
+git clean -fxd
+git reset
+
+# Go back to main directory
+cd ../..
 
 # Run our compile script
 generateDocumentation
