@@ -1,0 +1,2711 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "TileLayer",
+            "range": [
+              9,
+              18
+            ],
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 9
+              },
+              "end": {
+                "line": 1,
+                "column": 18
+              }
+            }
+          },
+          "imported": {
+            "type": "Identifier",
+            "name": "TileLayer",
+            "range": [
+              9,
+              18
+            ],
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 9
+              },
+              "end": {
+                "line": 1,
+                "column": 18
+              }
+            }
+          },
+          "range": [
+            9,
+            18
+          ],
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 9
+            },
+            "end": {
+              "line": 1,
+              "column": 18
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "./tilelayer",
+        "raw": "\"./tilelayer\"",
+        "range": [
+          26,
+          39
+        ],
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 26
+          },
+          "end": {
+            "line": 1,
+            "column": 39
+          }
+        }
+      },
+      "range": [
+        0,
+        40
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 40
+        }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * A tilemap object with name, sizes and layers.\n ",
+          "range": [
+            42,
+            98
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 5,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "ClassDeclaration",
+        "id": {
+          "type": "Identifier",
+          "name": "TileMap",
+          "range": [
+            112,
+            119
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 13
+            },
+            "end": {
+              "line": 6,
+              "column": 20
+            }
+          }
+        },
+        "superClass": null,
+        "body": {
+          "type": "ClassBody",
+          "body": [
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "constructor",
+                "range": [
+                  809,
+                  820
+                ],
+                "loc": {
+                  "start": {
+                    "line": 19,
+                    "column": 1
+                  },
+                  "end": {
+                    "line": 19,
+                    "column": 12
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "options",
+                    "range": [
+                      821,
+                      828
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 19,
+                        "column": 13
+                      },
+                      "end": {
+                        "line": 19,
+                        "column": 20
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              888,
+                              892
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 22,
+                                "column": 2
+                              },
+                              "end": {
+                                "line": 22,
+                                "column": 6
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "name",
+                            "range": [
+                              893,
+                              897
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 22,
+                                "column": 7
+                              },
+                              "end": {
+                                "line": 22,
+                                "column": 11
+                              }
+                            }
+                          },
+                          "range": [
+                            888,
+                            897
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 22,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 22,
+                              "column": 11
+                            }
+                          }
+                        },
+                        "right": {
+                          "type": "LogicalExpression",
+                          "operator": "||",
+                          "left": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "options",
+                              "range": [
+                                900,
+                                907
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 22,
+                                  "column": 14
+                                },
+                                "end": {
+                                  "line": 22,
+                                  "column": 21
+                                }
+                              }
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "name",
+                              "range": [
+                                908,
+                                912
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 22,
+                                  "column": 22
+                                },
+                                "end": {
+                                  "line": 22,
+                                  "column": 26
+                                }
+                              }
+                            },
+                            "range": [
+                              900,
+                              912
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 22,
+                                "column": 14
+                              },
+                              "end": {
+                                "line": 22,
+                                "column": 26
+                              }
+                            }
+                          },
+                          "right": {
+                            "type": "Literal",
+                            "value": "Tilemap",
+                            "raw": "\"Tilemap\"",
+                            "range": [
+                              916,
+                              925
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 22,
+                                "column": 30
+                              },
+                              "end": {
+                                "line": 22,
+                                "column": 39
+                              }
+                            }
+                          },
+                          "range": [
+                            900,
+                            925
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 22,
+                              "column": 14
+                            },
+                            "end": {
+                              "line": 22,
+                              "column": 39
+                            }
+                          }
+                        },
+                        "range": [
+                          888,
+                          925
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 22,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 22,
+                            "column": 39
+                          }
+                        }
+                      },
+                      "range": [
+                        888,
+                        926
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 22,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 22,
+                          "column": 40
+                        }
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "Block",
+                          "value": "* The name of the tilemap.\n\t\t * @type {string} ",
+                          "range": [
+                            834,
+                            885
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 20,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 21,
+                              "column": 22
+                            }
+                          }
+                        }
+                      ],
+                      "trailingComments": [
+                        {
+                          "type": "Block",
+                          "value": "* The width of the tilemap.\n\t\t * @type {number} ",
+                          "range": [
+                            930,
+                            982
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 24,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 25,
+                              "column": 22
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              985,
+                              989
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 26,
+                                "column": 2
+                              },
+                              "end": {
+                                "line": 26,
+                                "column": 6
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "width",
+                            "range": [
+                              990,
+                              995
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 26,
+                                "column": 7
+                              },
+                              "end": {
+                                "line": 26,
+                                "column": 12
+                              }
+                            }
+                          },
+                          "range": [
+                            985,
+                            995
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 26,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 26,
+                              "column": 12
+                            }
+                          }
+                        },
+                        "right": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "options",
+                            "range": [
+                              998,
+                              1005
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 26,
+                                "column": 15
+                              },
+                              "end": {
+                                "line": 26,
+                                "column": 22
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "width",
+                            "range": [
+                              1006,
+                              1011
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 26,
+                                "column": 23
+                              },
+                              "end": {
+                                "line": 26,
+                                "column": 28
+                              }
+                            }
+                          },
+                          "range": [
+                            998,
+                            1011
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 26,
+                              "column": 15
+                            },
+                            "end": {
+                              "line": 26,
+                              "column": 28
+                            }
+                          }
+                        },
+                        "range": [
+                          985,
+                          1011
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 26,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 26,
+                            "column": 28
+                          }
+                        }
+                      },
+                      "range": [
+                        985,
+                        1012
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 26,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 26,
+                          "column": 29
+                        }
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "Block",
+                          "value": "* The width of the tilemap.\n\t\t * @type {number} ",
+                          "range": [
+                            930,
+                            982
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 24,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 25,
+                              "column": 22
+                            }
+                          }
+                        }
+                      ],
+                      "trailingComments": [
+                        {
+                          "type": "Block",
+                          "value": "* The height of the tilemap.\n\t\t * @type {number} ",
+                          "range": [
+                            1015,
+                            1068
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 27,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 28,
+                              "column": 22
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              1071,
+                              1075
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 29,
+                                "column": 2
+                              },
+                              "end": {
+                                "line": 29,
+                                "column": 6
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "height",
+                            "range": [
+                              1076,
+                              1082
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 29,
+                                "column": 7
+                              },
+                              "end": {
+                                "line": 29,
+                                "column": 13
+                              }
+                            }
+                          },
+                          "range": [
+                            1071,
+                            1082
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 29,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 29,
+                              "column": 13
+                            }
+                          }
+                        },
+                        "right": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "options",
+                            "range": [
+                              1085,
+                              1092
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 29,
+                                "column": 16
+                              },
+                              "end": {
+                                "line": 29,
+                                "column": 23
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "height",
+                            "range": [
+                              1093,
+                              1099
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 29,
+                                "column": 24
+                              },
+                              "end": {
+                                "line": 29,
+                                "column": 30
+                              }
+                            }
+                          },
+                          "range": [
+                            1085,
+                            1099
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 29,
+                              "column": 16
+                            },
+                            "end": {
+                              "line": 29,
+                              "column": 30
+                            }
+                          }
+                        },
+                        "range": [
+                          1071,
+                          1099
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 29,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 29,
+                            "column": 30
+                          }
+                        }
+                      },
+                      "range": [
+                        1071,
+                        1100
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 29,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 29,
+                          "column": 31
+                        }
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "Block",
+                          "value": "* The height of the tilemap.\n\t\t * @type {number} ",
+                          "range": [
+                            1015,
+                            1068
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 27,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 28,
+                              "column": 22
+                            }
+                          }
+                        }
+                      ],
+                      "trailingComments": [
+                        {
+                          "type": "Block",
+                          "value": "* The width of a tile for the tilemap.\n\t\t * @type {number} ",
+                          "range": [
+                            1104,
+                            1167
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 31,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 32,
+                              "column": 22
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              1170,
+                              1174
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 33,
+                                "column": 2
+                              },
+                              "end": {
+                                "line": 33,
+                                "column": 6
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "tileWidth",
+                            "range": [
+                              1175,
+                              1184
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 33,
+                                "column": 7
+                              },
+                              "end": {
+                                "line": 33,
+                                "column": 16
+                              }
+                            }
+                          },
+                          "range": [
+                            1170,
+                            1184
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 33,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 33,
+                              "column": 16
+                            }
+                          }
+                        },
+                        "right": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "options",
+                            "range": [
+                              1187,
+                              1194
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 33,
+                                "column": 19
+                              },
+                              "end": {
+                                "line": 33,
+                                "column": 26
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "tileWidth",
+                            "range": [
+                              1195,
+                              1204
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 33,
+                                "column": 27
+                              },
+                              "end": {
+                                "line": 33,
+                                "column": 36
+                              }
+                            }
+                          },
+                          "range": [
+                            1187,
+                            1204
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 33,
+                              "column": 19
+                            },
+                            "end": {
+                              "line": 33,
+                              "column": 36
+                            }
+                          }
+                        },
+                        "range": [
+                          1170,
+                          1204
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 33,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 33,
+                            "column": 36
+                          }
+                        }
+                      },
+                      "range": [
+                        1170,
+                        1205
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 33,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 33,
+                          "column": 37
+                        }
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "Block",
+                          "value": "* The width of a tile for the tilemap.\n\t\t * @type {number} ",
+                          "range": [
+                            1104,
+                            1167
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 31,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 32,
+                              "column": 22
+                            }
+                          }
+                        }
+                      ],
+                      "trailingComments": [
+                        {
+                          "type": "Block",
+                          "value": "* The height of a tile for the tilemap.\n\t\t * @type {number} ",
+                          "range": [
+                            1208,
+                            1272
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 34,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 35,
+                              "column": 22
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              1275,
+                              1279
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 36,
+                                "column": 2
+                              },
+                              "end": {
+                                "line": 36,
+                                "column": 6
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "tileHeight",
+                            "range": [
+                              1280,
+                              1290
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 36,
+                                "column": 7
+                              },
+                              "end": {
+                                "line": 36,
+                                "column": 17
+                              }
+                            }
+                          },
+                          "range": [
+                            1275,
+                            1290
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 36,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 36,
+                              "column": 17
+                            }
+                          }
+                        },
+                        "right": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "options",
+                            "range": [
+                              1293,
+                              1300
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 36,
+                                "column": 20
+                              },
+                              "end": {
+                                "line": 36,
+                                "column": 27
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "tileHeight",
+                            "range": [
+                              1301,
+                              1311
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 36,
+                                "column": 28
+                              },
+                              "end": {
+                                "line": 36,
+                                "column": 38
+                              }
+                            }
+                          },
+                          "range": [
+                            1293,
+                            1311
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 36,
+                              "column": 20
+                            },
+                            "end": {
+                              "line": 36,
+                              "column": 38
+                            }
+                          }
+                        },
+                        "range": [
+                          1275,
+                          1311
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 36,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 36,
+                            "column": 38
+                          }
+                        }
+                      },
+                      "range": [
+                        1275,
+                        1312
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 36,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 36,
+                          "column": 39
+                        }
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "Block",
+                          "value": "* The height of a tile for the tilemap.\n\t\t * @type {number} ",
+                          "range": [
+                            1208,
+                            1272
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 34,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 35,
+                              "column": 22
+                            }
+                          }
+                        }
+                      ],
+                      "trailingComments": [
+                        {
+                          "type": "Block",
+                          "value": "* All layers of the tilemap\n\t\t *  @type {TileLayer[]} ",
+                          "range": [
+                            1316,
+                            1374
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 38,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 39,
+                              "column": 28
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              1377,
+                              1381
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 40,
+                                "column": 2
+                              },
+                              "end": {
+                                "line": 40,
+                                "column": 6
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "layers",
+                            "range": [
+                              1382,
+                              1388
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 40,
+                                "column": 7
+                              },
+                              "end": {
+                                "line": 40,
+                                "column": 13
+                              }
+                            }
+                          },
+                          "range": [
+                            1377,
+                            1388
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 40,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 40,
+                              "column": 13
+                            }
+                          }
+                        },
+                        "right": {
+                          "type": "ArrayExpression",
+                          "elements": [],
+                          "range": [
+                            1391,
+                            1393
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 40,
+                              "column": 16
+                            },
+                            "end": {
+                              "line": 40,
+                              "column": 18
+                            }
+                          }
+                        },
+                        "range": [
+                          1377,
+                          1393
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 40,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 40,
+                            "column": 18
+                          }
+                        }
+                      },
+                      "range": [
+                        1377,
+                        1394
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 40,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 40,
+                          "column": 19
+                        }
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "Block",
+                          "value": "* All layers of the tilemap\n\t\t *  @type {TileLayer[]} ",
+                          "range": [
+                            1316,
+                            1374
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 38,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 39,
+                              "column": 28
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "options",
+                            "range": [
+                              1397,
+                              1404
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 41,
+                                "column": 2
+                              },
+                              "end": {
+                                "line": 41,
+                                "column": 9
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "layers",
+                            "range": [
+                              1405,
+                              1411
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 41,
+                                "column": 10
+                              },
+                              "end": {
+                                "line": 41,
+                                "column": 16
+                              }
+                            }
+                          },
+                          "range": [
+                            1397,
+                            1411
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 41,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 41,
+                              "column": 16
+                            }
+                          }
+                        },
+                        "right": {
+                          "type": "LogicalExpression",
+                          "operator": "||",
+                          "left": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "options",
+                              "range": [
+                                1414,
+                                1421
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 41,
+                                  "column": 19
+                                },
+                                "end": {
+                                  "line": 41,
+                                  "column": 26
+                                }
+                              }
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "layers",
+                              "range": [
+                                1422,
+                                1428
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 41,
+                                  "column": 27
+                                },
+                                "end": {
+                                  "line": 41,
+                                  "column": 33
+                                }
+                              }
+                            },
+                            "range": [
+                              1414,
+                              1428
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 41,
+                                "column": 19
+                              },
+                              "end": {
+                                "line": 41,
+                                "column": 33
+                              }
+                            }
+                          },
+                          "right": {
+                            "type": "ArrayExpression",
+                            "elements": [],
+                            "range": [
+                              1432,
+                              1434
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 41,
+                                "column": 37
+                              },
+                              "end": {
+                                "line": 41,
+                                "column": 39
+                              }
+                            }
+                          },
+                          "range": [
+                            1414,
+                            1434
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 41,
+                              "column": 19
+                            },
+                            "end": {
+                              "line": 41,
+                              "column": 39
+                            }
+                          }
+                        },
+                        "range": [
+                          1397,
+                          1434
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 41,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 41,
+                            "column": 39
+                          }
+                        }
+                      },
+                      "range": [
+                        1397,
+                        1435
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 41,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 41,
+                          "column": 40
+                        }
+                      }
+                    },
+                    {
+                      "type": "ForOfStatement",
+                      "left": {
+                        "type": "VariableDeclaration",
+                        "declarations": [
+                          {
+                            "type": "VariableDeclarator",
+                            "id": {
+                              "type": "Identifier",
+                              "name": "layerData",
+                              "range": [
+                                1447,
+                                1456
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 42,
+                                  "column": 11
+                                },
+                                "end": {
+                                  "line": 42,
+                                  "column": 20
+                                }
+                              }
+                            },
+                            "init": null,
+                            "range": [
+                              1447,
+                              1456
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 42,
+                                "column": 11
+                              },
+                              "end": {
+                                "line": 42,
+                                "column": 20
+                              }
+                            }
+                          }
+                        ],
+                        "kind": "let",
+                        "range": [
+                          1443,
+                          1456
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 42,
+                            "column": 7
+                          },
+                          "end": {
+                            "line": 42,
+                            "column": 20
+                          }
+                        }
+                      },
+                      "right": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "options",
+                          "range": [
+                            1460,
+                            1467
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 42,
+                              "column": 24
+                            },
+                            "end": {
+                              "line": 42,
+                              "column": 31
+                            }
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "layers",
+                          "range": [
+                            1468,
+                            1474
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 42,
+                              "column": 32
+                            },
+                            "end": {
+                              "line": 42,
+                              "column": 38
+                            }
+                          }
+                        },
+                        "range": [
+                          1460,
+                          1474
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 42,
+                            "column": 24
+                          },
+                          "end": {
+                            "line": 42,
+                            "column": 38
+                          }
+                        }
+                      },
+                      "body": {
+                        "type": "BlockStatement",
+                        "body": [
+                          {
+                            "type": "ExpressionStatement",
+                            "expression": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "ThisExpression",
+                                  "range": [
+                                    1481,
+                                    1485
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 43,
+                                      "column": 3
+                                    },
+                                    "end": {
+                                      "line": 43,
+                                      "column": 7
+                                    }
+                                  }
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "createLayer",
+                                  "range": [
+                                    1486,
+                                    1497
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 43,
+                                      "column": 8
+                                    },
+                                    "end": {
+                                      "line": 43,
+                                      "column": 19
+                                    }
+                                  }
+                                },
+                                "range": [
+                                  1481,
+                                  1497
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 43,
+                                    "column": 3
+                                  },
+                                  "end": {
+                                    "line": 43,
+                                    "column": 19
+                                  }
+                                }
+                              },
+                              "arguments": [
+                                {
+                                  "type": "Identifier",
+                                  "name": "layerData",
+                                  "range": [
+                                    1498,
+                                    1507
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 43,
+                                      "column": 20
+                                    },
+                                    "end": {
+                                      "line": 43,
+                                      "column": 29
+                                    }
+                                  }
+                                }
+                              ],
+                              "range": [
+                                1481,
+                                1508
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 43,
+                                  "column": 3
+                                },
+                                "end": {
+                                  "line": 43,
+                                  "column": 30
+                                }
+                              }
+                            },
+                            "range": [
+                              1481,
+                              1509
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 43,
+                                "column": 3
+                              },
+                              "end": {
+                                "line": 43,
+                                "column": 31
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          1476,
+                          1513
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 42,
+                            "column": 40
+                          },
+                          "end": {
+                            "line": 44,
+                            "column": 3
+                          }
+                        }
+                      },
+                      "range": [
+                        1438,
+                        1513
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 42,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 44,
+                          "column": 3
+                        }
+                      },
+                      "trailingComments": [
+                        {
+                          "type": "Block",
+                          "value": "* Custom properties of the tilemap.\n\t\t * @type {Map<string, *>} ",
+                          "range": [
+                            1517,
+                            1585
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 46,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 47,
+                              "column": 30
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              1588,
+                              1592
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 48,
+                                "column": 2
+                              },
+                              "end": {
+                                "line": 48,
+                                "column": 6
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "properties",
+                            "range": [
+                              1593,
+                              1603
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 48,
+                                "column": 7
+                              },
+                              "end": {
+                                "line": 48,
+                                "column": 17
+                              }
+                            }
+                          },
+                          "range": [
+                            1588,
+                            1603
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 48,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 48,
+                              "column": 17
+                            }
+                          }
+                        },
+                        "right": {
+                          "type": "LogicalExpression",
+                          "operator": "||",
+                          "left": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "options",
+                              "range": [
+                                1606,
+                                1613
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 48,
+                                  "column": 20
+                                },
+                                "end": {
+                                  "line": 48,
+                                  "column": 27
+                                }
+                              }
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "properties",
+                              "range": [
+                                1614,
+                                1624
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 48,
+                                  "column": 28
+                                },
+                                "end": {
+                                  "line": 48,
+                                  "column": 38
+                                }
+                              }
+                            },
+                            "range": [
+                              1606,
+                              1624
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 48,
+                                "column": 20
+                              },
+                              "end": {
+                                "line": 48,
+                                "column": 38
+                              }
+                            }
+                          },
+                          "right": {
+                            "type": "NewExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "Map",
+                              "range": [
+                                1632,
+                                1635
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 48,
+                                  "column": 46
+                                },
+                                "end": {
+                                  "line": 48,
+                                  "column": 49
+                                }
+                              }
+                            },
+                            "arguments": [],
+                            "range": [
+                              1628,
+                              1637
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 48,
+                                "column": 42
+                              },
+                              "end": {
+                                "line": 48,
+                                "column": 51
+                              }
+                            }
+                          },
+                          "range": [
+                            1606,
+                            1637
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 48,
+                              "column": 20
+                            },
+                            "end": {
+                              "line": 48,
+                              "column": 51
+                            }
+                          }
+                        },
+                        "range": [
+                          1588,
+                          1637
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 48,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 48,
+                            "column": 51
+                          }
+                        }
+                      },
+                      "range": [
+                        1588,
+                        1638
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 48,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 48,
+                          "column": 52
+                        }
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "Block",
+                          "value": "* Custom properties of the tilemap.\n\t\t * @type {Map<string, *>} ",
+                          "range": [
+                            1517,
+                            1585
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 46,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 47,
+                              "column": 30
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "range": [
+                    830,
+                    1641
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 19,
+                      "column": 22
+                    },
+                    "end": {
+                      "line": 49,
+                      "column": 2
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  820,
+                  1641
+                ],
+                "loc": {
+                  "start": {
+                    "line": 19,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 49,
+                    "column": 2
+                  }
+                }
+              },
+              "kind": "constructor",
+              "computed": false,
+              "range": [
+                809,
+                1641
+              ],
+              "loc": {
+                "start": {
+                  "line": 19,
+                  "column": 1
+                },
+                "end": {
+                  "line": 49,
+                  "column": 2
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n     * TileMap constructor.\n     *\n     * @param {object} options - Options for the tilemap. Can also be a tilemap you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilemap\"] - {@link TileMap#name}\n     * @param {number} options.width - {@link TileMap#width}\n     * @param {number} options.height - {@link TileMap#height}\n     * @param {number} options.tileWidth - {@link TileMap#tileWidth}\n     * @param {number} options.tileHeight - {@link TileMap#tileHeight}\n     * @param {layerOption[]} [options.layers=[]] - Same structure as options in {@link TileLayer#constructor}\n\t * @param {Map<string, *>} [options.properties=Map] - {@link TileMap#properties}\n     ",
+                  "range": [
+                    123,
+                    807
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 7,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 18,
+                      "column": 7
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n\t * Creates a new layer and adds it to the tilemap.\n\t *\n\t * @param {object} options - Options for the layer (see {@link TileLayer}).\n\t *\n\t * @returns {TileLayer}\n\t ",
+                  "range": [
+                    1644,
+                    1814
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 51,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 57,
+                      "column": 4
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "createLayer",
+                "range": [
+                  1816,
+                  1827
+                ],
+                "loc": {
+                  "start": {
+                    "line": 58,
+                    "column": 1
+                  },
+                  "end": {
+                    "line": 58,
+                    "column": 12
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "options",
+                    "range": [
+                      1828,
+                      1835
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 58,
+                        "column": 13
+                      },
+                      "end": {
+                        "line": 58,
+                        "column": 20
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "VariableDeclaration",
+                      "declarations": [
+                        {
+                          "type": "VariableDeclarator",
+                          "id": {
+                            "type": "Identifier",
+                            "name": "layer",
+                            "range": [
+                              1847,
+                              1852
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 59,
+                                "column": 8
+                              },
+                              "end": {
+                                "line": 59,
+                                "column": 13
+                              }
+                            }
+                          },
+                          "init": {
+                            "type": "NewExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "TileLayer",
+                              "range": [
+                                1859,
+                                1868
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 59,
+                                  "column": 20
+                                },
+                                "end": {
+                                  "line": 59,
+                                  "column": 29
+                                }
+                              }
+                            },
+                            "arguments": [
+                              {
+                                "type": "Identifier",
+                                "name": "options",
+                                "range": [
+                                  1869,
+                                  1876
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 59,
+                                    "column": 30
+                                  },
+                                  "end": {
+                                    "line": 59,
+                                    "column": 37
+                                  }
+                                }
+                              }
+                            ],
+                            "range": [
+                              1855,
+                              1877
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 59,
+                                "column": 16
+                              },
+                              "end": {
+                                "line": 59,
+                                "column": 38
+                              }
+                            }
+                          },
+                          "range": [
+                            1847,
+                            1877
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 59,
+                              "column": 8
+                            },
+                            "end": {
+                              "line": 59,
+                              "column": 38
+                            }
+                          }
+                        }
+                      ],
+                      "kind": "const",
+                      "range": [
+                        1841,
+                        1878
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 59,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 59,
+                          "column": 39
+                        }
+                      }
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                1881,
+                                1885
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 60,
+                                  "column": 2
+                                },
+                                "end": {
+                                  "line": 60,
+                                  "column": 6
+                                }
+                              }
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "layers",
+                              "range": [
+                                1886,
+                                1892
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 60,
+                                  "column": 7
+                                },
+                                "end": {
+                                  "line": 60,
+                                  "column": 13
+                                }
+                              }
+                            },
+                            "range": [
+                              1881,
+                              1892
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 60,
+                                "column": 2
+                              },
+                              "end": {
+                                "line": 60,
+                                "column": 13
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "push",
+                            "range": [
+                              1893,
+                              1897
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 60,
+                                "column": 14
+                              },
+                              "end": {
+                                "line": 60,
+                                "column": 18
+                              }
+                            }
+                          },
+                          "range": [
+                            1881,
+                            1897
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 60,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 60,
+                              "column": 18
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "layer",
+                            "range": [
+                              1898,
+                              1903
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 60,
+                                "column": 19
+                              },
+                              "end": {
+                                "line": 60,
+                                "column": 24
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          1881,
+                          1904
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 60,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 60,
+                            "column": 25
+                          }
+                        }
+                      },
+                      "range": [
+                        1881,
+                        1905
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 60,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 60,
+                          "column": 26
+                        }
+                      }
+                    },
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "Identifier",
+                        "name": "layer",
+                        "range": [
+                          1915,
+                          1920
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 61,
+                            "column": 9
+                          },
+                          "end": {
+                            "line": 61,
+                            "column": 14
+                          }
+                        }
+                      },
+                      "range": [
+                        1908,
+                        1921
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 61,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 61,
+                          "column": 15
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    1837,
+                    1924
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 58,
+                      "column": 22
+                    },
+                    "end": {
+                      "line": 62,
+                      "column": 2
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1827,
+                  1924
+                ],
+                "loc": {
+                  "start": {
+                    "line": 58,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 62,
+                    "column": 2
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                1816,
+                1924
+              ],
+              "loc": {
+                "start": {
+                  "line": 58,
+                  "column": 1
+                },
+                "end": {
+                  "line": 62,
+                  "column": 2
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n\t * Creates a new layer and adds it to the tilemap.\n\t *\n\t * @param {object} options - Options for the layer (see {@link TileLayer}).\n\t *\n\t * @returns {TileLayer}\n\t ",
+                  "range": [
+                    1644,
+                    1814
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 51,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 57,
+                      "column": 4
+                    }
+                  }
+                }
+              ],
+              "static": false
+            }
+          ],
+          "range": [
+            120,
+            1926
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 21
+            },
+            "end": {
+              "line": 63,
+              "column": 1
+            }
+          }
+        },
+        "range": [
+          106,
+          1926
+        ],
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 7
+          },
+          "end": {
+            "line": 63,
+            "column": 1
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * A tilemap object with name, sizes and layers.\n ",
+            "range": [
+              42,
+              98
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 0
+              },
+              "end": {
+                "line": 5,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": []
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        99,
+        1926
+      ],
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 63,
+          "column": 1
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * A tilemap object with name, sizes and layers.\n ",
+          "range": [
+            42,
+            98
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 5,
+              "column": 3
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    0,
+    1926
+  ],
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 63,
+      "column": 1
+    }
+  },
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\n * A tilemap object with name, sizes and layers.\n ",
+      "range": [
+        42,
+        98
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n     * TileMap constructor.\n     *\n     * @param {object} options - Options for the tilemap. Can also be a tilemap you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilemap\"] - {@link TileMap#name}\n     * @param {number} options.width - {@link TileMap#width}\n     * @param {number} options.height - {@link TileMap#height}\n     * @param {number} options.tileWidth - {@link TileMap#tileWidth}\n     * @param {number} options.tileHeight - {@link TileMap#tileHeight}\n     * @param {layerOption[]} [options.layers=[]] - Same structure as options in {@link TileLayer#constructor}\n\t * @param {Map<string, *>} [options.properties=Map] - {@link TileMap#properties}\n     ",
+      "range": [
+        123,
+        807
+      ],
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 1
+        },
+        "end": {
+          "line": 18,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "* The name of the tilemap.\n\t\t * @type {string} ",
+      "range": [
+        834,
+        885
+      ],
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 2
+        },
+        "end": {
+          "line": 21,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "* The width of the tilemap.\n\t\t * @type {number} ",
+      "range": [
+        930,
+        982
+      ],
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 2
+        },
+        "end": {
+          "line": 25,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "* The height of the tilemap.\n\t\t * @type {number} ",
+      "range": [
+        1015,
+        1068
+      ],
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 2
+        },
+        "end": {
+          "line": 28,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "* The width of a tile for the tilemap.\n\t\t * @type {number} ",
+      "range": [
+        1104,
+        1167
+      ],
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 2
+        },
+        "end": {
+          "line": 32,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "* The height of a tile for the tilemap.\n\t\t * @type {number} ",
+      "range": [
+        1208,
+        1272
+      ],
+      "loc": {
+        "start": {
+          "line": 34,
+          "column": 2
+        },
+        "end": {
+          "line": 35,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "* All layers of the tilemap\n\t\t *  @type {TileLayer[]} ",
+      "range": [
+        1316,
+        1374
+      ],
+      "loc": {
+        "start": {
+          "line": 38,
+          "column": 2
+        },
+        "end": {
+          "line": 39,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "* Custom properties of the tilemap.\n\t\t * @type {Map<string, *>} ",
+      "range": [
+        1517,
+        1585
+      ],
+      "loc": {
+        "start": {
+          "line": 46,
+          "column": 2
+        },
+        "end": {
+          "line": 47,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n\t * Creates a new layer and adds it to the tilemap.\n\t *\n\t * @param {object} options - Options for the layer (see {@link TileLayer}).\n\t *\n\t * @returns {TileLayer}\n\t ",
+      "range": [
+        1644,
+        1814
+      ],
+      "loc": {
+        "start": {
+          "line": 51,
+          "column": 1
+        },
+        "end": {
+          "line": 57,
+          "column": 4
+        }
+      }
+    }
+  ]
+}

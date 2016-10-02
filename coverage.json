@@ -1,0 +1,22 @@
+{
+  "coverage": "100%",
+  "expectCount": 20,
+  "actualCount": 20,
+  "files": {
+    "src/tile.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/tilelayer.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/tilemap.js": {
+      "expectCount": 10,
+      "actualCount": 10,
+      "undocumentLines": []
+    }
+  }
+}
