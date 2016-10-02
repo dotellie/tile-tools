@@ -56,7 +56,7 @@ export class TileMap {
 	 * @returns {TileLayer}
 	 */
 	createLayer(options) {
-		const layer = new TileLayer(options);
+		const layer = new TileLayer(this, options);
 		this.layers.push(layer);
 		return layer;
 	}

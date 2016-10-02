@@ -1,3 +1,5 @@
+import { Tile } from "./tile";
+
 /**
  * A tile layer object containing tiles and other properties.
  */
@@ -12,15 +14,23 @@ export class TileLayer {
 	 * @param {Map<string, *>} options.properties=Map - {@link TileLayer#properties}
 	 */
 	constructor(parentMap, options = {}) {
-		this._map = parentMap;
-
 		/** The name of the tile layer.
 		 * @type {string} */
 		this.name = options.name || "Tilelayer";
 
 		/** The tiles of the layer.
 		 * @type {Tile[]} */
-		this.tiles = options.tiles || [];
+		this.tiles = [];
+		for (let y = 0; y < parentMap.height; y++) {
+			for (let x = 0; x < parentMap.width; x++) {
+				const tile = new Tile(
+					options.tiles
+					? options.tiles[x % parentMap.width + y * parentMap.width]
+					: {}
+				);
+				this.tiles.push(tile);
+			}
+		}
 
 		/** Custom properties of the layer.
 		 * @type {Map<string, *>} */
