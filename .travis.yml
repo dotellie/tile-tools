@@ -1,8 +1,15 @@
 language: node_js
 node_js:
   - "6"
+
+env:
+    global:
+      - ENCRYPTION_LABEL="7fcdedc5f15b"
+      - COMMIT_AUTHOR_EMAIL="realmagnon@gmail.com"
+
 after_success:
-  - "npm run doc"
+  - "chmod +x deployDocumentation.sh"
+  - "bash ./deployDocumentation.sh"
 deploy:
     provider: npm
     api_key:
