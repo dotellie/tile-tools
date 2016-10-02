@@ -2,8 +2,9 @@
   "name": "dtile-tilemap",
   "version": "0.1.0",
   "description": "A representation of a tilemap with very basic functionality.",
-  "main": "index.js",
+  "main": "out/js/index.js",
   "scripts": {
+    "build": "babel src -d out/js",
     "lint": "eslint ./src ./test",
     "test": "npm run lint && mocha --compilers js:babel-register",
     "doc": "esdoc -c ./esdoc.json"
