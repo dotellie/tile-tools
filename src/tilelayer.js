@@ -35,5 +35,23 @@ export class TileLayer {
 		/** Custom properties of the layer.
 		 * @type {Map<string, *>} */
 		this.properties = options.properties || new Map();
+
+		this._width = parentMap.width;
+		this._height = parentMap.height;
+	}
+
+	/**
+	 * Gets the index of a tile in the main tile array from a position
+	 *
+	 * @param {number} x - The x coordinate of the tile.
+	 * @param {number} y - The y coordinate of the tile.
+	 *
+	 * @returns {number} The index of the tile in the main array.
+	 */
+	getTileIndex(x, y) {
+		if (x < 0 || x >= this._width || y < 0 || y > this._height) {
+			throw new RangeError();
+		}
+		return y * this._width + x;
 	}
 }
