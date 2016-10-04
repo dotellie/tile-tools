@@ -5,7 +5,7 @@ export class Tile {
 	/**
 	 * Tile constructor.
 	 *
-	 * @param {object} [options={}] Options for the tile. Can also be tile data you loaded from JSON or similar.
+	 * @param {object} options={} Options for the tile. Can also be tile data you loaded from JSON or similar.
 	 * @param {number} options.tileId - {@link Tile#tileId}
 	 * @param {number} options.tilesetId - {@link Tile#tilesetId}
 	 * @param {Map<string, *>} [options.properties={}] - {@link Tile#properties}
