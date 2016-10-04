@@ -10,7 +10,7 @@ export class Tile {
 	 * @param {number} options.tilesetId - {@link Tile#tilesetId}
 	 * @param {Map<string, *>} [options.properties={}] - {@link Tile#properties}
 	 */
-	constructor(options = {}) {
+	constructor(options) {
 		/** The tile ID of the tile.
 		 * @type {number} */
 		this.tileId = options.tileId;
