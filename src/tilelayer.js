@@ -49,9 +49,17 @@ export class TileLayer {
 	 * @returns {number} The index of the tile in the main array.
 	 */
 	getTileIndex(x, y) {
-		if (x < 0 || x >= this._width || y < 0 || y > this._height) {
+		if (!this._inRange(x, y)) {
 			throw new RangeError();
 		}
 		return y * this._width + x;
+	}
+
+	_inRange(x, y, width = 1, height = 1) {
+		return !(x < 0 || x >= this._width ||
+			y < 0 || y > this._height ||
+			width <= 0 || x + width > this._width ||
+			height <= 0 || y + height > this._height
+		);
 	}
 }
