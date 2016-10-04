@@ -32,4 +32,18 @@ export class Tile {
 		 * @type {Map<string, *>} */
 		this.properties = options.properties || new Map();
 	}
+
+	/**
+	 * toJSON function used for JSON serialization.
+	 * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#toJSON()_behavior
+	 *
+	 * @returns {Tile|string} Object to be serialized
+	 */
+	toJSON() {
+		if (this.properties.size === 0) {
+			return this.tileId + ":" + this.tilesetId;
+		} else {
+			return this;
+		}
+	}
 }

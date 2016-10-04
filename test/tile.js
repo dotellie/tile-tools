@@ -21,5 +21,19 @@ describe("TileMap", () => {
 			tile.tileId.should.equal(224);
 			tile.tilesetId.should.equal(5);
 		});
+		it("stringifies with properties", () => {
+			let tile = new Tile({
+				tileId: 14,
+				tilesetId: 3,
+				properties: {
+					"property": "is a string"
+				}
+			});
+			JSON.stringify(tile).should.contain("\"property\":\"is a string\"");
+		});
+		it("stringifies without properties", () => {
+			let tile = new Tile("456:3");
+			JSON.stringify(tile).should.equal("\"456:3\"");
+		});
 	});
 });
