@@ -54,7 +54,8 @@ describe("TileMap", () => {
 		});
 	});
 
-	describe("#toJSON", () => {
+	/** @test {TileMap#getJSON} */
+	describe("#getJSON", () => {
 		it("returns a valid JSON string", () => {
 			JSON.parse(tilemap.getJSON());
 		});
