@@ -1,6 +1,7 @@
 import { should } from "chai";
 
 import { TileMap } from "../src";
+import testmap from "./testmap";
 
 should();
 
@@ -49,6 +50,11 @@ describe("TileMap", () => {
 		});
 		it("has properties for layers", () => {
 			tilemap.layers[0].name.should.be.a("string");
+		});
+		it("reads a valid tilemap JSON", () => {
+			tilemap = new TileMap(testmap);
+			tilemap.name.should.equal("test map");
+			tilemap.layers[0].tiles[23].tileId.should.equal(1);
 		});
 	});
 
