@@ -1,4 +1,5 @@
 import { Tile } from "./tile";
+import { TileArea } from "./tilearea";
 
 /**
  * A tile layer object containing tiles and other properties.
@@ -53,6 +54,29 @@ export class TileLayer {
 			throw new RangeError();
 		}
 		return y * this._width + x;
+	}
+
+	/**
+	 * Get an area of tiles.
+	 *
+	 * @param {number} x - The x coordinate of the tile area.
+	 * @param {number} y - The y coordinate of the tile area.
+	 * @param {number} width - The width of the tile area.
+	 * @param {number} height - The height of the tile area.
+	 *
+	 * @returns {TileArea} A {@link TileArea} of the area requested.
+	 */
+	getTileArea(x, y, width, height) {
+		if (!this._inRange(x, y, width, height)) {
+			throw new RangeError();
+		}
+		const tiles = [];
+		for (let ly = y; ly < y + height; ly++) {
+			for (let lx = x; lx < x + width; lx++) {
+				tiles.push(this.tiles[this.getTileIndex(lx, ly)]);
+			}
+		}
+		return new TileArea(width, height, tiles);
 	}
 
 	_inRange(x, y, width = 1, height = 1) {
