@@ -21,6 +21,10 @@ describe("TileMap", () => {
 			tile.tileId.should.equal(224);
 			tile.tilesetId.should.equal(5);
 		});
+	});
+
+	/** @test {Tile#toJSON} */
+	describe("#toJSON", () => {
 		it("stringifies with properties", () => {
 			let tile = new Tile({
 				tileId: 14,
