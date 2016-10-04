@@ -56,6 +56,11 @@ describe("TileMap", () => {
 			tilemap.name.should.equal("test map");
 			tilemap.layers[0].tiles[23].tileId.should.equal(1);
 		});
+		it("has correct default values", () => {
+			const tilemap = new TileMap({});
+			tilemap.name.should.be.a("string");
+			tilemap.layers.should.be.an("array");
+		});
 	});
 
 	/** @test {TileMap#getJSON} */
