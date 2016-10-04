@@ -7,8 +7,8 @@ should();
 /** @test {TileMap} */
 describe("TileMap", () => {
 	const mapName = "a map name",
-		mapWidth = 100,
-		mapHeight = 100,
+		mapWidth = 10,
+		mapHeight = 10,
 		tileWidth = 16,
 		tileHeight = 16;
 
