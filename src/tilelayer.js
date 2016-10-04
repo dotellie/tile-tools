@@ -14,7 +14,7 @@ export class TileLayer extends TileArea {
 	 * @param {Tile[]} options.tiles=[] - {@link TileLayer#tiles}
 	 * @param {Map<string, *>} options.properties=Map - {@link TileLayer#properties}
 	 */
-	constructor(parentMap, options = {}) {
+	constructor(parentMap, options) {
 		super(parentMap.width, parentMap.height);
 
 		/** The name of the tile layer.
