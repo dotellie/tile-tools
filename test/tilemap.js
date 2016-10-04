@@ -1,9 +1,9 @@
-import { should } from "chai";
+import { should as chaiShould } from "chai";
 
 import { TileMap } from "../src";
 import testmap from "./testmap";
 
-should();
+const should = chaiShould();
 
 /** @test {TileMap} */
 describe("TileMap", () => {
@@ -62,6 +62,10 @@ describe("TileMap", () => {
 	describe("#getJSON", () => {
 		it("returns a valid JSON string", () => {
 			JSON.parse(tilemap.getJSON());
+		});
+		it("doesn't parse private properties", () => {
+			tilemap._property = "foo";
+			should.not.exist(JSON.parse(tilemap.getJSON())._property);
 		});
 	});
 });
