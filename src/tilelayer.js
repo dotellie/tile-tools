@@ -29,7 +29,7 @@ export class TileLayer extends TileArea {
 				const tile = new Tile(
 					options.tiles
 					? options.tiles[x % parentMap.width + y * parentMap.width]
-					: {}
+					: { tileId: -1, tilesetId: 0 }
 				);
 				this.tiles.push(tile);
 			}
