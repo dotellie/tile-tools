@@ -1,5 +1,3 @@
-/* global: describe, it */
-
 import { should } from "chai";
 
 import { TileMap } from "../src";
