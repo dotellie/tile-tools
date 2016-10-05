@@ -69,4 +69,25 @@ describe("TileMap", () => {
 			JSON.stringify(tile).should.equal("\"456:3\"");
 		});
 	});
+
+	/** @test {Tile#clone} */
+	describe("#clone", () => {
+		let tile;
+		beforeEach(() => {
+			tile = new Tile({
+				tileId: 14,
+				tilesetId: 3,
+				properties: {
+					"property": "is a string"
+				}
+			});
+		});
+
+		it("clones all the properties of a tile", () => {
+			tile.clone().should.deep.equal(tile);
+		});
+		it("doesn't become the same tile", () => {
+			tile.clone().should.not.equal(tile);
+		});
+	});
 });

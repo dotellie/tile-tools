@@ -62,4 +62,13 @@ export class Tile {
 			return this;
 		}
 	}
+
+	/**
+	 * Creates a clone out of this tile.
+	 *
+	 * @returns {Tile} The new tile.
+	 */
+	clone() {
+		return new Tile(this);
+	}
 }
