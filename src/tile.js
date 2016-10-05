@@ -34,6 +34,22 @@ export class Tile {
 	}
 
 	/**
+	 * Sets the data for this tile.
+	 *
+	 * @param {number} tileId - The ID to assign to the tile.
+	 * @param {number} [tilesetId] - The tileset ID to assign to the tile.
+	 * @param {boolean} [replaceEmpty] - Should values less than 0 (-1) be handled (true) or ignored (false).
+	 */
+	setData(tileId, tilesetId, replaceEmpty) {
+		if (tileId >= 0 || replaceEmpty) {
+			this.tileId = Math.max(tileId, -1);
+		}
+		if (tilesetId != null && (tilesetId >= 0 || replaceEmpty)) {
+			this.tilesetId = Math.max(tilesetId, -1);
+		}
+	}
+
+	/**
 	 * toJSON function used for JSON serialization.
 	 * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#toJSON()_behavior
 	 *
