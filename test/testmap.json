@@ -4,6 +4,9 @@
 	"height": 5,
 	"tileWidth": 16,
 	"tileHeight": 16,
+    "tilesets": [
+        { "name": "A Tileset", "type": "test" }
+    ],
 	"layers": [
 		{
 			"name": "Layer 1",

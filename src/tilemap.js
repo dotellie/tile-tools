@@ -1,4 +1,5 @@
 import { TileLayer } from "./tilelayer";
+import { TileSet } from "./tileset";
 
 /**
  * A tilemap object with name, sizes and layers.
@@ -14,6 +15,7 @@ export class TileMap {
      * @param {number} options.tileWidth - {@link TileMap#tileWidth}
      * @param {number} options.tileHeight - {@link TileMap#tileHeight}
      * @param {layerOption[]} [options.layers=[]] - Same structure as options in {@link TileLayer#constructor}
+     * @param {tilesetOption[]} [options.tilesets=[]] - Same structure as options in {@link TileSet#constructor}
 	 * @param {Map<string, *>} [options.properties=Map] - {@link TileMap#properties}
      */
 	constructor(options) {
@@ -43,6 +45,14 @@ export class TileMap {
 			this.createLayer(layerData);
 		}
 
+		/** The tilesets the tilemap consists of.
+		 * @type {TileSet[]} */
+		this.tilesets = [];
+		options.tilesets = options.tilesets || [];
+		for (let tileset of options.tilesets) {
+			this.addTileset(new TileSet(tileset));
+		}
+
 		/** Custom properties of the tilemap.
 		 * @type {Map<string, *>} */
 		this.properties = options.properties || new Map();
@@ -59,6 +69,18 @@ export class TileMap {
 		const layer = new TileLayer(this, options);
 		this.layers.push(layer);
 		return layer;
+	}
+
+	/**
+	 * Adds a tileset to the tilemap.
+	 *
+	 * @param {TileSet} tileset - the tileset to add to the map.
+	 *
+	 * @returns {TileSet}
+	 */
+	addTileset(tileset) {
+		this.tilesets.push(tileset);
+		return tileset;
 	}
 
 	/**
