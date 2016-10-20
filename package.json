@@ -1,10 +1,11 @@
 {
   "name": "dtile-tilemap",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A representation of a tilemap with very basic functionality.",
-  "main": "out/js/index.js",
+  "main": "out/js/build.js",
+  "jsnext:main": "out/js/build.es6.js",
   "scripts": {
-    "build": "babel src -d out/js",
+    "build": "rollup -c",
     "lint": "eslint ./src ./test",
     "test": "npm run lint && nyc --reporter=text mocha --compilers js:babel-register",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
@@ -26,7 +27,6 @@
   },
   "homepage": "https://magnonellie.github.io/dtile-tilemap/",
   "devDependencies": {
-    "babel-cli": "^6.16.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.16.0",
     "babel-register": "^6.16.3",
     "chai": "^3.5.0",
@@ -34,6 +34,7 @@
     "esdoc": "^0.4.8",
     "eslint": "^3.7.0",
     "mocha": "^3.1.0",
-    "nyc": "^8.3.0"
+    "nyc": "^8.3.0",
+    "rollup": "^0.36.3"
   }
 }
