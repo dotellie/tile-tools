@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | API Document</title>
+  <title data-ice="title">test/tilearea.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -41,12 +41,79 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export { TileMap } from &quot;./tilemap&quot;;
-export { TileLayer } from &quot;./tilelayer&quot;;
-export { TileArea } from &quot;./tilearea&quot;;
-export { Tile } from &quot;./tile&quot;;
-export { TileSet } from &quot;./tileset&quot;;
+<div class="content" data-ice="content"><h1 data-ice="title">test/tilearea.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { should } from &quot;chai&quot;;
+
+import { TileArea } from &quot;../src&quot;;
+
+should();
+
+/** @test {TileArea} */
+describe(&quot;TileArea&quot;, () =&gt; {
+	const areaWidth = 100, areaHeight = 100;
+	let tileArea, tiles;
+
+	beforeEach(() =&gt; {
+		tiles = [];
+		for (let i = 0; i &lt; areaWidth * areaHeight; i++) {
+			tiles.push({
+				tileId: parseInt(Math.random() * 100)
+			});
+		}
+
+		tileArea = new TileArea(areaWidth, areaHeight, tiles);
+	});
+
+	/** @test {TileArea#getTileIndex} */
+	describe(&quot;#getTileIndex&quot;, () =&gt; {
+		it(&quot;returns the right index&quot;, () =&gt; {
+			tileArea.getTileIndex(16, 56).should.equal(5616);
+			tileArea.getTileIndex(76, 32).should.equal(3276);
+		});
+		it(&quot;crashes if out of bounds&quot;, () =&gt; {
+			(() =&gt; {
+				tileArea.getTileIndex(areaWidth, 0);
+			}).should.throw(RangeError);
+			(() =&gt; {
+				tileArea.getTileIndex(-1, 0);
+			}).should.throw(RangeError);
+		});
+	});
+
+	/** @test {TileLayer#getTileArea} */
+	describe(&quot;#getTileArea&quot;, () =&gt; {
+		it(&quot;returns the correct tiles&quot;, () =&gt; {
+			const tileAreaSplice = tileArea.getTileArea(0, 0, 2, 2);
+			for (let x = 0; x &lt; tileAreaSplice.width; x++) {
+				for (let y = 0; y &lt; tileAreaSplice.width; y++) {
+					tileAreaSplice.tiles[tileAreaSplice.getTileIndex(x, y)]
+						.tileId.should.equal(tiles[x + y * areaWidth].tileId);
+				}
+			}
+		});
+		it(&quot;returns the correct dimmensions&quot;, () =&gt; {
+			const tileAreaSplice = tileArea.getTileArea(0, 5, 3, 2);
+			tileAreaSplice.width.should.equal(3);
+			tileAreaSplice.height.should.equal(2);
+		});
+		it(&quot;crashes if out of bounds&quot;, () =&gt; {
+			(() =&gt; {
+				tileArea.getTileArea(areaWidth, 0, 50);
+			}).should.throw(RangeError);
+			(() =&gt; {
+				tileArea.getTileArea(areaWidth - 2, 0, 5, 1);
+			}).should.throw(RangeError);
+		});
+		it(&quot;crashes if rectangle is invalid&quot;, () =&gt; {
+			(() =&gt; {
+				tileArea.getTileArea(0, 0, -1, 1);
+			}).should.throw(RangeError);
+			(() =&gt; {
+				tileArea.getTileArea(0, 0, 1, 0);
+			}).should.throw(RangeError);
+		});
+	});
+});
 </code></pre>
 
 </div>

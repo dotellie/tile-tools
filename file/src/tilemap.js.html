@@ -33,14 +33,17 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/tilemap.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { TileLayer } from &quot;./tilelayer&quot;;
+import { TileSet } from &quot;./tileset&quot;;
 
 /**
  * A tilemap object with name, sizes and layers.
@@ -56,6 +59,7 @@ export class TileMap {
      * @param {number} options.tileWidth - {@link TileMap#tileWidth}
      * @param {number} options.tileHeight - {@link TileMap#tileHeight}
      * @param {layerOption[]} [options.layers=[]] - Same structure as options in {@link TileLayer#constructor}
+     * @param {tilesetOption[]} [options.tilesets=[]] - Same structure as options in {@link TileSet#constructor}
 	 * @param {Map&lt;string, *&gt;} [options.properties=Map] - {@link TileMap#properties}
      */
 	constructor(options) {
@@ -85,6 +89,14 @@ export class TileMap {
 			this.createLayer(layerData);
 		}
 
+		/** The tilesets the tilemap consists of.
+		 * @type {TileSet[]} */
+		this.tilesets = [];
+		options.tilesets = options.tilesets || [];
+		for (let tileset of options.tilesets) {
+			this.addTileset(new TileSet(tileset));
+		}
+
 		/** Custom properties of the tilemap.
 		 * @type {Map&lt;string, *&gt;} */
 		this.properties = options.properties || new Map();
@@ -98,9 +110,35 @@ export class TileMap {
 	 * @returns {TileLayer}
 	 */
 	createLayer(options) {
-		const layer = new TileLayer(options);
+		const layer = new TileLayer(this, options);
 		this.layers.push(layer);
 		return layer;
+	}
+
+	/**
+	 * Adds a tileset to the tilemap.
+	 *
+	 * @param {TileSet} tileset - the tileset to add to the map.
+	 *
+	 * @returns {TileSet}
+	 */
+	addTileset(tileset) {
+		this.tilesets.push(tileset);
+		return tileset;
+	}
+
+	/**
+	 * Converts this tilemap to a JSON string.
+	 *
+	 * @returns {string} - The JSON serialization of this tilemap.
+	 */
+	getJSON() {
+		return JSON.stringify(this, (key, value) =&gt; {
+			if (key.indexOf(&quot;_&quot;) === 0) {
+				return undefined;
+			}
+			return value;
+		});
 	}
 }
 </code></pre>

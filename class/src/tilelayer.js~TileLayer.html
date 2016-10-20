@@ -33,20 +33,22 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {TileLayer} from &apos;<span><a href="file/src/tilelayer.js.html#lineNumber4">dtile-tilemap/src/tilelayer.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {TileLayer} from &apos;<span><a href="file/src/tilelayer.js.html#lineNumber7">dtile-tilemap/src/tilelayer.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/tilelayer.js.html#lineNumber4">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/tilelayer.js.html#lineNumber7">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -56,7 +58,7 @@
 
   
   
-  
+  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span> &#x2192; TileLayer</div></div>
   
   
   
@@ -200,7 +202,143 @@
 </div>
 
 
-
+<div class="inherited-summary" data-ice="inheritedSummary"><h2>Inherited Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html#instance-member-height">height</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>The height of the tile area.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html#instance-member-tiles">tiles</a></span></span><span data-ice="signature">: <span><span><a href="class/src/tile.js~Tile.html">Tile</a></span><span>[]</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>The tiles in the tile area</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html#instance-member-width">width</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>The width of the tile area.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html#instance-method-getTileArea">getTileArea</a></span></span><span data-ice="signature">(x: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, y: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, width: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, height: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Gets an area of tiles.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html#instance-method-getTileIndex">getTileIndex</a></span></span><span data-ice="signature">(x: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, y: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Gets the index of a tile in the tile array from a position.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 
 
@@ -217,7 +355,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilelayer.js.html#lineNumber14">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilelayer.js.html#lineNumber17">source</a></span></span>
     </span>
   </h3>
 
@@ -227,7 +365,7 @@
   <div data-ice="description"><p>TileLayer constructor.</p>
 </div>
 
-  
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/tilearea.js~TileArea.html#instance-constructor-constructor">TileArea#constructor</a></span></div>
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>
@@ -307,7 +445,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilelayer.js.html#lineNumber19">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilelayer.js.html#lineNumber22">source</a></span></span>
     </span>
   </h3>
 
@@ -348,7 +486,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilelayer.js.html#lineNumber27">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilelayer.js.html#lineNumber40">source</a></span></span>
     </span>
   </h3>
 
@@ -389,7 +527,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilelayer.js.html#lineNumber23">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilelayer.js.html#lineNumber26">source</a></span></span>
     </span>
   </h3>
 
@@ -399,7 +537,7 @@
   <div data-ice="description"><p>The tiles of the layer.</p>
 </div>
 
-  
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/tilearea.js~TileArea.html#instance-member-tiles">TileArea#tiles</a></span></div>
 
   <div data-ice="properties">
 </div>

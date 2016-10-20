@@ -33,26 +33,27 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">test/tilemap.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/* global: describe, it */
-
-import { should } from &quot;chai&quot;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { should as chaiShould } from &quot;chai&quot;;
 
 import { TileMap } from &quot;../src&quot;;
+import testmap from &quot;./testmap&quot;;
 
-should();
+const should = chaiShould();
 
 /** @test {TileMap} */
 describe(&quot;TileMap&quot;, () =&gt; {
 	const mapName = &quot;a map name&quot;,
-		mapWidth = 100,
-		mapHeight = 100,
+		mapWidth = 10,
+		mapHeight = 10,
 		tileWidth = 16,
 		tileHeight = 16;
 
@@ -93,6 +94,27 @@ describe(&quot;TileMap&quot;, () =&gt; {
 		});
 		it(&quot;has properties for layers&quot;, () =&gt; {
 			tilemap.layers[0].name.should.be.a(&quot;string&quot;);
+		});
+		it(&quot;reads a valid tilemap JSON&quot;, () =&gt; {
+			tilemap = new TileMap(testmap);
+			tilemap.name.should.equal(&quot;test map&quot;);
+			tilemap.layers[0].tiles[23].tileId.should.equal(1);
+		});
+		it(&quot;has correct default values&quot;, () =&gt; {
+			const tilemap = new TileMap({});
+			tilemap.name.should.be.a(&quot;string&quot;);
+			tilemap.layers.should.be.an(&quot;array&quot;);
+		});
+	});
+
+	/** @test {TileMap#getJSON} */
+	describe(&quot;#getJSON&quot;, () =&gt; {
+		it(&quot;returns a valid JSON string&quot;, () =&gt; {
+			JSON.parse(tilemap.getJSON());
+		});
+		it(&quot;doesn&apos;t parse private properties&quot;, () =&gt; {
+			tilemap._property = &quot;foo&quot;;
+			should.not.exist(JSON.parse(tilemap.getJSON())._property);
 		});
 	});
 });

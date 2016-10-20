@@ -33,8 +33,10 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -47,23 +49,71 @@ export class Tile {
 	/**
 	 * Tile constructor.
 	 *
-	 * @param {object} [options={}] Options for the tile. Can also be tile data you loaded from JSON or similar.
+	 * @param {object|string} options={} Options for the tile. Can also be tile data you loaded from JSON or a plain string in the following format: &lt;tileId:tilesetId&gt;
 	 * @param {number} options.tileId - {@link Tile#tileId}
 	 * @param {number} options.tilesetId - {@link Tile#tilesetId}
 	 * @param {Map&lt;string, *&gt;} [options.properties={}] - {@link Tile#properties}
 	 */
-	constructor(options = {}) {
+	constructor(options) {
 		/** The tile ID of the tile.
 		 * @type {number} */
-		this.tileId = options.tileId;
+		this.tileId = undefined;
 
 		/** The tileset ID of the tile.
 		 * @type {number} */
-		this.tilesetId = options.tilesetId;
+		this.tilesetId = undefined;
+
+		if (typeof options === &quot;string&quot;) {
+			const colonIndex = options.indexOf(&quot;:&quot;);
+			this.tileId = parseInt(options.substring(0, colonIndex));
+			this.tilesetId = parseInt(options.substring(colonIndex + 1));
+		} else {
+			this.tileId = options.tileId;
+			this.tilesetId = options.tilesetId;
+		}
 
 		/** Custom properties of the tile.
 		 * @type {Map&lt;string, *&gt;} */
 		this.properties = options.properties || new Map();
+	}
+
+	/**
+	 * Sets the data for this tile.
+	 *
+	 * @param {number} tileId - The ID to assign to the tile.
+	 * @param {number} [tilesetId] - The tileset ID to assign to the tile.
+	 * @param {boolean} [replaceEmpty] - Should values less than 0 (-1) be handled (true) or ignored (false).
+	 */
+	setData(tileId, tilesetId, replaceEmpty) {
+		if (tileId &gt;= 0 || replaceEmpty) {
+			this.tileId = Math.max(tileId, -1);
+		}
+		if (tilesetId != null &amp;&amp; (tilesetId &gt;= 0 || replaceEmpty)) {
+			this.tilesetId = Math.max(tilesetId, -1);
+		}
+	}
+
+	/**
+	 * toJSON function used for JSON serialization.
+	 * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#toJSON()_behavior
+	 *
+	 * @returns {Tile|string} Object to be serialized
+	 */
+	toJSON() {
+		if (this.properties.size === 0) {
+			return this.tileId + &quot;:&quot; + this.tilesetId;
+		} else {
+			return this;
+		}
+	}
+
+	/**
+	 * Creates a clone out of this tile.
+	 *
+	 * @returns {Tile} The new tile.
+	 */
+	clone() {
+		return new Tile(this);
 	}
 }
 </code></pre>

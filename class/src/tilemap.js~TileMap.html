@@ -33,20 +33,22 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {TileMap} from &apos;<span><a href="file/src/tilemap.js.html#lineNumber6">dtile-tilemap/src/tilemap.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {TileMap} from &apos;<span><a href="file/src/tilemap.js.html#lineNumber7">dtile-tilemap/src/tilemap.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/tilemap.js.html#lineNumber6">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/tilemap.js.html#lineNumber7">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -77,7 +79,8 @@
     <h4>Test:</h4>
     <ul>
       
-    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber10">TileMap</a></span></li>
+    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber9">TileMap</a></span></li>
+<li data-ice="test"><span><a href="test-file/test/tileset.js.html#lineNumber8">TileMap</a></span></li>
 </ul>
   </div>
 
@@ -290,6 +293,32 @@
     <td>
       <div>
         <p>
+           <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-member-tilesets">tilesets</a></span></span><span data-ice="signature">: <span><span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span><span>[]</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>The tilesets the tilemap consists of.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
            <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-member-width">width</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
@@ -323,6 +352,32 @@
     <td>
       <div>
         <p>
+           <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-method-addTileset">addTileset</a></span></span><span data-ice="signature">(tileset: <span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span>): <span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Adds a tileset to the tilemap.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
            <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-method-createLayer">createLayer</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span>
         </p>
       </div>
@@ -330,6 +385,32 @@
         
         
         <div data-ice="description"><p>Creates a new layer and adds it to the tilemap.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-method-getJSON">getJSON</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Converts this tilemap to a JSON string.</p>
 </div>
       </div>
     </td>
@@ -359,7 +440,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber19">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber21">source</a></span></span>
     </span>
   </h3>
 
@@ -431,6 +512,14 @@
 </td>
     </tr>
 <tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.tilesets</td>
+      <td data-ice="type"><span><span>tilesetOption</span><span>[]</span></span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: []</li></ul></td>
+      <td data-ice="description"><p>Same structure as options in <span><a href="class/src/tileset.js~TileSet.html#instance-constructor-constructor">TileSet#constructor</a></span></p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
       <td data-ice="name" data-depth="1">options.properties</td>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, <span>*</span>&gt;</td>
       <td data-ice="appendix"><ul><li>optional</li>
@@ -457,7 +546,8 @@
     <h4>Test:</h4>
     <ul>
       
-    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber34">TileMap #create</a></span></li>
+    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber33">TileMap #create</a></span></li>
+<li data-ice="test"><span><a href="test-file/test/tileset.js.html#lineNumber10">TileMap #create</a></span></li>
 </ul>
   </div>
 
@@ -478,7 +568,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber31">source</a></span></span>
     </span>
   </h3>
 
@@ -519,7 +609,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber40">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
@@ -560,7 +650,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber22">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber24">source</a></span></span>
     </span>
   </h3>
 
@@ -601,7 +691,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber48">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber58">source</a></span></span>
     </span>
   </h3>
 
@@ -642,7 +732,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber36">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber38">source</a></span></span>
     </span>
   </h3>
 
@@ -683,7 +773,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber33">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber35">source</a></span></span>
     </span>
   </h3>
 
@@ -691,6 +781,47 @@
   
   
   <div data-ice="description"><p>The width of a tile for the tilemap.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-tilesets">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">tilesets</span><span data-ice="signature">: <span><span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span><span>[]</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber50">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>The tilesets the tilemap consists of.</p>
 </div>
 
   
@@ -724,7 +855,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber26">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber28">source</a></span></span>
     </span>
   </h3>
 
@@ -758,6 +889,74 @@
 <div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
 
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-addTileset">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">addTileset</span><span data-ice="signature">(tileset: <span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span>): <span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber81">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Adds a tileset to the tilemap.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">tileset</td>
+      <td data-ice="type"><span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the tileset to add to the map.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-createLayer">
     <span class="access" data-ice="access">public</span>
     
@@ -768,7 +967,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber58">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber68">source</a></span></span>
     </span>
   </h3>
 
@@ -821,6 +1020,64 @@
   
 
   
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-getJSON">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">getJSON</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber91">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Converts this tilemap to a JSON string.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+        <td class="return-desc" data-ice="returnDescription"><p>The JSON serialization of this tilemap.</p>
+</td>
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div data-ice="tests">
+    <h4>Test:</h4>
+    <ul>
+      
+    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber67">TileMap #getJSON</a></span></li>
+</ul>
+  </div>
 
   
   

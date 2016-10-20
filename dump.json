@@ -10,7 +10,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "export { TileMap } from \"./tilemap\";\nexport { TileLayer } from \"./tilelayer\";\nexport { Tile } from \"./tile\";\n"
+    "content": "export { TileMap } from \"./tilemap\";\nexport { TileLayer } from \"./tilelayer\";\nexport { TileArea } from \"./tilearea\";\nexport { Tile } from \"./tile\";\nexport { TileSet } from \"./tileset\";\n"
   },
   {
     "__docId__": 1,
@@ -23,7 +23,7 @@
     "access": null,
     "description": null,
     "lineNumber": 4,
-    "content": "/**\n * A tile object containing tile ID, tileset ID and custom properties.\n */\nexport class Tile {\n\t/**\n\t * Tile constructor.\n\t *\n\t * @param {object} [options={}] Options for the tile. Can also be tile data you loaded from JSON or similar.\n\t * @param {number} options.tileId - {@link Tile#tileId}\n\t * @param {number} options.tilesetId - {@link Tile#tilesetId}\n\t * @param {Map<string, *>} [options.properties={}] - {@link Tile#properties}\n\t */\n\tconstructor(options = {}) {\n\t\t/** The tile ID of the tile.\n\t\t * @type {number} */\n\t\tthis.tileId = options.tileId;\n\n\t\t/** The tileset ID of the tile.\n\t\t * @type {number} */\n\t\tthis.tilesetId = options.tilesetId;\n\n\t\t/** Custom properties of the tile.\n\t\t * @type {Map<string, *>} */\n\t\tthis.properties = options.properties || new Map();\n\t}\n}\n"
+    "content": "/**\n * A tile object containing tile ID, tileset ID and custom properties.\n */\nexport class Tile {\n\t/**\n\t * Tile constructor.\n\t *\n\t * @param {object|string} options={} Options for the tile. Can also be tile data you loaded from JSON or a plain string in the following format: <tileId:tilesetId>\n\t * @param {number} options.tileId - {@link Tile#tileId}\n\t * @param {number} options.tilesetId - {@link Tile#tilesetId}\n\t * @param {Map<string, *>} [options.properties={}] - {@link Tile#properties}\n\t */\n\tconstructor(options) {\n\t\t/** The tile ID of the tile.\n\t\t * @type {number} */\n\t\tthis.tileId = undefined;\n\n\t\t/** The tileset ID of the tile.\n\t\t * @type {number} */\n\t\tthis.tilesetId = undefined;\n\n\t\tif (typeof options === \"string\") {\n\t\t\tconst colonIndex = options.indexOf(\":\");\n\t\t\tthis.tileId = parseInt(options.substring(0, colonIndex));\n\t\t\tthis.tilesetId = parseInt(options.substring(colonIndex + 1));\n\t\t} else {\n\t\t\tthis.tileId = options.tileId;\n\t\t\tthis.tilesetId = options.tilesetId;\n\t\t}\n\n\t\t/** Custom properties of the tile.\n\t\t * @type {Map<string, *>} */\n\t\tthis.properties = options.properties || new Map();\n\t}\n\n\t/**\n\t * Sets the data for this tile.\n\t *\n\t * @param {number} tileId - The ID to assign to the tile.\n\t * @param {number} [tilesetId] - The tileset ID to assign to the tile.\n\t * @param {boolean} [replaceEmpty] - Should values less than 0 (-1) be handled (true) or ignored (false).\n\t */\n\tsetData(tileId, tilesetId, replaceEmpty) {\n\t\tif (tileId >= 0 || replaceEmpty) {\n\t\t\tthis.tileId = Math.max(tileId, -1);\n\t\t}\n\t\tif (tilesetId != null && (tilesetId >= 0 || replaceEmpty)) {\n\t\t\tthis.tilesetId = Math.max(tilesetId, -1);\n\t\t}\n\t}\n\n\t/**\n\t * toJSON function used for JSON serialization.\n\t * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#toJSON()_behavior\n\t *\n\t * @returns {Tile|string} Object to be serialized\n\t */\n\ttoJSON() {\n\t\tif (this.properties.size === 0) {\n\t\t\treturn this.tileId + \":\" + this.tilesetId;\n\t\t} else {\n\t\t\treturn this;\n\t\t}\n\t}\n\n\t/**\n\t * Creates a clone out of this tile.\n\t *\n\t * @returns {Tile} The new tile.\n\t */\n\tclone() {\n\t\treturn new Tile(this);\n\t}\n}\n"
   },
   {
     "__docId__": 2,
@@ -56,14 +56,15 @@
       {
         "nullable": null,
         "types": [
-          "object"
+          "object",
+          "string"
         ],
         "spread": false,
-        "optional": true,
+        "optional": false,
         "defaultValue": "{}",
         "defaultRaw": {},
         "name": "options",
-        "description": "Options for the tile. Can also be tile data you loaded from JSON or similar."
+        "description": "Options for the tile. Can also be tile data you loaded from JSON or a plain string in the following format: <tileId:tilesetId>"
       },
       {
         "nullable": null,
@@ -145,12 +146,84 @@
     "kind": "member",
     "static": false,
     "variation": null,
+    "name": "tileId",
+    "memberof": "src/tile.js~Tile",
+    "longname": "src/tile.js~Tile#tileId",
+    "access": null,
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 7,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "tilesetId",
+    "memberof": "src/tile.js~Tile",
+    "longname": "src/tile.js~Tile#tilesetId",
+    "access": null,
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 8,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "tileId",
+    "memberof": "src/tile.js~Tile",
+    "longname": "src/tile.js~Tile#tileId",
+    "access": null,
+    "description": null,
+    "lineNumber": 27,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 9,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "tilesetId",
+    "memberof": "src/tile.js~Tile",
+    "longname": "src/tile.js~Tile#tilesetId",
+    "access": null,
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 10,
+    "kind": "member",
+    "static": false,
+    "variation": null,
     "name": "properties",
     "memberof": "src/tile.js~Tile",
     "longname": "src/tile.js~Tile#properties",
     "access": null,
     "description": "Custom properties of the tile.",
-    "lineNumber": 24,
+    "lineNumber": 33,
     "type": {
       "nullable": null,
       "types": [
@@ -161,7 +234,451 @@
     }
   },
   {
-    "__docId__": 7,
+    "__docId__": 11,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "setData",
+    "memberof": "src/tile.js~Tile",
+    "longname": "src/tile.js~Tile#setData",
+    "access": null,
+    "description": "Sets the data for this tile.",
+    "lineNumber": 43,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tileId",
+        "description": "The ID to assign to the tile."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "tilesetId",
+        "description": "The tileset ID to assign to the tile."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "replaceEmpty",
+        "description": "Should values less than 0 (-1) be handled (true) or ignored (false)."
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 12,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "tileId",
+    "memberof": "src/tile.js~Tile",
+    "longname": "src/tile.js~Tile#tileId",
+    "access": null,
+    "description": null,
+    "lineNumber": 45,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 13,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "tilesetId",
+    "memberof": "src/tile.js~Tile",
+    "longname": "src/tile.js~Tile#tilesetId",
+    "access": null,
+    "description": null,
+    "lineNumber": 48,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 14,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "toJSON",
+    "memberof": "src/tile.js~Tile",
+    "longname": "src/tile.js~Tile#toJSON",
+    "access": null,
+    "description": "toJSON function used for JSON serialization.",
+    "see": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#toJSON()_behavior"
+    ],
+    "lineNumber": 58,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Tile|string} Object to be serialized"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Tile",
+        "string"
+      ],
+      "spread": false,
+      "description": "Object to be serialized"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 15,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "clone",
+    "memberof": "src/tile.js~Tile",
+    "longname": "src/tile.js~Tile#clone",
+    "access": null,
+    "description": "Creates a clone out of this tile.",
+    "lineNumber": 71,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Tile} The new tile."
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Tile"
+      ],
+      "spread": false,
+      "description": "The new tile."
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 16,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/tilearea.js",
+    "memberof": null,
+    "longname": "src/tilearea.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 4,
+    "content": "/**\n * A tile area object with a size and tiles.\n */\nexport class TileArea {\n\t/**\n\t * TileArea constructor.\n\t *\n\t * @param {number} width - {@link TileArea#width}\n\t * @param {number} height - {@link TileArea#height}\n\t * @param {Tile[]} tiles - {@link TileArea#tiles}\n\t */\n\tconstructor(width, height, tiles) {\n\t\t/** The width of the tile area.\n\t\t * @type {number} */\n\t\tthis.width = width;\n\t\t/** The height of the tile area.\n\t\t * @type {number} */\n\t\tthis.height = height;\n\n\t\t/** The tiles in the tile area\n\t\t * @type {Tile[]} */\n\t\tthis.tiles = tiles;\n\t}\n\n\t/**\n\t * Gets the index of a tile in the tile array from a position.\n\t *\n\t * @param {number} x - The x coordinate of the tile.\n\t * @param {number} y - The y coordinate of the tile.\n\t *\n\t * @returns {number} The index of the tile in the main array.\n\t */\n\tgetTileIndex(x, y) {\n\t\tif (!this._inRange(x, y)) {\n\t\t\tthrow new RangeError();\n\t\t}\n\t\treturn y * this.width + x;\n\t}\n\n\t/**\n\t * Gets an area of tiles.\n\t *\n\t * @param {number} x - The x coordinate of the tile area.\n\t * @param {number} y - The y coordinate of the tile area.\n\t * @param {number} width - The width of the tile area.\n\t * @param {number} height - The height of the tile area.\n\t *\n\t * @returns {TileArea} A {@link TileArea} of the area requested.\n\t */\n\tgetTileArea(x, y, width, height) {\n\t\tif (!this._inRange(x, y, width, height)) {\n\t\t\tthrow new RangeError();\n\t\t}\n\t\tconst tiles = [];\n\t\tfor (let ly = y; ly < y + height; ly++) {\n\t\t\tfor (let lx = x; lx < x + width; lx++) {\n\t\t\t\ttiles.push(this.tiles[this.getTileIndex(lx, ly)]);\n\t\t\t}\n\t\t}\n\t\treturn new TileArea(width, height, tiles);\n\t}\n\n\t_inRange(x, y, width = 1, height = 1) {\n\t\treturn !(x < 0 || x >= this.width ||\n\t\t\ty < 0 || y > this.height ||\n\t\t\twidth <= 0 || x + width > this.width ||\n\t\t\theight <= 0 || y + height > this.height\n\t\t);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 17,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "TileArea",
+    "memberof": "src/tilearea.js",
+    "longname": "src/tilearea.js~TileArea",
+    "access": null,
+    "export": true,
+    "importPath": "dtile-tilemap/src/tilearea.js",
+    "importStyle": "{TileArea}",
+    "description": "A tile area object with a size and tiles.",
+    "lineNumber": 4,
+    "interface": false
+  },
+  {
+    "__docId__": 18,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/tilearea.js~TileArea",
+    "longname": "src/tilearea.js~TileArea#constructor",
+    "access": null,
+    "description": "TileArea constructor.",
+    "lineNumber": 12,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "width",
+        "description": "{@link TileArea#width}"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "height",
+        "description": "{@link TileArea#height}"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Tile[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tiles",
+        "description": "{@link TileArea#tiles}"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 19,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "width",
+    "memberof": "src/tilearea.js~TileArea",
+    "longname": "src/tilearea.js~TileArea#width",
+    "access": null,
+    "description": "The width of the tile area.",
+    "lineNumber": 15,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 20,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "height",
+    "memberof": "src/tilearea.js~TileArea",
+    "longname": "src/tilearea.js~TileArea#height",
+    "access": null,
+    "description": "The height of the tile area.",
+    "lineNumber": 18,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 21,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "tiles",
+    "memberof": "src/tilearea.js~TileArea",
+    "longname": "src/tilearea.js~TileArea#tiles",
+    "access": null,
+    "description": "The tiles in the tile area",
+    "lineNumber": 22,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Tile[]"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 22,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "getTileIndex",
+    "memberof": "src/tilearea.js~TileArea",
+    "longname": "src/tilearea.js~TileArea#getTileIndex",
+    "access": null,
+    "description": "Gets the index of a tile in the tile array from a position.",
+    "lineNumber": 33,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{number} The index of the tile in the main array."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "x",
+        "description": "The x coordinate of the tile."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "y",
+        "description": "The y coordinate of the tile."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The index of the tile in the main array."
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 23,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "getTileArea",
+    "memberof": "src/tilearea.js~TileArea",
+    "longname": "src/tilearea.js~TileArea#getTileArea",
+    "access": null,
+    "description": "Gets an area of tiles.",
+    "lineNumber": 50,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{TileArea} A {@link TileArea} of the area requested."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "x",
+        "description": "The x coordinate of the tile area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "y",
+        "description": "The y coordinate of the tile area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "width",
+        "description": "The width of the tile area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "height",
+        "description": "The height of the tile area."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "TileArea"
+      ],
+      "spread": false,
+      "description": "A {@link TileArea} of the area requested."
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 24,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "_inRange",
+    "memberof": "src/tilearea.js~TileArea",
+    "longname": "src/tilearea.js~TileArea#_inRange",
+    "access": null,
+    "description": null,
+    "lineNumber": 63,
+    "undocument": true,
+    "params": [
+      {
+        "name": "x",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "y",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "width",
+        "optional": true,
+        "types": [
+          "number"
+        ],
+        "defaultRaw": 1,
+        "defaultValue": "1"
+      },
+      {
+        "name": "height",
+        "optional": true,
+        "types": [
+          "number"
+        ],
+        "defaultRaw": 1,
+        "defaultValue": "1"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 25,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -170,11 +687,11 @@
     "longname": "src/tilelayer.js",
     "access": null,
     "description": null,
-    "lineNumber": 4,
-    "content": "/**\n * A tile layer object containing tiles and other properties.\n */\nexport class TileLayer {\n\t/**\n\t * TileLayer constructor.\n\t *\n\t * @param {TileMap} parentMap - The parent map for this layer.\n\t * @param {object} options - Options for the layer. Can also be layer data you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilelayer\"] - {@link TileLayer#name}\n\t * @param {Tile[]} options.tiles=[] - {@link TileLayer#tiles}\n\t * @param {Map<string, *>} options.properties=Map - {@link TileLayer#properties}\n\t */\n\tconstructor(parentMap, options = {}) {\n\t\tthis._map = parentMap;\n\n\t\t/** The name of the tile layer.\n\t\t * @type {string} */\n\t\tthis.name = options.name || \"Tilelayer\";\n\n\t\t/** The tiles of the layer.\n\t\t * @type {Tile[]} */\n\t\tthis.tiles = options.tiles || [];\n\n\t\t/** Custom properties of the layer.\n\t\t * @type {Map<string, *>} */\n\t\tthis.properties = options.properties || new Map();\n\t}\n}\n"
+    "lineNumber": 1,
+    "content": "import { Tile } from \"./tile\";\nimport { TileArea } from \"./tilearea\";\n\n/**\n * A tile layer object containing tiles and other properties.\n */\nexport class TileLayer extends TileArea {\n\t/**\n\t * TileLayer constructor.\n\t *\n\t * @param {TileMap} parentMap - The parent map for this layer.\n\t * @param {object} options - Options for the layer. Can also be layer data you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilelayer\"] - {@link TileLayer#name}\n\t * @param {Tile[]} options.tiles=[] - {@link TileLayer#tiles}\n\t * @param {Map<string, *>} options.properties=Map - {@link TileLayer#properties}\n\t */\n\tconstructor(parentMap, options) {\n\t\tsuper(parentMap.width, parentMap.height);\n\n\t\t/** The name of the tile layer.\n\t\t * @type {string} */\n\t\tthis.name = options.name || \"Tilelayer\";\n\n\t\t/** The tiles of the layer.\n\t\t * @type {Tile[]} */\n\t\tthis.tiles = [];\n\t\tfor (let y = 0; y < parentMap.height; y++) {\n\t\t\tfor (let x = 0; x < parentMap.width; x++) {\n\t\t\t\tconst tile = new Tile(\n\t\t\t\t\toptions.tiles\n\t\t\t\t\t? options.tiles[x % parentMap.width + y * parentMap.width]\n\t\t\t\t\t: { tileId: -1, tilesetId: 0 }\n\t\t\t\t);\n\t\t\t\tthis.tiles.push(tile);\n\t\t\t}\n\t\t}\n\n\t\t/** Custom properties of the layer.\n\t\t * @type {Map<string, *>} */\n\t\tthis.properties = options.properties || new Map();\n\t}\n}\n"
   },
   {
-    "__docId__": 8,
+    "__docId__": 26,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -186,11 +703,14 @@
     "importPath": "dtile-tilemap/src/tilelayer.js",
     "importStyle": "{TileLayer}",
     "description": "A tile layer object containing tiles and other properties.",
-    "lineNumber": 4,
-    "interface": false
+    "lineNumber": 7,
+    "interface": false,
+    "extends": [
+      "src/tilearea.js~TileArea"
+    ]
   },
   {
-    "__docId__": 9,
+    "__docId__": 27,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -199,7 +719,7 @@
     "longname": "src/tilelayer.js~TileLayer#constructor",
     "access": null,
     "description": "TileLayer constructor.",
-    "lineNumber": 14,
+    "lineNumber": 17,
     "params": [
       {
         "nullable": null,
@@ -261,25 +781,7 @@
     "generator": false
   },
   {
-    "__docId__": 10,
-    "kind": "member",
-    "static": false,
-    "variation": null,
-    "name": "_map",
-    "memberof": "src/tilelayer.js~TileLayer",
-    "longname": "src/tilelayer.js~TileLayer#_map",
-    "access": null,
-    "description": null,
-    "lineNumber": 15,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 11,
+    "__docId__": 28,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -288,7 +790,7 @@
     "longname": "src/tilelayer.js~TileLayer#name",
     "access": null,
     "description": "The name of the tile layer.",
-    "lineNumber": 19,
+    "lineNumber": 22,
     "type": {
       "nullable": null,
       "types": [
@@ -299,7 +801,7 @@
     }
   },
   {
-    "__docId__": 12,
+    "__docId__": 29,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -308,7 +810,7 @@
     "longname": "src/tilelayer.js~TileLayer#tiles",
     "access": null,
     "description": "The tiles of the layer.",
-    "lineNumber": 23,
+    "lineNumber": 26,
     "type": {
       "nullable": null,
       "types": [
@@ -319,7 +821,7 @@
     }
   },
   {
-    "__docId__": 13,
+    "__docId__": 30,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -328,7 +830,7 @@
     "longname": "src/tilelayer.js~TileLayer#properties",
     "access": null,
     "description": "Custom properties of the layer.",
-    "lineNumber": 27,
+    "lineNumber": 40,
     "type": {
       "nullable": null,
       "types": [
@@ -339,7 +841,7 @@
     }
   },
   {
-    "__docId__": 14,
+    "__docId__": 31,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -349,10 +851,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { TileLayer } from \"./tilelayer\";\n\n/**\n * A tilemap object with name, sizes and layers.\n */\nexport class TileMap {\n\t/**\n     * TileMap constructor.\n     *\n     * @param {object} options - Options for the tilemap. Can also be a tilemap you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilemap\"] - {@link TileMap#name}\n     * @param {number} options.width - {@link TileMap#width}\n     * @param {number} options.height - {@link TileMap#height}\n     * @param {number} options.tileWidth - {@link TileMap#tileWidth}\n     * @param {number} options.tileHeight - {@link TileMap#tileHeight}\n     * @param {layerOption[]} [options.layers=[]] - Same structure as options in {@link TileLayer#constructor}\n\t * @param {Map<string, *>} [options.properties=Map] - {@link TileMap#properties}\n     */\n\tconstructor(options) {\n\t\t/** The name of the tilemap.\n\t\t * @type {string} */\n\t\tthis.name = options.name || \"Tilemap\";\n\n\t\t/** The width of the tilemap.\n\t\t * @type {number} */\n\t\tthis.width = options.width;\n\t\t/** The height of the tilemap.\n\t\t * @type {number} */\n\t\tthis.height = options.height;\n\n\t\t/** The width of a tile for the tilemap.\n\t\t * @type {number} */\n\t\tthis.tileWidth = options.tileWidth;\n\t\t/** The height of a tile for the tilemap.\n\t\t * @type {number} */\n\t\tthis.tileHeight = options.tileHeight;\n\n\t\t/** All layers of the tilemap\n\t\t *  @type {TileLayer[]} */\n\t\tthis.layers = [];\n\t\toptions.layers = options.layers || [];\n\t\tfor (let layerData of options.layers) {\n\t\t\tthis.createLayer(layerData);\n\t\t}\n\n\t\t/** Custom properties of the tilemap.\n\t\t * @type {Map<string, *>} */\n\t\tthis.properties = options.properties || new Map();\n\t}\n\n\t/**\n\t * Creates a new layer and adds it to the tilemap.\n\t *\n\t * @param {object} options - Options for the layer (see {@link TileLayer}).\n\t *\n\t * @returns {TileLayer}\n\t */\n\tcreateLayer(options) {\n\t\tconst layer = new TileLayer(options);\n\t\tthis.layers.push(layer);\n\t\treturn layer;\n\t}\n}\n"
+    "content": "import { TileLayer } from \"./tilelayer\";\nimport { TileSet } from \"./tileset\";\n\n/**\n * A tilemap object with name, sizes and layers.\n */\nexport class TileMap {\n\t/**\n     * TileMap constructor.\n     *\n     * @param {object} options - Options for the tilemap. Can also be a tilemap you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilemap\"] - {@link TileMap#name}\n     * @param {number} options.width - {@link TileMap#width}\n     * @param {number} options.height - {@link TileMap#height}\n     * @param {number} options.tileWidth - {@link TileMap#tileWidth}\n     * @param {number} options.tileHeight - {@link TileMap#tileHeight}\n     * @param {layerOption[]} [options.layers=[]] - Same structure as options in {@link TileLayer#constructor}\n     * @param {tilesetOption[]} [options.tilesets=[]] - Same structure as options in {@link TileSet#constructor}\n\t * @param {Map<string, *>} [options.properties=Map] - {@link TileMap#properties}\n     */\n\tconstructor(options) {\n\t\t/** The name of the tilemap.\n\t\t * @type {string} */\n\t\tthis.name = options.name || \"Tilemap\";\n\n\t\t/** The width of the tilemap.\n\t\t * @type {number} */\n\t\tthis.width = options.width;\n\t\t/** The height of the tilemap.\n\t\t * @type {number} */\n\t\tthis.height = options.height;\n\n\t\t/** The width of a tile for the tilemap.\n\t\t * @type {number} */\n\t\tthis.tileWidth = options.tileWidth;\n\t\t/** The height of a tile for the tilemap.\n\t\t * @type {number} */\n\t\tthis.tileHeight = options.tileHeight;\n\n\t\t/** All layers of the tilemap\n\t\t *  @type {TileLayer[]} */\n\t\tthis.layers = [];\n\t\toptions.layers = options.layers || [];\n\t\tfor (let layerData of options.layers) {\n\t\t\tthis.createLayer(layerData);\n\t\t}\n\n\t\t/** The tilesets the tilemap consists of.\n\t\t * @type {TileSet[]} */\n\t\tthis.tilesets = [];\n\t\toptions.tilesets = options.tilesets || [];\n\t\tfor (let tileset of options.tilesets) {\n\t\t\tthis.addTileset(new TileSet(tileset));\n\t\t}\n\n\t\t/** Custom properties of the tilemap.\n\t\t * @type {Map<string, *>} */\n\t\tthis.properties = options.properties || new Map();\n\t}\n\n\t/**\n\t * Creates a new layer and adds it to the tilemap.\n\t *\n\t * @param {object} options - Options for the layer (see {@link TileLayer}).\n\t *\n\t * @returns {TileLayer}\n\t */\n\tcreateLayer(options) {\n\t\tconst layer = new TileLayer(this, options);\n\t\tthis.layers.push(layer);\n\t\treturn layer;\n\t}\n\n\t/**\n\t * Adds a tileset to the tilemap.\n\t *\n\t * @param {TileSet} tileset - the tileset to add to the map.\n\t *\n\t * @returns {TileSet}\n\t */\n\taddTileset(tileset) {\n\t\tthis.tilesets.push(tileset);\n\t\treturn tileset;\n\t}\n\n\t/**\n\t * Converts this tilemap to a JSON string.\n\t *\n\t * @returns {string} - The JSON serialization of this tilemap.\n\t */\n\tgetJSON() {\n\t\treturn JSON.stringify(this, (key, value) => {\n\t\t\tif (key.indexOf(\"_\") === 0) {\n\t\t\t\treturn undefined;\n\t\t\t}\n\t\t\treturn value;\n\t\t});\n\t}\n}\n"
   },
   {
-    "__docId__": 15,
+    "__docId__": 32,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -364,11 +866,11 @@
     "importPath": "dtile-tilemap/src/tilemap.js",
     "importStyle": "{TileMap}",
     "description": "A tilemap object with name, sizes and layers.",
-    "lineNumber": 6,
+    "lineNumber": 7,
     "interface": false
   },
   {
-    "__docId__": 16,
+    "__docId__": 33,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -377,7 +879,7 @@
     "longname": "src/tilemap.js~TileMap#constructor",
     "access": null,
     "description": "TileMap constructor.",
-    "lineNumber": 19,
+    "lineNumber": 21,
     "params": [
       {
         "nullable": null,
@@ -456,6 +958,18 @@
       {
         "nullable": null,
         "types": [
+          "tilesetOption[]"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "[]",
+        "defaultRaw": [],
+        "name": "options.tilesets",
+        "description": "Same structure as options in {@link TileSet#constructor}"
+      },
+      {
+        "nullable": null,
+        "types": [
           "Map<string, *>"
         ],
         "spread": false,
@@ -469,7 +983,7 @@
     "generator": false
   },
   {
-    "__docId__": 17,
+    "__docId__": 34,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -478,7 +992,7 @@
     "longname": "src/tilemap.js~TileMap#name",
     "access": null,
     "description": "The name of the tilemap.",
-    "lineNumber": 22,
+    "lineNumber": 24,
     "type": {
       "nullable": null,
       "types": [
@@ -489,7 +1003,7 @@
     }
   },
   {
-    "__docId__": 18,
+    "__docId__": 35,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -498,7 +1012,7 @@
     "longname": "src/tilemap.js~TileMap#width",
     "access": null,
     "description": "The width of the tilemap.",
-    "lineNumber": 26,
+    "lineNumber": 28,
     "type": {
       "nullable": null,
       "types": [
@@ -509,7 +1023,7 @@
     }
   },
   {
-    "__docId__": 19,
+    "__docId__": 36,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -518,7 +1032,7 @@
     "longname": "src/tilemap.js~TileMap#height",
     "access": null,
     "description": "The height of the tilemap.",
-    "lineNumber": 29,
+    "lineNumber": 31,
     "type": {
       "nullable": null,
       "types": [
@@ -529,7 +1043,7 @@
     }
   },
   {
-    "__docId__": 20,
+    "__docId__": 37,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -538,7 +1052,7 @@
     "longname": "src/tilemap.js~TileMap#tileWidth",
     "access": null,
     "description": "The width of a tile for the tilemap.",
-    "lineNumber": 33,
+    "lineNumber": 35,
     "type": {
       "nullable": null,
       "types": [
@@ -549,7 +1063,7 @@
     }
   },
   {
-    "__docId__": 21,
+    "__docId__": 38,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -558,7 +1072,7 @@
     "longname": "src/tilemap.js~TileMap#tileHeight",
     "access": null,
     "description": "The height of a tile for the tilemap.",
-    "lineNumber": 36,
+    "lineNumber": 38,
     "type": {
       "nullable": null,
       "types": [
@@ -569,7 +1083,7 @@
     }
   },
   {
-    "__docId__": 22,
+    "__docId__": 39,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -578,7 +1092,7 @@
     "longname": "src/tilemap.js~TileMap#layers",
     "access": null,
     "description": "All layers of the tilemap",
-    "lineNumber": 40,
+    "lineNumber": 42,
     "type": {
       "nullable": null,
       "types": [
@@ -589,7 +1103,27 @@
     }
   },
   {
-    "__docId__": 23,
+    "__docId__": 40,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "tilesets",
+    "memberof": "src/tilemap.js~TileMap",
+    "longname": "src/tilemap.js~TileMap#tilesets",
+    "access": null,
+    "description": "The tilesets the tilemap consists of.",
+    "lineNumber": 50,
+    "type": {
+      "nullable": null,
+      "types": [
+        "TileSet[]"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 41,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -598,7 +1132,7 @@
     "longname": "src/tilemap.js~TileMap#properties",
     "access": null,
     "description": "Custom properties of the tilemap.",
-    "lineNumber": 48,
+    "lineNumber": 58,
     "type": {
       "nullable": null,
       "types": [
@@ -609,7 +1143,7 @@
     }
   },
   {
-    "__docId__": 24,
+    "__docId__": 42,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -618,7 +1152,7 @@
     "longname": "src/tilemap.js~TileMap#createLayer",
     "access": null,
     "description": "Creates a new layer and adds it to the tilemap.",
-    "lineNumber": 58,
+    "lineNumber": 68,
     "unknown": [
       {
         "tagName": "@returns",
@@ -648,7 +1182,252 @@
     "generator": false
   },
   {
-    "__docId__": 26,
+    "__docId__": 43,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "addTileset",
+    "memberof": "src/tilemap.js~TileMap",
+    "longname": "src/tilemap.js~TileMap#addTileset",
+    "access": null,
+    "description": "Adds a tileset to the tilemap.",
+    "lineNumber": 81,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{TileSet}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "TileSet"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tileset",
+        "description": "the tileset to add to the map."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "TileSet"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 44,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "getJSON",
+    "memberof": "src/tilemap.js~TileMap",
+    "longname": "src/tilemap.js~TileMap#getJSON",
+    "access": null,
+    "description": "Converts this tilemap to a JSON string.",
+    "lineNumber": 91,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{string} - The JSON serialization of this tilemap."
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "The JSON serialization of this tilemap."
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 45,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/tileset.js",
+    "memberof": null,
+    "longname": "src/tileset.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 4,
+    "content": "/**\n * A tileset object for storing arbitrary information about tilesets.\n */\nexport class TileSet {\n\t/**\n\t * TileSet constructor.\n\t *\n\t * @param {object} options - The options for the tileset.\n\t * @param {string} [options.name=\"Tileset\"] - {@link TileSet#name}\n\t * @param {string} [options.type=\"test\"] - {@link TileSet#type}\n\t * @param {string} [options.path] - {@link TileSet#path}\n\t * @param {Map<string, *>} [options.properties] - {@link TileSet@properties}\n\t */\n\tconstructor({ name = \"Tileset\", type = \"test\", path, properties }) {\n\t\t/** The name of the tileset.\n\t\t * @type {string} */\n\t\tthis.name = name;\n\t\t/** The type of the tileset.\n\t\t * Possible values are: \"test\", \"image\"\n\t\t * @type {string} */\n\t\tthis.type = type;\n\t\t/** The path of the tileset.\n\t\t * This should only be used if tileset type is set to \"image\".\n\t\t * @type {string} */\n\t\tthis.path = path;\n\n\t\t/** Custom properties of the tilemap.\n\t\t * @type {Map<string, *>} */\n\t\tthis.properties = properties || new Map();\n\t}\n}\n"
+  },
+  {
+    "__docId__": 46,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "TileSet",
+    "memberof": "src/tileset.js",
+    "longname": "src/tileset.js~TileSet",
+    "access": null,
+    "export": true,
+    "importPath": "dtile-tilemap/src/tileset.js",
+    "importStyle": "{TileSet}",
+    "description": "A tileset object for storing arbitrary information about tilesets.",
+    "lineNumber": 4,
+    "interface": false
+  },
+  {
+    "__docId__": 47,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/tileset.js~TileSet",
+    "longname": "src/tileset.js~TileSet#constructor",
+    "access": null,
+    "description": "TileSet constructor.",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "The options for the tileset."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "\"Tileset\"",
+        "defaultRaw": "Tileset",
+        "name": "options.name",
+        "description": "{@link TileSet#name}"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "\"test\"",
+        "defaultRaw": "test",
+        "name": "options.type",
+        "description": "{@link TileSet#type}"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options.path",
+        "description": "{@link TileSet#path}"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Map<string, *>"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options.properties",
+        "description": "{@link TileSet@properties}"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 48,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "name",
+    "memberof": "src/tileset.js~TileSet",
+    "longname": "src/tileset.js~TileSet#name",
+    "access": null,
+    "description": "The name of the tileset.",
+    "lineNumber": 17,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 49,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "type",
+    "memberof": "src/tileset.js~TileSet",
+    "longname": "src/tileset.js~TileSet#type",
+    "access": null,
+    "description": "The type of the tileset.\nPossible values are: \"test\", \"image\"",
+    "lineNumber": 21,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "path",
+    "memberof": "src/tileset.js~TileSet",
+    "longname": "src/tileset.js~TileSet#path",
+    "access": null,
+    "description": "The path of the tileset.\nThis should only be used if tileset type is set to \"image\".",
+    "lineNumber": 25,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "properties",
+    "memberof": "src/tileset.js~TileSet",
+    "longname": "src/tileset.js~TileSet#properties",
+    "access": null,
+    "description": "Custom properties of the tilemap.",
+    "lineNumber": 29,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Map<string, *>"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 53,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -661,7 +1440,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 27,
+    "__docId__": 54,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -674,7 +1453,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 28,
+    "__docId__": 55,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -687,7 +1466,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 29,
+    "__docId__": 56,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -700,7 +1479,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 30,
+    "__docId__": 57,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -713,7 +1492,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 31,
+    "__docId__": 58,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -726,7 +1505,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 32,
+    "__docId__": 59,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -739,7 +1518,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 33,
+    "__docId__": 60,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -752,7 +1531,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 34,
+    "__docId__": 61,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -765,7 +1544,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 35,
+    "__docId__": 62,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -778,7 +1557,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 36,
+    "__docId__": 63,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -791,7 +1570,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 37,
+    "__docId__": 64,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -804,7 +1583,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 38,
+    "__docId__": 65,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -817,7 +1596,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 39,
+    "__docId__": 66,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -830,7 +1609,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 40,
+    "__docId__": 67,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -843,7 +1622,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 41,
+    "__docId__": 68,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -856,7 +1635,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 42,
+    "__docId__": 69,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -869,7 +1648,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 43,
+    "__docId__": 70,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -882,7 +1661,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 44,
+    "__docId__": 71,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -895,7 +1674,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 45,
+    "__docId__": 72,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -908,7 +1687,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 46,
+    "__docId__": 73,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -921,7 +1700,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 47,
+    "__docId__": 74,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -934,7 +1713,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 48,
+    "__docId__": 75,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -947,7 +1726,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 49,
+    "__docId__": 76,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -960,7 +1739,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 50,
+    "__docId__": 77,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -973,7 +1752,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 51,
+    "__docId__": 78,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -986,7 +1765,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 52,
+    "__docId__": 79,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -999,7 +1778,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 53,
+    "__docId__": 80,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1012,7 +1791,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 54,
+    "__docId__": 81,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1025,7 +1804,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 55,
+    "__docId__": 82,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1038,7 +1817,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 56,
+    "__docId__": 83,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1051,7 +1830,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 57,
+    "__docId__": 84,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1064,7 +1843,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 58,
+    "__docId__": 85,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1077,7 +1856,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 59,
+    "__docId__": 86,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1090,7 +1869,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 87,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1103,7 +1882,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 61,
+    "__docId__": 88,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1116,7 +1895,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 62,
+    "__docId__": 89,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1129,7 +1908,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 63,
+    "__docId__": 90,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1142,7 +1921,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 64,
+    "__docId__": 91,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1155,7 +1934,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 65,
+    "__docId__": 92,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1168,7 +1947,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 66,
+    "__docId__": 93,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1181,7 +1960,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 67,
+    "__docId__": 94,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1194,7 +1973,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 68,
+    "__docId__": 95,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1207,7 +1986,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 69,
+    "__docId__": 96,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1220,7 +1999,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 70,
+    "__docId__": 97,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1233,7 +2012,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 71,
+    "__docId__": 98,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1246,7 +2025,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 72,
+    "__docId__": 99,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1259,7 +2038,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 74,
+    "__docId__": 101,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1272,7 +2051,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 75,
+    "__docId__": 102,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1285,7 +2064,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 76,
+    "__docId__": 103,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1298,7 +2077,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 77,
+    "__docId__": 104,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1311,7 +2090,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 78,
+    "__docId__": 105,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1324,7 +2103,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 79,
+    "__docId__": 106,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1337,7 +2116,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 80,
+    "__docId__": 107,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1350,7 +2129,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 81,
+    "__docId__": 108,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1363,7 +2142,441 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 82,
+    "__docId__": 109,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/tile.js",
+    "memberof": null,
+    "longname": "test/tile.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import { should } from \"chai\";\n\nimport { Tile } from \"../src\";\n\nshould();\n\n/** @test {Tile} */\ndescribe(\"TileMap\", () => {\n\t/** @test {Tile#constructor} */\n\tdescribe(\"#create\", () => {\n\t\tit(\"creates from objects\", () => {\n\t\t\tlet tile = new Tile({\n\t\t\t\ttileId: 56,\n\t\t\t\ttilesetId: 1\n\t\t\t});\n\t\t\ttile.tileId.should.equal(56);\n\t\t\ttile.tilesetId.should.equal(1);\n\t\t});\n\t\tit(\"creates from strings\", () => {\n\t\t\tlet tile = new Tile(\"224:5\");\n\t\t\ttile.tileId.should.equal(224);\n\t\t\ttile.tilesetId.should.equal(5);\n\t\t});\n\t});\n\n\t/** @test {Tile#setTile} */\n\tdescribe(\"#setTile\", () => {\n\t\tlet tile;\n\t\tbeforeEach(() => {\n\t\t\ttile = new Tile(\"10:8\");\n\t\t});\n\n\t\tit(\"can replace only tile ID\", () => {\n\t\t\ttile.setData(15);\n\t\t\ttile.tileId.should.equal(15);\n\t\t\ttile.tilesetId.should.equal(8);\n\t\t});\n\t\tit(\"can replace both tile ID and tileset ID\", () => {\n\t\t\ttile.setData(84, 2);\n\t\t\ttile.tileId.should.equal(84);\n\t\t\ttile.tilesetId.should.equal(2);\n\t\t});\n\t\tit(\"doesn't replace if ID is -1\", () => {\n\t\t\ttile.setData(-1, -1);\n\t\t\ttile.tileId.should.equal(10);\n\t\t\ttile.tilesetId.should.equal(8);\n\t\t});\n\t\tit(\"does replace empty if told so\", () => {\n\t\t\ttile.setData(-1, -1, true);\n\t\t\ttile.tileId.should.equal(-1);\n\t\t\ttile.tilesetId.should.equal(-1);\n\t\t});\n\t});\n\n\t/** @test {Tile#toJSON} */\n\tdescribe(\"#toJSON\", () => {\n\t\tit(\"stringifies with properties\", () => {\n\t\t\tlet tile = new Tile({\n\t\t\t\ttileId: 14,\n\t\t\t\ttilesetId: 3,\n\t\t\t\tproperties: {\n\t\t\t\t\t\"property\": \"is a string\"\n\t\t\t\t}\n\t\t\t});\n\t\t\tJSON.stringify(tile).should.contain(\"\\\"property\\\":\\\"is a string\\\"\");\n\t\t});\n\t\tit(\"stringifies without properties\", () => {\n\t\t\tlet tile = new Tile(\"456:3\");\n\t\t\tJSON.stringify(tile).should.equal(\"\\\"456:3\\\"\");\n\t\t});\n\t});\n\n\t/** @test {Tile#clone} */\n\tdescribe(\"#clone\", () => {\n\t\tlet tile;\n\t\tbeforeEach(() => {\n\t\t\ttile = new Tile({\n\t\t\t\ttileId: 14,\n\t\t\t\ttilesetId: 3,\n\t\t\t\tproperties: {\n\t\t\t\t\t\"property\": \"is a string\"\n\t\t\t\t}\n\t\t\t});\n\t\t});\n\n\t\tit(\"clones all the properties of a tile\", () => {\n\t\t\ttile.clone().should.deep.equal(tile);\n\t\t});\n\t\tit(\"doesn't become the same tile\", () => {\n\t\t\ttile.clone().should.not.equal(tile);\n\t\t});\n\t});\n});\n"
+  },
+  {
+    "__docId__": 110,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe0",
+    "testId": 0,
+    "memberof": "test/tile.js",
+    "testDepth": 0,
+    "longname": "test/tile.js~describe0",
+    "access": null,
+    "description": "TileMap",
+    "lineNumber": 8,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{Tile}"
+      }
+    ],
+    "testTargets": [
+      "Tile"
+    ]
+  },
+  {
+    "__docId__": 111,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe1",
+    "testId": 1,
+    "memberof": "test/tile.js~describe0",
+    "testDepth": 1,
+    "longname": "test/tile.js~describe0.describe1",
+    "access": null,
+    "description": "#create",
+    "lineNumber": 10,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{Tile#constructor}"
+      }
+    ],
+    "testTargets": [
+      "Tile#constructor"
+    ]
+  },
+  {
+    "__docId__": 112,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it2",
+    "testId": 2,
+    "memberof": "test/tile.js~describe0.describe1",
+    "testDepth": 2,
+    "longname": "test/tile.js~describe0.describe1.it2",
+    "access": null,
+    "description": "creates from objects",
+    "lineNumber": 11
+  },
+  {
+    "__docId__": 113,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it3",
+    "testId": 3,
+    "memberof": "test/tile.js~describe0.describe1",
+    "testDepth": 2,
+    "longname": "test/tile.js~describe0.describe1.it3",
+    "access": null,
+    "description": "creates from strings",
+    "lineNumber": 19
+  },
+  {
+    "__docId__": 114,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe4",
+    "testId": 4,
+    "memberof": "test/tile.js~describe0",
+    "testDepth": 1,
+    "longname": "test/tile.js~describe0.describe4",
+    "access": null,
+    "description": "#setTile",
+    "lineNumber": 27,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{Tile#setTile}"
+      }
+    ],
+    "testTargets": [
+      "Tile#setTile"
+    ]
+  },
+  {
+    "__docId__": 115,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it5",
+    "testId": 5,
+    "memberof": "test/tile.js~describe0.describe4",
+    "testDepth": 2,
+    "longname": "test/tile.js~describe0.describe4.it5",
+    "access": null,
+    "description": "can replace only tile ID",
+    "lineNumber": 33
+  },
+  {
+    "__docId__": 116,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it6",
+    "testId": 6,
+    "memberof": "test/tile.js~describe0.describe4",
+    "testDepth": 2,
+    "longname": "test/tile.js~describe0.describe4.it6",
+    "access": null,
+    "description": "can replace both tile ID and tileset ID",
+    "lineNumber": 38
+  },
+  {
+    "__docId__": 117,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it7",
+    "testId": 7,
+    "memberof": "test/tile.js~describe0.describe4",
+    "testDepth": 2,
+    "longname": "test/tile.js~describe0.describe4.it7",
+    "access": null,
+    "description": "doesn't replace if ID is -1",
+    "lineNumber": 43
+  },
+  {
+    "__docId__": 118,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it8",
+    "testId": 8,
+    "memberof": "test/tile.js~describe0.describe4",
+    "testDepth": 2,
+    "longname": "test/tile.js~describe0.describe4.it8",
+    "access": null,
+    "description": "does replace empty if told so",
+    "lineNumber": 48
+  },
+  {
+    "__docId__": 119,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe9",
+    "testId": 9,
+    "memberof": "test/tile.js~describe0",
+    "testDepth": 1,
+    "longname": "test/tile.js~describe0.describe9",
+    "access": null,
+    "description": "#toJSON",
+    "lineNumber": 56,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{Tile#toJSON}"
+      }
+    ],
+    "testTargets": [
+      "Tile#toJSON"
+    ]
+  },
+  {
+    "__docId__": 120,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it10",
+    "testId": 10,
+    "memberof": "test/tile.js~describe0.describe9",
+    "testDepth": 2,
+    "longname": "test/tile.js~describe0.describe9.it10",
+    "access": null,
+    "description": "stringifies with properties",
+    "lineNumber": 57
+  },
+  {
+    "__docId__": 121,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it11",
+    "testId": 11,
+    "memberof": "test/tile.js~describe0.describe9",
+    "testDepth": 2,
+    "longname": "test/tile.js~describe0.describe9.it11",
+    "access": null,
+    "description": "stringifies without properties",
+    "lineNumber": 67
+  },
+  {
+    "__docId__": 122,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe12",
+    "testId": 12,
+    "memberof": "test/tile.js~describe0",
+    "testDepth": 1,
+    "longname": "test/tile.js~describe0.describe12",
+    "access": null,
+    "description": "#clone",
+    "lineNumber": 74,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{Tile#clone}"
+      }
+    ],
+    "testTargets": [
+      "Tile#clone"
+    ]
+  },
+  {
+    "__docId__": 123,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it13",
+    "testId": 13,
+    "memberof": "test/tile.js~describe0.describe12",
+    "testDepth": 2,
+    "longname": "test/tile.js~describe0.describe12.it13",
+    "access": null,
+    "description": "clones all the properties of a tile",
+    "lineNumber": 86
+  },
+  {
+    "__docId__": 124,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it14",
+    "testId": 14,
+    "memberof": "test/tile.js~describe0.describe12",
+    "testDepth": 2,
+    "longname": "test/tile.js~describe0.describe12.it14",
+    "access": null,
+    "description": "doesn't become the same tile",
+    "lineNumber": 89
+  },
+  {
+    "__docId__": 125,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/tilearea.js",
+    "memberof": null,
+    "longname": "test/tilearea.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import { should } from \"chai\";\n\nimport { TileArea } from \"../src\";\n\nshould();\n\n/** @test {TileArea} */\ndescribe(\"TileArea\", () => {\n\tconst areaWidth = 100, areaHeight = 100;\n\tlet tileArea, tiles;\n\n\tbeforeEach(() => {\n\t\ttiles = [];\n\t\tfor (let i = 0; i < areaWidth * areaHeight; i++) {\n\t\t\ttiles.push({\n\t\t\t\ttileId: parseInt(Math.random() * 100)\n\t\t\t});\n\t\t}\n\n\t\ttileArea = new TileArea(areaWidth, areaHeight, tiles);\n\t});\n\n\t/** @test {TileArea#getTileIndex} */\n\tdescribe(\"#getTileIndex\", () => {\n\t\tit(\"returns the right index\", () => {\n\t\t\ttileArea.getTileIndex(16, 56).should.equal(5616);\n\t\t\ttileArea.getTileIndex(76, 32).should.equal(3276);\n\t\t});\n\t\tit(\"crashes if out of bounds\", () => {\n\t\t\t(() => {\n\t\t\t\ttileArea.getTileIndex(areaWidth, 0);\n\t\t\t}).should.throw(RangeError);\n\t\t\t(() => {\n\t\t\t\ttileArea.getTileIndex(-1, 0);\n\t\t\t}).should.throw(RangeError);\n\t\t});\n\t});\n\n\t/** @test {TileLayer#getTileArea} */\n\tdescribe(\"#getTileArea\", () => {\n\t\tit(\"returns the correct tiles\", () => {\n\t\t\tconst tileAreaSplice = tileArea.getTileArea(0, 0, 2, 2);\n\t\t\tfor (let x = 0; x < tileAreaSplice.width; x++) {\n\t\t\t\tfor (let y = 0; y < tileAreaSplice.width; y++) {\n\t\t\t\t\ttileAreaSplice.tiles[tileAreaSplice.getTileIndex(x, y)]\n\t\t\t\t\t\t.tileId.should.equal(tiles[x + y * areaWidth].tileId);\n\t\t\t\t}\n\t\t\t}\n\t\t});\n\t\tit(\"returns the correct dimmensions\", () => {\n\t\t\tconst tileAreaSplice = tileArea.getTileArea(0, 5, 3, 2);\n\t\t\ttileAreaSplice.width.should.equal(3);\n\t\t\ttileAreaSplice.height.should.equal(2);\n\t\t});\n\t\tit(\"crashes if out of bounds\", () => {\n\t\t\t(() => {\n\t\t\t\ttileArea.getTileArea(areaWidth, 0, 50);\n\t\t\t}).should.throw(RangeError);\n\t\t\t(() => {\n\t\t\t\ttileArea.getTileArea(areaWidth - 2, 0, 5, 1);\n\t\t\t}).should.throw(RangeError);\n\t\t});\n\t\tit(\"crashes if rectangle is invalid\", () => {\n\t\t\t(() => {\n\t\t\t\ttileArea.getTileArea(0, 0, -1, 1);\n\t\t\t}).should.throw(RangeError);\n\t\t\t(() => {\n\t\t\t\ttileArea.getTileArea(0, 0, 1, 0);\n\t\t\t}).should.throw(RangeError);\n\t\t});\n\t});\n});\n"
+  },
+  {
+    "__docId__": 126,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe15",
+    "testId": 15,
+    "memberof": "test/tilearea.js",
+    "testDepth": 0,
+    "longname": "test/tilearea.js~describe15",
+    "access": null,
+    "description": "TileArea",
+    "lineNumber": 8,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{TileArea}"
+      }
+    ],
+    "testTargets": [
+      "TileArea"
+    ]
+  },
+  {
+    "__docId__": 127,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe16",
+    "testId": 16,
+    "memberof": "test/tilearea.js~describe15",
+    "testDepth": 1,
+    "longname": "test/tilearea.js~describe15.describe16",
+    "access": null,
+    "description": "#getTileIndex",
+    "lineNumber": 24,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{TileArea#getTileIndex}"
+      }
+    ],
+    "testTargets": [
+      "TileArea#getTileIndex"
+    ]
+  },
+  {
+    "__docId__": 128,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it17",
+    "testId": 17,
+    "memberof": "test/tilearea.js~describe15.describe16",
+    "testDepth": 2,
+    "longname": "test/tilearea.js~describe15.describe16.it17",
+    "access": null,
+    "description": "returns the right index",
+    "lineNumber": 25
+  },
+  {
+    "__docId__": 129,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it18",
+    "testId": 18,
+    "memberof": "test/tilearea.js~describe15.describe16",
+    "testDepth": 2,
+    "longname": "test/tilearea.js~describe15.describe16.it18",
+    "access": null,
+    "description": "crashes if out of bounds",
+    "lineNumber": 29
+  },
+  {
+    "__docId__": 130,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe19",
+    "testId": 19,
+    "memberof": "test/tilearea.js~describe15",
+    "testDepth": 1,
+    "longname": "test/tilearea.js~describe15.describe19",
+    "access": null,
+    "description": "#getTileArea",
+    "lineNumber": 40,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{TileLayer#getTileArea}"
+      }
+    ],
+    "testTargets": [
+      "TileLayer#getTileArea"
+    ]
+  },
+  {
+    "__docId__": 131,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it20",
+    "testId": 20,
+    "memberof": "test/tilearea.js~describe15.describe19",
+    "testDepth": 2,
+    "longname": "test/tilearea.js~describe15.describe19.it20",
+    "access": null,
+    "description": "returns the correct tiles",
+    "lineNumber": 41
+  },
+  {
+    "__docId__": 132,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it21",
+    "testId": 21,
+    "memberof": "test/tilearea.js~describe15.describe19",
+    "testDepth": 2,
+    "longname": "test/tilearea.js~describe15.describe19.it21",
+    "access": null,
+    "description": "returns the correct dimmensions",
+    "lineNumber": 50
+  },
+  {
+    "__docId__": 133,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it22",
+    "testId": 22,
+    "memberof": "test/tilearea.js~describe15.describe19",
+    "testDepth": 2,
+    "longname": "test/tilearea.js~describe15.describe19.it22",
+    "access": null,
+    "description": "crashes if out of bounds",
+    "lineNumber": 55
+  },
+  {
+    "__docId__": 134,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it23",
+    "testId": 23,
+    "memberof": "test/tilearea.js~describe15.describe19",
+    "testDepth": 2,
+    "longname": "test/tilearea.js~describe15.describe19.it23",
+    "access": null,
+    "description": "crashes if rectangle is invalid",
+    "lineNumber": 63
+  },
+  {
+    "__docId__": 135,
     "kind": "testFile",
     "static": true,
     "variation": null,
@@ -1372,22 +2585,22 @@
     "longname": "test/tilemap.js",
     "access": null,
     "description": null,
-    "lineNumber": 3,
-    "content": "/* global: describe, it */\n\nimport { should } from \"chai\";\n\nimport { TileMap } from \"../src\";\n\nshould();\n\n/** @test {TileMap} */\ndescribe(\"TileMap\", () => {\n\tconst mapName = \"a map name\",\n\t\tmapWidth = 100,\n\t\tmapHeight = 100,\n\t\ttileWidth = 16,\n\t\ttileHeight = 16;\n\n\tlet tilemap;\n\n\tbeforeEach(() => {\n\t\ttilemap = new TileMap({\n\t\t\tname: mapName,\n\t\t\twidth: mapWidth,\n\t\t\theight: mapHeight,\n\t\t\ttileWidth,\n\t\t\ttileHeight,\n\n\t\t\tlayers: [\n\t\t\t\t{}, {}, {}\n\t\t\t]\n\t\t});\n\t});\n\n\t/** @test {TileMap#constructor} */\n\tdescribe(\"#create\", () => {\n\t\tit(\"has a name\", () => {\n\t\t\ttilemap.name.should.equal(mapName);\n\t\t});\n\t\tit(\"has dimmensions\", () => {\n\t\t\ttilemap.width.should.be.a(\"number\");\n\t\t\ttilemap.height.should.be.a(\"number\");\n\n\t\t\ttilemap.width.should.equal(mapWidth);\n\t\t\ttilemap.height.should.equal(mapHeight);\n\t\t});\n\t\tit(\"has tile size\", () => {\n\t\t\ttilemap.tileWidth.should.be.a(\"number\");\n\t\t\ttilemap.tileHeight.should.be.a(\"number\");\n\t\t});\n\t\tit(\"has layers\", () => {\n\t\t\ttilemap.layers.should.have.length(3);\n\t\t});\n\t\tit(\"has properties for layers\", () => {\n\t\t\ttilemap.layers[0].name.should.be.a(\"string\");\n\t\t});\n\t});\n});\n"
+    "lineNumber": 1,
+    "content": "import { should as chaiShould } from \"chai\";\n\nimport { TileMap } from \"../src\";\nimport testmap from \"./testmap\";\n\nconst should = chaiShould();\n\n/** @test {TileMap} */\ndescribe(\"TileMap\", () => {\n\tconst mapName = \"a map name\",\n\t\tmapWidth = 10,\n\t\tmapHeight = 10,\n\t\ttileWidth = 16,\n\t\ttileHeight = 16;\n\n\tlet tilemap;\n\n\tbeforeEach(() => {\n\t\ttilemap = new TileMap({\n\t\t\tname: mapName,\n\t\t\twidth: mapWidth,\n\t\t\theight: mapHeight,\n\t\t\ttileWidth,\n\t\t\ttileHeight,\n\n\t\t\tlayers: [\n\t\t\t\t{}, {}, {}\n\t\t\t]\n\t\t});\n\t});\n\n\t/** @test {TileMap#constructor} */\n\tdescribe(\"#create\", () => {\n\t\tit(\"has a name\", () => {\n\t\t\ttilemap.name.should.equal(mapName);\n\t\t});\n\t\tit(\"has dimmensions\", () => {\n\t\t\ttilemap.width.should.be.a(\"number\");\n\t\t\ttilemap.height.should.be.a(\"number\");\n\n\t\t\ttilemap.width.should.equal(mapWidth);\n\t\t\ttilemap.height.should.equal(mapHeight);\n\t\t});\n\t\tit(\"has tile size\", () => {\n\t\t\ttilemap.tileWidth.should.be.a(\"number\");\n\t\t\ttilemap.tileHeight.should.be.a(\"number\");\n\t\t});\n\t\tit(\"has layers\", () => {\n\t\t\ttilemap.layers.should.have.length(3);\n\t\t});\n\t\tit(\"has properties for layers\", () => {\n\t\t\ttilemap.layers[0].name.should.be.a(\"string\");\n\t\t});\n\t\tit(\"reads a valid tilemap JSON\", () => {\n\t\t\ttilemap = new TileMap(testmap);\n\t\t\ttilemap.name.should.equal(\"test map\");\n\t\t\ttilemap.layers[0].tiles[23].tileId.should.equal(1);\n\t\t});\n\t\tit(\"has correct default values\", () => {\n\t\t\tconst tilemap = new TileMap({});\n\t\t\ttilemap.name.should.be.a(\"string\");\n\t\t\ttilemap.layers.should.be.an(\"array\");\n\t\t});\n\t});\n\n\t/** @test {TileMap#getJSON} */\n\tdescribe(\"#getJSON\", () => {\n\t\tit(\"returns a valid JSON string\", () => {\n\t\t\tJSON.parse(tilemap.getJSON());\n\t\t});\n\t\tit(\"doesn't parse private properties\", () => {\n\t\t\ttilemap._property = \"foo\";\n\t\t\tshould.not.exist(JSON.parse(tilemap.getJSON())._property);\n\t\t});\n\t});\n});\n"
   },
   {
-    "__docId__": 83,
+    "__docId__": 136,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
-    "name": "describe0",
-    "testId": 0,
+    "name": "describe24",
+    "testId": 24,
     "memberof": "test/tilemap.js",
     "testDepth": 0,
-    "longname": "test/tilemap.js~describe0",
+    "longname": "test/tilemap.js~describe24",
     "access": null,
     "description": "TileMap",
-    "lineNumber": 10,
+    "lineNumber": 9,
     "unknown": [
       {
         "tagName": "@test",
@@ -1399,18 +2612,18 @@
     ]
   },
   {
-    "__docId__": 84,
+    "__docId__": 137,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
-    "name": "describe1",
-    "testId": 1,
-    "memberof": "test/tilemap.js~describe0",
+    "name": "describe25",
+    "testId": 25,
+    "memberof": "test/tilemap.js~describe24",
     "testDepth": 1,
-    "longname": "test/tilemap.js~describe0.describe1",
+    "longname": "test/tilemap.js~describe24.describe25",
     "access": null,
     "description": "#create",
-    "lineNumber": 34,
+    "lineNumber": 33,
     "unknown": [
       {
         "tagName": "@test",
@@ -1422,73 +2635,239 @@
     ]
   },
   {
-    "__docId__": 85,
+    "__docId__": 138,
     "kind": "testIt",
     "static": true,
     "variation": null,
-    "name": "it2",
-    "testId": 2,
-    "memberof": "test/tilemap.js~describe0.describe1",
+    "name": "it26",
+    "testId": 26,
+    "memberof": "test/tilemap.js~describe24.describe25",
     "testDepth": 2,
-    "longname": "test/tilemap.js~describe0.describe1.it2",
+    "longname": "test/tilemap.js~describe24.describe25.it26",
     "access": null,
     "description": "has a name",
-    "lineNumber": 35
+    "lineNumber": 34
   },
   {
-    "__docId__": 86,
+    "__docId__": 139,
     "kind": "testIt",
     "static": true,
     "variation": null,
-    "name": "it3",
-    "testId": 3,
-    "memberof": "test/tilemap.js~describe0.describe1",
+    "name": "it27",
+    "testId": 27,
+    "memberof": "test/tilemap.js~describe24.describe25",
     "testDepth": 2,
-    "longname": "test/tilemap.js~describe0.describe1.it3",
+    "longname": "test/tilemap.js~describe24.describe25.it27",
     "access": null,
     "description": "has dimmensions",
-    "lineNumber": 38
+    "lineNumber": 37
   },
   {
-    "__docId__": 87,
+    "__docId__": 140,
     "kind": "testIt",
     "static": true,
     "variation": null,
-    "name": "it4",
-    "testId": 4,
-    "memberof": "test/tilemap.js~describe0.describe1",
+    "name": "it28",
+    "testId": 28,
+    "memberof": "test/tilemap.js~describe24.describe25",
     "testDepth": 2,
-    "longname": "test/tilemap.js~describe0.describe1.it4",
+    "longname": "test/tilemap.js~describe24.describe25.it28",
     "access": null,
     "description": "has tile size",
-    "lineNumber": 45
+    "lineNumber": 44
   },
   {
-    "__docId__": 88,
+    "__docId__": 141,
     "kind": "testIt",
     "static": true,
     "variation": null,
-    "name": "it5",
-    "testId": 5,
-    "memberof": "test/tilemap.js~describe0.describe1",
+    "name": "it29",
+    "testId": 29,
+    "memberof": "test/tilemap.js~describe24.describe25",
     "testDepth": 2,
-    "longname": "test/tilemap.js~describe0.describe1.it5",
+    "longname": "test/tilemap.js~describe24.describe25.it29",
     "access": null,
     "description": "has layers",
-    "lineNumber": 49
+    "lineNumber": 48
   },
   {
-    "__docId__": 89,
+    "__docId__": 142,
     "kind": "testIt",
     "static": true,
     "variation": null,
-    "name": "it6",
-    "testId": 6,
-    "memberof": "test/tilemap.js~describe0.describe1",
+    "name": "it30",
+    "testId": 30,
+    "memberof": "test/tilemap.js~describe24.describe25",
     "testDepth": 2,
-    "longname": "test/tilemap.js~describe0.describe1.it6",
+    "longname": "test/tilemap.js~describe24.describe25.it30",
     "access": null,
     "description": "has properties for layers",
-    "lineNumber": 52
+    "lineNumber": 51
+  },
+  {
+    "__docId__": 143,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it31",
+    "testId": 31,
+    "memberof": "test/tilemap.js~describe24.describe25",
+    "testDepth": 2,
+    "longname": "test/tilemap.js~describe24.describe25.it31",
+    "access": null,
+    "description": "reads a valid tilemap JSON",
+    "lineNumber": 54
+  },
+  {
+    "__docId__": 144,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it32",
+    "testId": 32,
+    "memberof": "test/tilemap.js~describe24.describe25",
+    "testDepth": 2,
+    "longname": "test/tilemap.js~describe24.describe25.it32",
+    "access": null,
+    "description": "has correct default values",
+    "lineNumber": 59
+  },
+  {
+    "__docId__": 145,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe33",
+    "testId": 33,
+    "memberof": "test/tilemap.js~describe24",
+    "testDepth": 1,
+    "longname": "test/tilemap.js~describe24.describe33",
+    "access": null,
+    "description": "#getJSON",
+    "lineNumber": 67,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{TileMap#getJSON}"
+      }
+    ],
+    "testTargets": [
+      "TileMap#getJSON"
+    ]
+  },
+  {
+    "__docId__": 146,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it34",
+    "testId": 34,
+    "memberof": "test/tilemap.js~describe24.describe33",
+    "testDepth": 2,
+    "longname": "test/tilemap.js~describe24.describe33.it34",
+    "access": null,
+    "description": "returns a valid JSON string",
+    "lineNumber": 68
+  },
+  {
+    "__docId__": 147,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it35",
+    "testId": 35,
+    "memberof": "test/tilemap.js~describe24.describe33",
+    "testDepth": 2,
+    "longname": "test/tilemap.js~describe24.describe33.it35",
+    "access": null,
+    "description": "doesn't parse private properties",
+    "lineNumber": 71
+  },
+  {
+    "__docId__": 148,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/tileset.js",
+    "memberof": null,
+    "longname": "test/tileset.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import { should as chaiShould } from \"chai\";\n\nimport { TileSet } from \"../src\";\n\nconst should = chaiShould();\n\n/** @test {TileMap} */\ndescribe(\"TileMap\", () => {\n\t/** @test {TileMap#constructor} */\n\tdescribe(\"#create\", () => {\n\t\tit(\"creates with default values\", () => {\n\t\t\tconst tileset = new TileSet({});\n\t\t\ttileset.name.should.be.a(\"string\");\n\t\t\ttileset.type.should.be.a(\"string\");\n\t\t\tshould.not.exist(tileset.path);\n\t\t});\n\t\tit(\"creates with definded values\", () => {\n\t\t\tconst name = \"hello\",\n\t\t\t\ttype = \"image\",\n\t\t\t\tpath = \"./some/path.png\",\n\t\t\t\ttileset = new TileSet({ name, type, path });\n\t\t\ttileset.name.should.equal(name);\n\t\t\ttileset.type.should.equal(type);\n\t\t\ttileset.path.should.equal(path);\n\t\t});\n\t});\n});\n"
+  },
+  {
+    "__docId__": 149,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe36",
+    "testId": 36,
+    "memberof": "test/tileset.js",
+    "testDepth": 0,
+    "longname": "test/tileset.js~describe36",
+    "access": null,
+    "description": "TileMap",
+    "lineNumber": 8,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{TileMap}"
+      }
+    ],
+    "testTargets": [
+      "TileMap"
+    ]
+  },
+  {
+    "__docId__": 150,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe37",
+    "testId": 37,
+    "memberof": "test/tileset.js~describe36",
+    "testDepth": 1,
+    "longname": "test/tileset.js~describe36.describe37",
+    "access": null,
+    "description": "#create",
+    "lineNumber": 10,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{TileMap#constructor}"
+      }
+    ],
+    "testTargets": [
+      "TileMap#constructor"
+    ]
+  },
+  {
+    "__docId__": 151,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it38",
+    "testId": 38,
+    "memberof": "test/tileset.js~describe36.describe37",
+    "testDepth": 2,
+    "longname": "test/tileset.js~describe36.describe37.it38",
+    "access": null,
+    "description": "creates with default values",
+    "lineNumber": 11
+  },
+  {
+    "__docId__": 152,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it39",
+    "testId": 39,
+    "memberof": "test/tileset.js~describe36.describe37",
+    "testDepth": 2,
+    "longname": "test/tileset.js~describe36.describe37.it39",
+    "access": null,
+    "description": "creates with definded values",
+    "lineNumber": 17
   }
 ]

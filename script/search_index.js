@@ -6,6 +6,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "dtile-tilemap/src/tilearea.js~tilearea",
+    "class/src/tilearea.js~TileArea.html",
+    "<span>TileArea</span> <span class=\"search-result-import-path\">dtile-tilemap/src/tilearea.js</span>",
+    "class"
+  ],
+  [
     "dtile-tilemap/src/tilelayer.js~tilelayer",
     "class/src/tilelayer.js~TileLayer.html",
     "<span>TileLayer</span> <span class=\"search-result-import-path\">dtile-tilemap/src/tilelayer.js</span>",
@@ -15,6 +21,12 @@ window.esdocSearchIndex = [
     "dtile-tilemap/src/tilemap.js~tilemap",
     "class/src/tilemap.js~TileMap.html",
     "<span>TileMap</span> <span class=\"search-result-import-path\">dtile-tilemap/src/tilemap.js</span>",
+    "class"
+  ],
+  [
+    "dtile-tilemap/src/tileset.js~tileset",
+    "class/src/tileset.js~TileSet.html",
+    "<span>TileSet</span> <span class=\"search-result-import-path\">dtile-tilemap/src/tileset.js</span>",
     "class"
   ],
   [
@@ -348,45 +360,243 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "tilearea src/tilearea.js~tilearea,tilearea",
+    "test-file/test/tilearea.js.html#lineNumber8",
+    "TileArea",
+    "test"
+  ],
+  [
+    "tilelayer#gettilearea src/tilearea.js~tilearea#gettilearea,tilelayer#gettilearea",
+    "test-file/test/tilearea.js.html#lineNumber40",
+    "TileArea #getTileArea",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber55",
+    "TileArea #getTileArea crashes if out of bounds",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber63",
+    "TileArea #getTileArea crashes if rectangle is invalid",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber50",
+    "TileArea #getTileArea returns the correct dimmensions",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber41",
+    "TileArea #getTileArea returns the correct tiles",
+    "test"
+  ],
+  [
+    "tilearea#gettileindex src/tilearea.js~tilearea#gettileindex,tilearea#gettileindex",
+    "test-file/test/tilearea.js.html#lineNumber24",
+    "TileArea #getTileIndex",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber29",
+    "TileArea #getTileIndex crashes if out of bounds",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber25",
+    "TileArea #getTileIndex returns the right index",
+    "test"
+  ],
+  [
     "tilemap src/tilemap.js~tilemap,tilemap",
-    "test-file/test/tilemap.js.html#lineNumber10",
+    "test-file/test/tilemap.js.html#lineNumber9",
     "TileMap",
     "test"
   ],
   [
+    "tilemap src/tilemap.js~tilemap,tilemap",
+    "test-file/test/tileset.js.html#lineNumber8",
+    "TileMap",
+    "test"
+  ],
+  [
+    "tile src/tile.js~tile,tile",
+    "test-file/test/tile.js.html#lineNumber8",
+    "TileMap",
+    "test"
+  ],
+  [
+    "tile#clone src/tile.js~tile#clone,tile#clone",
+    "test-file/test/tile.js.html#lineNumber74",
+    "TileMap #clone",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber86",
+    "TileMap #clone clones all the properties of a tile",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber89",
+    "TileMap #clone doesn't become the same tile",
+    "test"
+  ],
+  [
     "tilemap#constructor src/tilemap.js~tilemap#constructor,tilemap#constructor",
-    "test-file/test/tilemap.js.html#lineNumber34",
+    "test-file/test/tilemap.js.html#lineNumber33",
+    "TileMap #create",
+    "test"
+  ],
+  [
+    "tile#constructor src/tile.js~tile#constructor,tile#constructor",
+    "test-file/test/tile.js.html#lineNumber10",
+    "TileMap #create",
+    "test"
+  ],
+  [
+    "tilemap#constructor src/tilemap.js~tilemap#constructor,tilemap#constructor",
+    "test-file/test/tileset.js.html#lineNumber10",
     "TileMap #create",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber35",
+    "test-file/test/tile.js.html#lineNumber11",
+    "TileMap #create creates from objects",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber19",
+    "TileMap #create creates from strings",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tileset.js.html#lineNumber11",
+    "TileMap #create creates with default values",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tileset.js.html#lineNumber17",
+    "TileMap #create creates with definded values",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilemap.js.html#lineNumber34",
     "TileMap #create has a name",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber38",
+    "test-file/test/tilemap.js.html#lineNumber59",
+    "TileMap #create has correct default values",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilemap.js.html#lineNumber37",
     "TileMap #create has dimmensions",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber49",
+    "test-file/test/tilemap.js.html#lineNumber48",
     "TileMap #create has layers",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber52",
+    "test-file/test/tilemap.js.html#lineNumber51",
     "TileMap #create has properties for layers",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber45",
+    "test-file/test/tilemap.js.html#lineNumber44",
     "TileMap #create has tile size",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilemap.js.html#lineNumber54",
+    "TileMap #create reads a valid tilemap JSON",
+    "test"
+  ],
+  [
+    "tilemap#getjson src/tilemap.js~tilemap#getjson,tilemap#getjson",
+    "test-file/test/tilemap.js.html#lineNumber67",
+    "TileMap #getJSON",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilemap.js.html#lineNumber71",
+    "TileMap #getJSON doesn't parse private properties",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilemap.js.html#lineNumber68",
+    "TileMap #getJSON returns a valid JSON string",
+    "test"
+  ],
+  [
+    "tile#settile tile#settile,tile#settile",
+    "test-file/test/tile.js.html#lineNumber27",
+    "TileMap #setTile",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber38",
+    "TileMap #setTile can replace both tile ID and tileset ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber33",
+    "TileMap #setTile can replace only tile ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber48",
+    "TileMap #setTile does replace empty if told so",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber43",
+    "TileMap #setTile doesn't replace if ID is -1",
+    "test"
+  ],
+  [
+    "tile#tojson src/tile.js~tile#tojson,tile#tojson",
+    "test-file/test/tile.js.html#lineNumber56",
+    "TileMap #toJSON",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber57",
+    "TileMap #toJSON stringifies with properties",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber67",
+    "TileMap #toJSON stringifies without properties",
     "test"
   ],
   [
@@ -402,6 +612,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/tile.js~tile#clone",
+    "class/src/tile.js~Tile.html#instance-method-clone",
+    "src/tile.js~Tile#clone",
+    "method"
+  ],
+  [
     "src/tile.js~tile#constructor",
     "class/src/tile.js~Tile.html#instance-constructor-constructor",
     "src/tile.js~Tile#constructor",
@@ -414,6 +630,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/tile.js~tile#setdata",
+    "class/src/tile.js~Tile.html#instance-method-setData",
+    "src/tile.js~Tile#setData",
+    "method"
+  ],
+  [
     "src/tile.js~tile#tileid",
     "class/src/tile.js~Tile.html#instance-member-tileId",
     "src/tile.js~Tile#tileId",
@@ -423,6 +645,54 @@ window.esdocSearchIndex = [
     "src/tile.js~tile#tilesetid",
     "class/src/tile.js~Tile.html#instance-member-tilesetId",
     "src/tile.js~Tile#tilesetId",
+    "member"
+  ],
+  [
+    "src/tile.js~tile#tojson",
+    "class/src/tile.js~Tile.html#instance-method-toJSON",
+    "src/tile.js~Tile#toJSON",
+    "method"
+  ],
+  [
+    "src/tilearea.js",
+    "file/src/tilearea.js.html",
+    "src/tilearea.js",
+    "file"
+  ],
+  [
+    "src/tilearea.js~tilearea#constructor",
+    "class/src/tilearea.js~TileArea.html#instance-constructor-constructor",
+    "src/tilearea.js~TileArea#constructor",
+    "method"
+  ],
+  [
+    "src/tilearea.js~tilearea#gettilearea",
+    "class/src/tilearea.js~TileArea.html#instance-method-getTileArea",
+    "src/tilearea.js~TileArea#getTileArea",
+    "method"
+  ],
+  [
+    "src/tilearea.js~tilearea#gettileindex",
+    "class/src/tilearea.js~TileArea.html#instance-method-getTileIndex",
+    "src/tilearea.js~TileArea#getTileIndex",
+    "method"
+  ],
+  [
+    "src/tilearea.js~tilearea#height",
+    "class/src/tilearea.js~TileArea.html#instance-member-height",
+    "src/tilearea.js~TileArea#height",
+    "member"
+  ],
+  [
+    "src/tilearea.js~tilearea#tiles",
+    "class/src/tilearea.js~TileArea.html#instance-member-tiles",
+    "src/tilearea.js~TileArea#tiles",
+    "member"
+  ],
+  [
+    "src/tilearea.js~tilearea#width",
+    "class/src/tilearea.js~TileArea.html#instance-member-width",
+    "src/tilearea.js~TileArea#width",
     "member"
   ],
   [
@@ -462,6 +732,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/tilemap.js~tilemap#addtileset",
+    "class/src/tilemap.js~TileMap.html#instance-method-addTileset",
+    "src/tilemap.js~TileMap#addTileset",
+    "method"
+  ],
+  [
     "src/tilemap.js~tilemap#constructor",
     "class/src/tilemap.js~TileMap.html#instance-constructor-constructor",
     "src/tilemap.js~TileMap#constructor",
@@ -471,6 +747,12 @@ window.esdocSearchIndex = [
     "src/tilemap.js~tilemap#createlayer",
     "class/src/tilemap.js~TileMap.html#instance-method-createLayer",
     "src/tilemap.js~TileMap#createLayer",
+    "method"
+  ],
+  [
+    "src/tilemap.js~tilemap#getjson",
+    "class/src/tilemap.js~TileMap.html#instance-method-getJSON",
+    "src/tilemap.js~TileMap#getJSON",
     "method"
   ],
   [
@@ -510,15 +792,75 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/tilemap.js~tilemap#tilesets",
+    "class/src/tilemap.js~TileMap.html#instance-member-tilesets",
+    "src/tilemap.js~TileMap#tilesets",
+    "member"
+  ],
+  [
     "src/tilemap.js~tilemap#width",
     "class/src/tilemap.js~TileMap.html#instance-member-width",
     "src/tilemap.js~TileMap#width",
     "member"
   ],
   [
+    "src/tileset.js",
+    "file/src/tileset.js.html",
+    "src/tileset.js",
+    "file"
+  ],
+  [
+    "src/tileset.js~tileset#constructor",
+    "class/src/tileset.js~TileSet.html#instance-constructor-constructor",
+    "src/tileset.js~TileSet#constructor",
+    "method"
+  ],
+  [
+    "src/tileset.js~tileset#name",
+    "class/src/tileset.js~TileSet.html#instance-member-name",
+    "src/tileset.js~TileSet#name",
+    "member"
+  ],
+  [
+    "src/tileset.js~tileset#path",
+    "class/src/tileset.js~TileSet.html#instance-member-path",
+    "src/tileset.js~TileSet#path",
+    "member"
+  ],
+  [
+    "src/tileset.js~tileset#properties",
+    "class/src/tileset.js~TileSet.html#instance-member-properties",
+    "src/tileset.js~TileSet#properties",
+    "member"
+  ],
+  [
+    "src/tileset.js~tileset#type",
+    "class/src/tileset.js~TileSet.html#instance-member-type",
+    "src/tileset.js~TileSet#type",
+    "member"
+  ],
+  [
+    "test/tile.js",
+    "test-file/test/tile.js.html",
+    "test/tile.js",
+    "testFile"
+  ],
+  [
+    "test/tilearea.js",
+    "test-file/test/tilearea.js.html",
+    "test/tilearea.js",
+    "testFile"
+  ],
+  [
     "test/tilemap.js",
     "test-file/test/tilemap.js.html",
     "test/tilemap.js",
+    "testFile"
+  ],
+  [
+    "test/tileset.js",
+    "test-file/test/tileset.js.html",
+    "test/tileset.js",
     "testFile"
   ]
 ]

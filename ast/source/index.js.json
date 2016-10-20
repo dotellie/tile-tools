@@ -193,10 +193,10 @@
           "type": "ExportSpecifier",
           "exported": {
             "type": "Identifier",
-            "name": "Tile",
+            "name": "TileArea",
             "range": [
               87,
-              91
+              95
             ],
             "loc": {
               "start": {
@@ -205,16 +205,16 @@
               },
               "end": {
                 "line": 3,
-                "column": 13
+                "column": 17
               }
             }
           },
           "local": {
             "type": "Identifier",
-            "name": "Tile",
+            "name": "TileArea",
             "range": [
               87,
-              91
+              95
             ],
             "loc": {
               "start": {
@@ -223,13 +223,13 @@
               },
               "end": {
                 "line": 3,
-                "column": 13
+                "column": 17
               }
             }
           },
           "range": [
             87,
-            91
+            95
           ],
           "loc": {
             "start": {
@@ -238,6 +238,98 @@
             },
             "end": {
               "line": 3,
+              "column": 17
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "./tilearea",
+        "raw": "\"./tilearea\"",
+        "range": [
+          103,
+          115
+        ],
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 25
+          },
+          "end": {
+            "line": 3,
+            "column": 37
+          }
+        }
+      },
+      "range": [
+        78,
+        116
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 38
+        }
+      }
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": null,
+      "specifiers": [
+        {
+          "type": "ExportSpecifier",
+          "exported": {
+            "type": "Identifier",
+            "name": "Tile",
+            "range": [
+              126,
+              130
+            ],
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 9
+              },
+              "end": {
+                "line": 4,
+                "column": 13
+              }
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "name": "Tile",
+            "range": [
+              126,
+              130
+            ],
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 9
+              },
+              "end": {
+                "line": 4,
+                "column": 13
+              }
+            }
+          },
+          "range": [
+            126,
+            130
+          ],
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 9
+            },
+            "end": {
+              "line": 4,
               "column": 13
             }
           }
@@ -248,32 +340,124 @@
         "value": "./tile",
         "raw": "\"./tile\"",
         "range": [
-          99,
-          107
+          138,
+          146
         ],
         "loc": {
           "start": {
-            "line": 3,
+            "line": 4,
             "column": 21
           },
           "end": {
-            "line": 3,
+            "line": 4,
             "column": 29
           }
         }
       },
       "range": [
-        78,
-        108
+        117,
+        147
       ],
       "loc": {
         "start": {
-          "line": 3,
+          "line": 4,
           "column": 0
         },
         "end": {
-          "line": 3,
+          "line": 4,
           "column": 30
+        }
+      }
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": null,
+      "specifiers": [
+        {
+          "type": "ExportSpecifier",
+          "exported": {
+            "type": "Identifier",
+            "name": "TileSet",
+            "range": [
+              157,
+              164
+            ],
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 9
+              },
+              "end": {
+                "line": 5,
+                "column": 16
+              }
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "name": "TileSet",
+            "range": [
+              157,
+              164
+            ],
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 9
+              },
+              "end": {
+                "line": 5,
+                "column": 16
+              }
+            }
+          },
+          "range": [
+            157,
+            164
+          ],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 9
+            },
+            "end": {
+              "line": 5,
+              "column": 16
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "./tileset",
+        "raw": "\"./tileset\"",
+        "range": [
+          172,
+          183
+        ],
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 24
+          },
+          "end": {
+            "line": 5,
+            "column": 35
+          }
+        }
+      },
+      "range": [
+        148,
+        184
+      ],
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 36
         }
       }
     }
@@ -281,7 +465,7 @@
   "sourceType": "module",
   "range": [
     0,
-    108
+    184
   ],
   "loc": {
     "start": {
@@ -289,8 +473,8 @@
       "column": 0
     },
     "end": {
-      "line": 3,
-      "column": 30
+      "line": 5,
+      "column": 36
     }
   },
   "comments": []

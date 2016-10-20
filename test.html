@@ -33,8 +33,10 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -51,47 +53,278 @@
 
   <tbody data-ice="tests">
 <tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="0">
-  <td data-ice="testDescription" style="padding-left: 10px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber10"><p>TileMap</p>
+  <td data-ice="testDescription" style="padding-left: 10px"><span class="toggle closed"></span><span><a href="test-file/test/tile.js.html#lineNumber8"><p>TileMap</p>
 </a></span></td>
-  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></td>
-  <td data-ice="testCount">5</td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></td>
+  <td data-ice="testCount">10</td>
 </tr>
 
 
 
 <tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
-  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber34"><p>#create</p>
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tile.js.html#lineNumber10"><p>#create</p>
 </a></span></td>
-  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilemap.js~TileMap.html#instance-constructor-constructor">TileMap#constructor</a></span></td>
-  <td data-ice="testCount">5</td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tile.js~Tile.html#instance-constructor-constructor">Tile#constructor</a></span></td>
+  <td data-ice="testCount">2</td>
 </tr>
 
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber35"><p>has a name</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tile.js.html#lineNumber11"><p>creates from objects</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber38"><p>has dimmensions</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tile.js.html#lineNumber19"><p>creates from strings</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+
+
+<tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tile.js.html#lineNumber27"><p>#setTile</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span>Tile#setTile</span></td>
+  <td data-ice="testCount">4</td>
+</tr>
+
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tile.js.html#lineNumber33"><p>can replace only tile ID</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber45"><p>has tile size</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tile.js.html#lineNumber38"><p>can replace both tile ID and tileset ID</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber49"><p>has layers</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tile.js.html#lineNumber43"><p>doesn&apos;t replace if ID is -1</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber52"><p>has properties for layers</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tile.js.html#lineNumber48"><p>does replace empty if told so</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+
+
+<tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tile.js.html#lineNumber56"><p>#toJSON</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tile.js~Tile.html#instance-method-toJSON">Tile#toJSON</a></span></td>
+  <td data-ice="testCount">2</td>
+</tr>
+
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tile.js.html#lineNumber57"><p>stringifies with properties</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tile.js.html#lineNumber67"><p>stringifies without properties</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+
+
+<tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tile.js.html#lineNumber74"><p>#clone</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tile.js~Tile.html#instance-method-clone">Tile#clone</a></span></td>
+  <td data-ice="testCount">2</td>
+</tr>
+
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tile.js.html#lineNumber86"><p>clones all the properties of a tile</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tile.js.html#lineNumber89"><p>doesn&apos;t become the same tile</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+
+
+<tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span class="toggle closed"></span><span><a href="test-file/test/tilearea.js.html#lineNumber8"><p>TileArea</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></td>
+  <td data-ice="testCount">6</td>
+</tr>
+
+
+
+<tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tilearea.js.html#lineNumber24"><p>#getTileIndex</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilearea.js~TileArea.html#instance-method-getTileIndex">TileArea#getTileIndex</a></span></td>
+  <td data-ice="testCount">2</td>
+</tr>
+
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilearea.js.html#lineNumber25"><p>returns the right index</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilearea.js.html#lineNumber29"><p>crashes if out of bounds</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+
+
+<tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tilearea.js.html#lineNumber40"><p>#getTileArea</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilearea.js~TileArea.html#instance-method-getTileArea">TileLayer#getTileArea</a></span></td>
+  <td data-ice="testCount">4</td>
+</tr>
+
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilearea.js.html#lineNumber41"><p>returns the correct tiles</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilearea.js.html#lineNumber50"><p>returns the correct dimmensions</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilearea.js.html#lineNumber55"><p>crashes if out of bounds</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilearea.js.html#lineNumber63"><p>crashes if rectangle is invalid</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+
+
+<tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber9"><p>TileMap</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></td>
+  <td data-ice="testCount">9</td>
+</tr>
+
+
+
+<tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber33"><p>#create</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilemap.js~TileMap.html#instance-constructor-constructor">TileMap#constructor</a></span></td>
+  <td data-ice="testCount">7</td>
+</tr>
+
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber34"><p>has a name</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber37"><p>has dimmensions</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber44"><p>has tile size</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber48"><p>has layers</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber51"><p>has properties for layers</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber54"><p>reads a valid tilemap JSON</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber59"><p>has correct default values</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+
+
+<tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber67"><p>#getJSON</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilemap.js~TileMap.html#instance-method-getJSON">TileMap#getJSON</a></span></td>
+  <td data-ice="testCount">2</td>
+</tr>
+
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber68"><p>returns a valid JSON string</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber71"><p>doesn&apos;t parse private properties</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+
+
+<tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span class="toggle closed"></span><span><a href="test-file/test/tileset.js.html#lineNumber8"><p>TileMap</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></td>
+  <td data-ice="testCount">2</td>
+</tr>
+
+
+
+<tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tileset.js.html#lineNumber10"><p>#create</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilemap.js~TileMap.html#instance-constructor-constructor">TileMap#constructor</a></span></td>
+  <td data-ice="testCount">2</td>
+</tr>
+
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tileset.js.html#lineNumber11"><p>creates with default values</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tileset.js.html#lineNumber17"><p>creates with definded values</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
