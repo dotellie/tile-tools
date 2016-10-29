@@ -16,8 +16,8 @@
 				{ "tileId": 0, "tilesetId": 0 },
 
 				{ "tileId": 0, "tilesetId": 0 }, { "tileId": 1, "tilesetId": 0 },
-				{ "tileId": 0, "tilesetId": 0 }, { "tileId": 0, "tilesetId": 0 },
-				{ "tileId": 1, "tilesetId": 0 },
+				{ "tileId": 0, "tilesetId": 0 }, { "tileId": 1, "tilesetId": 0 },
+				{ "tileId": 0, "tilesetId": 0 },
 
 				{ "tileId": 0, "tilesetId": 0 }, { "tileId": 0, "tilesetId": 0 },
 				{ "tileId": 0, "tilesetId": 0 }, { "tileId": 0, "tilesetId": 0 },
@@ -25,7 +25,7 @@
 
 				{ "tileId": 1, "tilesetId": 0 }, { "tileId": 0, "tilesetId": 0 },
 				{ "tileId": 0, "tilesetId": 0 }, { "tileId": 0, "tilesetId": 0 },
-				{ "tileId": 0, "tilesetId": 1 },
+				{ "tileId": 1, "tilesetId": 0 },
 
 				{ "tileId": 0, "tilesetId": 0 }, { "tileId": 1, "tilesetId": 0 },
 				{ "tileId": 1, "tilesetId": 0 }, { "tileId": 1, "tilesetId": 0 },
