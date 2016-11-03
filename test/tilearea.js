@@ -36,7 +36,7 @@ describe("TileArea", () => {
 		});
 	});
 
-	/** @test {TileLayer#getTileArea} */
+	/** @test {TileArea#getTileArea} */
 	describe("#getTileArea", () => {
 		it("returns the correct tiles", () => {
 			const tileAreaSplice = tileArea.getTileArea(0, 0, 2, 2);
