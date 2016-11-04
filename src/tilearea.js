@@ -60,6 +60,30 @@ export class TileArea {
 		return new TileArea(width, height, tiles);
 	}
 
+	/**
+	 * Inserts a TileArea into this TileArea.
+	 *
+	 * This isertion does not fail if it goes outside of the TileArea.
+	 *
+	 * @param {number} x - Top left x coordinate of where the TileArea should be inserted.
+	 * @param {number} y - Top left y coordinate of where the TileArea should be inserted.
+	 * @param {TileArea} tileArea - The TileArea to be inserted.
+	 * @param {boolean} skipEmpty - If the insertion should skip empty (-1) tiles.
+	 */
+	insertTileArea(x, y, tileArea, skipEmpty) {
+		for (let lx = x; lx < x + tileArea.width; lx++) {
+			for (let ly = y; ly < y + tileArea.height; ly++) {
+				try {
+					const newTile = tileArea.tiles[tileArea.getTileIndex(lx - x, ly - y)];
+					if (skipEmpty && newTile.tileId === -1) continue;
+					this.tiles[this.getTileIndex(lx, ly)] = newTile;
+				} catch (e) {
+					if (e instanceof RangeError) continue; else throw e;
+				}
+			}
+		}
+	}
+
 	_inRange(x, y, width = 1, height = 1) {
 		return !(x < 0 || x >= this.width ||
 			y < 0 || y > this.height ||
