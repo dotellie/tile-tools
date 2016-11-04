@@ -80,7 +80,7 @@ describe(&quot;TileArea&quot;, () =&gt; {
 		});
 	});
 
-	/** @test {TileLayer#getTileArea} */
+	/** @test {TileArea#getTileArea} */
 	describe(&quot;#getTileArea&quot;, () =&gt; {
 		it(&quot;returns the correct tiles&quot;, () =&gt; {
 			const tileAreaSplice = tileArea.getTileArea(0, 0, 2, 2);
@@ -111,6 +111,45 @@ describe(&quot;TileArea&quot;, () =&gt; {
 			(() =&gt; {
 				tileArea.getTileArea(0, 0, 1, 0);
 			}).should.throw(RangeError);
+		});
+	});
+
+	/** @test {TileArea#insertTileArea} */
+	describe(&quot;#insertTileArea&quot;, () =&gt; {
+		const smallAreaWidth = 3, smallAreaHeight = 3;
+		let smallTileArea;
+
+		beforeEach(() =&gt; {
+			const tiles = [];
+			for (let i = 0; i &lt; smallAreaWidth * smallAreaHeight; i++) {
+				tiles.push({
+					tileId: parseInt(Math.random() * 100)
+				});
+			}
+			smallTileArea = new TileArea(smallAreaWidth, smallAreaHeight, tiles);
+		});
+
+		it(&quot;inserts a tile area correctly&quot;, () =&gt; {
+			const x = parseInt((areaWidth - smallAreaWidth) / 2);
+			const y = parseInt((areaHeight - smallAreaHeight) / 2);
+			tileArea.insertTileArea(x, y, smallTileArea);
+
+			tileArea.getTileArea(x, y, smallAreaWidth, smallAreaHeight)
+				.should.deep.equal(smallTileArea);
+		});
+		it(&quot;can skip empty (-1) tiles&quot;, () =&gt; {
+			tileArea.insertTileArea(0, 0, new TileArea(1, 1, [{ tileId: -1 }]), true);
+
+			tileArea.getTileArea(0, 0, 1, 1).tiles[0].tileId.should.not.equal(-1);
+		});
+		it(&quot;doesn&apos;t crash when going out of bounds&quot;, () =&gt; {
+			const x = -smallAreaWidth + 1;
+			const y = -smallAreaHeight + 1;
+			tileArea.insertTileArea(x, y, smallTileArea);
+
+			tileArea.getTileArea(0, 0, 1, 1).tiles[0].tileId.should.equal(
+				smallTileArea.tiles[smallTileArea.tiles.length - 1].tileId
+			);
 		});
 	});
 });

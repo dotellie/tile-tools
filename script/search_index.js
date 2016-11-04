@@ -366,7 +366,7 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
-    "tilelayer#gettilearea src/tilearea.js~tilearea#gettilearea,tilelayer#gettilearea",
+    "tilearea#gettilearea src/tilearea.js~tilearea#gettilearea,tilearea#gettilearea",
     "test-file/test/tilearea.js.html#lineNumber40",
     "TileArea #getTileArea",
     "test"
@@ -414,14 +414,38 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
-    "tilemap src/tilemap.js~tilemap,tilemap",
-    "test-file/test/tilemap.js.html#lineNumber9",
-    "TileMap",
+    "tilearea#inserttilearea src/tilearea.js~tilearea#inserttilearea,tilearea#inserttilearea",
+    "test-file/test/tilearea.js.html#lineNumber74",
+    "TileArea #insertTileArea",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber96",
+    "TileArea #insertTileArea can skip empty (-1) tiles",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber101",
+    "TileArea #insertTileArea doesn't crash when going out of bounds",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber88",
+    "TileArea #insertTileArea inserts a tile area correctly",
     "test"
   ],
   [
     "tilemap src/tilemap.js~tilemap,tilemap",
     "test-file/test/tileset.js.html#lineNumber8",
+    "TileMap",
+    "test"
+  ],
+  [
+    "tilemap src/tilemap.js~tilemap,tilemap",
+    "test-file/test/tilemap.js.html#lineNumber9",
     "TileMap",
     "test"
   ],
@@ -456,14 +480,14 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
-    "tile#constructor src/tile.js~tile#constructor,tile#constructor",
-    "test-file/test/tile.js.html#lineNumber10",
+    "tilemap#constructor src/tilemap.js~tilemap#constructor,tilemap#constructor",
+    "test-file/test/tileset.js.html#lineNumber10",
     "TileMap #create",
     "test"
   ],
   [
-    "tilemap#constructor src/tilemap.js~tilemap#constructor,tilemap#constructor",
-    "test-file/test/tileset.js.html#lineNumber10",
+    "tile#constructor src/tile.js~tile#constructor,tile#constructor",
+    "test-file/test/tile.js.html#lineNumber10",
     "TileMap #create",
     "test"
   ],
@@ -682,6 +706,12 @@ window.esdocSearchIndex = [
     "class/src/tilearea.js~TileArea.html#instance-member-height",
     "src/tilearea.js~TileArea#height",
     "member"
+  ],
+  [
+    "src/tilearea.js~tilearea#inserttilearea",
+    "class/src/tilearea.js~TileArea.html#instance-method-insertTileArea",
+    "src/tilearea.js~TileArea#insertTileArea",
+    "method"
   ],
   [
     "src/tilearea.js~tilearea#tiles",
