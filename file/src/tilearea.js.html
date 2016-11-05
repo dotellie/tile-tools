@@ -131,7 +131,9 @@ export class TileArea {
 				try {
 					const newTile = tileArea.tiles[tileArea.getTileIndex(lx - x, ly - y)];
 					if (skipEmpty &amp;&amp; newTile.tileId === -1) continue;
-					this.tiles[this.getTileIndex(lx, ly)] = newTile;
+
+					this.tiles[this.getTileIndex(lx, ly)]
+						.setData(newTile.tileId, newTile.tilesetId);
 				} catch (e) {
 					if (e instanceof RangeError) continue; else throw e;
 				}
