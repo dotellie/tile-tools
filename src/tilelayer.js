@@ -15,15 +15,7 @@ export class TileLayer extends TileArea {
 	 * @param {Map<string, *>} options.properties=Map - {@link TileLayer#properties}
 	 */
 	constructor(parentMap, options) {
-		super(parentMap.width, parentMap.height);
-
-		/** The name of the tile layer.
-		 * @type {string} */
-		this.name = options.name || "Tilelayer";
-
-		/** The tiles of the layer.
-		 * @type {Tile[]} */
-		this.tiles = [];
+		const tiles = [];
 		for (let y = 0; y < parentMap.height; y++) {
 			for (let x = 0; x < parentMap.width; x++) {
 				const tile = new Tile(
@@ -31,9 +23,15 @@ export class TileLayer extends TileArea {
 					? options.tiles[x % parentMap.width + y * parentMap.width]
 					: { tileId: -1, tilesetId: 0 }
 				);
-				this.tiles.push(tile);
+				tiles.push(tile);
 			}
 		}
+
+		super(parentMap.width, parentMap.height, tiles);
+
+		/** The name of the tile layer.
+		 * @type {string} */
+		this.name = options.name || "Tilelayer";
 
 		/** Custom properties of the layer.
 		 * @type {Map<string, *>} */

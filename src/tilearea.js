@@ -1,3 +1,5 @@
+import { Tile } from "./tile";
+
 /**
  * A tile area object with a size and tiles.
  */
@@ -19,7 +21,12 @@ export class TileArea {
 
 		/** The tiles in the tile area
 		 * @type {Tile[]} */
-		this.tiles = tiles;
+		this.tiles = tiles.map(tile => {
+			if (!(tile instanceof Tile)) {
+				throw new TypeError("All tiles in a TileArea has to be of the Tile type.");
+			}
+			return tile;
+		});
 	}
 
 	/**

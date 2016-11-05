@@ -20,6 +20,16 @@ describe("TileArea", () => {
 		tileArea = new TileArea(areaWidth, areaHeight, tiles);
 	});
 
+	/** @test {TileArea#constructor} */
+	describe("#constructor", () => {
+		it("rejects non-tile objects", () => {
+			(() => {
+				// eslint-disable-next-line no-new
+				new TileArea(1, 1, [{ tileId: 0 }]);
+			}).should.throw(TypeError);
+		});
+	});
+
 	/** @test {TileArea#getTileIndex} */
 	describe("#getTileIndex", () => {
 		it("returns the right index", () => {
@@ -94,7 +104,11 @@ describe("TileArea", () => {
 				.should.deep.equal(smallTileArea);
 		});
 		it("can skip empty (-1) tiles", () => {
-			tileArea.insertTileArea(0, 0, new TileArea(1, 1, [{ tileId: -1 }]), true);
+			tileArea.insertTileArea(
+				0, 0,
+				new TileArea(1, 1, [new Tile({ tileId: -1 })]),
+				true
+			);
 
 			tileArea.getTileArea(0, 0, 1, 1).tiles[0].tileId.should.not.equal(-1);
 		});
