@@ -1,6 +1,6 @@
 import { should } from "chai";
 
-import { TileArea } from "../src";
+import { TileArea, Tile } from "../src";
 
 should();
 
@@ -12,9 +12,9 @@ describe("TileArea", () => {
 	beforeEach(() => {
 		tiles = [];
 		for (let i = 0; i < areaWidth * areaHeight; i++) {
-			tiles.push({
+			tiles.push(new Tile({
 				tileId: parseInt(Math.random() * 100)
-			});
+			}));
 		}
 
 		tileArea = new TileArea(areaWidth, areaHeight, tiles);
@@ -78,9 +78,9 @@ describe("TileArea", () => {
 		beforeEach(() => {
 			const tiles = [];
 			for (let i = 0; i < smallAreaWidth * smallAreaHeight; i++) {
-				tiles.push({
+				tiles.push(new Tile({
 					tileId: parseInt(Math.random() * 100)
-				});
+				}));
 			}
 			smallTileArea = new TileArea(smallAreaWidth, smallAreaHeight, tiles);
 		});
