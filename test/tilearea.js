@@ -28,6 +28,13 @@ describe("TileArea", () => {
 				new TileArea(1, 1, [{ tileId: 0 }]);
 			}).should.throw(TypeError);
 		});
+
+		it("requires width and height to equal amount of tiles", () => {
+			(() => {
+				// eslint-disable-next-line no-new
+				new TileArea(0, 0, [new Tile({ tileId: 0 })]);
+			}).should.throw(RangeError);
+		});
 	});
 
 	/** @test {TileArea#getTileIndex} */

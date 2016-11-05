@@ -27,6 +27,10 @@ export class TileArea {
 			}
 			return tile;
 		});
+
+		if (this.width * this.height !== this.tiles.length) {
+			throw new RangeError("The width and height doesn't match the amount of tiles given.");
+		}
 	}
 
 	/**
