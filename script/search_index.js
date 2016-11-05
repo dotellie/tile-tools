@@ -366,86 +366,104 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
-    "tilearea#gettilearea src/tilearea.js~tilearea#gettilearea,tilearea#gettilearea",
-    "test-file/test/tilearea.js.html#lineNumber40",
-    "TileArea #getTileArea",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tilearea.js.html#lineNumber55",
-    "TileArea #getTileArea crashes if out of bounds",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tilearea.js.html#lineNumber63",
-    "TileArea #getTileArea crashes if rectangle is invalid",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tilearea.js.html#lineNumber50",
-    "TileArea #getTileArea returns the correct dimmensions",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tilearea.js.html#lineNumber41",
-    "TileArea #getTileArea returns the correct tiles",
-    "test"
-  ],
-  [
-    "tilearea#gettileindex src/tilearea.js~tilearea#gettileindex,tilearea#gettileindex",
+    "tilearea#constructor src/tilearea.js~tilearea#constructor,tilearea#constructor",
     "test-file/test/tilearea.js.html#lineNumber24",
-    "TileArea #getTileIndex",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tilearea.js.html#lineNumber29",
-    "TileArea #getTileIndex crashes if out of bounds",
+    "TileArea #constructor",
     "test"
   ],
   [
     "",
     "test-file/test/tilearea.js.html#lineNumber25",
+    "TileArea #constructor rejects non-tile objects",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber32",
+    "TileArea #constructor requires width and height to equal amount of tiles",
+    "test"
+  ],
+  [
+    "tilearea#gettilearea src/tilearea.js~tilearea#gettilearea,tilearea#gettilearea",
+    "test-file/test/tilearea.js.html#lineNumber57",
+    "TileArea #getTileArea",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber72",
+    "TileArea #getTileArea crashes if out of bounds",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber80",
+    "TileArea #getTileArea crashes if rectangle is invalid",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber67",
+    "TileArea #getTileArea returns the correct dimmensions",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber58",
+    "TileArea #getTileArea returns the correct tiles",
+    "test"
+  ],
+  [
+    "tilearea#gettileindex src/tilearea.js~tilearea#gettileindex,tilearea#gettileindex",
+    "test-file/test/tilearea.js.html#lineNumber41",
+    "TileArea #getTileIndex",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber46",
+    "TileArea #getTileIndex crashes if out of bounds",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber42",
     "TileArea #getTileIndex returns the right index",
     "test"
   ],
   [
     "tilearea#inserttilearea src/tilearea.js~tilearea#inserttilearea,tilearea#inserttilearea",
-    "test-file/test/tilearea.js.html#lineNumber74",
+    "test-file/test/tilearea.js.html#lineNumber91",
     "TileArea #insertTileArea",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber96",
+    "test-file/test/tilearea.js.html#lineNumber113",
     "TileArea #insertTileArea can skip empty (-1) tiles",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber101",
+    "test-file/test/tilearea.js.html#lineNumber122",
     "TileArea #insertTileArea doesn't crash when going out of bounds",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber88",
+    "test-file/test/tilearea.js.html#lineNumber105",
     "TileArea #insertTileArea inserts a tile area correctly",
     "test"
   ],
   [
     "tilemap src/tilemap.js~tilemap,tilemap",
-    "test-file/test/tileset.js.html#lineNumber8",
+    "test-file/test/tilemap.js.html#lineNumber9",
     "TileMap",
     "test"
   ],
   [
     "tilemap src/tilemap.js~tilemap,tilemap",
-    "test-file/test/tilemap.js.html#lineNumber9",
+    "test-file/test/tileset.js.html#lineNumber8",
     "TileMap",
     "test"
   ],
@@ -475,13 +493,13 @@ window.esdocSearchIndex = [
   ],
   [
     "tilemap#constructor src/tilemap.js~tilemap#constructor,tilemap#constructor",
-    "test-file/test/tilemap.js.html#lineNumber33",
+    "test-file/test/tileset.js.html#lineNumber10",
     "TileMap #create",
     "test"
   ],
   [
     "tilemap#constructor src/tilemap.js~tilemap#constructor,tilemap#constructor",
-    "test-file/test/tileset.js.html#lineNumber10",
+    "test-file/test/tilemap.js.html#lineNumber33",
     "TileMap #create",
     "test"
   ],
@@ -747,12 +765,6 @@ window.esdocSearchIndex = [
     "src/tilelayer.js~tilelayer#properties",
     "class/src/tilelayer.js~TileLayer.html#instance-member-properties",
     "src/tilelayer.js~TileLayer#properties",
-    "member"
-  ],
-  [
-    "src/tilelayer.js~tilelayer#tiles",
-    "class/src/tilelayer.js~TileLayer.html#instance-member-tiles",
-    "src/tilelayer.js~TileLayer#tiles",
     "member"
   ],
   [

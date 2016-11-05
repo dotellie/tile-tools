@@ -44,7 +44,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">test/tilearea.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { should } from &quot;chai&quot;;
 
-import { TileArea } from &quot;../src&quot;;
+import { TileArea, Tile } from &quot;../src&quot;;
 
 should();
 
@@ -56,12 +56,29 @@ describe(&quot;TileArea&quot;, () =&gt; {
 	beforeEach(() =&gt; {
 		tiles = [];
 		for (let i = 0; i &lt; areaWidth * areaHeight; i++) {
-			tiles.push({
+			tiles.push(new Tile({
 				tileId: parseInt(Math.random() * 100)
-			});
+			}));
 		}
 
 		tileArea = new TileArea(areaWidth, areaHeight, tiles);
+	});
+
+	/** @test {TileArea#constructor} */
+	describe(&quot;#constructor&quot;, () =&gt; {
+		it(&quot;rejects non-tile objects&quot;, () =&gt; {
+			(() =&gt; {
+				// eslint-disable-next-line no-new
+				new TileArea(1, 1, [{ tileId: 0 }]);
+			}).should.throw(TypeError);
+		});
+
+		it(&quot;requires width and height to equal amount of tiles&quot;, () =&gt; {
+			(() =&gt; {
+				// eslint-disable-next-line no-new
+				new TileArea(0, 0, [new Tile({ tileId: 0 })]);
+			}).should.throw(RangeError);
+		});
 	});
 
 	/** @test {TileArea#getTileIndex} */
@@ -122,9 +139,9 @@ describe(&quot;TileArea&quot;, () =&gt; {
 		beforeEach(() =&gt; {
 			const tiles = [];
 			for (let i = 0; i &lt; smallAreaWidth * smallAreaHeight; i++) {
-				tiles.push({
+				tiles.push(new Tile({
 					tileId: parseInt(Math.random() * 100)
-				});
+				}));
 			}
 			smallTileArea = new TileArea(smallAreaWidth, smallAreaHeight, tiles);
 		});
@@ -138,7 +155,11 @@ describe(&quot;TileArea&quot;, () =&gt; {
 				.should.deep.equal(smallTileArea);
 		});
 		it(&quot;can skip empty (-1) tiles&quot;, () =&gt; {
-			tileArea.insertTileArea(0, 0, new TileArea(1, 1, [{ tileId: -1 }]), true);
+			tileArea.insertTileArea(
+				0, 0,
+				new TileArea(1, 1, [new Tile({ tileId: -1 })]),
+				true
+			);
 
 			tileArea.getTileArea(0, 0, 1, 1).tiles[0].tileId.should.not.equal(-1);
 		});

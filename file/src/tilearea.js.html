@@ -42,7 +42,9 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/tilearea.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { Tile } from &quot;./tile&quot;;
+
+/**
  * A tile area object with a size and tiles.
  */
 export class TileArea {
@@ -63,7 +65,16 @@ export class TileArea {
 
 		/** The tiles in the tile area
 		 * @type {Tile[]} */
-		this.tiles = tiles;
+		this.tiles = tiles.map(tile =&gt; {
+			if (!(tile instanceof Tile)) {
+				throw new TypeError(&quot;All tiles in a TileArea has to be of the Tile type.&quot;);
+			}
+			return tile;
+		});
+
+		if (this.width * this.height !== this.tiles.length) {
+			throw new RangeError(&quot;The width and height doesn&apos;t match the amount of tiles given.&quot;);
+		}
 	}
 
 	/**
