@@ -23,12 +23,8 @@ export class TileMap {
 		 * @type {string} */
 		this.name = options.name || "Tilemap";
 
-		/** The width of the tilemap.
-		 * @type {number} */
-		this.width = options.width;
-		/** The height of the tilemap.
-		 * @type {number} */
-		this.height = options.height;
+		this._width = options.width;
+		this._height = options.height;
 
 		/** The width of a tile for the tilemap.
 		 * @type {number} */
@@ -56,6 +52,17 @@ export class TileMap {
 		/** Custom properties of the tilemap.
 		 * @type {Map<string, *>} */
 		this.properties = options.properties || new Map();
+	}
+
+	/** The width of the tilemap.
+	 * @type {number} */
+	get width() {
+		return this._width;
+	}
+	/** The height of the tilemap.
+	 * @type {number} */
+	get height() {
+		return this._height;
 	}
 
 	/**
