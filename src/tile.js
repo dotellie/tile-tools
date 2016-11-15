@@ -6,11 +6,11 @@ export class Tile {
 	 * Tile constructor.
 	 *
 	 * @param {object|string} options={} Options for the tile. Can also be tile data you loaded from JSON or a plain string in the following format: <tileId:tilesetId>
-	 * @param {number} options.tileId - {@link Tile#tileId}
-	 * @param {number} options.tilesetId - {@link Tile#tilesetId}
+	 * @param {number} options.tileId=-1 - {@link Tile#tileId}
+	 * @param {number} options.tilesetId=-1 - {@link Tile#tilesetId}
 	 * @param {Map<string, *>} [options.properties={}] - {@link Tile#properties}
 	 */
-	constructor(options) {
+	constructor(options = { tileId: -1, tilesetId: -1 }) {
 		/** The tile ID of the tile.
 		 * @type {number} */
 		this.tileId = undefined;

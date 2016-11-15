@@ -21,6 +21,11 @@ describe("TileMap", () => {
 			tile.tileId.should.equal(224);
 			tile.tilesetId.should.equal(5);
 		});
+		it("has empty default values", () => {
+			const tile = new Tile();
+			tile.tilesetId.should.equal(-1);
+			tile.tilesetId.should.equal(-1);
+		});
 	});
 
 	/** @test {Tile#setTile} */
