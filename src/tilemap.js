@@ -66,6 +66,25 @@ export class TileMap {
 	}
 
 	/**
+	 * Resizes the TileMap, inserting empty tiles if grown and removing tiles if shrunk.
+	 *
+	 * PLEASE NOTE: As explained {@link TileArea#resize}, this function is slow
+	 * on just one TileArea (layer), so you can imagine what'll happen if you call
+	 * this on just 4 150x150 layers...
+	 *
+	 * @param {number} width - The new width of the map.
+	 * @param {number} height - The new height of the map.
+	 */
+	resize(width, height) {
+		this._width = width;
+		this._height = height;
+
+		for (let layer of this.layers) {
+			layer.resize(this._width, this._height);
+		}
+	}
+
+	/**
 	 * Creates a new layer and adds it to the tilemap.
 	 *
 	 * @param {object} options - Options for the layer (see {@link TileLayer}).

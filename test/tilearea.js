@@ -129,4 +129,51 @@ describe("TileArea", () => {
 			);
 		});
 	});
+
+	describe("TileArea#resize", () => {
+		let newWidth, newHeight;
+
+		const shrink = () => {
+			newWidth = areaWidth / 2;
+			newHeight = areaHeight / 2;
+			tileArea.resize(newWidth, newHeight);
+		};
+		const grow = () => {
+			newWidth = areaWidth * 2;
+			newHeight = areaHeight * 2;
+			tileArea.resize(newWidth, newHeight);
+		};
+		const unevenResize = () => {
+			newWidth = areaWidth * 2;
+			newHeight = areaHeight / 2;
+		};
+
+		it("can shrink dimmensions", () => {
+			shrink();
+			tileArea.width.should.equal(newWidth);
+			tileArea.height.should.equal(newHeight);
+		});
+		it("can grow dimmensions", () => {
+			grow();
+			tileArea.width.should.equal(newWidth);
+			tileArea.height.should.equal(newHeight);
+		});
+		it("keeps tiles intact", () => {
+			const aTileX = 5;
+			const aTileY = 6;
+			const aTile = tileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0];
+			shrink();
+			tileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0].should.equal(aTile);
+			console.log(tileArea.tiles);
+			grow();
+			console.log(tileArea.tiles);
+			tileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0].should.equal(aTile);
+			unevenResize();
+			tileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0].should.equal(aTile);
+		});
+		it("adds empty tiles when growing", () => {
+			grow();
+			tileArea.tiles[tileArea.getTileIndex(newWidth - 1, newHeight - 1)].tileId.should.equal(-1);
+		});
+	});
 });

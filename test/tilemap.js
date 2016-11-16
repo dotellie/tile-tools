@@ -63,6 +63,25 @@ describe("TileMap", () => {
 		});
 	});
 
+	/** @test {TileMap#resize} */
+	describe("#resize", () => {
+		const newWidth = mapWidth / 2, newHeight = mapHeight / 2;
+		beforeEach(() => {
+			tilemap.resize(newWidth, newHeight);
+		});
+
+		it("changes the size of the map", () => {
+			tilemap.width.should.equal(newWidth);
+			tilemap.height.should.equal(newHeight);
+		});
+		it("changes the size of all layers", () => {
+			for (let layer of tilemap.layers) {
+				layer.width.should.equal(newWidth);
+				layer.height.should.equal(newHeight);
+			}
+		});
+	});
+
 	/** @test {TileMap#getJSON} */
 	describe("#getJSON", () => {
 		it("returns a valid JSON string", () => {

@@ -97,6 +97,53 @@ export class TileArea {
 		}
 	}
 
+	/**
+	 * Resizes the TileArea, inserting empty tiles if grown and removing tiles if shrunk.
+	 *
+	 * Keep in mind that this function is currently really slow. It works, but it's just
+	 * very slow. Just ping me or send a PR if you need it to be faster. For now
+	 * though, don't call it every frame, but rather once you're certain you need
+	 * to resize.
+	 *
+	 * @param {number} width - The new width of the TileArea.
+	 * @param {number} height - The new height of the TileArea.
+	 */
+	resize(width, height) {
+		// Shrink
+		if (width < this.width) {
+			this.tiles = this.getTileArea(0, 0, width, this.height).tiles;
+			this.width = width;
+		}
+		if (height < this.height) {
+			this.tiles = this.getTileArea(0, 0, this.width, height).tiles;
+			this.height = height;
+		}
+
+		// Grow
+		if (width > this.width) {
+			let offset = 0;
+			for (let y = 0; y < this.height; y++) {
+				const startIndex = this.getTileIndex(this.width - 1, y) + offset + 1;
+				for (let x = 0; x < width - this.width; x++) {
+					this.tiles.splice(startIndex + x, 0, new Tile());
+					offset++;
+				}
+			}
+			this.width = width;
+		}
+		if (height > this.height) {
+			let offset = 0;
+			for (let y = this.height; y < height; y++) {
+				const startIndex = this.getTileIndex(this.width - 1, this.height - 1) + offset + 1;
+				for (let x = 0; x < this.width; x++) {
+					this.tiles.splice(startIndex + x, 0, new Tile());
+					offset++;
+				}
+			}
+			this.height = height;
+		}
+	}
+
 	_inRange(x, y, width = 1, height = 1) {
 		return !(x < 0 || x >= this.width ||
 			y < 0 || y > this.height ||
