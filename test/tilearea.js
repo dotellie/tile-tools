@@ -164,9 +164,7 @@ describe("TileArea", () => {
 			const aTile = tileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0];
 			shrink();
 			tileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0].should.equal(aTile);
-			console.log(tileArea.tiles);
 			grow();
-			console.log(tileArea.tiles);
 			tileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0].should.equal(aTile);
 			unevenResize();
 			tileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0].should.equal(aTile);
