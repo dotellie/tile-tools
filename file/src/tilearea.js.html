@@ -32,7 +32,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></span></li>
@@ -138,6 +139,53 @@ export class TileArea {
 					if (e instanceof RangeError) continue; else throw e;
 				}
 			}
+		}
+	}
+
+	/**
+	 * Resizes the TileArea, inserting empty tiles if grown and removing tiles if shrunk.
+	 *
+	 * Keep in mind that this function is currently really slow. It works, but it&apos;s just
+	 * very slow. Just ping me or send a PR if you need it to be faster. For now
+	 * though, don&apos;t call it every frame, but rather once you&apos;re certain you need
+	 * to resize.
+	 *
+	 * @param {number} width - The new width of the TileArea.
+	 * @param {number} height - The new height of the TileArea.
+	 */
+	resize(width, height) {
+		// Shrink
+		if (width &lt; this.width) {
+			this.tiles = this.getTileArea(0, 0, width, this.height).tiles;
+			this.width = width;
+		}
+		if (height &lt; this.height) {
+			this.tiles = this.getTileArea(0, 0, this.width, height).tiles;
+			this.height = height;
+		}
+
+		// Grow
+		if (width &gt; this.width) {
+			let offset = 0;
+			for (let y = 0; y &lt; this.height; y++) {
+				const startIndex = this.getTileIndex(this.width - 1, y) + offset + 1;
+				for (let x = 0; x &lt; width - this.width; x++) {
+					this.tiles.splice(startIndex + x, 0, new Tile());
+					offset++;
+				}
+			}
+			this.width = width;
+		}
+		if (height &gt; this.height) {
+			let offset = 0;
+			for (let y = this.height; y &lt; height; y++) {
+				const startIndex = this.getTileIndex(this.width - 1, this.height - 1) + offset + 1;
+				for (let x = 0; x &lt; this.width; x++) {
+					this.tiles.splice(startIndex + x, 0, new Tile());
+					offset++;
+				}
+			}
+			this.height = height;
 		}
 	}
 

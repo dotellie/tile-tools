@@ -1,16 +1,21 @@
 {
   "coverage": "100%",
-  "expectCount": 39,
-  "actualCount": 39,
+  "expectCount": 48,
+  "actualCount": 48,
   "files": {
+    "src/propertyObject.js": {
+      "expectCount": 7,
+      "actualCount": 7,
+      "undocumentLines": []
+    },
     "src/tile.js": {
       "expectCount": 8,
       "actualCount": 8,
       "undocumentLines": []
     },
     "src/tilearea.js": {
-      "expectCount": 8,
-      "actualCount": 8,
+      "expectCount": 9,
+      "actualCount": 9,
       "undocumentLines": []
     },
     "src/tilelayer.js": {
@@ -19,8 +24,8 @@
       "undocumentLines": []
     },
     "src/tilemap.js": {
-      "expectCount": 13,
-      "actualCount": 13,
+      "expectCount": 14,
+      "actualCount": 14,
       "undocumentLines": []
     },
     "src/tileset.js": {

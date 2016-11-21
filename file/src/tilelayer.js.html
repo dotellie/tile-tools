@@ -32,7 +32,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></span></li>
@@ -44,6 +45,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/tilelayer.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { Tile } from &quot;./tile&quot;;
 import { TileArea } from &quot;./tilearea&quot;;
+import { PropertyObject } from &quot;./propertyObject&quot;;
 
 /**
  * A tile layer object containing tiles and other properties.
@@ -79,7 +81,7 @@ export class TileLayer extends TileArea {
 
 		/** Custom properties of the layer.
 		 * @type {Map&lt;string, *&gt;} */
-		this.properties = options.properties || new Map();
+		this.properties = new PropertyObject(options.properties);
 	}
 }
 </code></pre>

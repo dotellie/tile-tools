@@ -32,7 +32,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></span></li>
@@ -42,13 +43,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {TileMap} from &apos;<span><a href="file/src/tilemap.js.html#lineNumber7">dtile-tilemap/src/tilemap.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {TileMap} from &apos;<span><a href="file/src/tilemap.js.html#lineNumber8">dtile-tilemap/src/tilemap.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/tilemap.js.html#lineNumber7">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/tilemap.js.html#lineNumber8">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -130,14 +131,14 @@
     <td>
       <span class="access" data-ice="access">public</span>
       
-      
+      <span class="kind" data-ice="kind">get</span>
       
       <span class="override" data-ice="override"></span>
     </td>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-member-height">height</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+           <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-get-height">height</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
@@ -215,7 +216,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-member-properties">properties</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, <span>*</span>&gt;</span>
+           <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-member-properties">properties</a></span></span><span data-ice="signature">: <span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span>
         </p>
       </div>
       <div>
@@ -312,14 +313,14 @@
     <td>
       <span class="access" data-ice="access">public</span>
       
-      
+      <span class="kind" data-ice="kind">get</span>
       
       <span class="override" data-ice="override"></span>
     </td>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-member-width">width</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+           <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-get-width">width</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
@@ -419,6 +420,32 @@
       
     </td>
   </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-method-resize">resize</a></span></span><span data-ice="signature">(width: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, height: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Resizes the TileMap, inserting empty tiles if grown and removing tiles if shrunk.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
 </tbody>
 </table>
 </div>
@@ -440,7 +467,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber21">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber22">source</a></span></span>
     </span>
   </h3>
 
@@ -479,14 +506,14 @@
       <td data-ice="name" data-depth="1">options.width</td>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p><span><a href="class/src/tilemap.js~TileMap.html#instance-member-width">TileMap#width</a></span></p>
+      <td data-ice="description"><p><span><a href="class/src/tilemap.js~TileMap.html#instance-get-width">TileMap#width</a></span></p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="1">
       <td data-ice="name" data-depth="1">options.height</td>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p><span><a href="class/src/tilemap.js~TileMap.html#instance-member-height">TileMap#height</a></span></p>
+      <td data-ice="description"><p><span><a href="class/src/tilemap.js~TileMap.html#instance-get-height">TileMap#height</a></span></p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="1">
@@ -558,17 +585,17 @@
 <div data-ice="memberDetails"><h2 data-ice="title">Public Members</h2>
 
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-height">
+  <h3 data-ice="anchor" id="instance-get-height">
     <span class="access" data-ice="access">public</span>
     
-    
+    <span class="kind" data-ice="kind">get</span>
     
     
     <span data-ice="name">height</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber31">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber65">source</a></span></span>
     </span>
   </h3>
 
@@ -609,7 +636,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber42">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber39">source</a></span></span>
     </span>
   </h3>
 
@@ -650,7 +677,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber24">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber25">source</a></span></span>
     </span>
   </h3>
 
@@ -687,11 +714,11 @@
     
     
     
-    <span data-ice="name">properties</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, <span>*</span>&gt;</span>
+    <span data-ice="name">properties</span><span data-ice="signature">: <span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber58">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber55">source</a></span></span>
     </span>
   </h3>
 
@@ -732,7 +759,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber38">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber35">source</a></span></span>
     </span>
   </h3>
 
@@ -773,7 +800,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber35">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber32">source</a></span></span>
     </span>
   </h3>
 
@@ -814,7 +841,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber50">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber47">source</a></span></span>
     </span>
   </h3>
 
@@ -845,17 +872,17 @@
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-width">
+  <h3 data-ice="anchor" id="instance-get-width">
     <span class="access" data-ice="access">public</span>
     
-    
+    <span class="kind" data-ice="kind">get</span>
     
     
     <span data-ice="name">width</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber28">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber60">source</a></span></span>
     </span>
   </h3>
 
@@ -899,7 +926,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber81">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber108">source</a></span></span>
     </span>
   </h3>
 
@@ -967,7 +994,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber68">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber95">source</a></span></span>
     </span>
   </h3>
 
@@ -1035,7 +1062,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber91">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber118">source</a></span></span>
     </span>
   </h3>
 
@@ -1075,7 +1102,81 @@
     <h4>Test:</h4>
     <ul>
       
-    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber67">TileMap #getJSON</a></span></li>
+    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber86">TileMap #getJSON</a></span></li>
+</ul>
+  </div>
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-resize">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">resize</span><span data-ice="signature">(width: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, height: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber79">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Resizes the TileMap, inserting empty tiles if grown and removing tiles if shrunk.</p>
+<p>PLEASE NOTE: As explained <span><a href="class/src/tilearea.js~TileArea.html#instance-method-resize">TileArea#resize</a></span>, this function is slow
+on just one TileArea (layer), so you can imagine what&apos;ll happen if you call
+this on just 4 150x150 layers...</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">width</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The new width of the map.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">height</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The new height of the map.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div data-ice="tests">
+    <h4>Test:</h4>
+    <ul>
+      
+    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber67">TileMap #resize</a></span></li>
 </ul>
   </div>
 

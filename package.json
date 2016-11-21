@@ -1,6 +1,6 @@
 {
   "name": "dtile-tilemap",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "A representation of a tilemap with very basic functionality.",
   "main": "out/js/build.js",
   "jsnext:main": "out/js/build.es6.js",
@@ -27,14 +27,14 @@
   },
   "homepage": "https://magnonellie.github.io/dtile-tilemap/",
   "devDependencies": {
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.16.0",
-    "babel-register": "^6.16.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-register": "^6.18.0",
     "chai": "^3.5.0",
-    "coveralls": "^2.11.14",
+    "coveralls": "^2.11.15",
     "esdoc": "^0.4.8",
-    "eslint": "^3.7.0",
-    "mocha": "^3.1.0",
-    "nyc": "^8.3.0",
+    "eslint": "^3.10.2",
+    "mocha": "^3.1.2",
+    "nyc": "^9.0.1",
     "rollup": "^0.36.3"
   }
 }

@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "dtile-tilemap/src/propertyobject.js~propertyobject",
+    "class/src/propertyObject.js~PropertyObject.html",
+    "<span>PropertyObject</span> <span class=\"search-result-import-path\">dtile-tilemap/src/propertyObject.js</span>",
+    "class"
+  ],
+  [
     "dtile-tilemap/src/tile.js~tile",
     "class/src/tile.js~Tile.html",
     "<span>Tile</span> <span class=\"search-result-import-path\">dtile-tilemap/src/tile.js</span>",
@@ -360,6 +366,108 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "propertyobject src/propertyobject.js~propertyobject,propertyobject",
+    "test-file/test/propertyObject.js.html#lineNumber8",
+    "PropertyObject",
+    "test"
+  ],
+  [
+    "propertyobject#constructor src/propertyobject.js~propertyobject#constructor,propertyobject#constructor",
+    "test-file/test/propertyObject.js.html#lineNumber17",
+    "PropertyObject #constructor",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/propertyObject.js.html#lineNumber26",
+    "PropertyObject #constructor crashes when passed in an invalid properties object",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/propertyObject.js.html#lineNumber22",
+    "PropertyObject #constructor creates from another property object",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/propertyObject.js.html#lineNumber18",
+    "PropertyObject #constructor creates width some default values",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/propertyObject.js.html#lineNumber32",
+    "PropertyObject #constructor rejects invalid value types",
+    "test"
+  ],
+  [
+    "propertyobject#get src/propertyobject.js~propertyobject#get,propertyobject#get",
+    "test-file/test/propertyObject.js.html#lineNumber41",
+    "PropertyObject #get",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/propertyObject.js.html#lineNumber46",
+    "PropertyObject #get crashes when key is not a string",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/propertyObject.js.html#lineNumber42",
+    "PropertyObject #get gets basic values correctly",
+    "test"
+  ],
+  [
+    "propertyobject#getall src/propertyobject.js~propertyobject#getall,propertyobject#getall",
+    "test-file/test/propertyObject.js.html#lineNumber54",
+    "PropertyObject #getAll",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/propertyObject.js.html#lineNumber55",
+    "PropertyObject #getAll gets all values correctly",
+    "test"
+  ],
+  [
+    "propertyobject#set src/propertyobject.js~propertyobject#set,propertyobject#set",
+    "test-file/test/propertyObject.js.html#lineNumber71",
+    "PropertyObject #set",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/propertyObject.js.html#lineNumber76",
+    "PropertyObject #set rejects keys of invalid types",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/propertyObject.js.html#lineNumber81",
+    "PropertyObject #set rejects values of invalid types",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/propertyObject.js.html#lineNumber72",
+    "PropertyObject #set sets a key correctly",
+    "test"
+  ],
+  [
+    "propertyobject#tojson src/propertyobject.js~propertyobject#tojson,propertyobject#tojson",
+    "test-file/test/propertyObject.js.html#lineNumber96",
+    "PropertyObject #toJSON",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/propertyObject.js.html#lineNumber97",
+    "PropertyObject #toJSON serializes correctly",
+    "test"
+  ],
+  [
     "tilearea src/tilearea.js~tilearea,tilearea",
     "test-file/test/tilearea.js.html#lineNumber8",
     "TileArea",
@@ -456,6 +564,42 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber133",
+    "TileArea TileArea#resize",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber172",
+    "TileArea TileArea#resize adds empty tiles when growing",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber156",
+    "TileArea TileArea#resize can grow dimmensions",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber151",
+    "TileArea TileArea#resize can shrink dimmensions",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber161",
+    "TileArea TileArea#resize keeps tiles intact",
+    "test"
+  ],
+  [
+    "tile src/tile.js~tile,tile",
+    "test-file/test/tile.js.html#lineNumber8",
+    "TileMap",
+    "test"
+  ],
+  [
     "tilemap src/tilemap.js~tilemap,tilemap",
     "test-file/test/tilemap.js.html#lineNumber9",
     "TileMap",
@@ -468,26 +612,20 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
-    "tile src/tile.js~tile,tile",
-    "test-file/test/tile.js.html#lineNumber8",
-    "TileMap",
-    "test"
-  ],
-  [
     "tile#clone src/tile.js~tile#clone,tile#clone",
-    "test-file/test/tile.js.html#lineNumber74",
+    "test-file/test/tile.js.html#lineNumber79",
     "TileMap #clone",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber86",
+    "test-file/test/tile.js.html#lineNumber91",
     "TileMap #clone clones all the properties of a tile",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber89",
+    "test-file/test/tile.js.html#lineNumber94",
     "TileMap #clone doesn't become the same tile",
     "test"
   ],
@@ -553,6 +691,12 @@ window.esdocSearchIndex = [
   ],
   [
     "",
+    "test-file/test/tile.js.html#lineNumber24",
+    "TileMap #create has empty default values",
+    "test"
+  ],
+  [
+    "",
     "test-file/test/tilemap.js.html#lineNumber48",
     "TileMap #create has layers",
     "test"
@@ -577,67 +721,85 @@ window.esdocSearchIndex = [
   ],
   [
     "tilemap#getjson src/tilemap.js~tilemap#getjson,tilemap#getjson",
-    "test-file/test/tilemap.js.html#lineNumber67",
+    "test-file/test/tilemap.js.html#lineNumber86",
     "TileMap #getJSON",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber71",
+    "test-file/test/tilemap.js.html#lineNumber90",
     "TileMap #getJSON doesn't parse private properties",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber68",
+    "test-file/test/tilemap.js.html#lineNumber87",
     "TileMap #getJSON returns a valid JSON string",
     "test"
   ],
   [
+    "tilemap#resize src/tilemap.js~tilemap#resize,tilemap#resize",
+    "test-file/test/tilemap.js.html#lineNumber67",
+    "TileMap #resize",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilemap.js.html#lineNumber77",
+    "TileMap #resize changes the size of all layers",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilemap.js.html#lineNumber73",
+    "TileMap #resize changes the size of the map",
+    "test"
+  ],
+  [
     "tile#settile tile#settile,tile#settile",
-    "test-file/test/tile.js.html#lineNumber27",
+    "test-file/test/tile.js.html#lineNumber32",
     "TileMap #setTile",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber38",
+    "test-file/test/tile.js.html#lineNumber43",
     "TileMap #setTile can replace both tile ID and tileset ID",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber33",
+    "test-file/test/tile.js.html#lineNumber38",
     "TileMap #setTile can replace only tile ID",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber48",
+    "test-file/test/tile.js.html#lineNumber53",
     "TileMap #setTile does replace empty if told so",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber43",
+    "test-file/test/tile.js.html#lineNumber48",
     "TileMap #setTile doesn't replace if ID is -1",
     "test"
   ],
   [
     "tile#tojson src/tile.js~tile#tojson,tile#tojson",
-    "test-file/test/tile.js.html#lineNumber56",
+    "test-file/test/tile.js.html#lineNumber61",
     "TileMap #toJSON",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber57",
+    "test-file/test/tile.js.html#lineNumber62",
     "TileMap #toJSON stringifies with properties",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber67",
+    "test-file/test/tile.js.html#lineNumber72",
     "TileMap #toJSON stringifies without properties",
     "test"
   ],
@@ -646,6 +808,48 @@ window.esdocSearchIndex = [
     "file/src/index.js.html",
     "src/index.js",
     "file"
+  ],
+  [
+    "src/propertyobject.js",
+    "file/src/propertyObject.js.html",
+    "src/propertyObject.js",
+    "file"
+  ],
+  [
+    "src/propertyobject.js~propertyobject#constructor",
+    "class/src/propertyObject.js~PropertyObject.html#instance-constructor-constructor",
+    "src/propertyObject.js~PropertyObject#constructor",
+    "method"
+  ],
+  [
+    "src/propertyobject.js~propertyobject#get",
+    "class/src/propertyObject.js~PropertyObject.html#instance-method-get",
+    "src/propertyObject.js~PropertyObject#get",
+    "method"
+  ],
+  [
+    "src/propertyobject.js~propertyobject#getall",
+    "class/src/propertyObject.js~PropertyObject.html#instance-method-getAll",
+    "src/propertyObject.js~PropertyObject#getAll",
+    "method"
+  ],
+  [
+    "src/propertyobject.js~propertyobject#set",
+    "class/src/propertyObject.js~PropertyObject.html#instance-method-set",
+    "src/propertyObject.js~PropertyObject#set",
+    "method"
+  ],
+  [
+    "src/propertyobject.js~propertyobject#size",
+    "class/src/propertyObject.js~PropertyObject.html#instance-get-size",
+    "src/propertyObject.js~PropertyObject#size",
+    "member"
+  ],
+  [
+    "src/propertyobject.js~propertyobject#tojson",
+    "class/src/propertyObject.js~PropertyObject.html#instance-method-toJSON",
+    "src/propertyObject.js~PropertyObject#toJSON",
+    "method"
   ],
   [
     "src/tile.js",
@@ -732,6 +936,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/tilearea.js~tilearea#resize",
+    "class/src/tilearea.js~TileArea.html#instance-method-resize",
+    "src/tilearea.js~TileArea#resize",
+    "method"
+  ],
+  [
     "src/tilearea.js~tilearea#tiles",
     "class/src/tilearea.js~TileArea.html#instance-member-tiles",
     "src/tilearea.js~TileArea#tiles",
@@ -799,7 +1009,7 @@ window.esdocSearchIndex = [
   ],
   [
     "src/tilemap.js~tilemap#height",
-    "class/src/tilemap.js~TileMap.html#instance-member-height",
+    "class/src/tilemap.js~TileMap.html#instance-get-height",
     "src/tilemap.js~TileMap#height",
     "member"
   ],
@@ -822,6 +1032,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/tilemap.js~tilemap#resize",
+    "class/src/tilemap.js~TileMap.html#instance-method-resize",
+    "src/tilemap.js~TileMap#resize",
+    "method"
+  ],
+  [
     "src/tilemap.js~tilemap#tileheight",
     "class/src/tilemap.js~TileMap.html#instance-member-tileHeight",
     "src/tilemap.js~TileMap#tileHeight",
@@ -841,7 +1057,7 @@ window.esdocSearchIndex = [
   ],
   [
     "src/tilemap.js~tilemap#width",
-    "class/src/tilemap.js~TileMap.html#instance-member-width",
+    "class/src/tilemap.js~TileMap.html#instance-get-width",
     "src/tilemap.js~TileMap#width",
     "member"
   ],
@@ -880,6 +1096,12 @@ window.esdocSearchIndex = [
     "class/src/tileset.js~TileSet.html#instance-member-type",
     "src/tileset.js~TileSet#type",
     "member"
+  ],
+  [
+    "test/propertyobject.js",
+    "test-file/test/propertyObject.js.html",
+    "test/propertyObject.js",
+    "testFile"
   ],
   [
     "test/tile.js",

@@ -32,7 +32,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></span></li>
@@ -44,6 +45,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/tilemap.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { TileLayer } from &quot;./tilelayer&quot;;
 import { TileSet } from &quot;./tileset&quot;;
+import { PropertyObject } from &quot;./propertyObject&quot;;
 
 /**
  * A tilemap object with name, sizes and layers.
@@ -67,12 +69,8 @@ export class TileMap {
 		 * @type {string} */
 		this.name = options.name || &quot;Tilemap&quot;;
 
-		/** The width of the tilemap.
-		 * @type {number} */
-		this.width = options.width;
-		/** The height of the tilemap.
-		 * @type {number} */
-		this.height = options.height;
+		this._width = options.width;
+		this._height = options.height;
 
 		/** The width of a tile for the tilemap.
 		 * @type {number} */
@@ -98,8 +96,38 @@ export class TileMap {
 		}
 
 		/** Custom properties of the tilemap.
-		 * @type {Map&lt;string, *&gt;} */
-		this.properties = options.properties || new Map();
+		 * @type {PropertyObject} */
+		this.properties = new PropertyObject(options.properties);
+	}
+
+	/** The width of the tilemap.
+	 * @type {number} */
+	get width() {
+		return this._width;
+	}
+	/** The height of the tilemap.
+	 * @type {number} */
+	get height() {
+		return this._height;
+	}
+
+	/**
+	 * Resizes the TileMap, inserting empty tiles if grown and removing tiles if shrunk.
+	 *
+	 * PLEASE NOTE: As explained {@link TileArea#resize}, this function is slow
+	 * on just one TileArea (layer), so you can imagine what&apos;ll happen if you call
+	 * this on just 4 150x150 layers...
+	 *
+	 * @param {number} width - The new width of the map.
+	 * @param {number} height - The new height of the map.
+	 */
+	resize(width, height) {
+		this._width = width;
+		this._height = height;
+
+		for (let layer of this.layers) {
+			layer.resize(this._width, this._height);
+		}
 	}
 
 	/**

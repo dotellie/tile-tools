@@ -32,7 +32,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></span></li>
@@ -42,7 +43,9 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/tile.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { PropertyObject } from &quot;./propertyObject&quot;;
+
+/**
  * A tile object containing tile ID, tileset ID and custom properties.
  */
 export class Tile {
@@ -50,11 +53,11 @@ export class Tile {
 	 * Tile constructor.
 	 *
 	 * @param {object|string} options={} Options for the tile. Can also be tile data you loaded from JSON or a plain string in the following format: &lt;tileId:tilesetId&gt;
-	 * @param {number} options.tileId - {@link Tile#tileId}
-	 * @param {number} options.tilesetId - {@link Tile#tilesetId}
+	 * @param {number} options.tileId=-1 - {@link Tile#tileId}
+	 * @param {number} options.tilesetId=-1 - {@link Tile#tilesetId}
 	 * @param {Map&lt;string, *&gt;} [options.properties={}] - {@link Tile#properties}
 	 */
-	constructor(options) {
+	constructor(options = { tileId: -1, tilesetId: -1 }) {
 		/** The tile ID of the tile.
 		 * @type {number} */
 		this.tileId = undefined;
@@ -74,7 +77,7 @@ export class Tile {
 
 		/** Custom properties of the tile.
 		 * @type {Map&lt;string, *&gt;} */
-		this.properties = options.properties || new Map();
+		this.properties = new PropertyObject(options.properties);
 	}
 
 	/**

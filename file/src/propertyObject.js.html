@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/tileset.js | API Document</title>
+  <title data-ice="title">src/propertyObject.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -42,36 +42,101 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/tileset.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/propertyObject.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
- * A tileset object for storing arbitrary information about tilesets.
+ * An object representing generic properties most things in a TileMap can have.
  */
-export class TileSet {
+export class PropertyObject {
 	/**
-	 * TileSet constructor.
+	 * PropertyObject constructor.
 	 *
-	 * @param {object} options - The options for the tileset.
-	 * @param {string} [options.name=&quot;Tileset&quot;] - {@link TileSet#name}
-	 * @param {string} [options.type=&quot;test&quot;] - {@link TileSet#type}
-	 * @param {string} [options.path] - {@link TileSet#path}
-	 * @param {Map&lt;string, *&gt;} [options.properties] - {@link TileSet@properties}
+	 * @param {[[key, value]]} properties - The default properties for this object expressed in key value pairs.
+	 *
+	 * @example
+	 * // The value part of the key value array can litterally be anything that
+	 * // you can serialize to JSON. In this case, we use a string and another
+	 * // array containing an object.
+	 * const properties = new PropertyObject(
+	 *     [[&quot;environment&quot;, &quot;spooky&quot;], [&quot;connections&quot;, [
+	 *         { map: &quot;otherMap&quot;, location: &quot;top&quot;, xOffset: 5 }
+	 *     ]]]
+	 * );
 	 */
-	constructor({ name = &quot;Tileset&quot;, type = &quot;test&quot;, path, properties }) {
-		/** The name of the tileset.
-		 * @type {string} */
-		this.name = name;
-		/** The type of the tileset.
-		 * Possible values are: &quot;test&quot;, &quot;image&quot;
-		 * @type {string} */
-		this.type = type;
-		/** The path of the tileset.
-		 * This should only be used if tileset type is set to &quot;image&quot;.
-		 * @type {string} */
-		this.path = path;
+	constructor(properties) {
+		this._map = new Map();
 
-		/** Custom properties of the tilemap.
-		 * @type {Map&lt;string, *&gt;} */
-		this.properties = properties || new Map();
+		if (!properties) return;
+		let array;
+		if (properties instanceof PropertyObject) {
+			array = properties.getAll();
+		} else if (properties instanceof Array) {
+			array = properties;
+		} else {
+			throw new TypeError(&quot;A property object can not be created from object of type &quot; + typeof properties);
+		}
+		for (let [key, value] of array) {
+			this.set(key, value);
+		}
+	}
+
+	/**
+	 * Gets the amount of properties in the object.
+	 *
+	 * @returns {number} The amount of properties.
+	 */
+	get size() {
+		return this._map.size;
+	}
+
+	/**
+	 * Gets a value from the properties.
+	 *
+	 * @param {string} key - The key of the value.
+	 *
+	 * @returns The value that is assigned to the key. Will be undefined if no value has been assigned yet.
+	 */
+	get(key) {
+		if (typeof key !== &quot;string&quot;) throw new TypeError(&quot;Key has to be a string&quot;);
+		return this._map.get(key);
+	}
+
+	/**
+	 * Gets all properties of this object.
+	 *
+	 * @returns A key-value pair 2D array. [[k, v], [k, v]... etc.]
+	 */
+	getAll() {
+		const toReturn = [];
+		for (let value of this._map) {
+			toReturn.push(value);
+		}
+		return toReturn;
+	}
+
+	/**
+	 * Sets a property of this object.
+	 *
+	 * This will throw an error if types are invalid. Keys have to be strings and
+	 * values have to be serializable into JSON.
+	 *
+	 * @param {string} key - The desired key of the property.
+	 * @param value - The desired value of the property.
+	 */
+	set(key, value) {
+		if (typeof key === &quot;string&quot; &amp;&amp; JSON.stringify(value)) {
+			this._map.set(key, value);
+		} else {
+			throw TypeError(&quot;Invalid key or value&quot;);
+		}
+	}
+
+	/**
+	 * Generates a JSON compatible value from this object.
+	 *
+	 * @returns An array to represent this object.
+	 */
+	toJSON() {
+		return this.getAll();
 	}
 }
 </code></pre>

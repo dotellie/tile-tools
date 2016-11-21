@@ -32,7 +32,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></span></li>
@@ -64,6 +65,11 @@ describe(&quot;TileMap&quot;, () =&gt; {
 			let tile = new Tile(&quot;224:5&quot;);
 			tile.tileId.should.equal(224);
 			tile.tilesetId.should.equal(5);
+		});
+		it(&quot;has empty default values&quot;, () =&gt; {
+			const tile = new Tile();
+			tile.tilesetId.should.equal(-1);
+			tile.tilesetId.should.equal(-1);
 		});
 	});
 
@@ -102,11 +108,11 @@ describe(&quot;TileMap&quot;, () =&gt; {
 			let tile = new Tile({
 				tileId: 14,
 				tilesetId: 3,
-				properties: {
-					&quot;property&quot;: &quot;is a string&quot;
-				}
+				properties: [
+					[&quot;property&quot;, &quot;is a string&quot;]
+				]
 			});
-			JSON.stringify(tile).should.contain(&quot;\&quot;property\&quot;:\&quot;is a string\&quot;&quot;);
+			JSON.stringify(tile).should.contain(&quot;[\&quot;property\&quot;,\&quot;is a string\&quot;]&quot;);
 		});
 		it(&quot;stringifies without properties&quot;, () =&gt; {
 			let tile = new Tile(&quot;456:3&quot;);
@@ -121,9 +127,9 @@ describe(&quot;TileMap&quot;, () =&gt; {
 			tile = new Tile({
 				tileId: 14,
 				tilesetId: 3,
-				properties: {
-					&quot;property&quot;: &quot;is a string&quot;
-				}
+				properties: [
+					[&quot;property&quot;, &quot;is a string&quot;]
+				]
 			});
 		});
 

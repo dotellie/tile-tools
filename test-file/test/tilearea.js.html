@@ -32,7 +32,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></span></li>
@@ -171,6 +172,51 @@ describe(&quot;TileArea&quot;, () =&gt; {
 			tileArea.getTileArea(0, 0, 1, 1).tiles[0].tileId.should.equal(
 				smallTileArea.tiles[smallTileArea.tiles.length - 1].tileId
 			);
+		});
+	});
+
+	describe(&quot;TileArea#resize&quot;, () =&gt; {
+		let newWidth, newHeight;
+
+		const shrink = () =&gt; {
+			newWidth = areaWidth / 2;
+			newHeight = areaHeight / 2;
+			tileArea.resize(newWidth, newHeight);
+		};
+		const grow = () =&gt; {
+			newWidth = areaWidth * 2;
+			newHeight = areaHeight * 2;
+			tileArea.resize(newWidth, newHeight);
+		};
+		const unevenResize = () =&gt; {
+			newWidth = areaWidth * 2;
+			newHeight = areaHeight / 2;
+		};
+
+		it(&quot;can shrink dimmensions&quot;, () =&gt; {
+			shrink();
+			tileArea.width.should.equal(newWidth);
+			tileArea.height.should.equal(newHeight);
+		});
+		it(&quot;can grow dimmensions&quot;, () =&gt; {
+			grow();
+			tileArea.width.should.equal(newWidth);
+			tileArea.height.should.equal(newHeight);
+		});
+		it(&quot;keeps tiles intact&quot;, () =&gt; {
+			const aTileX = 5;
+			const aTileY = 6;
+			const aTile = tileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0];
+			shrink();
+			tileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0].should.equal(aTile);
+			grow();
+			tileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0].should.equal(aTile);
+			unevenResize();
+			tileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0].should.equal(aTile);
+		});
+		it(&quot;adds empty tiles when growing&quot;, () =&gt; {
+			grow();
+			tileArea.tiles[tileArea.getTileIndex(newWidth - 1, newHeight - 1)].tileId.should.equal(-1);
 		});
 	});
 });
