@@ -63,11 +63,11 @@ describe("TileMap", () => {
 			let tile = new Tile({
 				tileId: 14,
 				tilesetId: 3,
-				properties: {
-					"property": "is a string"
-				}
+				properties: [
+					["property", "is a string"]
+				]
 			});
-			JSON.stringify(tile).should.contain("\"property\":\"is a string\"");
+			JSON.stringify(tile).should.contain("[\"property\",\"is a string\"]");
 		});
 		it("stringifies without properties", () => {
 			let tile = new Tile("456:3");
@@ -82,9 +82,9 @@ describe("TileMap", () => {
 			tile = new Tile({
 				tileId: 14,
 				tilesetId: 3,
-				properties: {
-					"property": "is a string"
-				}
+				properties: [
+					["property", "is a string"]
+				]
 			});
 		});
 

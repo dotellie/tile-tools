@@ -1,3 +1,5 @@
+import { PropertyObject } from "./propertyObject";
+
 /**
  * A tile object containing tile ID, tileset ID and custom properties.
  */
@@ -30,7 +32,7 @@ export class Tile {
 
 		/** Custom properties of the tile.
 		 * @type {Map<string, *>} */
-		this.properties = options.properties || new Map();
+		this.properties = new PropertyObject(options.properties);
 	}
 
 	/**

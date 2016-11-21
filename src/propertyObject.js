@@ -19,9 +19,28 @@ export class PropertyObject {
 	 */
 	constructor(properties) {
 		this._map = new Map();
-		for (let [key, value] of properties) {
+
+		if (!properties) return;
+		let array;
+		if (properties instanceof PropertyObject) {
+			array = properties.getAll();
+		} else if (properties instanceof Array) {
+			array = properties;
+		} else {
+			throw new TypeError("A property object can not be created from object of type " + typeof properties);
+		}
+		for (let [key, value] of array) {
 			this.set(key, value);
 		}
+	}
+
+	/**
+	 * Gets the amount of properties in the object.
+	 *
+	 * @returns {number} The amount of properties.
+	 */
+	get size() {
+		return this._map.size;
 	}
 
 	/**

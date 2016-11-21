@@ -19,6 +19,16 @@ describe("PropertyObject", () => {
 			properties._map.get("test1").should.equal(true);
 			properties._map.get("test2").should.equal(159);
 		});
+		it("creates from another property object", () => {
+			const newProperties = new PropertyObject(properties);
+			newProperties.should.deep.equal(properties);
+		});
+		it("crashes when passed in an invalid properties object", () => {
+			(() => {
+				// eslint-disable-next-line no-new
+				new PropertyObject(() => {});
+			}).should.throw(TypeError);
+		});
 		it("rejects invalid value types", () => {
 			(() => {
 				// eslint-disable-next-line no-new

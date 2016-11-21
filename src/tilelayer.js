@@ -1,5 +1,6 @@
 import { Tile } from "./tile";
 import { TileArea } from "./tilearea";
+import { PropertyObject } from "./propertyObject";
 
 /**
  * A tile layer object containing tiles and other properties.
@@ -35,6 +36,6 @@ export class TileLayer extends TileArea {
 
 		/** Custom properties of the layer.
 		 * @type {Map<string, *>} */
-		this.properties = options.properties || new Map();
+		this.properties = new PropertyObject(options.properties);
 	}
 }

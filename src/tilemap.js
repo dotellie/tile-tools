@@ -1,5 +1,6 @@
 import { TileLayer } from "./tilelayer";
 import { TileSet } from "./tileset";
+import { PropertyObject } from "./propertyObject";
 
 /**
  * A tilemap object with name, sizes and layers.
@@ -50,8 +51,8 @@ export class TileMap {
 		}
 
 		/** Custom properties of the tilemap.
-		 * @type {Map<string, *>} */
-		this.properties = options.properties || new Map();
+		 * @type {PropertyObject} */
+		this.properties = new PropertyObject(options.properties);
 	}
 
 	/** The width of the tilemap.
