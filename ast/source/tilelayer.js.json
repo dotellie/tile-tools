@@ -2043,7 +2043,7 @@
                       "trailingComments": [
                         {
                           "type": "Block",
-                          "value": "* Custom properties of the layer.\n\t\t * @type {Map<string, *>} ",
+                          "value": "* Custom properties of the layer.\n\t\t * @type {PropertyObject} ",
                           "range": [
                             1154,
                             1220
@@ -2242,7 +2242,7 @@
                       "leadingComments": [
                         {
                           "type": "Block",
-                          "value": "* Custom properties of the layer.\n\t\t * @type {Map<string, *>} ",
+                          "value": "* Custom properties of the layer.\n\t\t * @type {PropertyObject} ",
                           "range": [
                             1154,
                             1220
@@ -2312,7 +2312,7 @@
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n\t * TileLayer constructor.\n\t *\n\t * @param {TileMap} parentMap - The parent map for this layer.\n\t * @param {object} options - Options for the layer. Can also be layer data you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilelayer\"] - {@link TileLayer#name}\n\t * @param {Tile[]} options.tiles=[] - {@link TileLayer#tiles}\n\t * @param {Map<string, *>} options.properties=Map - {@link TileLayer#properties}\n\t ",
+                  "value": "*\n\t * TileLayer constructor.\n\t *\n\t * @param {TileMap} parentMap - The parent map for this layer.\n\t * @param {object} options - Options for the layer. Can also be layer data you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilelayer\"] - {@link TileLayer#name}\n\t * @param {Tile[]} options.tiles=[] - {@link TileLayer#tiles}\n\t * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}\n\t ",
                   "range": [
                     235,
                     664
@@ -2457,7 +2457,7 @@
     },
     {
       "type": "Block",
-      "value": "*\n\t * TileLayer constructor.\n\t *\n\t * @param {TileMap} parentMap - The parent map for this layer.\n\t * @param {object} options - Options for the layer. Can also be layer data you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilelayer\"] - {@link TileLayer#name}\n\t * @param {Tile[]} options.tiles=[] - {@link TileLayer#tiles}\n\t * @param {Map<string, *>} options.properties=Map - {@link TileLayer#properties}\n\t ",
+      "value": "*\n\t * TileLayer constructor.\n\t *\n\t * @param {TileMap} parentMap - The parent map for this layer.\n\t * @param {object} options - Options for the layer. Can also be layer data you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilelayer\"] - {@link TileLayer#name}\n\t * @param {Tile[]} options.tiles=[] - {@link TileLayer#tiles}\n\t * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}\n\t ",
       "range": [
         235,
         664
@@ -2493,7 +2493,7 @@
     },
     {
       "type": "Block",
-      "value": "* Custom properties of the layer.\n\t\t * @type {Map<string, *>} ",
+      "value": "* Custom properties of the layer.\n\t\t * @type {PropertyObject} ",
       "range": [
         1154,
         1220

@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 48,
-  "actualCount": 48,
+  "expectCount": 51,
+  "actualCount": 51,
   "files": {
     "src/propertyObject.js": {
       "expectCount": 7,
@@ -29,8 +29,8 @@
       "undocumentLines": []
     },
     "src/tileset.js": {
-      "expectCount": 6,
-      "actualCount": 6,
+      "expectCount": 9,
+      "actualCount": 9,
       "undocumentLines": []
     }
   }

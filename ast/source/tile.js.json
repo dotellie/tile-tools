@@ -144,8 +144,8 @@
                 "type": "Identifier",
                 "name": "constructor",
                 "range": [
-                  557,
-                  568
+                  561,
+                  572
                 ],
                 "loc": {
                   "start": {
@@ -168,8 +168,8 @@
                       "type": "Identifier",
                       "name": "options",
                       "range": [
-                        569,
-                        576
+                        573,
+                        580
                       ],
                       "loc": {
                         "start": {
@@ -191,8 +191,8 @@
                             "type": "Identifier",
                             "name": "tileId",
                             "range": [
-                              581,
-                              587
+                              585,
+                              591
                             ],
                             "loc": {
                               "start": {
@@ -213,8 +213,8 @@
                               "value": 1,
                               "raw": "1",
                               "range": [
-                                590,
-                                591
+                                594,
+                                595
                               ],
                               "loc": {
                                 "start": {
@@ -229,8 +229,8 @@
                             },
                             "prefix": true,
                             "range": [
-                              589,
-                              591
+                              593,
+                              595
                             ],
                             "loc": {
                               "start": {
@@ -248,8 +248,8 @@
                           "shorthand": false,
                           "computed": false,
                           "range": [
-                            581,
-                            591
+                            585,
+                            595
                           ],
                           "loc": {
                             "start": {
@@ -268,8 +268,8 @@
                             "type": "Identifier",
                             "name": "tilesetId",
                             "range": [
-                              593,
-                              602
+                              597,
+                              606
                             ],
                             "loc": {
                               "start": {
@@ -290,8 +290,8 @@
                               "value": 1,
                               "raw": "1",
                               "range": [
-                                605,
-                                606
+                                609,
+                                610
                               ],
                               "loc": {
                                 "start": {
@@ -306,8 +306,8 @@
                             },
                             "prefix": true,
                             "range": [
-                              604,
-                              606
+                              608,
+                              610
                             ],
                             "loc": {
                               "start": {
@@ -325,8 +325,8 @@
                           "shorthand": false,
                           "computed": false,
                           "range": [
-                            593,
-                            606
+                            597,
+                            610
                           ],
                           "loc": {
                             "start": {
@@ -341,8 +341,8 @@
                         }
                       ],
                       "range": [
-                        579,
-                        608
+                        583,
+                        612
                       ],
                       "loc": {
                         "start": {
@@ -356,8 +356,8 @@
                       }
                     },
                     "range": [
-                      569,
-                      608
+                      573,
+                      612
                     ],
                     "loc": {
                       "start": {
@@ -385,8 +385,8 @@
                           "object": {
                             "type": "ThisExpression",
                             "range": [
-                              668,
-                              672
+                              672,
+                              676
                             ],
                             "loc": {
                               "start": {
@@ -403,8 +403,8 @@
                             "type": "Identifier",
                             "name": "tileId",
                             "range": [
-                              673,
-                              679
+                              677,
+                              683
                             ],
                             "loc": {
                               "start": {
@@ -418,8 +418,8 @@
                             }
                           },
                           "range": [
-                            668,
-                            679
+                            672,
+                            683
                           ],
                           "loc": {
                             "start": {
@@ -436,8 +436,8 @@
                           "type": "Identifier",
                           "name": "undefined",
                           "range": [
-                            682,
-                            691
+                            686,
+                            695
                           ],
                           "loc": {
                             "start": {
@@ -451,8 +451,8 @@
                           }
                         },
                         "range": [
-                          668,
-                          691
+                          672,
+                          695
                         ],
                         "loc": {
                           "start": {
@@ -466,8 +466,8 @@
                         }
                       },
                       "range": [
-                        668,
-                        692
+                        672,
+                        696
                       ],
                       "loc": {
                         "start": {
@@ -484,8 +484,8 @@
                           "type": "Block",
                           "value": "* The tile ID of the tile.\n\t\t * @type {number} ",
                           "range": [
-                            614,
-                            665
+                            618,
+                            669
                           ],
                           "loc": {
                             "start": {
@@ -504,8 +504,8 @@
                           "type": "Block",
                           "value": "* The tileset ID of the tile.\n\t\t * @type {number} ",
                           "range": [
-                            696,
-                            750
+                            700,
+                            754
                           ],
                           "loc": {
                             "start": {
@@ -531,8 +531,8 @@
                           "object": {
                             "type": "ThisExpression",
                             "range": [
-                              753,
-                              757
+                              757,
+                              761
                             ],
                             "loc": {
                               "start": {
@@ -549,8 +549,8 @@
                             "type": "Identifier",
                             "name": "tilesetId",
                             "range": [
-                              758,
-                              767
+                              762,
+                              771
                             ],
                             "loc": {
                               "start": {
@@ -564,8 +564,8 @@
                             }
                           },
                           "range": [
-                            753,
-                            767
+                            757,
+                            771
                           ],
                           "loc": {
                             "start": {
@@ -582,8 +582,8 @@
                           "type": "Identifier",
                           "name": "undefined",
                           "range": [
-                            770,
-                            779
+                            774,
+                            783
                           ],
                           "loc": {
                             "start": {
@@ -597,8 +597,8 @@
                           }
                         },
                         "range": [
-                          753,
-                          779
+                          757,
+                          783
                         ],
                         "loc": {
                           "start": {
@@ -612,8 +612,8 @@
                         }
                       },
                       "range": [
-                        753,
-                        780
+                        757,
+                        784
                       ],
                       "loc": {
                         "start": {
@@ -630,8 +630,8 @@
                           "type": "Block",
                           "value": "* The tileset ID of the tile.\n\t\t * @type {number} ",
                           "range": [
-                            696,
-                            750
+                            700,
+                            754
                           ],
                           "loc": {
                             "start": {
@@ -658,8 +658,8 @@
                             "type": "Identifier",
                             "name": "options",
                             "range": [
-                              795,
-                              802
+                              799,
+                              806
                             ],
                             "loc": {
                               "start": {
@@ -674,8 +674,8 @@
                           },
                           "prefix": true,
                           "range": [
-                            788,
-                            802
+                            792,
+                            806
                           ],
                           "loc": {
                             "start": {
@@ -693,8 +693,8 @@
                           "value": "string",
                           "raw": "\"string\"",
                           "range": [
-                            807,
-                            815
+                            811,
+                            819
                           ],
                           "loc": {
                             "start": {
@@ -708,8 +708,8 @@
                           }
                         },
                         "range": [
-                          788,
-                          815
+                          792,
+                          819
                         ],
                         "loc": {
                           "start": {
@@ -734,8 +734,8 @@
                                   "type": "Identifier",
                                   "name": "colonIndex",
                                   "range": [
-                                    828,
-                                    838
+                                    832,
+                                    842
                                   ],
                                   "loc": {
                                     "start": {
@@ -757,8 +757,8 @@
                                       "type": "Identifier",
                                       "name": "options",
                                       "range": [
-                                        841,
-                                        848
+                                        845,
+                                        852
                                       ],
                                       "loc": {
                                         "start": {
@@ -775,8 +775,8 @@
                                       "type": "Identifier",
                                       "name": "indexOf",
                                       "range": [
-                                        849,
-                                        856
+                                        853,
+                                        860
                                       ],
                                       "loc": {
                                         "start": {
@@ -790,8 +790,8 @@
                                       }
                                     },
                                     "range": [
-                                      841,
-                                      856
+                                      845,
+                                      860
                                     ],
                                     "loc": {
                                       "start": {
@@ -810,8 +810,8 @@
                                       "value": ":",
                                       "raw": "\":\"",
                                       "range": [
-                                        857,
-                                        860
+                                        861,
+                                        864
                                       ],
                                       "loc": {
                                         "start": {
@@ -826,8 +826,8 @@
                                     }
                                   ],
                                   "range": [
-                                    841,
-                                    861
+                                    845,
+                                    865
                                   ],
                                   "loc": {
                                     "start": {
@@ -841,8 +841,8 @@
                                   }
                                 },
                                 "range": [
-                                  828,
-                                  861
+                                  832,
+                                  865
                                 ],
                                 "loc": {
                                   "start": {
@@ -858,8 +858,8 @@
                             ],
                             "kind": "const",
                             "range": [
-                              822,
-                              862
+                              826,
+                              866
                             ],
                             "loc": {
                               "start": {
@@ -883,8 +883,8 @@
                                 "object": {
                                   "type": "ThisExpression",
                                   "range": [
-                                    866,
-                                    870
+                                    870,
+                                    874
                                   ],
                                   "loc": {
                                     "start": {
@@ -901,8 +901,8 @@
                                   "type": "Identifier",
                                   "name": "tileId",
                                   "range": [
-                                    871,
-                                    877
+                                    875,
+                                    881
                                   ],
                                   "loc": {
                                     "start": {
@@ -916,8 +916,8 @@
                                   }
                                 },
                                 "range": [
-                                  866,
-                                  877
+                                  870,
+                                  881
                                 ],
                                 "loc": {
                                   "start": {
@@ -936,8 +936,8 @@
                                   "type": "Identifier",
                                   "name": "parseInt",
                                   "range": [
-                                    880,
-                                    888
+                                    884,
+                                    892
                                   ],
                                   "loc": {
                                     "start": {
@@ -960,8 +960,8 @@
                                         "type": "Identifier",
                                         "name": "options",
                                         "range": [
-                                          889,
-                                          896
+                                          893,
+                                          900
                                         ],
                                         "loc": {
                                           "start": {
@@ -978,8 +978,8 @@
                                         "type": "Identifier",
                                         "name": "substring",
                                         "range": [
-                                          897,
-                                          906
+                                          901,
+                                          910
                                         ],
                                         "loc": {
                                           "start": {
@@ -993,8 +993,8 @@
                                         }
                                       },
                                       "range": [
-                                        889,
-                                        906
+                                        893,
+                                        910
                                       ],
                                       "loc": {
                                         "start": {
@@ -1013,8 +1013,8 @@
                                         "value": 0,
                                         "raw": "0",
                                         "range": [
-                                          907,
-                                          908
+                                          911,
+                                          912
                                         ],
                                         "loc": {
                                           "start": {
@@ -1031,8 +1031,8 @@
                                         "type": "Identifier",
                                         "name": "colonIndex",
                                         "range": [
-                                          910,
-                                          920
+                                          914,
+                                          924
                                         ],
                                         "loc": {
                                           "start": {
@@ -1047,8 +1047,8 @@
                                       }
                                     ],
                                     "range": [
-                                      889,
-                                      921
+                                      893,
+                                      925
                                     ],
                                     "loc": {
                                       "start": {
@@ -1063,8 +1063,8 @@
                                   }
                                 ],
                                 "range": [
-                                  880,
-                                  922
+                                  884,
+                                  926
                                 ],
                                 "loc": {
                                   "start": {
@@ -1078,8 +1078,8 @@
                                 }
                               },
                               "range": [
-                                866,
-                                922
+                                870,
+                                926
                               ],
                               "loc": {
                                 "start": {
@@ -1093,8 +1093,8 @@
                               }
                             },
                             "range": [
-                              866,
-                              923
+                              870,
+                              927
                             ],
                             "loc": {
                               "start": {
@@ -1118,8 +1118,8 @@
                                 "object": {
                                   "type": "ThisExpression",
                                   "range": [
-                                    927,
-                                    931
+                                    931,
+                                    935
                                   ],
                                   "loc": {
                                     "start": {
@@ -1136,8 +1136,8 @@
                                   "type": "Identifier",
                                   "name": "tilesetId",
                                   "range": [
-                                    932,
-                                    941
+                                    936,
+                                    945
                                   ],
                                   "loc": {
                                     "start": {
@@ -1151,8 +1151,8 @@
                                   }
                                 },
                                 "range": [
-                                  927,
-                                  941
+                                  931,
+                                  945
                                 ],
                                 "loc": {
                                   "start": {
@@ -1171,8 +1171,8 @@
                                   "type": "Identifier",
                                   "name": "parseInt",
                                   "range": [
-                                    944,
-                                    952
+                                    948,
+                                    956
                                   ],
                                   "loc": {
                                     "start": {
@@ -1195,8 +1195,8 @@
                                         "type": "Identifier",
                                         "name": "options",
                                         "range": [
-                                          953,
-                                          960
+                                          957,
+                                          964
                                         ],
                                         "loc": {
                                           "start": {
@@ -1213,8 +1213,8 @@
                                         "type": "Identifier",
                                         "name": "substring",
                                         "range": [
-                                          961,
-                                          970
+                                          965,
+                                          974
                                         ],
                                         "loc": {
                                           "start": {
@@ -1228,8 +1228,8 @@
                                         }
                                       },
                                       "range": [
-                                        953,
-                                        970
+                                        957,
+                                        974
                                       ],
                                       "loc": {
                                         "start": {
@@ -1250,8 +1250,8 @@
                                           "type": "Identifier",
                                           "name": "colonIndex",
                                           "range": [
-                                            971,
-                                            981
+                                            975,
+                                            985
                                           ],
                                           "loc": {
                                             "start": {
@@ -1269,8 +1269,8 @@
                                           "value": 1,
                                           "raw": "1",
                                           "range": [
-                                            984,
-                                            985
+                                            988,
+                                            989
                                           ],
                                           "loc": {
                                             "start": {
@@ -1284,8 +1284,8 @@
                                           }
                                         },
                                         "range": [
-                                          971,
-                                          985
+                                          975,
+                                          989
                                         ],
                                         "loc": {
                                           "start": {
@@ -1300,8 +1300,8 @@
                                       }
                                     ],
                                     "range": [
-                                      953,
-                                      986
+                                      957,
+                                      990
                                     ],
                                     "loc": {
                                       "start": {
@@ -1316,8 +1316,8 @@
                                   }
                                 ],
                                 "range": [
-                                  944,
-                                  987
+                                  948,
+                                  991
                                 ],
                                 "loc": {
                                   "start": {
@@ -1331,8 +1331,8 @@
                                 }
                               },
                               "range": [
-                                927,
-                                987
+                                931,
+                                991
                               ],
                               "loc": {
                                 "start": {
@@ -1346,8 +1346,8 @@
                               }
                             },
                             "range": [
-                              927,
-                              988
+                              931,
+                              992
                             ],
                             "loc": {
                               "start": {
@@ -1362,8 +1362,8 @@
                           }
                         ],
                         "range": [
-                          817,
-                          992
+                          821,
+                          996
                         ],
                         "loc": {
                           "start": {
@@ -1390,8 +1390,8 @@
                                 "object": {
                                   "type": "ThisExpression",
                                   "range": [
-                                    1003,
-                                    1007
+                                    1007,
+                                    1011
                                   ],
                                   "loc": {
                                     "start": {
@@ -1408,8 +1408,8 @@
                                   "type": "Identifier",
                                   "name": "tileId",
                                   "range": [
-                                    1008,
-                                    1014
+                                    1012,
+                                    1018
                                   ],
                                   "loc": {
                                     "start": {
@@ -1423,8 +1423,8 @@
                                   }
                                 },
                                 "range": [
-                                  1003,
-                                  1014
+                                  1007,
+                                  1018
                                 ],
                                 "loc": {
                                   "start": {
@@ -1444,8 +1444,8 @@
                                   "type": "Identifier",
                                   "name": "options",
                                   "range": [
-                                    1017,
-                                    1024
+                                    1021,
+                                    1028
                                   ],
                                   "loc": {
                                     "start": {
@@ -1462,8 +1462,8 @@
                                   "type": "Identifier",
                                   "name": "tileId",
                                   "range": [
-                                    1025,
-                                    1031
+                                    1029,
+                                    1035
                                   ],
                                   "loc": {
                                     "start": {
@@ -1477,8 +1477,8 @@
                                   }
                                 },
                                 "range": [
-                                  1017,
-                                  1031
+                                  1021,
+                                  1035
                                 ],
                                 "loc": {
                                   "start": {
@@ -1492,8 +1492,8 @@
                                 }
                               },
                               "range": [
-                                1003,
-                                1031
+                                1007,
+                                1035
                               ],
                               "loc": {
                                 "start": {
@@ -1507,8 +1507,8 @@
                               }
                             },
                             "range": [
-                              1003,
-                              1032
+                              1007,
+                              1036
                             ],
                             "loc": {
                               "start": {
@@ -1532,8 +1532,8 @@
                                 "object": {
                                   "type": "ThisExpression",
                                   "range": [
-                                    1036,
-                                    1040
+                                    1040,
+                                    1044
                                   ],
                                   "loc": {
                                     "start": {
@@ -1550,8 +1550,8 @@
                                   "type": "Identifier",
                                   "name": "tilesetId",
                                   "range": [
-                                    1041,
-                                    1050
+                                    1045,
+                                    1054
                                   ],
                                   "loc": {
                                     "start": {
@@ -1565,8 +1565,8 @@
                                   }
                                 },
                                 "range": [
-                                  1036,
-                                  1050
+                                  1040,
+                                  1054
                                 ],
                                 "loc": {
                                   "start": {
@@ -1586,8 +1586,8 @@
                                   "type": "Identifier",
                                   "name": "options",
                                   "range": [
-                                    1053,
-                                    1060
+                                    1057,
+                                    1064
                                   ],
                                   "loc": {
                                     "start": {
@@ -1604,8 +1604,8 @@
                                   "type": "Identifier",
                                   "name": "tilesetId",
                                   "range": [
-                                    1061,
-                                    1070
+                                    1065,
+                                    1074
                                   ],
                                   "loc": {
                                     "start": {
@@ -1619,8 +1619,8 @@
                                   }
                                 },
                                 "range": [
-                                  1053,
-                                  1070
+                                  1057,
+                                  1074
                                 ],
                                 "loc": {
                                   "start": {
@@ -1634,8 +1634,8 @@
                                 }
                               },
                               "range": [
-                                1036,
-                                1070
+                                1040,
+                                1074
                               ],
                               "loc": {
                                 "start": {
@@ -1649,8 +1649,8 @@
                               }
                             },
                             "range": [
-                              1036,
-                              1071
+                              1040,
+                              1075
                             ],
                             "loc": {
                               "start": {
@@ -1665,8 +1665,8 @@
                           }
                         ],
                         "range": [
-                          998,
-                          1075
+                          1002,
+                          1079
                         ],
                         "loc": {
                           "start": {
@@ -1680,8 +1680,8 @@
                         }
                       },
                       "range": [
-                        784,
-                        1075
+                        788,
+                        1079
                       ],
                       "loc": {
                         "start": {
@@ -1696,10 +1696,10 @@
                       "trailingComments": [
                         {
                           "type": "Block",
-                          "value": "* Custom properties of the tile.\n\t\t * @type {Map<string, *>} ",
+                          "value": "* Custom properties of the tile.\n\t\t * @type {PropertyObject} ",
                           "range": [
-                            1079,
-                            1144
+                            1083,
+                            1148
                           ],
                           "loc": {
                             "start": {
@@ -1725,8 +1725,8 @@
                           "object": {
                             "type": "ThisExpression",
                             "range": [
-                              1147,
-                              1151
+                              1151,
+                              1155
                             ],
                             "loc": {
                               "start": {
@@ -1743,8 +1743,8 @@
                             "type": "Identifier",
                             "name": "properties",
                             "range": [
-                              1152,
-                              1162
+                              1156,
+                              1166
                             ],
                             "loc": {
                               "start": {
@@ -1758,8 +1758,8 @@
                             }
                           },
                           "range": [
-                            1147,
-                            1162
+                            1151,
+                            1166
                           ],
                           "loc": {
                             "start": {
@@ -1778,8 +1778,8 @@
                             "type": "Identifier",
                             "name": "PropertyObject",
                             "range": [
-                              1169,
-                              1183
+                              1173,
+                              1187
                             ],
                             "loc": {
                               "start": {
@@ -1800,8 +1800,8 @@
                                 "type": "Identifier",
                                 "name": "options",
                                 "range": [
-                                  1184,
-                                  1191
+                                  1188,
+                                  1195
                                 ],
                                 "loc": {
                                   "start": {
@@ -1818,8 +1818,8 @@
                                 "type": "Identifier",
                                 "name": "properties",
                                 "range": [
-                                  1192,
-                                  1202
+                                  1196,
+                                  1206
                                 ],
                                 "loc": {
                                   "start": {
@@ -1833,8 +1833,8 @@
                                 }
                               },
                               "range": [
-                                1184,
-                                1202
+                                1188,
+                                1206
                               ],
                               "loc": {
                                 "start": {
@@ -1849,8 +1849,8 @@
                             }
                           ],
                           "range": [
-                            1165,
-                            1203
+                            1169,
+                            1207
                           ],
                           "loc": {
                             "start": {
@@ -1864,8 +1864,8 @@
                           }
                         },
                         "range": [
-                          1147,
-                          1203
+                          1151,
+                          1207
                         ],
                         "loc": {
                           "start": {
@@ -1879,8 +1879,8 @@
                         }
                       },
                       "range": [
-                        1147,
-                        1204
+                        1151,
+                        1208
                       ],
                       "loc": {
                         "start": {
@@ -1895,10 +1895,10 @@
                       "leadingComments": [
                         {
                           "type": "Block",
-                          "value": "* Custom properties of the tile.\n\t\t * @type {Map<string, *>} ",
+                          "value": "* Custom properties of the tile.\n\t\t * @type {PropertyObject} ",
                           "range": [
-                            1079,
-                            1144
+                            1083,
+                            1148
                           ],
                           "loc": {
                             "start": {
@@ -1915,8 +1915,8 @@
                     }
                   ],
                   "range": [
-                    610,
-                    1207
+                    614,
+                    1211
                   ],
                   "loc": {
                     "start": {
@@ -1932,8 +1932,8 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  568,
-                  1207
+                  572,
+                  1211
                 ],
                 "loc": {
                   "start": {
@@ -1949,8 +1949,8 @@
               "kind": "constructor",
               "computed": false,
               "range": [
-                557,
-                1207
+                561,
+                1211
               ],
               "loc": {
                 "start": {
@@ -1965,10 +1965,10 @@
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n\t * Tile constructor.\n\t *\n\t * @param {object|string} options={} Options for the tile. Can also be tile data you loaded from JSON or a plain string in the following format: <tileId:tilesetId>\n\t * @param {number} options.tileId=-1 - {@link Tile#tileId}\n\t * @param {number} options.tilesetId=-1 - {@link Tile#tilesetId}\n\t * @param {Map<string, *>} [options.properties={}] - {@link Tile#properties}\n\t ",
+                  "value": "*\n\t * Tile constructor.\n\t *\n\t * @param {object|string} options={} Options for the tile. Can also be tile data you loaded from JSON or a plain string in the following format: <tileId:tilesetId>\n\t * @param {number} options.tileId=-1 - {@link Tile#tileId}\n\t * @param {number} options.tilesetId=-1 - {@link Tile#tilesetId}\n\t * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}\n\t ",
                   "range": [
                     152,
-                    555
+                    559
                   ],
                   "loc": {
                     "start": {
@@ -1987,8 +1987,8 @@
                   "type": "Block",
                   "value": "*\n\t * Sets the data for this tile.\n\t *\n\t * @param {number} tileId - The ID to assign to the tile.\n\t * @param {number} [tilesetId] - The tileset ID to assign to the tile.\n\t * @param {boolean} [replaceEmpty] - Should values less than 0 (-1) be handled (true) or ignored (false).\n\t ",
                   "range": [
-                    1210,
-                    1493
+                    1214,
+                    1497
                   ],
                   "loc": {
                     "start": {
@@ -2010,8 +2010,8 @@
                 "type": "Identifier",
                 "name": "setData",
                 "range": [
-                  1495,
-                  1502
+                  1499,
+                  1506
                 ],
                 "loc": {
                   "start": {
@@ -2032,8 +2032,8 @@
                     "type": "Identifier",
                     "name": "tileId",
                     "range": [
-                      1503,
-                      1509
+                      1507,
+                      1513
                     ],
                     "loc": {
                       "start": {
@@ -2050,8 +2050,8 @@
                     "type": "Identifier",
                     "name": "tilesetId",
                     "range": [
-                      1511,
-                      1520
+                      1515,
+                      1524
                     ],
                     "loc": {
                       "start": {
@@ -2068,8 +2068,8 @@
                     "type": "Identifier",
                     "name": "replaceEmpty",
                     "range": [
-                      1522,
-                      1534
+                      1526,
+                      1538
                     ],
                     "loc": {
                       "start": {
@@ -2098,8 +2098,8 @@
                             "type": "Identifier",
                             "name": "tileId",
                             "range": [
-                              1544,
-                              1550
+                              1548,
+                              1554
                             ],
                             "loc": {
                               "start": {
@@ -2117,8 +2117,8 @@
                             "value": 0,
                             "raw": "0",
                             "range": [
-                              1554,
-                              1555
+                              1558,
+                              1559
                             ],
                             "loc": {
                               "start": {
@@ -2132,8 +2132,8 @@
                             }
                           },
                           "range": [
-                            1544,
-                            1555
+                            1548,
+                            1559
                           ],
                           "loc": {
                             "start": {
@@ -2150,8 +2150,8 @@
                           "type": "Identifier",
                           "name": "replaceEmpty",
                           "range": [
-                            1559,
-                            1571
+                            1563,
+                            1575
                           ],
                           "loc": {
                             "start": {
@@ -2165,8 +2165,8 @@
                           }
                         },
                         "range": [
-                          1544,
-                          1571
+                          1548,
+                          1575
                         ],
                         "loc": {
                           "start": {
@@ -2193,8 +2193,8 @@
                                 "object": {
                                   "type": "ThisExpression",
                                   "range": [
-                                    1578,
-                                    1582
+                                    1582,
+                                    1586
                                   ],
                                   "loc": {
                                     "start": {
@@ -2211,8 +2211,8 @@
                                   "type": "Identifier",
                                   "name": "tileId",
                                   "range": [
-                                    1583,
-                                    1589
+                                    1587,
+                                    1593
                                   ],
                                   "loc": {
                                     "start": {
@@ -2226,8 +2226,8 @@
                                   }
                                 },
                                 "range": [
-                                  1578,
-                                  1589
+                                  1582,
+                                  1593
                                 ],
                                 "loc": {
                                   "start": {
@@ -2249,8 +2249,8 @@
                                     "type": "Identifier",
                                     "name": "Math",
                                     "range": [
-                                      1592,
-                                      1596
+                                      1596,
+                                      1600
                                     ],
                                     "loc": {
                                       "start": {
@@ -2267,8 +2267,8 @@
                                     "type": "Identifier",
                                     "name": "max",
                                     "range": [
-                                      1597,
-                                      1600
+                                      1601,
+                                      1604
                                     ],
                                     "loc": {
                                       "start": {
@@ -2282,8 +2282,8 @@
                                     }
                                   },
                                   "range": [
-                                    1592,
-                                    1600
+                                    1596,
+                                    1604
                                   ],
                                   "loc": {
                                     "start": {
@@ -2301,8 +2301,8 @@
                                     "type": "Identifier",
                                     "name": "tileId",
                                     "range": [
-                                      1601,
-                                      1607
+                                      1605,
+                                      1611
                                     ],
                                     "loc": {
                                       "start": {
@@ -2323,8 +2323,8 @@
                                       "value": 1,
                                       "raw": "1",
                                       "range": [
-                                        1610,
-                                        1611
+                                        1614,
+                                        1615
                                       ],
                                       "loc": {
                                         "start": {
@@ -2339,8 +2339,8 @@
                                     },
                                     "prefix": true,
                                     "range": [
-                                      1609,
-                                      1611
+                                      1613,
+                                      1615
                                     ],
                                     "loc": {
                                       "start": {
@@ -2355,8 +2355,8 @@
                                   }
                                 ],
                                 "range": [
-                                  1592,
-                                  1612
+                                  1596,
+                                  1616
                                 ],
                                 "loc": {
                                   "start": {
@@ -2370,8 +2370,8 @@
                                 }
                               },
                               "range": [
-                                1578,
-                                1612
+                                1582,
+                                1616
                               ],
                               "loc": {
                                 "start": {
@@ -2385,8 +2385,8 @@
                               }
                             },
                             "range": [
-                              1578,
-                              1613
+                              1582,
+                              1617
                             ],
                             "loc": {
                               "start": {
@@ -2401,8 +2401,8 @@
                           }
                         ],
                         "range": [
-                          1573,
-                          1617
+                          1577,
+                          1621
                         ],
                         "loc": {
                           "start": {
@@ -2417,8 +2417,8 @@
                       },
                       "alternate": null,
                       "range": [
-                        1540,
-                        1617
+                        1544,
+                        1621
                       ],
                       "loc": {
                         "start": {
@@ -2443,8 +2443,8 @@
                             "type": "Identifier",
                             "name": "tilesetId",
                             "range": [
-                              1624,
-                              1633
+                              1628,
+                              1637
                             ],
                             "loc": {
                               "start": {
@@ -2462,8 +2462,8 @@
                             "value": null,
                             "raw": "null",
                             "range": [
-                              1637,
-                              1641
+                              1641,
+                              1645
                             ],
                             "loc": {
                               "start": {
@@ -2477,8 +2477,8 @@
                             }
                           },
                           "range": [
-                            1624,
-                            1641
+                            1628,
+                            1645
                           ],
                           "loc": {
                             "start": {
@@ -2501,8 +2501,8 @@
                               "type": "Identifier",
                               "name": "tilesetId",
                               "range": [
-                                1646,
-                                1655
+                                1650,
+                                1659
                               ],
                               "loc": {
                                 "start": {
@@ -2520,8 +2520,8 @@
                               "value": 0,
                               "raw": "0",
                               "range": [
-                                1659,
-                                1660
+                                1663,
+                                1664
                               ],
                               "loc": {
                                 "start": {
@@ -2535,8 +2535,8 @@
                               }
                             },
                             "range": [
-                              1646,
-                              1660
+                              1650,
+                              1664
                             ],
                             "loc": {
                               "start": {
@@ -2553,8 +2553,8 @@
                             "type": "Identifier",
                             "name": "replaceEmpty",
                             "range": [
-                              1664,
-                              1676
+                              1668,
+                              1680
                             ],
                             "loc": {
                               "start": {
@@ -2568,8 +2568,8 @@
                             }
                           },
                           "range": [
-                            1646,
-                            1676
+                            1650,
+                            1680
                           ],
                           "loc": {
                             "start": {
@@ -2583,8 +2583,8 @@
                           }
                         },
                         "range": [
-                          1624,
-                          1677
+                          1628,
+                          1681
                         ],
                         "loc": {
                           "start": {
@@ -2611,8 +2611,8 @@
                                 "object": {
                                   "type": "ThisExpression",
                                   "range": [
-                                    1684,
-                                    1688
+                                    1688,
+                                    1692
                                   ],
                                   "loc": {
                                     "start": {
@@ -2629,8 +2629,8 @@
                                   "type": "Identifier",
                                   "name": "tilesetId",
                                   "range": [
-                                    1689,
-                                    1698
+                                    1693,
+                                    1702
                                   ],
                                   "loc": {
                                     "start": {
@@ -2644,8 +2644,8 @@
                                   }
                                 },
                                 "range": [
-                                  1684,
-                                  1698
+                                  1688,
+                                  1702
                                 ],
                                 "loc": {
                                   "start": {
@@ -2667,8 +2667,8 @@
                                     "type": "Identifier",
                                     "name": "Math",
                                     "range": [
-                                      1701,
-                                      1705
+                                      1705,
+                                      1709
                                     ],
                                     "loc": {
                                       "start": {
@@ -2685,8 +2685,8 @@
                                     "type": "Identifier",
                                     "name": "max",
                                     "range": [
-                                      1706,
-                                      1709
+                                      1710,
+                                      1713
                                     ],
                                     "loc": {
                                       "start": {
@@ -2700,8 +2700,8 @@
                                     }
                                   },
                                   "range": [
-                                    1701,
-                                    1709
+                                    1705,
+                                    1713
                                   ],
                                   "loc": {
                                     "start": {
@@ -2719,8 +2719,8 @@
                                     "type": "Identifier",
                                     "name": "tilesetId",
                                     "range": [
-                                      1710,
-                                      1719
+                                      1714,
+                                      1723
                                     ],
                                     "loc": {
                                       "start": {
@@ -2741,8 +2741,8 @@
                                       "value": 1,
                                       "raw": "1",
                                       "range": [
-                                        1722,
-                                        1723
+                                        1726,
+                                        1727
                                       ],
                                       "loc": {
                                         "start": {
@@ -2757,8 +2757,8 @@
                                     },
                                     "prefix": true,
                                     "range": [
-                                      1721,
-                                      1723
+                                      1725,
+                                      1727
                                     ],
                                     "loc": {
                                       "start": {
@@ -2773,8 +2773,8 @@
                                   }
                                 ],
                                 "range": [
-                                  1701,
-                                  1724
+                                  1705,
+                                  1728
                                 ],
                                 "loc": {
                                   "start": {
@@ -2788,8 +2788,8 @@
                                 }
                               },
                               "range": [
-                                1684,
-                                1724
+                                1688,
+                                1728
                               ],
                               "loc": {
                                 "start": {
@@ -2803,8 +2803,8 @@
                               }
                             },
                             "range": [
-                              1684,
-                              1725
+                              1688,
+                              1729
                             ],
                             "loc": {
                               "start": {
@@ -2819,8 +2819,8 @@
                           }
                         ],
                         "range": [
-                          1679,
-                          1729
+                          1683,
+                          1733
                         ],
                         "loc": {
                           "start": {
@@ -2835,8 +2835,8 @@
                       },
                       "alternate": null,
                       "range": [
-                        1620,
-                        1729
+                        1624,
+                        1733
                       ],
                       "loc": {
                         "start": {
@@ -2851,8 +2851,8 @@
                     }
                   ],
                   "range": [
-                    1536,
-                    1732
+                    1540,
+                    1736
                   ],
                   "loc": {
                     "start": {
@@ -2868,8 +2868,8 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  1502,
-                  1732
+                  1506,
+                  1736
                 ],
                 "loc": {
                   "start": {
@@ -2885,8 +2885,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                1495,
-                1732
+                1499,
+                1736
               ],
               "loc": {
                 "start": {
@@ -2903,8 +2903,8 @@
                   "type": "Block",
                   "value": "*\n\t * Sets the data for this tile.\n\t *\n\t * @param {number} tileId - The ID to assign to the tile.\n\t * @param {number} [tilesetId] - The tileset ID to assign to the tile.\n\t * @param {boolean} [replaceEmpty] - Should values less than 0 (-1) be handled (true) or ignored (false).\n\t ",
                   "range": [
-                    1210,
-                    1493
+                    1214,
+                    1497
                   ],
                   "loc": {
                     "start": {
@@ -2923,8 +2923,8 @@
                   "type": "Block",
                   "value": "*\n\t * toJSON function used for JSON serialization.\n\t * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#toJSON()_behavior\n\t *\n\t * @returns {Tile|string} Object to be serialized\n\t ",
                   "range": [
-                    1735,
-                    1970
+                    1739,
+                    1974
                   ],
                   "loc": {
                     "start": {
@@ -2946,8 +2946,8 @@
                 "type": "Identifier",
                 "name": "toJSON",
                 "range": [
-                  1972,
-                  1978
+                  1976,
+                  1982
                 ],
                 "loc": {
                   "start": {
@@ -2981,8 +2981,8 @@
                             "object": {
                               "type": "ThisExpression",
                               "range": [
-                                1989,
-                                1993
+                                1993,
+                                1997
                               ],
                               "loc": {
                                 "start": {
@@ -2999,8 +2999,8 @@
                               "type": "Identifier",
                               "name": "properties",
                               "range": [
-                                1994,
-                                2004
+                                1998,
+                                2008
                               ],
                               "loc": {
                                 "start": {
@@ -3014,8 +3014,8 @@
                               }
                             },
                             "range": [
-                              1989,
-                              2004
+                              1993,
+                              2008
                             ],
                             "loc": {
                               "start": {
@@ -3032,8 +3032,8 @@
                             "type": "Identifier",
                             "name": "size",
                             "range": [
-                              2005,
-                              2009
+                              2009,
+                              2013
                             ],
                             "loc": {
                               "start": {
@@ -3047,8 +3047,8 @@
                             }
                           },
                           "range": [
-                            1989,
-                            2009
+                            1993,
+                            2013
                           ],
                           "loc": {
                             "start": {
@@ -3066,8 +3066,8 @@
                           "value": 0,
                           "raw": "0",
                           "range": [
-                            2014,
-                            2015
+                            2018,
+                            2019
                           ],
                           "loc": {
                             "start": {
@@ -3081,8 +3081,8 @@
                           }
                         },
                         "range": [
-                          1989,
-                          2015
+                          1993,
+                          2019
                         ],
                         "loc": {
                           "start": {
@@ -3112,8 +3112,8 @@
                                   "object": {
                                     "type": "ThisExpression",
                                     "range": [
-                                      2029,
-                                      2033
+                                      2033,
+                                      2037
                                     ],
                                     "loc": {
                                       "start": {
@@ -3130,8 +3130,8 @@
                                     "type": "Identifier",
                                     "name": "tileId",
                                     "range": [
-                                      2034,
-                                      2040
+                                      2038,
+                                      2044
                                     ],
                                     "loc": {
                                       "start": {
@@ -3145,8 +3145,8 @@
                                     }
                                   },
                                   "range": [
-                                    2029,
-                                    2040
+                                    2033,
+                                    2044
                                   ],
                                   "loc": {
                                     "start": {
@@ -3164,8 +3164,8 @@
                                   "value": ":",
                                   "raw": "\":\"",
                                   "range": [
-                                    2043,
-                                    2046
+                                    2047,
+                                    2050
                                   ],
                                   "loc": {
                                     "start": {
@@ -3179,8 +3179,8 @@
                                   }
                                 },
                                 "range": [
-                                  2029,
-                                  2046
+                                  2033,
+                                  2050
                                 ],
                                 "loc": {
                                   "start": {
@@ -3199,8 +3199,8 @@
                                 "object": {
                                   "type": "ThisExpression",
                                   "range": [
-                                    2049,
-                                    2053
+                                    2053,
+                                    2057
                                   ],
                                   "loc": {
                                     "start": {
@@ -3217,8 +3217,8 @@
                                   "type": "Identifier",
                                   "name": "tilesetId",
                                   "range": [
-                                    2054,
-                                    2063
+                                    2058,
+                                    2067
                                   ],
                                   "loc": {
                                     "start": {
@@ -3232,8 +3232,8 @@
                                   }
                                 },
                                 "range": [
-                                  2049,
-                                  2063
+                                  2053,
+                                  2067
                                 ],
                                 "loc": {
                                   "start": {
@@ -3247,8 +3247,8 @@
                                 }
                               },
                               "range": [
-                                2029,
-                                2063
+                                2033,
+                                2067
                               ],
                               "loc": {
                                 "start": {
@@ -3262,8 +3262,8 @@
                               }
                             },
                             "range": [
-                              2022,
-                              2064
+                              2026,
+                              2068
                             ],
                             "loc": {
                               "start": {
@@ -3278,8 +3278,8 @@
                           }
                         ],
                         "range": [
-                          2017,
-                          2068
+                          2021,
+                          2072
                         ],
                         "loc": {
                           "start": {
@@ -3300,8 +3300,8 @@
                             "argument": {
                               "type": "ThisExpression",
                               "range": [
-                                2086,
-                                2090
+                                2090,
+                                2094
                               ],
                               "loc": {
                                 "start": {
@@ -3315,8 +3315,8 @@
                               }
                             },
                             "range": [
-                              2079,
-                              2091
+                              2083,
+                              2095
                             ],
                             "loc": {
                               "start": {
@@ -3331,8 +3331,8 @@
                           }
                         ],
                         "range": [
-                          2074,
-                          2095
+                          2078,
+                          2099
                         ],
                         "loc": {
                           "start": {
@@ -3346,8 +3346,8 @@
                         }
                       },
                       "range": [
-                        1985,
-                        2095
+                        1989,
+                        2099
                       ],
                       "loc": {
                         "start": {
@@ -3362,8 +3362,8 @@
                     }
                   ],
                   "range": [
-                    1981,
-                    2098
+                    1985,
+                    2102
                   ],
                   "loc": {
                     "start": {
@@ -3379,8 +3379,8 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  1978,
-                  2098
+                  1982,
+                  2102
                 ],
                 "loc": {
                   "start": {
@@ -3396,8 +3396,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                1972,
-                2098
+                1976,
+                2102
               ],
               "loc": {
                 "start": {
@@ -3414,8 +3414,8 @@
                   "type": "Block",
                   "value": "*\n\t * toJSON function used for JSON serialization.\n\t * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#toJSON()_behavior\n\t *\n\t * @returns {Tile|string} Object to be serialized\n\t ",
                   "range": [
-                    1735,
-                    1970
+                    1739,
+                    1974
                   ],
                   "loc": {
                     "start": {
@@ -3434,8 +3434,8 @@
                   "type": "Block",
                   "value": "*\n\t * Creates a clone out of this tile.\n\t *\n\t * @returns {Tile} The new tile.\n\t ",
                   "range": [
-                    2101,
-                    2185
+                    2105,
+                    2189
                   ],
                   "loc": {
                     "start": {
@@ -3457,8 +3457,8 @@
                 "type": "Identifier",
                 "name": "clone",
                 "range": [
-                  2187,
-                  2192
+                  2191,
+                  2196
                 ],
                 "loc": {
                   "start": {
@@ -3486,8 +3486,8 @@
                           "type": "Identifier",
                           "name": "Tile",
                           "range": [
-                            2210,
-                            2214
+                            2214,
+                            2218
                           ],
                           "loc": {
                             "start": {
@@ -3504,8 +3504,8 @@
                           {
                             "type": "ThisExpression",
                             "range": [
-                              2215,
-                              2219
+                              2219,
+                              2223
                             ],
                             "loc": {
                               "start": {
@@ -3520,8 +3520,8 @@
                           }
                         ],
                         "range": [
-                          2206,
-                          2220
+                          2210,
+                          2224
                         ],
                         "loc": {
                           "start": {
@@ -3535,8 +3535,8 @@
                         }
                       },
                       "range": [
-                        2199,
-                        2221
+                        2203,
+                        2225
                       ],
                       "loc": {
                         "start": {
@@ -3551,8 +3551,8 @@
                     }
                   ],
                   "range": [
-                    2195,
-                    2224
+                    2199,
+                    2228
                   ],
                   "loc": {
                     "start": {
@@ -3568,8 +3568,8 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  2192,
-                  2224
+                  2196,
+                  2228
                 ],
                 "loc": {
                   "start": {
@@ -3585,8 +3585,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                2187,
-                2224
+                2191,
+                2228
               ],
               "loc": {
                 "start": {
@@ -3603,8 +3603,8 @@
                   "type": "Block",
                   "value": "*\n\t * Creates a clone out of this tile.\n\t *\n\t * @returns {Tile} The new tile.\n\t ",
                   "range": [
-                    2101,
-                    2185
+                    2105,
+                    2189
                   ],
                   "loc": {
                     "start": {
@@ -3623,7 +3623,7 @@
           ],
           "range": [
             149,
-            2226
+            2230
           ],
           "loc": {
             "start": {
@@ -3638,7 +3638,7 @@
         },
         "range": [
           138,
-          2226
+          2230
         ],
         "loc": {
           "start": {
@@ -3676,7 +3676,7 @@
       "source": null,
       "range": [
         131,
-        2226
+        2230
       ],
       "loc": {
         "start": {
@@ -3713,7 +3713,7 @@
   "sourceType": "module",
   "range": [
     0,
-    2226
+    2230
   ],
   "loc": {
     "start": {
@@ -3746,10 +3746,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n\t * Tile constructor.\n\t *\n\t * @param {object|string} options={} Options for the tile. Can also be tile data you loaded from JSON or a plain string in the following format: <tileId:tilesetId>\n\t * @param {number} options.tileId=-1 - {@link Tile#tileId}\n\t * @param {number} options.tilesetId=-1 - {@link Tile#tilesetId}\n\t * @param {Map<string, *>} [options.properties={}] - {@link Tile#properties}\n\t ",
+      "value": "*\n\t * Tile constructor.\n\t *\n\t * @param {object|string} options={} Options for the tile. Can also be tile data you loaded from JSON or a plain string in the following format: <tileId:tilesetId>\n\t * @param {number} options.tileId=-1 - {@link Tile#tileId}\n\t * @param {number} options.tilesetId=-1 - {@link Tile#tilesetId}\n\t * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}\n\t ",
       "range": [
         152,
-        555
+        559
       ],
       "loc": {
         "start": {
@@ -3766,8 +3766,8 @@
       "type": "Block",
       "value": "* The tile ID of the tile.\n\t\t * @type {number} ",
       "range": [
-        614,
-        665
+        618,
+        669
       ],
       "loc": {
         "start": {
@@ -3784,8 +3784,8 @@
       "type": "Block",
       "value": "* The tileset ID of the tile.\n\t\t * @type {number} ",
       "range": [
-        696,
-        750
+        700,
+        754
       ],
       "loc": {
         "start": {
@@ -3800,10 +3800,10 @@
     },
     {
       "type": "Block",
-      "value": "* Custom properties of the tile.\n\t\t * @type {Map<string, *>} ",
+      "value": "* Custom properties of the tile.\n\t\t * @type {PropertyObject} ",
       "range": [
-        1079,
-        1144
+        1083,
+        1148
       ],
       "loc": {
         "start": {
@@ -3820,8 +3820,8 @@
       "type": "Block",
       "value": "*\n\t * Sets the data for this tile.\n\t *\n\t * @param {number} tileId - The ID to assign to the tile.\n\t * @param {number} [tilesetId] - The tileset ID to assign to the tile.\n\t * @param {boolean} [replaceEmpty] - Should values less than 0 (-1) be handled (true) or ignored (false).\n\t ",
       "range": [
-        1210,
-        1493
+        1214,
+        1497
       ],
       "loc": {
         "start": {
@@ -3838,8 +3838,8 @@
       "type": "Block",
       "value": "*\n\t * toJSON function used for JSON serialization.\n\t * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#toJSON()_behavior\n\t *\n\t * @returns {Tile|string} Object to be serialized\n\t ",
       "range": [
-        1735,
-        1970
+        1739,
+        1974
       ],
       "loc": {
         "start": {
@@ -3856,8 +3856,8 @@
       "type": "Block",
       "value": "*\n\t * Creates a clone out of this tile.\n\t *\n\t * @returns {Tile} The new tile.\n\t ",
       "range": [
-        2101,
-        2185
+        2105,
+        2189
       ],
       "loc": {
         "start": {

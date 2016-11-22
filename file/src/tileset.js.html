@@ -43,7 +43,9 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/tileset.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { PropertyObject } from &quot;./propertyObject&quot;;
+
+/**
  * A tileset object for storing arbitrary information about tilesets.
  */
 export class TileSet {
@@ -54,9 +56,10 @@ export class TileSet {
 	 * @param {string} [options.name=&quot;Tileset&quot;] - {@link TileSet#name}
 	 * @param {string} [options.type=&quot;test&quot;] - {@link TileSet#type}
 	 * @param {string} [options.path] - {@link TileSet#path}
-	 * @param {Map&lt;string, *&gt;} [options.properties] - {@link TileSet@properties}
+	 * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}
+	 * @param {object} [options.tileProperties={}] - Default tile properties for the tileset.
 	 */
-	constructor({ name = &quot;Tileset&quot;, type = &quot;test&quot;, path, properties }) {
+	constructor({ name = &quot;Tileset&quot;, type = &quot;test&quot;, path, properties, tileProperties = {} }) {
 		/** The name of the tileset.
 		 * @type {string} */
 		this.name = name;
@@ -70,8 +73,74 @@ export class TileSet {
 		this.path = path;
 
 		/** Custom properties of the tilemap.
-		 * @type {Map&lt;string, *&gt;} */
-		this.properties = properties || new Map();
+		 * @type {PropertyObject} */
+		this.properties = new PropertyObject(properties);
+
+		this._tileProperties = {};
+		for (let key of Object.keys(tileProperties)) {
+			key = parseInt(key);
+			if (isNaN(key)) {
+				throw new TypeError(&quot;Tile property keys have to be numbers&quot;);
+			}
+			const value = tileProperties[key];
+			this._tileProperties[key] = new PropertyObject(value);
+		}
+	}
+
+	/**
+	 * Gets a PropertyObject for a tile ID on the TileSet.
+	 *
+	 * @param {number} id - The tileID to get the PropertyObject for.
+	 *
+	 * @returns {PropertyObject} The PropertyObject beloning to this tile ID.
+	 *
+	 * @throws {TypeError} Throws a TypeError if id isn&apos;t a number.
+	 * @throws {RangeError} Throws a RangeError if there isn&apos;t a PropertyObject for the ID.
+	 */
+	getTileProperties(id) {
+		if (typeof id !== &quot;number&quot;) {
+			throw new TypeError(&quot;ID has to be a number&quot;);
+		}
+		if (!this.hasTileProperties(id)) {
+			throw new RangeError(&quot;There are no properties for tile ID &quot; + id);
+		}
+
+		return this._tileProperties[id];
+	}
+
+	/**
+	 * Creates a PropertyObject if needed and returns it.
+	 *
+	 * @param {number} id - The tileID to create the PropertyObject for.
+	 *
+	 * @returns {?PropertyObject} The created PropertyObject or undefined if it already existed.
+	 *
+	 * @throws {TypeError} Throws a TypeError if id isn&apos;t a number.
+	 */
+	createTileProperties(id) {
+		if (typeof id !== &quot;number&quot;) {
+			throw new TypeError(&quot;ID has to be a number&quot;);
+		}
+		if (!this.hasTileProperties(id)) {
+			this._tileProperties[id] = new PropertyObject();
+			return this._tileProperties[id];
+		}
+	}
+
+	/**
+	 * Checks if a PropertyObject exists for an ID.
+	 *
+	 * @param {number} id - The tileID to check for a PropertyObject.
+	 *
+	 * @returns {boolean}
+	 *
+	 * @throws {TypeError} Throws a TypeError if id isn&apos;t a number.
+	 */
+	hasTileProperties(id) {
+		if (typeof id !== &quot;number&quot;) {
+			throw new TypeError(&quot;ID has to be a number&quot;);
+		}
+		return typeof this._tileProperties[id] !== &quot;undefined&quot;;
 	}
 }
 </code></pre>

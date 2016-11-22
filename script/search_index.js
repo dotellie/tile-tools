@@ -468,6 +468,102 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
+    "tile src/tile.js~tile,tile",
+    "test-file/test/tile.js.html#lineNumber8",
+    "Tile",
+    "test"
+  ],
+  [
+    "tile#clone src/tile.js~tile#clone,tile#clone",
+    "test-file/test/tile.js.html#lineNumber79",
+    "Tile #clone",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber91",
+    "Tile #clone clones all the properties of a tile",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber94",
+    "Tile #clone doesn't become the same tile",
+    "test"
+  ],
+  [
+    "tile#constructor src/tile.js~tile#constructor,tile#constructor",
+    "test-file/test/tile.js.html#lineNumber10",
+    "Tile #constructor",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber11",
+    "Tile #constructor creates from objects",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber19",
+    "Tile #constructor creates from strings",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber24",
+    "Tile #constructor has empty default values",
+    "test"
+  ],
+  [
+    "tile#settile tile#settile,tile#settile",
+    "test-file/test/tile.js.html#lineNumber32",
+    "Tile #setTile",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber43",
+    "Tile #setTile can replace both tile ID and tileset ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber38",
+    "Tile #setTile can replace only tile ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber53",
+    "Tile #setTile does replace empty if told so",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber48",
+    "Tile #setTile doesn't replace if ID is -1",
+    "test"
+  ],
+  [
+    "tile#tojson src/tile.js~tile#tojson,tile#tojson",
+    "test-file/test/tile.js.html#lineNumber61",
+    "Tile #toJSON",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber62",
+    "Tile #toJSON stringifies with properties",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tile.js.html#lineNumber72",
+    "Tile #toJSON stringifies without properties",
+    "test"
+  ],
+  [
     "tilearea src/tilearea.js~tilearea,tilearea",
     "test-file/test/tilearea.js.html#lineNumber8",
     "TileArea",
@@ -594,129 +690,57 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
-    "tile src/tile.js~tile,tile",
-    "test-file/test/tile.js.html#lineNumber8",
-    "TileMap",
-    "test"
-  ],
-  [
     "tilemap src/tilemap.js~tilemap,tilemap",
     "test-file/test/tilemap.js.html#lineNumber9",
     "TileMap",
     "test"
   ],
   [
-    "tilemap src/tilemap.js~tilemap,tilemap",
-    "test-file/test/tileset.js.html#lineNumber8",
-    "TileMap",
-    "test"
-  ],
-  [
-    "tile#clone src/tile.js~tile#clone,tile#clone",
-    "test-file/test/tile.js.html#lineNumber79",
-    "TileMap #clone",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tile.js.html#lineNumber91",
-    "TileMap #clone clones all the properties of a tile",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tile.js.html#lineNumber94",
-    "TileMap #clone doesn't become the same tile",
-    "test"
-  ],
-  [
-    "tilemap#constructor src/tilemap.js~tilemap#constructor,tilemap#constructor",
-    "test-file/test/tileset.js.html#lineNumber10",
-    "TileMap #create",
-    "test"
-  ],
-  [
     "tilemap#constructor src/tilemap.js~tilemap#constructor,tilemap#constructor",
     "test-file/test/tilemap.js.html#lineNumber33",
-    "TileMap #create",
-    "test"
-  ],
-  [
-    "tile#constructor src/tile.js~tile#constructor,tile#constructor",
-    "test-file/test/tile.js.html#lineNumber10",
-    "TileMap #create",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tile.js.html#lineNumber11",
-    "TileMap #create creates from objects",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tile.js.html#lineNumber19",
-    "TileMap #create creates from strings",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tileset.js.html#lineNumber11",
-    "TileMap #create creates with default values",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tileset.js.html#lineNumber17",
-    "TileMap #create creates with definded values",
+    "TileMap #constructor",
     "test"
   ],
   [
     "",
     "test-file/test/tilemap.js.html#lineNumber34",
-    "TileMap #create has a name",
+    "TileMap #constructor has a name",
     "test"
   ],
   [
     "",
     "test-file/test/tilemap.js.html#lineNumber59",
-    "TileMap #create has correct default values",
+    "TileMap #constructor has correct default values",
     "test"
   ],
   [
     "",
     "test-file/test/tilemap.js.html#lineNumber37",
-    "TileMap #create has dimmensions",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tile.js.html#lineNumber24",
-    "TileMap #create has empty default values",
+    "TileMap #constructor has dimmensions",
     "test"
   ],
   [
     "",
     "test-file/test/tilemap.js.html#lineNumber48",
-    "TileMap #create has layers",
+    "TileMap #constructor has layers",
     "test"
   ],
   [
     "",
     "test-file/test/tilemap.js.html#lineNumber51",
-    "TileMap #create has properties for layers",
+    "TileMap #constructor has properties for layers",
     "test"
   ],
   [
     "",
     "test-file/test/tilemap.js.html#lineNumber44",
-    "TileMap #create has tile size",
+    "TileMap #constructor has tile size",
     "test"
   ],
   [
     "",
     "test-file/test/tilemap.js.html#lineNumber54",
-    "TileMap #create reads a valid tilemap JSON",
+    "TileMap #constructor reads a valid tilemap JSON",
     "test"
   ],
   [
@@ -756,51 +780,93 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
-    "tile#settile tile#settile,tile#settile",
-    "test-file/test/tile.js.html#lineNumber32",
-    "TileMap #setTile",
+    "tileset src/tileset.js~tileset,tileset",
+    "test-file/test/tileset.js.html#lineNumber8",
+    "TileSet",
+    "test"
+  ],
+  [
+    "tileset#constructor src/tileset.js~tileset#constructor,tileset#constructor",
+    "test-file/test/tileset.js.html#lineNumber10",
+    "TileSet #constructor",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber43",
-    "TileMap #setTile can replace both tile ID and tileset ID",
+    "test-file/test/tileset.js.html#lineNumber11",
+    "TileSet #constructor creates with default values",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber38",
-    "TileMap #setTile can replace only tile ID",
+    "test-file/test/tileset.js.html#lineNumber17",
+    "TileSet #constructor creates with definded values",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber53",
-    "TileMap #setTile does replace empty if told so",
+    "test-file/test/tileset.js.html#lineNumber26",
+    "TileSet #constructor fails if any tile properties key isn't a number",
+    "test"
+  ],
+  [
+    "tileset#createtileproperties src/tileset.js~tileset#createtileproperties,tileset#createtileproperties",
+    "test-file/test/tileset.js.html#lineNumber68",
+    "TileSet #createTileProperties",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber48",
-    "TileMap #setTile doesn't replace if ID is -1",
-    "test"
-  ],
-  [
-    "tile#tojson src/tile.js~tile#tojson,tile#tojson",
-    "test-file/test/tile.js.html#lineNumber61",
-    "TileMap #toJSON",
+    "test-file/test/tileset.js.html#lineNumber69",
+    "TileSet #createTileProperties creates a tile property for a tile ID",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber62",
-    "TileMap #toJSON stringifies with properties",
+    "test-file/test/tileset.js.html#lineNumber75",
+    "TileSet #createTileProperties fails if argument isn't a number",
+    "test"
+  ],
+  [
+    "tileset#gettileproperties src/tileset.js~tileset#gettileproperties,tileset#gettileproperties",
+    "test-file/test/tileset.js.html#lineNumber37",
+    "TileSet #getTileProperty",
     "test"
   ],
   [
     "",
-    "test-file/test/tile.js.html#lineNumber72",
-    "TileMap #toJSON stringifies without properties",
+    "test-file/test/tileset.js.html#lineNumber60",
+    "TileSet #getTileProperty fails if argument isn't a number",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tileset.js.html#lineNumber49",
+    "TileSet #getTileProperty gets a property object correctly",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tileset.js.html#lineNumber54",
+    "TileSet #getTileProperty throws an error if ID doesn't have a properties object",
+    "test"
+  ],
+  [
+    "tileset#hastileproperties src/tileset.js~tileset#hastileproperties,tileset#hastileproperties",
+    "test-file/test/tileset.js.html#lineNumber83",
+    "TileSet #hasTileProperties",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tileset.js.html#lineNumber84",
+    "TileSet #hasTileProperties checks if there is a tile property object for an ID",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tileset.js.html#lineNumber94",
+    "TileSet #hasTileProperties fails if argument isn't a number",
     "test"
   ],
   [
@@ -1071,6 +1137,24 @@ window.esdocSearchIndex = [
     "src/tileset.js~tileset#constructor",
     "class/src/tileset.js~TileSet.html#instance-constructor-constructor",
     "src/tileset.js~TileSet#constructor",
+    "method"
+  ],
+  [
+    "src/tileset.js~tileset#createtileproperties",
+    "class/src/tileset.js~TileSet.html#instance-method-createTileProperties",
+    "src/tileset.js~TileSet#createTileProperties",
+    "method"
+  ],
+  [
+    "src/tileset.js~tileset#gettileproperties",
+    "class/src/tileset.js~TileSet.html#instance-method-getTileProperties",
+    "src/tileset.js~TileSet#getTileProperties",
+    "method"
+  ],
+  [
+    "src/tileset.js~tileset#hastileproperties",
+    "class/src/tileset.js~TileSet.html#instance-method-hasTileProperties",
+    "src/tileset.js~TileSet#hasTileProperties",
     "method"
   ],
   [

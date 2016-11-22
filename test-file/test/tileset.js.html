@@ -49,10 +49,10 @@ import { TileSet } from &quot;../src&quot;;
 
 const should = chaiShould();
 
-/** @test {TileMap} */
-describe(&quot;TileMap&quot;, () =&gt; {
-	/** @test {TileMap#constructor} */
-	describe(&quot;#create&quot;, () =&gt; {
+/** @test {TileSet} */
+describe(&quot;TileSet&quot;, () =&gt; {
+	/** @test {TileSet#constructor} */
+	describe(&quot;#constructor&quot;, () =&gt; {
 		it(&quot;creates with default values&quot;, () =&gt; {
 			const tileset = new TileSet({});
 			tileset.name.should.be.a(&quot;string&quot;);
@@ -67,6 +67,79 @@ describe(&quot;TileMap&quot;, () =&gt; {
 			tileset.name.should.equal(name);
 			tileset.type.should.equal(type);
 			tileset.path.should.equal(path);
+		});
+		it(&quot;fails if any tile properties key isn&apos;t a number&quot;, () =&gt; {
+			(() =&gt; {
+				// eslint-disable-next-line no-new
+				new TileSet({ tileProperties: {
+					&quot;a string&quot;: &quot;should be invalid&quot;
+				} });
+			}).should.throw(TypeError);
+		});
+	});
+
+	/** @test {TileSet#getTileProperties} */
+	describe(&quot;#getTileProperty&quot;, () =&gt; {
+		let tileset;
+
+		beforeEach(() =&gt; {
+			tileset = new TileSet({
+				tileProperties: {
+					&quot;0&quot;: [[&quot;test&quot;, &quot;isTest&quot;]],
+					&quot;5&quot;: [[&quot;test5&quot;, &quot;is5&quot;]]
+				}
+			});
+		});
+
+		it(&quot;gets a property object correctly&quot;, () =&gt; {
+			tileset.getTileProperties(0).get(&quot;test&quot;).should.equal(&quot;isTest&quot;);
+			tileset.getTileProperties(5).get(&quot;test5&quot;).should.equal(&quot;is5&quot;);
+		});
+
+		it(&quot;throws an error if ID doesn&apos;t have a properties object&quot;, () =&gt; {
+			(() =&gt; {
+				tileset.getTileProperties(10);
+			}).should.throw(RangeError);
+		});
+
+		it(&quot;fails if argument isn&apos;t a number&quot;, () =&gt; {
+			(() =&gt; {
+				tileset.getTileProperties(&quot;a string&quot;);
+			}).should.throw(TypeError);
+		});
+	});
+
+	/** @test {TileSet#createTileProperties} */
+	describe(&quot;#createTileProperties&quot;, () =&gt; {
+		it(&quot;creates a tile property for a tile ID&quot;, () =&gt; {
+			const tileset = new TileSet({});
+			tileset.createTileProperties(2);
+			tileset.hasTileProperties(2).should.be.ok;
+		});
+
+		it(&quot;fails if argument isn&apos;t a number&quot;, () =&gt; {
+			(() =&gt; {
+				new TileSet({}).createTileProperties(&quot;a string&quot;);
+			}).should.throw(TypeError);
+		});
+	});
+
+	/** @test {TileSet#hasTileProperties} */
+	describe(&quot;#hasTileProperties&quot;, () =&gt; {
+		it(&quot;checks if there is a tile property object for an ID&quot;, () =&gt; {
+			const tileset = new TileSet({
+				tileProperties: {
+					&quot;4&quot;: [[&quot;key&quot;, &quot;value&quot;]]
+				}
+			});
+			tileset.hasTileProperties(4).should.be.ok;
+			tileset.hasTileProperties(0).should.not.be.ok;
+		});
+
+		it(&quot;fails if argument isn&apos;t a number&quot;, () =&gt; {
+			(() =&gt; {
+				new TileSet({}).hasTileProperties(&quot;a string&quot;);
+			}).should.throw(TypeError);
 		});
 	});
 });
