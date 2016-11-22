@@ -6,7 +6,7 @@ should();
 
 /** @test {TileArea} */
 describe("TileArea", () => {
-	const areaWidth = 100, areaHeight = 100;
+	const areaWidth = 30, areaHeight = 30;
 	let tileArea, tiles;
 
 	beforeEach(() => {
@@ -40,8 +40,8 @@ describe("TileArea", () => {
 	/** @test {TileArea#getTileIndex} */
 	describe("#getTileIndex", () => {
 		it("returns the right index", () => {
-			tileArea.getTileIndex(16, 56).should.equal(5616);
-			tileArea.getTileIndex(76, 32).should.equal(3276);
+			tileArea.getTileIndex(16, 20).should.equal(616);
+			tileArea.getTileIndex(5, 26).should.equal(785);
 		});
 		it("crashes if out of bounds", () => {
 			(() => {
