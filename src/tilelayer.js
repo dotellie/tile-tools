@@ -13,7 +13,7 @@ export class TileLayer extends TileArea {
 	 * @param {object} options - Options for the layer. Can also be layer data you loaded from JSON or similar.
 	 * @param {string} [options.name="Tilelayer"] - {@link TileLayer#name}
 	 * @param {Tile[]} options.tiles=[] - {@link TileLayer#tiles}
-	 * @param {Map<string, *>} options.properties=Map - {@link TileLayer#properties}
+	 * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}
 	 */
 	constructor(parentMap, options) {
 		const tiles = [];
@@ -35,7 +35,7 @@ export class TileLayer extends TileArea {
 		this.name = options.name || "Tilelayer";
 
 		/** Custom properties of the layer.
-		 * @type {Map<string, *>} */
+		 * @type {PropertyObject} */
 		this.properties = new PropertyObject(options.properties);
 	}
 }

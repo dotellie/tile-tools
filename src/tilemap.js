@@ -17,7 +17,7 @@ export class TileMap {
      * @param {number} options.tileHeight - {@link TileMap#tileHeight}
      * @param {layerOption[]} [options.layers=[]] - Same structure as options in {@link TileLayer#constructor}
      * @param {tilesetOption[]} [options.tilesets=[]] - Same structure as options in {@link TileSet#constructor}
-	 * @param {Map<string, *>} [options.properties=Map] - {@link TileMap#properties}
+	 * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}
      */
 	constructor(options) {
 		/** The name of the tilemap.

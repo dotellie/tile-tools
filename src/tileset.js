@@ -11,7 +11,7 @@ export class TileSet {
 	 * @param {string} [options.name="Tileset"] - {@link TileSet#name}
 	 * @param {string} [options.type="test"] - {@link TileSet#type}
 	 * @param {string} [options.path] - {@link TileSet#path}
-	 * @param {Map<string, *>} [options.properties] - {@link TileSet#properties}
+	 * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}
 	 * @param {object} [options.tileProperties={}] - Default tile properties for the tileset.
 	 */
 	constructor({ name = "Tileset", type = "test", path, properties, tileProperties = {} }) {
@@ -28,8 +28,8 @@ export class TileSet {
 		this.path = path;
 
 		/** Custom properties of the tilemap.
-		 * @type {Map<string, *>} */
-		this.properties = properties || new Map();
+		 * @type {PropertyObject} */
+		this.properties = new PropertyObject(properties);
 
 		this._tileProperties = {};
 		for (let key of Object.keys(tileProperties)) {
