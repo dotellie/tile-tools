@@ -4,10 +4,10 @@ import { TileSet } from "../src";
 
 const should = chaiShould();
 
-/** @test {TileMap} */
-describe("TileMap", () => {
-	/** @test {TileMap#constructor} */
-	describe("#create", () => {
+/** @test {TileSet} */
+describe("TileSet", () => {
+	/** @test {TileSet#constructor} */
+	describe("#constructor", () => {
 		it("creates with default values", () => {
 			const tileset = new TileSet({});
 			tileset.name.should.be.a("string");

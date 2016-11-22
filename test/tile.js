@@ -5,9 +5,9 @@ import { Tile } from "../src";
 should();
 
 /** @test {Tile} */
-describe("TileMap", () => {
+describe("Tile", () => {
 	/** @test {Tile#constructor} */
-	describe("#create", () => {
+	describe("#constructor", () => {
 		it("creates from objects", () => {
 			let tile = new Tile({
 				tileId: 56,

@@ -30,7 +30,7 @@ describe("TileMap", () => {
 	});
 
 	/** @test {TileMap#constructor} */
-	describe("#create", () => {
+	describe("#constructor", () => {
 		it("has a name", () => {
 			tilemap.name.should.equal(mapName);
 		});
