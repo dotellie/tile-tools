@@ -14,7 +14,14 @@ export class TileSet {
 	 * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}
 	 * @param {object} [options.tileProperties={}] - Default tile properties for the tileset.
 	 */
-	constructor({ name = "Tileset", type = "test", path, properties, tileProperties = {} }) {
+	constructor({
+		name = "Tileset",
+		type = "test",
+		path,
+		virtualPath,
+		properties,
+		tileProperties = {}
+	}) {
 		/** The name of the tileset.
 		 * @type {string} */
 		this.name = name;
@@ -26,6 +33,11 @@ export class TileSet {
 		 * This should only be used if tileset type is set to "image".
 		 * @type {string} */
 		this.path = path;
+		/** The virtual path of the tileset.
+		 * To be used by editors, such as DTile. Defaults to the noraml path if
+		 * undefined.
+		 * @type {string} */
+		this.virtualPath = virtualPath || path;
 
 		/** Custom properties of the tilemap.
 		 * @type {PropertyObject} */

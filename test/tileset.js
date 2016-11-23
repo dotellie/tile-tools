@@ -18,10 +18,17 @@ describe("TileSet", () => {
 			const name = "hello",
 				type = "image",
 				path = "./some/path.png",
-				tileset = new TileSet({ name, type, path });
+				virtualPath = "./some/other/path.png",
+				tileset = new TileSet({ name, type, path, virtualPath });
 			tileset.name.should.equal(name);
 			tileset.type.should.equal(type);
 			tileset.path.should.equal(path);
+			tileset.virtualPath.should.equal(virtualPath);
+		});
+		it("defaults virtual path to normal path", () => {
+			const path = "./a/path.png",
+				tileset = new TileSet({ path });
+			tileset.virtualPath.should.equal(path);
 		});
 		it("fails if any tile properties key isn't a number", () => {
 			(() => {
