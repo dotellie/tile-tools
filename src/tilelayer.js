@@ -38,4 +38,13 @@ export class TileLayer extends TileArea {
 		 * @type {PropertyObject} */
 		this.properties = new PropertyObject(options.properties);
 	}
+
+	toJSON() {
+		const replacement = {};
+		for (let key in this) {
+			if (key === "width" || key === "height") continue;
+			replacement[key] = this[key];
+		}
+		return replacement;
+	}
 }
