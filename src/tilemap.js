@@ -117,6 +117,21 @@ export class TileMap {
 	 */
 	getJSON() {
 		return JSON.stringify(this, (key, value) => {
+			// Since width and height are getters, they don't get serialized.
+			// Therefore, what is done here is that we check each property for
+			// if it's a TileMap and if it is, we replace the _width and _height
+			// property names with width and height (by substringing).
+			if (value instanceof TileMap) {
+				const replacement = {};
+				for (let k in value) {
+					const oldValue = value[k];
+					if (k === "_width" || k === "_height") {
+						k = k.substring(1);
+					}
+					replacement[k] = oldValue;
+				}
+				return replacement;
+			}
 			if (key.indexOf("_") === 0) {
 				return undefined;
 			}

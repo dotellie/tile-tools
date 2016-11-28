@@ -91,5 +91,16 @@ describe("TileMap", () => {
 			tilemap._property = "foo";
 			should.not.exist(JSON.parse(tilemap.getJSON())._property);
 		});
+		it("can be parsed back to a map object", () => {
+			(() => {
+				// eslint-disable-next-line no-new
+				new TileMap(JSON.parse(tilemap.getJSON()));
+			}).should.not.throw(Error);
+		});
+		it("still has width and height properties after parsing", () => {
+			const map = JSON.parse(tilemap.getJSON());
+			map.width.should.be.a("number");
+			map.height.should.be.a("number");
+		});
 	});
 });
