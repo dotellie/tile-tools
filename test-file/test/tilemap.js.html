@@ -136,6 +136,17 @@ describe(&quot;TileMap&quot;, () =&gt; {
 			tilemap._property = &quot;foo&quot;;
 			should.not.exist(JSON.parse(tilemap.getJSON())._property);
 		});
+		it(&quot;can be parsed back to a map object&quot;, () =&gt; {
+			(() =&gt; {
+				// eslint-disable-next-line no-new
+				new TileMap(JSON.parse(tilemap.getJSON()));
+			}).should.not.throw(Error);
+		});
+		it(&quot;still has width and height properties after parsing&quot;, () =&gt; {
+			const map = JSON.parse(tilemap.getJSON());
+			map.width.should.be.a(&quot;number&quot;);
+			map.height.should.be.a(&quot;number&quot;);
+		});
 	});
 });
 </code></pre>

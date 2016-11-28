@@ -1125,7 +1125,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { Tile } from \"./tile\";\nimport { TileArea } from \"./tilearea\";\nimport { PropertyObject } from \"./propertyObject\";\n\n/**\n * A tile layer object containing tiles and other properties.\n */\nexport class TileLayer extends TileArea {\n\t/**\n\t * TileLayer constructor.\n\t *\n\t * @param {TileMap} parentMap - The parent map for this layer.\n\t * @param {object} options - Options for the layer. Can also be layer data you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilelayer\"] - {@link TileLayer#name}\n\t * @param {Tile[]} options.tiles=[] - {@link TileLayer#tiles}\n\t * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}\n\t */\n\tconstructor(parentMap, options) {\n\t\tconst tiles = [];\n\t\tfor (let y = 0; y < parentMap.height; y++) {\n\t\t\tfor (let x = 0; x < parentMap.width; x++) {\n\t\t\t\tconst tile = new Tile(\n\t\t\t\t\toptions.tiles\n\t\t\t\t\t? options.tiles[x % parentMap.width + y * parentMap.width]\n\t\t\t\t\t: { tileId: -1, tilesetId: 0 }\n\t\t\t\t);\n\t\t\t\ttiles.push(tile);\n\t\t\t}\n\t\t}\n\n\t\tsuper(parentMap.width, parentMap.height, tiles);\n\n\t\t/** The name of the tile layer.\n\t\t * @type {string} */\n\t\tthis.name = options.name || \"Tilelayer\";\n\n\t\t/** Custom properties of the layer.\n\t\t * @type {PropertyObject} */\n\t\tthis.properties = new PropertyObject(options.properties);\n\t}\n}\n"
+    "content": "import { Tile } from \"./tile\";\nimport { TileArea } from \"./tilearea\";\nimport { PropertyObject } from \"./propertyObject\";\n\n/**\n * A tile layer object containing tiles and other properties.\n */\nexport class TileLayer extends TileArea {\n\t/**\n\t * TileLayer constructor.\n\t *\n\t * @param {TileMap} parentMap - The parent map for this layer.\n\t * @param {object} options - Options for the layer. Can also be layer data you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilelayer\"] - {@link TileLayer#name}\n\t * @param {Tile[]} options.tiles=[] - {@link TileLayer#tiles}\n\t * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}\n\t */\n\tconstructor(parentMap, options) {\n\t\tconst tiles = [];\n\t\tfor (let y = 0; y < parentMap.height; y++) {\n\t\t\tfor (let x = 0; x < parentMap.width; x++) {\n\t\t\t\tconst tile = new Tile(\n\t\t\t\t\toptions.tiles\n\t\t\t\t\t? options.tiles[x % parentMap.width + y * parentMap.width]\n\t\t\t\t\t: { tileId: -1, tilesetId: 0 }\n\t\t\t\t);\n\t\t\t\ttiles.push(tile);\n\t\t\t}\n\t\t}\n\n\t\tsuper(parentMap.width, parentMap.height, tiles);\n\n\t\t/** The name of the tile layer.\n\t\t * @type {string} */\n\t\tthis.name = options.name || \"Tilelayer\";\n\n\t\t/** Custom properties of the layer.\n\t\t * @type {PropertyObject} */\n\t\tthis.properties = new PropertyObject(options.properties);\n\t}\n\n\ttoJSON() {\n\t\tconst replacement = {};\n\t\tfor (let key in this) {\n\t\t\tif (key === \"width\" || key === \"height\") continue;\n\t\t\treplacement[key] = this[key];\n\t\t}\n\t\treturn replacement;\n\t}\n}\n"
   },
   {
     "__docId__": 43,
@@ -1257,6 +1257,26 @@
   },
   {
     "__docId__": 47,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "toJSON",
+    "memberof": "src/tilelayer.js~TileLayer",
+    "longname": "src/tilelayer.js~TileLayer#toJSON",
+    "access": null,
+    "description": null,
+    "lineNumber": 42,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 48,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1266,10 +1286,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { TileLayer } from \"./tilelayer\";\nimport { TileSet } from \"./tileset\";\nimport { PropertyObject } from \"./propertyObject\";\n\n/**\n * A tilemap object with name, sizes and layers.\n */\nexport class TileMap {\n\t/**\n     * TileMap constructor.\n     *\n     * @param {object} options - Options for the tilemap. Can also be a tilemap you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilemap\"] - {@link TileMap#name}\n     * @param {number} options.width - {@link TileMap#width}\n     * @param {number} options.height - {@link TileMap#height}\n     * @param {number} options.tileWidth - {@link TileMap#tileWidth}\n     * @param {number} options.tileHeight - {@link TileMap#tileHeight}\n     * @param {layerOption[]} [options.layers=[]] - Same structure as options in {@link TileLayer#constructor}\n     * @param {tilesetOption[]} [options.tilesets=[]] - Same structure as options in {@link TileSet#constructor}\n\t * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}\n     */\n\tconstructor(options) {\n\t\t/** The name of the tilemap.\n\t\t * @type {string} */\n\t\tthis.name = options.name || \"Tilemap\";\n\n\t\tthis._width = options.width;\n\t\tthis._height = options.height;\n\n\t\t/** The width of a tile for the tilemap.\n\t\t * @type {number} */\n\t\tthis.tileWidth = options.tileWidth;\n\t\t/** The height of a tile for the tilemap.\n\t\t * @type {number} */\n\t\tthis.tileHeight = options.tileHeight;\n\n\t\t/** All layers of the tilemap\n\t\t *  @type {TileLayer[]} */\n\t\tthis.layers = [];\n\t\toptions.layers = options.layers || [];\n\t\tfor (let layerData of options.layers) {\n\t\t\tthis.createLayer(layerData);\n\t\t}\n\n\t\t/** The tilesets the tilemap consists of.\n\t\t * @type {TileSet[]} */\n\t\tthis.tilesets = [];\n\t\toptions.tilesets = options.tilesets || [];\n\t\tfor (let tileset of options.tilesets) {\n\t\t\tthis.addTileset(new TileSet(tileset));\n\t\t}\n\n\t\t/** Custom properties of the tilemap.\n\t\t * @type {PropertyObject} */\n\t\tthis.properties = new PropertyObject(options.properties);\n\t}\n\n\t/** The width of the tilemap.\n\t * @type {number} */\n\tget width() {\n\t\treturn this._width;\n\t}\n\t/** The height of the tilemap.\n\t * @type {number} */\n\tget height() {\n\t\treturn this._height;\n\t}\n\n\t/**\n\t * Resizes the TileMap, inserting empty tiles if grown and removing tiles if shrunk.\n\t *\n\t * PLEASE NOTE: As explained {@link TileArea#resize}, this function is slow\n\t * on just one TileArea (layer), so you can imagine what'll happen if you call\n\t * this on just 4 150x150 layers...\n\t *\n\t * @param {number} width - The new width of the map.\n\t * @param {number} height - The new height of the map.\n\t */\n\tresize(width, height) {\n\t\tthis._width = width;\n\t\tthis._height = height;\n\n\t\tfor (let layer of this.layers) {\n\t\t\tlayer.resize(this._width, this._height);\n\t\t}\n\t}\n\n\t/**\n\t * Creates a new layer and adds it to the tilemap.\n\t *\n\t * @param {object} options - Options for the layer (see {@link TileLayer}).\n\t *\n\t * @returns {TileLayer}\n\t */\n\tcreateLayer(options) {\n\t\tconst layer = new TileLayer(this, options);\n\t\tthis.layers.push(layer);\n\t\treturn layer;\n\t}\n\n\t/**\n\t * Adds a tileset to the tilemap.\n\t *\n\t * @param {TileSet} tileset - the tileset to add to the map.\n\t *\n\t * @returns {TileSet}\n\t */\n\taddTileset(tileset) {\n\t\tthis.tilesets.push(tileset);\n\t\treturn tileset;\n\t}\n\n\t/**\n\t * Converts this tilemap to a JSON string.\n\t *\n\t * @returns {string} - The JSON serialization of this tilemap.\n\t */\n\tgetJSON() {\n\t\treturn JSON.stringify(this, (key, value) => {\n\t\t\tif (key.indexOf(\"_\") === 0) {\n\t\t\t\treturn undefined;\n\t\t\t}\n\t\t\treturn value;\n\t\t});\n\t}\n}\n"
+    "content": "import { TileLayer } from \"./tilelayer\";\nimport { TileSet } from \"./tileset\";\nimport { PropertyObject } from \"./propertyObject\";\n\n/**\n * A tilemap object with name, sizes and layers.\n */\nexport class TileMap {\n\t/**\n     * TileMap constructor.\n     *\n     * @param {object} options - Options for the tilemap. Can also be a tilemap you loaded from JSON or similar.\n\t * @param {string} [options.name=\"Tilemap\"] - {@link TileMap#name}\n     * @param {number} options.width - {@link TileMap#width}\n     * @param {number} options.height - {@link TileMap#height}\n     * @param {number} options.tileWidth - {@link TileMap#tileWidth}\n     * @param {number} options.tileHeight - {@link TileMap#tileHeight}\n     * @param {layerOption[]} [options.layers=[]] - Same structure as options in {@link TileLayer#constructor}\n     * @param {tilesetOption[]} [options.tilesets=[]] - Same structure as options in {@link TileSet#constructor}\n\t * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}\n     */\n\tconstructor(options) {\n\t\t/** The name of the tilemap.\n\t\t * @type {string} */\n\t\tthis.name = options.name || \"Tilemap\";\n\n\t\tthis._width = options.width;\n\t\tthis._height = options.height;\n\n\t\t/** The width of a tile for the tilemap.\n\t\t * @type {number} */\n\t\tthis.tileWidth = options.tileWidth;\n\t\t/** The height of a tile for the tilemap.\n\t\t * @type {number} */\n\t\tthis.tileHeight = options.tileHeight;\n\n\t\t/** All layers of the tilemap\n\t\t *  @type {TileLayer[]} */\n\t\tthis.layers = [];\n\t\toptions.layers = options.layers || [];\n\t\tfor (let layerData of options.layers) {\n\t\t\tthis.createLayer(layerData);\n\t\t}\n\n\t\t/** The tilesets the tilemap consists of.\n\t\t * @type {TileSet[]} */\n\t\tthis.tilesets = [];\n\t\toptions.tilesets = options.tilesets || [];\n\t\tfor (let tileset of options.tilesets) {\n\t\t\tthis.addTileset(new TileSet(tileset));\n\t\t}\n\n\t\t/** Custom properties of the tilemap.\n\t\t * @type {PropertyObject} */\n\t\tthis.properties = new PropertyObject(options.properties);\n\t}\n\n\t/** The width of the tilemap.\n\t * @type {number} */\n\tget width() {\n\t\treturn this._width;\n\t}\n\t/** The height of the tilemap.\n\t * @type {number} */\n\tget height() {\n\t\treturn this._height;\n\t}\n\n\t/**\n\t * Resizes the TileMap, inserting empty tiles if grown and removing tiles if shrunk.\n\t *\n\t * PLEASE NOTE: As explained {@link TileArea#resize}, this function is slow\n\t * on just one TileArea (layer), so you can imagine what'll happen if you call\n\t * this on just 4 150x150 layers...\n\t *\n\t * @param {number} width - The new width of the map.\n\t * @param {number} height - The new height of the map.\n\t */\n\tresize(width, height) {\n\t\tthis._width = width;\n\t\tthis._height = height;\n\n\t\tfor (let layer of this.layers) {\n\t\t\tlayer.resize(this._width, this._height);\n\t\t}\n\t}\n\n\t/**\n\t * Creates a new layer and adds it to the tilemap.\n\t *\n\t * @param {object} options - Options for the layer (see {@link TileLayer}).\n\t *\n\t * @returns {TileLayer}\n\t */\n\tcreateLayer(options) {\n\t\tconst layer = new TileLayer(this, options);\n\t\tthis.layers.push(layer);\n\t\treturn layer;\n\t}\n\n\t/**\n\t * Adds a tileset to the tilemap.\n\t *\n\t * @param {TileSet} tileset - the tileset to add to the map.\n\t *\n\t * @returns {TileSet}\n\t */\n\taddTileset(tileset) {\n\t\tthis.tilesets.push(tileset);\n\t\treturn tileset;\n\t}\n\n\t/**\n\t * Converts this tilemap to a JSON string.\n\t *\n\t * @returns {string} - The JSON serialization of this tilemap.\n\t */\n\tgetJSON() {\n\t\treturn JSON.stringify(this, (key, value) => {\n\t\t\t// Since width and height are getters, they don't get serialized.\n\t\t\t// Therefore, what is done here is that we check each property for\n\t\t\t// if it's a TileMap and if it is, we replace the _width and _height\n\t\t\t// property names with width and height (by substringing).\n\t\t\tif (value instanceof TileMap) {\n\t\t\t\tconst replacement = {};\n\t\t\t\tfor (let k in value) {\n\t\t\t\t\tconst oldValue = value[k];\n\t\t\t\t\tif (k === \"_width\" || k === \"_height\") {\n\t\t\t\t\t\tk = k.substring(1);\n\t\t\t\t\t}\n\t\t\t\t\treplacement[k] = oldValue;\n\t\t\t\t}\n\t\t\t\treturn replacement;\n\t\t\t}\n\t\t\tif (key.indexOf(\"_\") === 0) {\n\t\t\t\treturn undefined;\n\t\t\t}\n\t\t\treturn value;\n\t\t});\n\t}\n}\n"
   },
   {
-    "__docId__": 48,
+    "__docId__": 49,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -1285,7 +1305,7 @@
     "interface": false
   },
   {
-    "__docId__": 49,
+    "__docId__": 50,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -1396,7 +1416,7 @@
     "generator": false
   },
   {
-    "__docId__": 50,
+    "__docId__": 51,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1416,7 +1436,7 @@
     }
   },
   {
-    "__docId__": 51,
+    "__docId__": 52,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1434,7 +1454,7 @@
     }
   },
   {
-    "__docId__": 52,
+    "__docId__": 53,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1452,7 +1472,7 @@
     }
   },
   {
-    "__docId__": 53,
+    "__docId__": 54,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1472,7 +1492,7 @@
     }
   },
   {
-    "__docId__": 54,
+    "__docId__": 55,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1492,7 +1512,7 @@
     }
   },
   {
-    "__docId__": 55,
+    "__docId__": 56,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1512,7 +1532,7 @@
     }
   },
   {
-    "__docId__": 56,
+    "__docId__": 57,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1532,7 +1552,7 @@
     }
   },
   {
-    "__docId__": 57,
+    "__docId__": 58,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1552,7 +1572,7 @@
     }
   },
   {
-    "__docId__": 58,
+    "__docId__": 59,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -1573,7 +1593,7 @@
     "generator": false
   },
   {
-    "__docId__": 59,
+    "__docId__": 60,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -1594,7 +1614,7 @@
     "generator": false
   },
   {
-    "__docId__": 60,
+    "__docId__": 61,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1629,7 +1649,7 @@
     "generator": false
   },
   {
-    "__docId__": 61,
+    "__docId__": 62,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1647,7 +1667,7 @@
     }
   },
   {
-    "__docId__": 62,
+    "__docId__": 63,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1665,7 +1685,7 @@
     }
   },
   {
-    "__docId__": 63,
+    "__docId__": 64,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1704,7 +1724,7 @@
     "generator": false
   },
   {
-    "__docId__": 64,
+    "__docId__": 65,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1743,7 +1763,7 @@
     "generator": false
   },
   {
-    "__docId__": 65,
+    "__docId__": 66,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1771,7 +1791,7 @@
     "generator": false
   },
   {
-    "__docId__": 66,
+    "__docId__": 67,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1781,10 +1801,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { PropertyObject } from \"./propertyObject\";\n\n/**\n * A tileset object for storing arbitrary information about tilesets.\n */\nexport class TileSet {\n\t/**\n\t * TileSet constructor.\n\t *\n\t * @param {object} options - The options for the tileset.\n\t * @param {string} [options.name=\"Tileset\"] - {@link TileSet#name}\n\t * @param {string} [options.type=\"test\"] - {@link TileSet#type}\n\t * @param {string} [options.path] - {@link TileSet#path}\n\t * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}\n\t * @param {object} [options.tileProperties={}] - Default tile properties for the tileset.\n\t */\n\tconstructor({ name = \"Tileset\", type = \"test\", path, properties, tileProperties = {} }) {\n\t\t/** The name of the tileset.\n\t\t * @type {string} */\n\t\tthis.name = name;\n\t\t/** The type of the tileset.\n\t\t * Possible values are: \"test\", \"image\"\n\t\t * @type {string} */\n\t\tthis.type = type;\n\t\t/** The path of the tileset.\n\t\t * This should only be used if tileset type is set to \"image\".\n\t\t * @type {string} */\n\t\tthis.path = path;\n\n\t\t/** Custom properties of the tilemap.\n\t\t * @type {PropertyObject} */\n\t\tthis.properties = new PropertyObject(properties);\n\n\t\tthis._tileProperties = {};\n\t\tfor (let key of Object.keys(tileProperties)) {\n\t\t\tkey = parseInt(key);\n\t\t\tif (isNaN(key)) {\n\t\t\t\tthrow new TypeError(\"Tile property keys have to be numbers\");\n\t\t\t}\n\t\t\tconst value = tileProperties[key];\n\t\t\tthis._tileProperties[key] = new PropertyObject(value);\n\t\t}\n\t}\n\n\t/**\n\t * Gets a PropertyObject for a tile ID on the TileSet.\n\t *\n\t * @param {number} id - The tileID to get the PropertyObject for.\n\t *\n\t * @returns {PropertyObject} The PropertyObject beloning to this tile ID.\n\t *\n\t * @throws {TypeError} Throws a TypeError if id isn't a number.\n\t * @throws {RangeError} Throws a RangeError if there isn't a PropertyObject for the ID.\n\t */\n\tgetTileProperties(id) {\n\t\tif (typeof id !== \"number\") {\n\t\t\tthrow new TypeError(\"ID has to be a number\");\n\t\t}\n\t\tif (!this.hasTileProperties(id)) {\n\t\t\tthrow new RangeError(\"There are no properties for tile ID \" + id);\n\t\t}\n\n\t\treturn this._tileProperties[id];\n\t}\n\n\t/**\n\t * Creates a PropertyObject if needed and returns it.\n\t *\n\t * @param {number} id - The tileID to create the PropertyObject for.\n\t *\n\t * @returns {?PropertyObject} The created PropertyObject or undefined if it already existed.\n\t *\n\t * @throws {TypeError} Throws a TypeError if id isn't a number.\n\t */\n\tcreateTileProperties(id) {\n\t\tif (typeof id !== \"number\") {\n\t\t\tthrow new TypeError(\"ID has to be a number\");\n\t\t}\n\t\tif (!this.hasTileProperties(id)) {\n\t\t\tthis._tileProperties[id] = new PropertyObject();\n\t\t\treturn this._tileProperties[id];\n\t\t}\n\t}\n\n\t/**\n\t * Checks if a PropertyObject exists for an ID.\n\t *\n\t * @param {number} id - The tileID to check for a PropertyObject.\n\t *\n\t * @returns {boolean}\n\t *\n\t * @throws {TypeError} Throws a TypeError if id isn't a number.\n\t */\n\thasTileProperties(id) {\n\t\tif (typeof id !== \"number\") {\n\t\t\tthrow new TypeError(\"ID has to be a number\");\n\t\t}\n\t\treturn typeof this._tileProperties[id] !== \"undefined\";\n\t}\n}\n"
+    "content": "import { PropertyObject } from \"./propertyObject\";\n\n/**\n * A tileset object for storing arbitrary information about tilesets.\n */\nexport class TileSet {\n\t/**\n\t * TileSet constructor.\n\t *\n\t * @param {object} options - The options for the tileset.\n\t * @param {string} [options.name=\"Tileset\"] - {@link TileSet#name}\n\t * @param {string} [options.type=\"test\"] - {@link TileSet#type}\n\t * @param {string} [options.path] - {@link TileSet#path}\n\t * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}\n\t * @param {object} [options.tileProperties={}] - Default tile properties for the tileset.\n\t */\n\tconstructor({\n\t\tname = \"Tileset\",\n\t\ttype = \"test\",\n\t\tpath,\n\t\tvirtualPath,\n\t\tproperties,\n\t\ttileProperties = {}\n\t}) {\n\t\t/** The name of the tileset.\n\t\t * @type {string} */\n\t\tthis.name = name;\n\t\t/** The type of the tileset.\n\t\t * Possible values are: \"test\", \"image\"\n\t\t * @type {string} */\n\t\tthis.type = type;\n\t\t/** The path of the tileset.\n\t\t * This should only be used if tileset type is set to \"image\".\n\t\t * @type {string} */\n\t\tthis.path = path;\n\t\t/** The virtual path of the tileset.\n\t\t * To be used by editors, such as DTile. Defaults to the noraml path if\n\t\t * undefined.\n\t\t * @type {string} */\n\t\tthis.virtualPath = virtualPath || path;\n\n\t\t/** Custom properties of the tilemap.\n\t\t * @type {PropertyObject} */\n\t\tthis.properties = new PropertyObject(properties);\n\n\t\tthis._tileProperties = {};\n\t\tfor (let key of Object.keys(tileProperties)) {\n\t\t\tkey = parseInt(key);\n\t\t\tif (isNaN(key)) {\n\t\t\t\tthrow new TypeError(\"Tile property keys have to be numbers\");\n\t\t\t}\n\t\t\tconst value = tileProperties[key];\n\t\t\tthis._tileProperties[key] = new PropertyObject(value);\n\t\t}\n\t}\n\n\t/**\n\t * Gets a PropertyObject for a tile ID on the TileSet.\n\t *\n\t * @param {number} id - The tileID to get the PropertyObject for.\n\t *\n\t * @returns {PropertyObject} The PropertyObject beloning to this tile ID.\n\t *\n\t * @throws {TypeError} Throws a TypeError if id isn't a number.\n\t * @throws {RangeError} Throws a RangeError if there isn't a PropertyObject for the ID.\n\t */\n\tgetTileProperties(id) {\n\t\tif (typeof id !== \"number\") {\n\t\t\tthrow new TypeError(\"ID has to be a number\");\n\t\t}\n\t\tif (!this.hasTileProperties(id)) {\n\t\t\tthrow new RangeError(\"There are no properties for tile ID \" + id);\n\t\t}\n\n\t\treturn this._tileProperties[id];\n\t}\n\n\t/**\n\t * Creates a PropertyObject if needed and returns it.\n\t *\n\t * @param {number} id - The tileID to create the PropertyObject for.\n\t *\n\t * @returns {?PropertyObject} The created PropertyObject or undefined if it already existed.\n\t *\n\t * @throws {TypeError} Throws a TypeError if id isn't a number.\n\t */\n\tcreateTileProperties(id) {\n\t\tif (typeof id !== \"number\") {\n\t\t\tthrow new TypeError(\"ID has to be a number\");\n\t\t}\n\t\tif (!this.hasTileProperties(id)) {\n\t\t\tthis._tileProperties[id] = new PropertyObject();\n\t\t\treturn this._tileProperties[id];\n\t\t}\n\t}\n\n\t/**\n\t * Checks if a PropertyObject exists for an ID.\n\t *\n\t * @param {number} id - The tileID to check for a PropertyObject.\n\t *\n\t * @returns {boolean}\n\t *\n\t * @throws {TypeError} Throws a TypeError if id isn't a number.\n\t */\n\thasTileProperties(id) {\n\t\tif (typeof id !== \"number\") {\n\t\t\tthrow new TypeError(\"ID has to be a number\");\n\t\t}\n\t\treturn typeof this._tileProperties[id] !== \"undefined\";\n\t}\n}\n"
   },
   {
-    "__docId__": 67,
+    "__docId__": 68,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -1800,7 +1820,7 @@
     "interface": false
   },
   {
-    "__docId__": 68,
+    "__docId__": 69,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -1881,7 +1901,7 @@
     "generator": false
   },
   {
-    "__docId__": 69,
+    "__docId__": 70,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1890,27 +1910,7 @@
     "longname": "src/tileset.js~TileSet#name",
     "access": null,
     "description": "The name of the tileset.",
-    "lineNumber": 20,
-    "type": {
-      "nullable": null,
-      "types": [
-        "string"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 70,
-    "kind": "member",
-    "static": false,
-    "variation": null,
-    "name": "type",
-    "memberof": "src/tileset.js~TileSet",
-    "longname": "src/tileset.js~TileSet#type",
-    "access": null,
-    "description": "The type of the tileset.\nPossible values are: \"test\", \"image\"",
-    "lineNumber": 24,
+    "lineNumber": 27,
     "type": {
       "nullable": null,
       "types": [
@@ -1925,12 +1925,12 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "path",
+    "name": "type",
     "memberof": "src/tileset.js~TileSet",
-    "longname": "src/tileset.js~TileSet#path",
+    "longname": "src/tileset.js~TileSet#type",
     "access": null,
-    "description": "The path of the tileset.\nThis should only be used if tileset type is set to \"image\".",
-    "lineNumber": 28,
+    "description": "The type of the tileset.\nPossible values are: \"test\", \"image\"",
+    "lineNumber": 31,
     "type": {
       "nullable": null,
       "types": [
@@ -1945,16 +1945,16 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "properties",
+    "name": "path",
     "memberof": "src/tileset.js~TileSet",
-    "longname": "src/tileset.js~TileSet#properties",
+    "longname": "src/tileset.js~TileSet#path",
     "access": null,
-    "description": "Custom properties of the tilemap.",
-    "lineNumber": 32,
+    "description": "The path of the tileset.\nThis should only be used if tileset type is set to \"image\".",
+    "lineNumber": 35,
     "type": {
       "nullable": null,
       "types": [
-        "PropertyObject"
+        "string"
       ],
       "spread": false,
       "description": null
@@ -1965,12 +1965,52 @@
     "kind": "member",
     "static": false,
     "variation": null,
+    "name": "virtualPath",
+    "memberof": "src/tileset.js~TileSet",
+    "longname": "src/tileset.js~TileSet#virtualPath",
+    "access": null,
+    "description": "The virtual path of the tileset.\nTo be used by editors, such as DTile. Defaults to the noraml path if\nundefined.",
+    "lineNumber": 40,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 74,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "properties",
+    "memberof": "src/tileset.js~TileSet",
+    "longname": "src/tileset.js~TileSet#properties",
+    "access": null,
+    "description": "Custom properties of the tilemap.",
+    "lineNumber": 44,
+    "type": {
+      "nullable": null,
+      "types": [
+        "PropertyObject"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "member",
+    "static": false,
+    "variation": null,
     "name": "_tileProperties",
     "memberof": "src/tileset.js~TileSet",
     "longname": "src/tileset.js~TileSet#_tileProperties",
     "access": null,
     "description": null,
-    "lineNumber": 34,
+    "lineNumber": 46,
     "undocument": true,
     "type": {
       "types": [
@@ -1979,7 +2019,7 @@
     }
   },
   {
-    "__docId__": 74,
+    "__docId__": 76,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1988,7 +2028,7 @@
     "longname": "src/tileset.js~TileSet#getTileProperties",
     "access": null,
     "description": "Gets a PropertyObject for a tile ID on the TileSet.",
-    "lineNumber": 55,
+    "lineNumber": 67,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2032,7 +2072,7 @@
     "generator": false
   },
   {
-    "__docId__": 75,
+    "__docId__": 77,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2041,7 +2081,7 @@
     "longname": "src/tileset.js~TileSet#createTileProperties",
     "access": null,
     "description": "Creates a PropertyObject if needed and returns it.",
-    "lineNumber": 75,
+    "lineNumber": 87,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2079,7 +2119,7 @@
     "generator": false
   },
   {
-    "__docId__": 76,
+    "__docId__": 78,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2088,7 +2128,7 @@
     "longname": "src/tileset.js~TileSet#hasTileProperties",
     "access": null,
     "description": "Checks if a PropertyObject exists for an ID.",
-    "lineNumber": 94,
+    "lineNumber": 106,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2126,7 +2166,7 @@
     "generator": false
   },
   {
-    "__docId__": 78,
+    "__docId__": 80,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2139,7 +2179,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 79,
+    "__docId__": 81,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2152,7 +2192,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 80,
+    "__docId__": 82,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2165,7 +2205,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 81,
+    "__docId__": 83,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2178,7 +2218,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 82,
+    "__docId__": 84,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2191,7 +2231,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 83,
+    "__docId__": 85,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2204,7 +2244,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 84,
+    "__docId__": 86,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2217,7 +2257,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 85,
+    "__docId__": 87,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2230,7 +2270,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 88,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2243,7 +2283,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 87,
+    "__docId__": 89,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2256,7 +2296,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 88,
+    "__docId__": 90,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2269,7 +2309,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 89,
+    "__docId__": 91,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2282,7 +2322,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 90,
+    "__docId__": 92,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2295,7 +2335,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 91,
+    "__docId__": 93,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2308,7 +2348,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 92,
+    "__docId__": 94,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2321,7 +2361,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 93,
+    "__docId__": 95,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2334,7 +2374,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 94,
+    "__docId__": 96,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2347,7 +2387,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 95,
+    "__docId__": 97,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2360,7 +2400,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 96,
+    "__docId__": 98,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2373,7 +2413,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 99,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2386,7 +2426,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 98,
+    "__docId__": 100,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2399,7 +2439,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 99,
+    "__docId__": 101,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2412,7 +2452,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 100,
+    "__docId__": 102,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2425,7 +2465,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 101,
+    "__docId__": 103,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2438,7 +2478,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 102,
+    "__docId__": 104,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2451,7 +2491,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 103,
+    "__docId__": 105,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2464,7 +2504,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 104,
+    "__docId__": 106,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2477,7 +2517,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 105,
+    "__docId__": 107,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2490,7 +2530,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 108,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2503,7 +2543,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 107,
+    "__docId__": 109,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2516,7 +2556,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 108,
+    "__docId__": 110,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2529,7 +2569,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 109,
+    "__docId__": 111,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2542,7 +2582,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 110,
+    "__docId__": 112,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2555,7 +2595,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 111,
+    "__docId__": 113,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2568,7 +2608,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 112,
+    "__docId__": 114,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2581,7 +2621,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 113,
+    "__docId__": 115,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2594,7 +2634,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 114,
+    "__docId__": 116,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2607,7 +2647,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 115,
+    "__docId__": 117,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2620,7 +2660,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 116,
+    "__docId__": 118,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2633,7 +2673,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 117,
+    "__docId__": 119,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2646,7 +2686,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 118,
+    "__docId__": 120,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2659,7 +2699,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 119,
+    "__docId__": 121,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2672,7 +2712,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 120,
+    "__docId__": 122,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2685,7 +2725,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 121,
+    "__docId__": 123,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2698,7 +2738,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 122,
+    "__docId__": 124,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2711,7 +2751,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 123,
+    "__docId__": 125,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2724,7 +2764,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 124,
+    "__docId__": 126,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2737,7 +2777,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 126,
+    "__docId__": 128,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2750,7 +2790,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 127,
+    "__docId__": 129,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2763,7 +2803,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 128,
+    "__docId__": 130,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2776,7 +2816,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 129,
+    "__docId__": 131,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2789,7 +2829,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 130,
+    "__docId__": 132,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2802,7 +2842,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 131,
+    "__docId__": 133,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2815,7 +2855,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 132,
+    "__docId__": 134,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2828,7 +2868,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 133,
+    "__docId__": 135,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2841,7 +2881,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 134,
+    "__docId__": 136,
     "kind": "testFile",
     "static": true,
     "variation": null,
@@ -2854,7 +2894,7 @@
     "content": "import { should as chaiShould } from \"chai\";\n\nimport { PropertyObject } from \"../src/propertyObject\";\n\nchaiShould();\n\n/** @test {PropertyObject} */\ndescribe(\"PropertyObject\", () => {\n\tconst defaultProperties = [[\"test1\", true], [\"test2\", 159]];\n\tlet properties;\n\n\tbeforeEach(() => {\n\t\tproperties = new PropertyObject(defaultProperties);\n\t});\n\n\t/** @test {PropertyObject#constructor} */\n\tdescribe(\"#constructor\", () => {\n\t\tit(\"creates width some default values\", () => {\n\t\t\tproperties._map.get(\"test1\").should.equal(true);\n\t\t\tproperties._map.get(\"test2\").should.equal(159);\n\t\t});\n\t\tit(\"creates from another property object\", () => {\n\t\t\tconst newProperties = new PropertyObject(properties);\n\t\t\tnewProperties.should.deep.equal(properties);\n\t\t});\n\t\tit(\"crashes when passed in an invalid properties object\", () => {\n\t\t\t(() => {\n\t\t\t\t// eslint-disable-next-line no-new\n\t\t\t\tnew PropertyObject(() => {});\n\t\t\t}).should.throw(TypeError);\n\t\t});\n\t\tit(\"rejects invalid value types\", () => {\n\t\t\t(() => {\n\t\t\t\t// eslint-disable-next-line no-new\n\t\t\t\tnew PropertyObject({ test: () => {} });\n\t\t\t}).should.throw(TypeError);\n\t\t});\n\t});\n\n\t/** @test {PropertyObject#get} */\n\tdescribe(\"#get\", () => {\n\t\tit(\"gets basic values correctly\", () => {\n\t\t\tproperties.get(\"test1\").should.equal(true);\n\t\t\tproperties.get(\"test2\").should.equal(159);\n\t\t});\n\t\tit(\"crashes when key is not a string\", () => {\n\t\t\t(() => {\n\t\t\t\tproperties.get(() => {});\n\t\t\t}).should.throw(TypeError);\n\t\t});\n\t});\n\n\t/** @test {PropertyObject#getAll} */\n\tdescribe(\"#getAll\", () => {\n\t\tit(\"gets all values correctly\", () => {\n\t\t\tconst values = properties.getAll();\n\t\t\tfor (let [key, value] of values) {\n\t\t\t\tlet found = false;\n\t\t\t\tfor (let [pkey, pvalue] of defaultProperties) {\n\t\t\t\t\tif (key === pkey) {\n\t\t\t\t\t\tvalue.should.equal(pvalue);\n\t\t\t\t\t\tfound = true;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tfound.should.be.true;\n\t\t\t}\n\t\t});\n\t});\n\n\t/** @test {PropertyObject#set} */\n\tdescribe(\"#set\", () => {\n\t\tit(\"sets a key correctly\", () => {\n\t\t\tproperties.set(\"test3\", \"hello\");\n\t\t\tproperties.get(\"test3\").should.equal(\"hello\");\n\t\t});\n\t\tit(\"rejects keys of invalid types\", () => {\n\t\t\t(() => {\n\t\t\t\tproperties.set(() => {}, \"invalid\");\n\t\t\t}).should.throw(TypeError);\n\t\t});\n\t\tit(\"rejects values of invalid types\", () => {\n\t\t\t// Should only accept valid JSON types.\n\t\t\t(() => {\n\t\t\t\tproperties.set(\"test3\", () => {});\n\t\t\t}).should.throw(TypeError);\n\t\t\t(() => {\n\t\t\t\tproperties.set(\"test3\", \"hello\");\n\t\t\t\tproperties.set(\"test4\", 123);\n\t\t\t\tproperties.set(\"test5\", true);\n\t\t\t\tproperties.set(\"test6\", { anObject: \"with a value\" });\n\t\t\t}).should.not.throw(TypeError);\n\t\t});\n\t});\n\n\t/** @test {PropertyObject#toJSON} */\n\tdescribe(\"#toJSON\", () => {\n\t\tit(\"serializes correctly\", () => {\n\t\t\tJSON.stringify(properties).should.equal(\"[[\\\"test1\\\",true],[\\\"test2\\\",159]]\");\n\t\t});\n\t});\n});\n"
   },
   {
-    "__docId__": 135,
+    "__docId__": 137,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -2877,7 +2917,7 @@
     ]
   },
   {
-    "__docId__": 136,
+    "__docId__": 138,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -2900,7 +2940,7 @@
     ]
   },
   {
-    "__docId__": 137,
+    "__docId__": 139,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -2914,7 +2954,7 @@
     "lineNumber": 18
   },
   {
-    "__docId__": 138,
+    "__docId__": 140,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -2928,7 +2968,7 @@
     "lineNumber": 22
   },
   {
-    "__docId__": 139,
+    "__docId__": 141,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -2942,7 +2982,7 @@
     "lineNumber": 26
   },
   {
-    "__docId__": 140,
+    "__docId__": 142,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -2956,7 +2996,7 @@
     "lineNumber": 32
   },
   {
-    "__docId__": 141,
+    "__docId__": 143,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -2979,7 +3019,7 @@
     ]
   },
   {
-    "__docId__": 142,
+    "__docId__": 144,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -2993,7 +3033,7 @@
     "lineNumber": 42
   },
   {
-    "__docId__": 143,
+    "__docId__": 145,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3007,7 +3047,7 @@
     "lineNumber": 46
   },
   {
-    "__docId__": 144,
+    "__docId__": 146,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3030,7 +3070,7 @@
     ]
   },
   {
-    "__docId__": 145,
+    "__docId__": 147,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3044,7 +3084,7 @@
     "lineNumber": 55
   },
   {
-    "__docId__": 146,
+    "__docId__": 148,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3067,7 +3107,7 @@
     ]
   },
   {
-    "__docId__": 147,
+    "__docId__": 149,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3081,7 +3121,7 @@
     "lineNumber": 72
   },
   {
-    "__docId__": 148,
+    "__docId__": 150,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3095,7 +3135,7 @@
     "lineNumber": 76
   },
   {
-    "__docId__": 149,
+    "__docId__": 151,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3109,7 +3149,7 @@
     "lineNumber": 81
   },
   {
-    "__docId__": 150,
+    "__docId__": 152,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3132,7 +3172,7 @@
     ]
   },
   {
-    "__docId__": 151,
+    "__docId__": 153,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3146,7 +3186,7 @@
     "lineNumber": 97
   },
   {
-    "__docId__": 152,
+    "__docId__": 154,
     "kind": "testFile",
     "static": true,
     "variation": null,
@@ -3159,7 +3199,7 @@
     "content": "import { should } from \"chai\";\n\nimport { Tile } from \"../src\";\n\nshould();\n\n/** @test {Tile} */\ndescribe(\"Tile\", () => {\n\t/** @test {Tile#constructor} */\n\tdescribe(\"#constructor\", () => {\n\t\tit(\"creates from objects\", () => {\n\t\t\tlet tile = new Tile({\n\t\t\t\ttileId: 56,\n\t\t\t\ttilesetId: 1\n\t\t\t});\n\t\t\ttile.tileId.should.equal(56);\n\t\t\ttile.tilesetId.should.equal(1);\n\t\t});\n\t\tit(\"creates from strings\", () => {\n\t\t\tlet tile = new Tile(\"224:5\");\n\t\t\ttile.tileId.should.equal(224);\n\t\t\ttile.tilesetId.should.equal(5);\n\t\t});\n\t\tit(\"has empty default values\", () => {\n\t\t\tconst tile = new Tile();\n\t\t\ttile.tilesetId.should.equal(-1);\n\t\t\ttile.tilesetId.should.equal(-1);\n\t\t});\n\t});\n\n\t/** @test {Tile#setTile} */\n\tdescribe(\"#setTile\", () => {\n\t\tlet tile;\n\t\tbeforeEach(() => {\n\t\t\ttile = new Tile(\"10:8\");\n\t\t});\n\n\t\tit(\"can replace only tile ID\", () => {\n\t\t\ttile.setData(15);\n\t\t\ttile.tileId.should.equal(15);\n\t\t\ttile.tilesetId.should.equal(8);\n\t\t});\n\t\tit(\"can replace both tile ID and tileset ID\", () => {\n\t\t\ttile.setData(84, 2);\n\t\t\ttile.tileId.should.equal(84);\n\t\t\ttile.tilesetId.should.equal(2);\n\t\t});\n\t\tit(\"doesn't replace if ID is -1\", () => {\n\t\t\ttile.setData(-1, -1);\n\t\t\ttile.tileId.should.equal(10);\n\t\t\ttile.tilesetId.should.equal(8);\n\t\t});\n\t\tit(\"does replace empty if told so\", () => {\n\t\t\ttile.setData(-1, -1, true);\n\t\t\ttile.tileId.should.equal(-1);\n\t\t\ttile.tilesetId.should.equal(-1);\n\t\t});\n\t});\n\n\t/** @test {Tile#toJSON} */\n\tdescribe(\"#toJSON\", () => {\n\t\tit(\"stringifies with properties\", () => {\n\t\t\tlet tile = new Tile({\n\t\t\t\ttileId: 14,\n\t\t\t\ttilesetId: 3,\n\t\t\t\tproperties: [\n\t\t\t\t\t[\"property\", \"is a string\"]\n\t\t\t\t]\n\t\t\t});\n\t\t\tJSON.stringify(tile).should.contain(\"[\\\"property\\\",\\\"is a string\\\"]\");\n\t\t});\n\t\tit(\"stringifies without properties\", () => {\n\t\t\tlet tile = new Tile(\"456:3\");\n\t\t\tJSON.stringify(tile).should.equal(\"\\\"456:3\\\"\");\n\t\t});\n\t});\n\n\t/** @test {Tile#clone} */\n\tdescribe(\"#clone\", () => {\n\t\tlet tile;\n\t\tbeforeEach(() => {\n\t\t\ttile = new Tile({\n\t\t\t\ttileId: 14,\n\t\t\t\ttilesetId: 3,\n\t\t\t\tproperties: [\n\t\t\t\t\t[\"property\", \"is a string\"]\n\t\t\t\t]\n\t\t\t});\n\t\t});\n\n\t\tit(\"clones all the properties of a tile\", () => {\n\t\t\ttile.clone().should.deep.equal(tile);\n\t\t});\n\t\tit(\"doesn't become the same tile\", () => {\n\t\t\ttile.clone().should.not.equal(tile);\n\t\t});\n\t});\n});\n"
   },
   {
-    "__docId__": 153,
+    "__docId__": 155,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3182,7 +3222,7 @@
     ]
   },
   {
-    "__docId__": 154,
+    "__docId__": 156,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3205,7 +3245,7 @@
     ]
   },
   {
-    "__docId__": 155,
+    "__docId__": 157,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3219,7 +3259,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 156,
+    "__docId__": 158,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3233,7 +3273,7 @@
     "lineNumber": 19
   },
   {
-    "__docId__": 157,
+    "__docId__": 159,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3247,7 +3287,7 @@
     "lineNumber": 24
   },
   {
-    "__docId__": 158,
+    "__docId__": 160,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3270,7 +3310,7 @@
     ]
   },
   {
-    "__docId__": 159,
+    "__docId__": 161,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3284,7 +3324,7 @@
     "lineNumber": 38
   },
   {
-    "__docId__": 160,
+    "__docId__": 162,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3298,7 +3338,7 @@
     "lineNumber": 43
   },
   {
-    "__docId__": 161,
+    "__docId__": 163,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3312,7 +3352,7 @@
     "lineNumber": 48
   },
   {
-    "__docId__": 162,
+    "__docId__": 164,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3326,7 +3366,7 @@
     "lineNumber": 53
   },
   {
-    "__docId__": 163,
+    "__docId__": 165,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3349,7 +3389,7 @@
     ]
   },
   {
-    "__docId__": 164,
+    "__docId__": 166,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3363,7 +3403,7 @@
     "lineNumber": 62
   },
   {
-    "__docId__": 165,
+    "__docId__": 167,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3377,7 +3417,7 @@
     "lineNumber": 72
   },
   {
-    "__docId__": 166,
+    "__docId__": 168,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3400,7 +3440,7 @@
     ]
   },
   {
-    "__docId__": 167,
+    "__docId__": 169,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3414,7 +3454,7 @@
     "lineNumber": 91
   },
   {
-    "__docId__": 168,
+    "__docId__": 170,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3428,7 +3468,7 @@
     "lineNumber": 94
   },
   {
-    "__docId__": 169,
+    "__docId__": 171,
     "kind": "testFile",
     "static": true,
     "variation": null,
@@ -3441,7 +3481,7 @@
     "content": "import { should } from \"chai\";\n\nimport { TileArea, Tile } from \"../src\";\n\nshould();\n\n/** @test {TileArea} */\ndescribe(\"TileArea\", () => {\n\tconst areaWidth = 30, areaHeight = 30;\n\tlet tileArea, tiles;\n\n\tbeforeEach(() => {\n\t\ttiles = [];\n\t\tfor (let i = 0; i < areaWidth * areaHeight; i++) {\n\t\t\ttiles.push(new Tile({\n\t\t\t\ttileId: parseInt(Math.random() * 100)\n\t\t\t}));\n\t\t}\n\n\t\ttileArea = new TileArea(areaWidth, areaHeight, tiles);\n\t});\n\n\t/** @test {TileArea#constructor} */\n\tdescribe(\"#constructor\", () => {\n\t\tit(\"rejects non-tile objects\", () => {\n\t\t\t(() => {\n\t\t\t\t// eslint-disable-next-line no-new\n\t\t\t\tnew TileArea(1, 1, [{ tileId: 0 }]);\n\t\t\t}).should.throw(TypeError);\n\t\t});\n\n\t\tit(\"requires width and height to equal amount of tiles\", () => {\n\t\t\t(() => {\n\t\t\t\t// eslint-disable-next-line no-new\n\t\t\t\tnew TileArea(0, 0, [new Tile({ tileId: 0 })]);\n\t\t\t}).should.throw(RangeError);\n\t\t});\n\t});\n\n\t/** @test {TileArea#getTileIndex} */\n\tdescribe(\"#getTileIndex\", () => {\n\t\tit(\"returns the right index\", () => {\n\t\t\ttileArea.getTileIndex(16, 20).should.equal(616);\n\t\t\ttileArea.getTileIndex(5, 26).should.equal(785);\n\t\t});\n\t\tit(\"crashes if out of bounds\", () => {\n\t\t\t(() => {\n\t\t\t\ttileArea.getTileIndex(areaWidth, 0);\n\t\t\t}).should.throw(RangeError);\n\t\t\t(() => {\n\t\t\t\ttileArea.getTileIndex(-1, 0);\n\t\t\t}).should.throw(RangeError);\n\t\t});\n\t});\n\n\t/** @test {TileArea#getTileArea} */\n\tdescribe(\"#getTileArea\", () => {\n\t\tit(\"returns the correct tiles\", () => {\n\t\t\tconst tileAreaSplice = tileArea.getTileArea(0, 0, 2, 2);\n\t\t\tfor (let x = 0; x < tileAreaSplice.width; x++) {\n\t\t\t\tfor (let y = 0; y < tileAreaSplice.width; y++) {\n\t\t\t\t\ttileAreaSplice.tiles[tileAreaSplice.getTileIndex(x, y)]\n\t\t\t\t\t\t.tileId.should.equal(tiles[x + y * areaWidth].tileId);\n\t\t\t\t}\n\t\t\t}\n\t\t});\n\t\tit(\"returns the correct dimmensions\", () => {\n\t\t\tconst tileAreaSplice = tileArea.getTileArea(0, 5, 3, 2);\n\t\t\ttileAreaSplice.width.should.equal(3);\n\t\t\ttileAreaSplice.height.should.equal(2);\n\t\t});\n\t\tit(\"crashes if out of bounds\", () => {\n\t\t\t(() => {\n\t\t\t\ttileArea.getTileArea(areaWidth, 0, 50);\n\t\t\t}).should.throw(RangeError);\n\t\t\t(() => {\n\t\t\t\ttileArea.getTileArea(areaWidth - 2, 0, 5, 1);\n\t\t\t}).should.throw(RangeError);\n\t\t});\n\t\tit(\"crashes if rectangle is invalid\", () => {\n\t\t\t(() => {\n\t\t\t\ttileArea.getTileArea(0, 0, -1, 1);\n\t\t\t}).should.throw(RangeError);\n\t\t\t(() => {\n\t\t\t\ttileArea.getTileArea(0, 0, 1, 0);\n\t\t\t}).should.throw(RangeError);\n\t\t});\n\t});\n\n\t/** @test {TileArea#insertTileArea} */\n\tdescribe(\"#insertTileArea\", () => {\n\t\tconst smallAreaWidth = 3, smallAreaHeight = 3;\n\t\tlet smallTileArea;\n\n\t\tbeforeEach(() => {\n\t\t\tconst tiles = [];\n\t\t\tfor (let i = 0; i < smallAreaWidth * smallAreaHeight; i++) {\n\t\t\t\ttiles.push(new Tile({\n\t\t\t\t\ttileId: parseInt(Math.random() * 100)\n\t\t\t\t}));\n\t\t\t}\n\t\t\tsmallTileArea = new TileArea(smallAreaWidth, smallAreaHeight, tiles);\n\t\t});\n\n\t\tit(\"inserts a tile area correctly\", () => {\n\t\t\tconst x = parseInt((areaWidth - smallAreaWidth) / 2);\n\t\t\tconst y = parseInt((areaHeight - smallAreaHeight) / 2);\n\t\t\ttileArea.insertTileArea(x, y, smallTileArea);\n\n\t\t\ttileArea.getTileArea(x, y, smallAreaWidth, smallAreaHeight)\n\t\t\t\t.should.deep.equal(smallTileArea);\n\t\t});\n\t\tit(\"can skip empty (-1) tiles\", () => {\n\t\t\ttileArea.insertTileArea(\n\t\t\t\t0, 0,\n\t\t\t\tnew TileArea(1, 1, [new Tile({ tileId: -1 })]),\n\t\t\t\ttrue\n\t\t\t);\n\n\t\t\ttileArea.getTileArea(0, 0, 1, 1).tiles[0].tileId.should.not.equal(-1);\n\t\t});\n\t\tit(\"doesn't crash when going out of bounds\", () => {\n\t\t\tconst x = -smallAreaWidth + 1;\n\t\t\tconst y = -smallAreaHeight + 1;\n\t\t\ttileArea.insertTileArea(x, y, smallTileArea);\n\n\t\t\ttileArea.getTileArea(0, 0, 1, 1).tiles[0].tileId.should.equal(\n\t\t\t\tsmallTileArea.tiles[smallTileArea.tiles.length - 1].tileId\n\t\t\t);\n\t\t});\n\t});\n\n\tdescribe(\"TileArea#resize\", () => {\n\t\tlet newWidth, newHeight;\n\n\t\tconst shrink = () => {\n\t\t\tnewWidth = areaWidth / 2;\n\t\t\tnewHeight = areaHeight / 2;\n\t\t\ttileArea.resize(newWidth, newHeight);\n\t\t};\n\t\tconst grow = () => {\n\t\t\tnewWidth = areaWidth * 2;\n\t\t\tnewHeight = areaHeight * 2;\n\t\t\ttileArea.resize(newWidth, newHeight);\n\t\t};\n\t\tconst unevenResize = () => {\n\t\t\tnewWidth = areaWidth * 2;\n\t\t\tnewHeight = areaHeight / 2;\n\t\t};\n\n\t\tit(\"can shrink dimmensions\", () => {\n\t\t\tshrink();\n\t\t\ttileArea.width.should.equal(newWidth);\n\t\t\ttileArea.height.should.equal(newHeight);\n\t\t});\n\t\tit(\"can grow dimmensions\", () => {\n\t\t\tgrow();\n\t\t\ttileArea.width.should.equal(newWidth);\n\t\t\ttileArea.height.should.equal(newHeight);\n\t\t});\n\t\tit(\"keeps tiles intact\", () => {\n\t\t\tconst aTileX = 5;\n\t\t\tconst aTileY = 6;\n\t\t\tconst aTile = tileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0];\n\t\t\tshrink();\n\t\t\ttileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0].should.equal(aTile);\n\t\t\tgrow();\n\t\t\ttileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0].should.equal(aTile);\n\t\t\tunevenResize();\n\t\t\ttileArea.getTileArea(aTileX, aTileY, 1, 1).tiles[0].should.equal(aTile);\n\t\t});\n\t\tit(\"adds empty tiles when growing\", () => {\n\t\t\tgrow();\n\t\t\ttileArea.tiles[tileArea.getTileIndex(newWidth - 1, newHeight - 1)].tileId.should.equal(-1);\n\t\t});\n\t});\n});\n"
   },
   {
-    "__docId__": 170,
+    "__docId__": 172,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3464,7 +3504,7 @@
     ]
   },
   {
-    "__docId__": 171,
+    "__docId__": 173,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3487,7 +3527,7 @@
     ]
   },
   {
-    "__docId__": 172,
+    "__docId__": 174,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3501,7 +3541,7 @@
     "lineNumber": 25
   },
   {
-    "__docId__": 173,
+    "__docId__": 175,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3515,7 +3555,7 @@
     "lineNumber": 32
   },
   {
-    "__docId__": 174,
+    "__docId__": 176,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3538,7 +3578,7 @@
     ]
   },
   {
-    "__docId__": 175,
+    "__docId__": 177,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3552,7 +3592,7 @@
     "lineNumber": 42
   },
   {
-    "__docId__": 176,
+    "__docId__": 178,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3566,7 +3606,7 @@
     "lineNumber": 46
   },
   {
-    "__docId__": 177,
+    "__docId__": 179,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3589,7 +3629,7 @@
     ]
   },
   {
-    "__docId__": 178,
+    "__docId__": 180,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3603,7 +3643,7 @@
     "lineNumber": 58
   },
   {
-    "__docId__": 179,
+    "__docId__": 181,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3617,7 +3657,7 @@
     "lineNumber": 67
   },
   {
-    "__docId__": 180,
+    "__docId__": 182,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3631,7 +3671,7 @@
     "lineNumber": 72
   },
   {
-    "__docId__": 181,
+    "__docId__": 183,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3645,7 +3685,7 @@
     "lineNumber": 80
   },
   {
-    "__docId__": 182,
+    "__docId__": 184,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3668,7 +3708,7 @@
     ]
   },
   {
-    "__docId__": 183,
+    "__docId__": 185,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3682,7 +3722,7 @@
     "lineNumber": 105
   },
   {
-    "__docId__": 184,
+    "__docId__": 186,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3696,7 +3736,7 @@
     "lineNumber": 113
   },
   {
-    "__docId__": 185,
+    "__docId__": 187,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3710,7 +3750,7 @@
     "lineNumber": 122
   },
   {
-    "__docId__": 186,
+    "__docId__": 188,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3724,7 +3764,7 @@
     "lineNumber": 133
   },
   {
-    "__docId__": 187,
+    "__docId__": 189,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3738,7 +3778,7 @@
     "lineNumber": 151
   },
   {
-    "__docId__": 188,
+    "__docId__": 190,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3752,7 +3792,7 @@
     "lineNumber": 156
   },
   {
-    "__docId__": 189,
+    "__docId__": 191,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3766,7 +3806,7 @@
     "lineNumber": 161
   },
   {
-    "__docId__": 190,
+    "__docId__": 192,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3780,7 +3820,7 @@
     "lineNumber": 172
   },
   {
-    "__docId__": 191,
+    "__docId__": 193,
     "kind": "testFile",
     "static": true,
     "variation": null,
@@ -3790,10 +3830,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { should as chaiShould } from \"chai\";\n\nimport { TileMap } from \"../src\";\nimport testmap from \"./testmap\";\n\nconst should = chaiShould();\n\n/** @test {TileMap} */\ndescribe(\"TileMap\", () => {\n\tconst mapName = \"a map name\",\n\t\tmapWidth = 10,\n\t\tmapHeight = 10,\n\t\ttileWidth = 16,\n\t\ttileHeight = 16;\n\n\tlet tilemap;\n\n\tbeforeEach(() => {\n\t\ttilemap = new TileMap({\n\t\t\tname: mapName,\n\t\t\twidth: mapWidth,\n\t\t\theight: mapHeight,\n\t\t\ttileWidth,\n\t\t\ttileHeight,\n\n\t\t\tlayers: [\n\t\t\t\t{}, {}, {}\n\t\t\t]\n\t\t});\n\t});\n\n\t/** @test {TileMap#constructor} */\n\tdescribe(\"#constructor\", () => {\n\t\tit(\"has a name\", () => {\n\t\t\ttilemap.name.should.equal(mapName);\n\t\t});\n\t\tit(\"has dimmensions\", () => {\n\t\t\ttilemap.width.should.be.a(\"number\");\n\t\t\ttilemap.height.should.be.a(\"number\");\n\n\t\t\ttilemap.width.should.equal(mapWidth);\n\t\t\ttilemap.height.should.equal(mapHeight);\n\t\t});\n\t\tit(\"has tile size\", () => {\n\t\t\ttilemap.tileWidth.should.be.a(\"number\");\n\t\t\ttilemap.tileHeight.should.be.a(\"number\");\n\t\t});\n\t\tit(\"has layers\", () => {\n\t\t\ttilemap.layers.should.have.length(3);\n\t\t});\n\t\tit(\"has properties for layers\", () => {\n\t\t\ttilemap.layers[0].name.should.be.a(\"string\");\n\t\t});\n\t\tit(\"reads a valid tilemap JSON\", () => {\n\t\t\ttilemap = new TileMap(testmap);\n\t\t\ttilemap.name.should.equal(\"test map\");\n\t\t\ttilemap.layers[0].tiles[23].tileId.should.equal(1);\n\t\t});\n\t\tit(\"has correct default values\", () => {\n\t\t\tconst tilemap = new TileMap({});\n\t\t\ttilemap.name.should.be.a(\"string\");\n\t\t\ttilemap.layers.should.be.an(\"array\");\n\t\t});\n\t});\n\n\t/** @test {TileMap#resize} */\n\tdescribe(\"#resize\", () => {\n\t\tconst newWidth = mapWidth / 2, newHeight = mapHeight / 2;\n\t\tbeforeEach(() => {\n\t\t\ttilemap.resize(newWidth, newHeight);\n\t\t});\n\n\t\tit(\"changes the size of the map\", () => {\n\t\t\ttilemap.width.should.equal(newWidth);\n\t\t\ttilemap.height.should.equal(newHeight);\n\t\t});\n\t\tit(\"changes the size of all layers\", () => {\n\t\t\tfor (let layer of tilemap.layers) {\n\t\t\t\tlayer.width.should.equal(newWidth);\n\t\t\t\tlayer.height.should.equal(newHeight);\n\t\t\t}\n\t\t});\n\t});\n\n\t/** @test {TileMap#getJSON} */\n\tdescribe(\"#getJSON\", () => {\n\t\tit(\"returns a valid JSON string\", () => {\n\t\t\tJSON.parse(tilemap.getJSON());\n\t\t});\n\t\tit(\"doesn't parse private properties\", () => {\n\t\t\ttilemap._property = \"foo\";\n\t\t\tshould.not.exist(JSON.parse(tilemap.getJSON())._property);\n\t\t});\n\t});\n});\n"
+    "content": "import { should as chaiShould } from \"chai\";\n\nimport { TileMap } from \"../src\";\nimport testmap from \"./testmap\";\n\nconst should = chaiShould();\n\n/** @test {TileMap} */\ndescribe(\"TileMap\", () => {\n\tconst mapName = \"a map name\",\n\t\tmapWidth = 10,\n\t\tmapHeight = 10,\n\t\ttileWidth = 16,\n\t\ttileHeight = 16;\n\n\tlet tilemap;\n\n\tbeforeEach(() => {\n\t\ttilemap = new TileMap({\n\t\t\tname: mapName,\n\t\t\twidth: mapWidth,\n\t\t\theight: mapHeight,\n\t\t\ttileWidth,\n\t\t\ttileHeight,\n\n\t\t\tlayers: [\n\t\t\t\t{}, {}, {}\n\t\t\t]\n\t\t});\n\t});\n\n\t/** @test {TileMap#constructor} */\n\tdescribe(\"#constructor\", () => {\n\t\tit(\"has a name\", () => {\n\t\t\ttilemap.name.should.equal(mapName);\n\t\t});\n\t\tit(\"has dimmensions\", () => {\n\t\t\ttilemap.width.should.be.a(\"number\");\n\t\t\ttilemap.height.should.be.a(\"number\");\n\n\t\t\ttilemap.width.should.equal(mapWidth);\n\t\t\ttilemap.height.should.equal(mapHeight);\n\t\t});\n\t\tit(\"has tile size\", () => {\n\t\t\ttilemap.tileWidth.should.be.a(\"number\");\n\t\t\ttilemap.tileHeight.should.be.a(\"number\");\n\t\t});\n\t\tit(\"has layers\", () => {\n\t\t\ttilemap.layers.should.have.length(3);\n\t\t});\n\t\tit(\"has properties for layers\", () => {\n\t\t\ttilemap.layers[0].name.should.be.a(\"string\");\n\t\t});\n\t\tit(\"reads a valid tilemap JSON\", () => {\n\t\t\ttilemap = new TileMap(testmap);\n\t\t\ttilemap.name.should.equal(\"test map\");\n\t\t\ttilemap.layers[0].tiles[23].tileId.should.equal(1);\n\t\t});\n\t\tit(\"has correct default values\", () => {\n\t\t\tconst tilemap = new TileMap({});\n\t\t\ttilemap.name.should.be.a(\"string\");\n\t\t\ttilemap.layers.should.be.an(\"array\");\n\t\t});\n\t});\n\n\t/** @test {TileMap#resize} */\n\tdescribe(\"#resize\", () => {\n\t\tconst newWidth = mapWidth / 2, newHeight = mapHeight / 2;\n\t\tbeforeEach(() => {\n\t\t\ttilemap.resize(newWidth, newHeight);\n\t\t});\n\n\t\tit(\"changes the size of the map\", () => {\n\t\t\ttilemap.width.should.equal(newWidth);\n\t\t\ttilemap.height.should.equal(newHeight);\n\t\t});\n\t\tit(\"changes the size of all layers\", () => {\n\t\t\tfor (let layer of tilemap.layers) {\n\t\t\t\tlayer.width.should.equal(newWidth);\n\t\t\t\tlayer.height.should.equal(newHeight);\n\t\t\t}\n\t\t});\n\t});\n\n\t/** @test {TileMap#getJSON} */\n\tdescribe(\"#getJSON\", () => {\n\t\tit(\"returns a valid JSON string\", () => {\n\t\t\tJSON.parse(tilemap.getJSON());\n\t\t});\n\t\tit(\"doesn't parse private properties\", () => {\n\t\t\ttilemap._property = \"foo\";\n\t\t\tshould.not.exist(JSON.parse(tilemap.getJSON())._property);\n\t\t});\n\t\tit(\"can be parsed back to a map object\", () => {\n\t\t\t(() => {\n\t\t\t\t// eslint-disable-next-line no-new\n\t\t\t\tnew TileMap(JSON.parse(tilemap.getJSON()));\n\t\t\t}).should.not.throw(Error);\n\t\t});\n\t\tit(\"still has width and height properties after parsing\", () => {\n\t\t\tconst map = JSON.parse(tilemap.getJSON());\n\t\t\tmap.width.should.be.a(\"number\");\n\t\t\tmap.height.should.be.a(\"number\");\n\t\t});\n\t});\n});\n"
   },
   {
-    "__docId__": 192,
+    "__docId__": 194,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3816,7 +3856,7 @@
     ]
   },
   {
-    "__docId__": 193,
+    "__docId__": 195,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3839,7 +3879,7 @@
     ]
   },
   {
-    "__docId__": 194,
+    "__docId__": 196,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3853,7 +3893,7 @@
     "lineNumber": 34
   },
   {
-    "__docId__": 195,
+    "__docId__": 197,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3867,7 +3907,7 @@
     "lineNumber": 37
   },
   {
-    "__docId__": 196,
+    "__docId__": 198,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3881,7 +3921,7 @@
     "lineNumber": 44
   },
   {
-    "__docId__": 197,
+    "__docId__": 199,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3895,7 +3935,7 @@
     "lineNumber": 48
   },
   {
-    "__docId__": 198,
+    "__docId__": 200,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3909,7 +3949,7 @@
     "lineNumber": 51
   },
   {
-    "__docId__": 199,
+    "__docId__": 201,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3923,7 +3963,7 @@
     "lineNumber": 54
   },
   {
-    "__docId__": 200,
+    "__docId__": 202,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3937,7 +3977,7 @@
     "lineNumber": 59
   },
   {
-    "__docId__": 201,
+    "__docId__": 203,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -3960,7 +4000,7 @@
     ]
   },
   {
-    "__docId__": 202,
+    "__docId__": 204,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3974,7 +4014,7 @@
     "lineNumber": 73
   },
   {
-    "__docId__": 203,
+    "__docId__": 205,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -3988,7 +4028,7 @@
     "lineNumber": 77
   },
   {
-    "__docId__": 204,
+    "__docId__": 206,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -4011,7 +4051,7 @@
     ]
   },
   {
-    "__docId__": 205,
+    "__docId__": 207,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -4025,7 +4065,7 @@
     "lineNumber": 87
   },
   {
-    "__docId__": 206,
+    "__docId__": 208,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -4039,7 +4079,35 @@
     "lineNumber": 90
   },
   {
-    "__docId__": 207,
+    "__docId__": 209,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it69",
+    "testId": 69,
+    "memberof": "test/tilemap.js~describe54.describe66",
+    "testDepth": 2,
+    "longname": "test/tilemap.js~describe54.describe66.it69",
+    "access": null,
+    "description": "can be parsed back to a map object",
+    "lineNumber": 94
+  },
+  {
+    "__docId__": 210,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it70",
+    "testId": 70,
+    "memberof": "test/tilemap.js~describe54.describe66",
+    "testDepth": 2,
+    "longname": "test/tilemap.js~describe54.describe66.it70",
+    "access": null,
+    "description": "still has width and height properties after parsing",
+    "lineNumber": 100
+  },
+  {
+    "__docId__": 211,
     "kind": "testFile",
     "static": true,
     "variation": null,
@@ -4049,18 +4117,18 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { should as chaiShould } from \"chai\";\n\nimport { TileSet } from \"../src\";\n\nconst should = chaiShould();\n\n/** @test {TileSet} */\ndescribe(\"TileSet\", () => {\n\t/** @test {TileSet#constructor} */\n\tdescribe(\"#constructor\", () => {\n\t\tit(\"creates with default values\", () => {\n\t\t\tconst tileset = new TileSet({});\n\t\t\ttileset.name.should.be.a(\"string\");\n\t\t\ttileset.type.should.be.a(\"string\");\n\t\t\tshould.not.exist(tileset.path);\n\t\t});\n\t\tit(\"creates with definded values\", () => {\n\t\t\tconst name = \"hello\",\n\t\t\t\ttype = \"image\",\n\t\t\t\tpath = \"./some/path.png\",\n\t\t\t\ttileset = new TileSet({ name, type, path });\n\t\t\ttileset.name.should.equal(name);\n\t\t\ttileset.type.should.equal(type);\n\t\t\ttileset.path.should.equal(path);\n\t\t});\n\t\tit(\"fails if any tile properties key isn't a number\", () => {\n\t\t\t(() => {\n\t\t\t\t// eslint-disable-next-line no-new\n\t\t\t\tnew TileSet({ tileProperties: {\n\t\t\t\t\t\"a string\": \"should be invalid\"\n\t\t\t\t} });\n\t\t\t}).should.throw(TypeError);\n\t\t});\n\t});\n\n\t/** @test {TileSet#getTileProperties} */\n\tdescribe(\"#getTileProperty\", () => {\n\t\tlet tileset;\n\n\t\tbeforeEach(() => {\n\t\t\ttileset = new TileSet({\n\t\t\t\ttileProperties: {\n\t\t\t\t\t\"0\": [[\"test\", \"isTest\"]],\n\t\t\t\t\t\"5\": [[\"test5\", \"is5\"]]\n\t\t\t\t}\n\t\t\t});\n\t\t});\n\n\t\tit(\"gets a property object correctly\", () => {\n\t\t\ttileset.getTileProperties(0).get(\"test\").should.equal(\"isTest\");\n\t\t\ttileset.getTileProperties(5).get(\"test5\").should.equal(\"is5\");\n\t\t});\n\n\t\tit(\"throws an error if ID doesn't have a properties object\", () => {\n\t\t\t(() => {\n\t\t\t\ttileset.getTileProperties(10);\n\t\t\t}).should.throw(RangeError);\n\t\t});\n\n\t\tit(\"fails if argument isn't a number\", () => {\n\t\t\t(() => {\n\t\t\t\ttileset.getTileProperties(\"a string\");\n\t\t\t}).should.throw(TypeError);\n\t\t});\n\t});\n\n\t/** @test {TileSet#createTileProperties} */\n\tdescribe(\"#createTileProperties\", () => {\n\t\tit(\"creates a tile property for a tile ID\", () => {\n\t\t\tconst tileset = new TileSet({});\n\t\t\ttileset.createTileProperties(2);\n\t\t\ttileset.hasTileProperties(2).should.be.ok;\n\t\t});\n\n\t\tit(\"fails if argument isn't a number\", () => {\n\t\t\t(() => {\n\t\t\t\tnew TileSet({}).createTileProperties(\"a string\");\n\t\t\t}).should.throw(TypeError);\n\t\t});\n\t});\n\n\t/** @test {TileSet#hasTileProperties} */\n\tdescribe(\"#hasTileProperties\", () => {\n\t\tit(\"checks if there is a tile property object for an ID\", () => {\n\t\t\tconst tileset = new TileSet({\n\t\t\t\ttileProperties: {\n\t\t\t\t\t\"4\": [[\"key\", \"value\"]]\n\t\t\t\t}\n\t\t\t});\n\t\t\ttileset.hasTileProperties(4).should.be.ok;\n\t\t\ttileset.hasTileProperties(0).should.not.be.ok;\n\t\t});\n\n\t\tit(\"fails if argument isn't a number\", () => {\n\t\t\t(() => {\n\t\t\t\tnew TileSet({}).hasTileProperties(\"a string\");\n\t\t\t}).should.throw(TypeError);\n\t\t});\n\t});\n});\n"
+    "content": "import { should as chaiShould } from \"chai\";\n\nimport { TileSet } from \"../src\";\n\nconst should = chaiShould();\n\n/** @test {TileSet} */\ndescribe(\"TileSet\", () => {\n\t/** @test {TileSet#constructor} */\n\tdescribe(\"#constructor\", () => {\n\t\tit(\"creates with default values\", () => {\n\t\t\tconst tileset = new TileSet({});\n\t\t\ttileset.name.should.be.a(\"string\");\n\t\t\ttileset.type.should.be.a(\"string\");\n\t\t\tshould.not.exist(tileset.path);\n\t\t});\n\t\tit(\"creates with definded values\", () => {\n\t\t\tconst name = \"hello\",\n\t\t\t\ttype = \"image\",\n\t\t\t\tpath = \"./some/path.png\",\n\t\t\t\tvirtualPath = \"./some/other/path.png\",\n\t\t\t\ttileset = new TileSet({ name, type, path, virtualPath });\n\t\t\ttileset.name.should.equal(name);\n\t\t\ttileset.type.should.equal(type);\n\t\t\ttileset.path.should.equal(path);\n\t\t\ttileset.virtualPath.should.equal(virtualPath);\n\t\t});\n\t\tit(\"defaults virtual path to normal path\", () => {\n\t\t\tconst path = \"./a/path.png\",\n\t\t\t\ttileset = new TileSet({ path });\n\t\t\ttileset.virtualPath.should.equal(path);\n\t\t});\n\t\tit(\"fails if any tile properties key isn't a number\", () => {\n\t\t\t(() => {\n\t\t\t\t// eslint-disable-next-line no-new\n\t\t\t\tnew TileSet({ tileProperties: {\n\t\t\t\t\t\"a string\": \"should be invalid\"\n\t\t\t\t} });\n\t\t\t}).should.throw(TypeError);\n\t\t});\n\t});\n\n\t/** @test {TileSet#getTileProperties} */\n\tdescribe(\"#getTileProperty\", () => {\n\t\tlet tileset;\n\n\t\tbeforeEach(() => {\n\t\t\ttileset = new TileSet({\n\t\t\t\ttileProperties: {\n\t\t\t\t\t\"0\": [[\"test\", \"isTest\"]],\n\t\t\t\t\t\"5\": [[\"test5\", \"is5\"]]\n\t\t\t\t}\n\t\t\t});\n\t\t});\n\n\t\tit(\"gets a property object correctly\", () => {\n\t\t\ttileset.getTileProperties(0).get(\"test\").should.equal(\"isTest\");\n\t\t\ttileset.getTileProperties(5).get(\"test5\").should.equal(\"is5\");\n\t\t});\n\n\t\tit(\"throws an error if ID doesn't have a properties object\", () => {\n\t\t\t(() => {\n\t\t\t\ttileset.getTileProperties(10);\n\t\t\t}).should.throw(RangeError);\n\t\t});\n\n\t\tit(\"fails if argument isn't a number\", () => {\n\t\t\t(() => {\n\t\t\t\ttileset.getTileProperties(\"a string\");\n\t\t\t}).should.throw(TypeError);\n\t\t});\n\t});\n\n\t/** @test {TileSet#createTileProperties} */\n\tdescribe(\"#createTileProperties\", () => {\n\t\tit(\"creates a tile property for a tile ID\", () => {\n\t\t\tconst tileset = new TileSet({});\n\t\t\ttileset.createTileProperties(2);\n\t\t\ttileset.hasTileProperties(2).should.be.ok;\n\t\t});\n\n\t\tit(\"fails if argument isn't a number\", () => {\n\t\t\t(() => {\n\t\t\t\tnew TileSet({}).createTileProperties(\"a string\");\n\t\t\t}).should.throw(TypeError);\n\t\t});\n\t});\n\n\t/** @test {TileSet#hasTileProperties} */\n\tdescribe(\"#hasTileProperties\", () => {\n\t\tit(\"checks if there is a tile property object for an ID\", () => {\n\t\t\tconst tileset = new TileSet({\n\t\t\t\ttileProperties: {\n\t\t\t\t\t\"4\": [[\"key\", \"value\"]]\n\t\t\t\t}\n\t\t\t});\n\t\t\ttileset.hasTileProperties(4).should.be.ok;\n\t\t\ttileset.hasTileProperties(0).should.not.be.ok;\n\t\t});\n\n\t\tit(\"fails if argument isn't a number\", () => {\n\t\t\t(() => {\n\t\t\t\tnew TileSet({}).hasTileProperties(\"a string\");\n\t\t\t}).should.throw(TypeError);\n\t\t});\n\t});\n});\n"
   },
   {
-    "__docId__": 208,
+    "__docId__": 212,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
-    "name": "describe69",
-    "testId": 69,
+    "name": "describe71",
+    "testId": 71,
     "memberof": "test/tileset.js",
     "testDepth": 0,
-    "longname": "test/tileset.js~describe69",
+    "longname": "test/tileset.js~describe71",
     "access": null,
     "description": "TileSet",
     "lineNumber": 8,
@@ -4075,15 +4143,15 @@
     ]
   },
   {
-    "__docId__": 209,
+    "__docId__": 213,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
-    "name": "describe70",
-    "testId": 70,
-    "memberof": "test/tileset.js~describe69",
+    "name": "describe72",
+    "testId": 72,
+    "memberof": "test/tileset.js~describe71",
     "testDepth": 1,
-    "longname": "test/tileset.js~describe69.describe70",
+    "longname": "test/tileset.js~describe71.describe72",
     "access": null,
     "description": "#constructor",
     "lineNumber": 10,
@@ -4098,60 +4166,74 @@
     ]
   },
   {
-    "__docId__": 210,
-    "kind": "testIt",
-    "static": true,
-    "variation": null,
-    "name": "it71",
-    "testId": 71,
-    "memberof": "test/tileset.js~describe69.describe70",
-    "testDepth": 2,
-    "longname": "test/tileset.js~describe69.describe70.it71",
-    "access": null,
-    "description": "creates with default values",
-    "lineNumber": 11
-  },
-  {
-    "__docId__": 211,
-    "kind": "testIt",
-    "static": true,
-    "variation": null,
-    "name": "it72",
-    "testId": 72,
-    "memberof": "test/tileset.js~describe69.describe70",
-    "testDepth": 2,
-    "longname": "test/tileset.js~describe69.describe70.it72",
-    "access": null,
-    "description": "creates with definded values",
-    "lineNumber": 17
-  },
-  {
-    "__docId__": 212,
+    "__docId__": 214,
     "kind": "testIt",
     "static": true,
     "variation": null,
     "name": "it73",
     "testId": 73,
-    "memberof": "test/tileset.js~describe69.describe70",
+    "memberof": "test/tileset.js~describe71.describe72",
     "testDepth": 2,
-    "longname": "test/tileset.js~describe69.describe70.it73",
+    "longname": "test/tileset.js~describe71.describe72.it73",
     "access": null,
-    "description": "fails if any tile properties key isn't a number",
-    "lineNumber": 26
+    "description": "creates with default values",
+    "lineNumber": 11
   },
   {
-    "__docId__": 213,
+    "__docId__": 215,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it74",
+    "testId": 74,
+    "memberof": "test/tileset.js~describe71.describe72",
+    "testDepth": 2,
+    "longname": "test/tileset.js~describe71.describe72.it74",
+    "access": null,
+    "description": "creates with definded values",
+    "lineNumber": 17
+  },
+  {
+    "__docId__": 216,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it75",
+    "testId": 75,
+    "memberof": "test/tileset.js~describe71.describe72",
+    "testDepth": 2,
+    "longname": "test/tileset.js~describe71.describe72.it75",
+    "access": null,
+    "description": "defaults virtual path to normal path",
+    "lineNumber": 28
+  },
+  {
+    "__docId__": 217,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it76",
+    "testId": 76,
+    "memberof": "test/tileset.js~describe71.describe72",
+    "testDepth": 2,
+    "longname": "test/tileset.js~describe71.describe72.it76",
+    "access": null,
+    "description": "fails if any tile properties key isn't a number",
+    "lineNumber": 33
+  },
+  {
+    "__docId__": 218,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
-    "name": "describe74",
-    "testId": 74,
-    "memberof": "test/tileset.js~describe69",
+    "name": "describe77",
+    "testId": 77,
+    "memberof": "test/tileset.js~describe71",
     "testDepth": 1,
-    "longname": "test/tileset.js~describe69.describe74",
+    "longname": "test/tileset.js~describe71.describe77",
     "access": null,
     "description": "#getTileProperty",
-    "lineNumber": 37,
+    "lineNumber": 44,
     "unknown": [
       {
         "tagName": "@test",
@@ -4163,60 +4245,60 @@
     ]
   },
   {
-    "__docId__": 214,
+    "__docId__": 219,
     "kind": "testIt",
     "static": true,
     "variation": null,
-    "name": "it75",
-    "testId": 75,
-    "memberof": "test/tileset.js~describe69.describe74",
+    "name": "it78",
+    "testId": 78,
+    "memberof": "test/tileset.js~describe71.describe77",
     "testDepth": 2,
-    "longname": "test/tileset.js~describe69.describe74.it75",
+    "longname": "test/tileset.js~describe71.describe77.it78",
     "access": null,
     "description": "gets a property object correctly",
-    "lineNumber": 49
+    "lineNumber": 56
   },
   {
-    "__docId__": 215,
+    "__docId__": 220,
     "kind": "testIt",
     "static": true,
     "variation": null,
-    "name": "it76",
-    "testId": 76,
-    "memberof": "test/tileset.js~describe69.describe74",
+    "name": "it79",
+    "testId": 79,
+    "memberof": "test/tileset.js~describe71.describe77",
     "testDepth": 2,
-    "longname": "test/tileset.js~describe69.describe74.it76",
+    "longname": "test/tileset.js~describe71.describe77.it79",
     "access": null,
     "description": "throws an error if ID doesn't have a properties object",
-    "lineNumber": 54
+    "lineNumber": 61
   },
   {
-    "__docId__": 216,
+    "__docId__": 221,
     "kind": "testIt",
     "static": true,
     "variation": null,
-    "name": "it77",
-    "testId": 77,
-    "memberof": "test/tileset.js~describe69.describe74",
+    "name": "it80",
+    "testId": 80,
+    "memberof": "test/tileset.js~describe71.describe77",
     "testDepth": 2,
-    "longname": "test/tileset.js~describe69.describe74.it77",
+    "longname": "test/tileset.js~describe71.describe77.it80",
     "access": null,
     "description": "fails if argument isn't a number",
-    "lineNumber": 60
+    "lineNumber": 67
   },
   {
-    "__docId__": 217,
+    "__docId__": 222,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
-    "name": "describe78",
-    "testId": 78,
-    "memberof": "test/tileset.js~describe69",
+    "name": "describe81",
+    "testId": 81,
+    "memberof": "test/tileset.js~describe71",
     "testDepth": 1,
-    "longname": "test/tileset.js~describe69.describe78",
+    "longname": "test/tileset.js~describe71.describe81",
     "access": null,
     "description": "#createTileProperties",
-    "lineNumber": 68,
+    "lineNumber": 75,
     "unknown": [
       {
         "tagName": "@test",
@@ -4228,46 +4310,46 @@
     ]
   },
   {
-    "__docId__": 218,
+    "__docId__": 223,
     "kind": "testIt",
     "static": true,
     "variation": null,
-    "name": "it79",
-    "testId": 79,
-    "memberof": "test/tileset.js~describe69.describe78",
+    "name": "it82",
+    "testId": 82,
+    "memberof": "test/tileset.js~describe71.describe81",
     "testDepth": 2,
-    "longname": "test/tileset.js~describe69.describe78.it79",
+    "longname": "test/tileset.js~describe71.describe81.it82",
     "access": null,
     "description": "creates a tile property for a tile ID",
-    "lineNumber": 69
+    "lineNumber": 76
   },
   {
-    "__docId__": 219,
+    "__docId__": 224,
     "kind": "testIt",
     "static": true,
     "variation": null,
-    "name": "it80",
-    "testId": 80,
-    "memberof": "test/tileset.js~describe69.describe78",
+    "name": "it83",
+    "testId": 83,
+    "memberof": "test/tileset.js~describe71.describe81",
     "testDepth": 2,
-    "longname": "test/tileset.js~describe69.describe78.it80",
+    "longname": "test/tileset.js~describe71.describe81.it83",
     "access": null,
     "description": "fails if argument isn't a number",
-    "lineNumber": 75
+    "lineNumber": 82
   },
   {
-    "__docId__": 220,
+    "__docId__": 225,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
-    "name": "describe81",
-    "testId": 81,
-    "memberof": "test/tileset.js~describe69",
+    "name": "describe84",
+    "testId": 84,
+    "memberof": "test/tileset.js~describe71",
     "testDepth": 1,
-    "longname": "test/tileset.js~describe69.describe81",
+    "longname": "test/tileset.js~describe71.describe84",
     "access": null,
     "description": "#hasTileProperties",
-    "lineNumber": 83,
+    "lineNumber": 90,
     "unknown": [
       {
         "tagName": "@test",
@@ -4279,31 +4361,31 @@
     ]
   },
   {
-    "__docId__": 221,
+    "__docId__": 226,
     "kind": "testIt",
     "static": true,
     "variation": null,
-    "name": "it82",
-    "testId": 82,
-    "memberof": "test/tileset.js~describe69.describe81",
+    "name": "it85",
+    "testId": 85,
+    "memberof": "test/tileset.js~describe71.describe84",
     "testDepth": 2,
-    "longname": "test/tileset.js~describe69.describe81.it82",
+    "longname": "test/tileset.js~describe71.describe84.it85",
     "access": null,
     "description": "checks if there is a tile property object for an ID",
-    "lineNumber": 84
+    "lineNumber": 91
   },
   {
-    "__docId__": 222,
+    "__docId__": 227,
     "kind": "testIt",
     "static": true,
     "variation": null,
-    "name": "it83",
-    "testId": 83,
-    "memberof": "test/tileset.js~describe69.describe81",
+    "name": "it86",
+    "testId": 86,
+    "memberof": "test/tileset.js~describe71.describe84",
     "testDepth": 2,
-    "longname": "test/tileset.js~describe69.describe81.it83",
+    "longname": "test/tileset.js~describe71.describe84.it86",
     "access": null,
     "description": "fails if argument isn't a number",
-    "lineNumber": 94
+    "lineNumber": 101
   }
 ]

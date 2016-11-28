@@ -751,6 +751,12 @@ window.esdocSearchIndex = [
   ],
   [
     "",
+    "test-file/test/tilemap.js.html#lineNumber94",
+    "TileMap #getJSON can be parsed back to a map object",
+    "test"
+  ],
+  [
+    "",
     "test-file/test/tilemap.js.html#lineNumber90",
     "TileMap #getJSON doesn't parse private properties",
     "test"
@@ -759,6 +765,12 @@ window.esdocSearchIndex = [
     "",
     "test-file/test/tilemap.js.html#lineNumber87",
     "TileMap #getJSON returns a valid JSON string",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilemap.js.html#lineNumber100",
+    "TileMap #getJSON still has width and height properties after parsing",
     "test"
   ],
   [
@@ -805,67 +817,73 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/tileset.js.html#lineNumber26",
+    "test-file/test/tileset.js.html#lineNumber28",
+    "TileSet #constructor defaults virtual path to normal path",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tileset.js.html#lineNumber33",
     "TileSet #constructor fails if any tile properties key isn't a number",
     "test"
   ],
   [
     "tileset#createtileproperties src/tileset.js~tileset#createtileproperties,tileset#createtileproperties",
-    "test-file/test/tileset.js.html#lineNumber68",
+    "test-file/test/tileset.js.html#lineNumber75",
     "TileSet #createTileProperties",
     "test"
   ],
   [
     "",
-    "test-file/test/tileset.js.html#lineNumber69",
+    "test-file/test/tileset.js.html#lineNumber76",
     "TileSet #createTileProperties creates a tile property for a tile ID",
     "test"
   ],
   [
     "",
-    "test-file/test/tileset.js.html#lineNumber75",
+    "test-file/test/tileset.js.html#lineNumber82",
     "TileSet #createTileProperties fails if argument isn't a number",
     "test"
   ],
   [
     "tileset#gettileproperties src/tileset.js~tileset#gettileproperties,tileset#gettileproperties",
-    "test-file/test/tileset.js.html#lineNumber37",
+    "test-file/test/tileset.js.html#lineNumber44",
     "TileSet #getTileProperty",
     "test"
   ],
   [
     "",
-    "test-file/test/tileset.js.html#lineNumber60",
+    "test-file/test/tileset.js.html#lineNumber67",
     "TileSet #getTileProperty fails if argument isn't a number",
     "test"
   ],
   [
     "",
-    "test-file/test/tileset.js.html#lineNumber49",
+    "test-file/test/tileset.js.html#lineNumber56",
     "TileSet #getTileProperty gets a property object correctly",
     "test"
   ],
   [
     "",
-    "test-file/test/tileset.js.html#lineNumber54",
+    "test-file/test/tileset.js.html#lineNumber61",
     "TileSet #getTileProperty throws an error if ID doesn't have a properties object",
     "test"
   ],
   [
     "tileset#hastileproperties src/tileset.js~tileset#hastileproperties,tileset#hastileproperties",
-    "test-file/test/tileset.js.html#lineNumber83",
+    "test-file/test/tileset.js.html#lineNumber90",
     "TileSet #hasTileProperties",
     "test"
   ],
   [
     "",
-    "test-file/test/tileset.js.html#lineNumber84",
+    "test-file/test/tileset.js.html#lineNumber91",
     "TileSet #hasTileProperties checks if there is a tile property object for an ID",
     "test"
   ],
   [
     "",
-    "test-file/test/tileset.js.html#lineNumber94",
+    "test-file/test/tileset.js.html#lineNumber101",
     "TileSet #hasTileProperties fails if argument isn't a number",
     "test"
   ],
@@ -1044,6 +1062,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/tilelayer.js~tilelayer#tojson",
+    "class/src/tilelayer.js~TileLayer.html#instance-method-toJSON",
+    "src/tilelayer.js~TileLayer#toJSON",
+    "method"
+  ],
+  [
     "src/tilemap.js",
     "file/src/tilemap.js.html",
     "src/tilemap.js",
@@ -1179,6 +1203,12 @@ window.esdocSearchIndex = [
     "src/tileset.js~tileset#type",
     "class/src/tileset.js~TileSet.html#instance-member-type",
     "src/tileset.js~TileSet#type",
+    "member"
+  ],
+  [
+    "src/tileset.js~tileset#virtualpath",
+    "class/src/tileset.js~TileSet.html#instance-member-virtualPath",
+    "src/tileset.js~TileSet#virtualPath",
     "member"
   ],
   [
