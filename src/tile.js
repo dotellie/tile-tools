@@ -1,9 +1,10 @@
 import { PropertyObject } from "./propertyObject";
+import { EventEmitter } from "./event";
 
 /**
  * A tile object containing tile ID, tileset ID and custom properties.
  */
-export class Tile {
+export class Tile extends EventEmitter {
 	/**
 	 * Tile constructor.
 	 *
@@ -13,6 +14,8 @@ export class Tile {
 	 * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}
 	 */
 	constructor(options = { tileId: -1, tilesetId: -1 }) {
+		super();
+
 		/** The tile ID of the tile.
 		 * @type {number} */
 		this.tileId = undefined;
@@ -43,12 +46,19 @@ export class Tile {
 	 * @param {boolean} [replaceEmpty] - Should values less than 0 (-1) be handled (true) or ignored (false).
 	 */
 	setData(tileId, tilesetId, replaceEmpty) {
+		const before = [this.tileId, this.tilesetId];
+
 		if (tileId >= 0 || replaceEmpty) {
 			this.tileId = Math.max(tileId, -1);
 		}
 		if (tilesetId != null && (tilesetId >= 0 || replaceEmpty)) {
 			this.tilesetId = Math.max(tilesetId, -1);
 		}
+
+		this.emit("data-change", {
+			data: [[before[0], before[1]], [this.tileId, this.tilesetId]],
+			tile: this
+		});
 	}
 
 	/**

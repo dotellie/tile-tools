@@ -53,6 +53,8 @@ export class TileMap {
 		/** Custom properties of the tilemap.
 		 * @type {PropertyObject} */
 		this.properties = new PropertyObject(options.properties);
+
+		this._dataBuffer = [];
 	}
 
 	/** The width of the tilemap.
@@ -94,6 +96,12 @@ export class TileMap {
 	 */
 	createLayer(options) {
 		const layer = new TileLayer(this, options);
+
+		const layerIndex = this.layers.length;
+		layer.on("tile-change", data => {
+			this._dataBuffer.push([layerIndex].concat(data));
+		});
+
 		this.layers.push(layer);
 		return layer;
 	}
@@ -108,6 +116,18 @@ export class TileMap {
 	addTileset(tileset) {
 		this.tilesets.push(tileset);
 		return tileset;
+	}
+
+	/**
+	 * Empties the data buffer. This is supposed to be used with undo/redo
+	 * functionality.
+	 *
+	 * @returns The emptied data buffer as an Array. [layerId, tileId, [previousId, previousTilesetId], [newId, newTilesetId]]
+	 */
+	takeDataBuffer() {
+		const toReturn = [].concat(this._dataBuffer);
+		this._dataBuffer = [];
+		return toReturn;
 	}
 
 	/**

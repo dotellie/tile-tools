@@ -82,6 +82,29 @@ describe("TileMap", () => {
 		});
 	});
 
+	/** @test {TileMap#takeDataBuffer} */
+	describe("#takeDataBuffer", () => {
+		it("returns empty array when no change has happened", () => {
+			tilemap.takeDataBuffer().should.deep.equal([]);
+		});
+		it("returns both new and old values", () => {
+			tilemap.layers[0].tiles[10].setData(5, 10);
+			tilemap.layers[1].tiles[20].setData(10, 20);
+			tilemap.layers[2].tiles[30].setData(20, 40);
+
+			tilemap.takeDataBuffer().should.deep.equal([
+				[0, 10, [-1, 0], [5, 10]],
+				[1, 20, [-1, 0], [10, 20]],
+				[2, 30, [-1, 0], [20, 40]]
+			]);
+		});
+		it("empties data buffer when taken", () => {
+			tilemap.layers[0].tiles[25].setData(1, 1);
+			tilemap.takeDataBuffer();
+			tilemap.takeDataBuffer().should.deep.equal([]);
+		});
+	});
+
 	/** @test {TileMap#getJSON} */
 	describe("#getJSON", () => {
 		it("returns a valid JSON string", () => {

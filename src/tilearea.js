@@ -1,9 +1,11 @@
 import { Tile } from "./tile";
 
+import { EventEmitter } from "./event";
+
 /**
  * A tile area object with a size and tiles.
  */
-export class TileArea {
+export class TileArea extends EventEmitter {
 	/**
 	 * TileArea constructor.
 	 *
@@ -12,6 +14,8 @@ export class TileArea {
 	 * @param {Tile[]} tiles - {@link TileArea#tiles}
 	 */
 	constructor(width, height, tiles) {
+		super();
+
 		/** The width of the tile area.
 		 * @type {number} */
 		this.width = width;

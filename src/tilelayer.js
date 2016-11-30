@@ -37,6 +37,11 @@ export class TileLayer extends TileArea {
 		/** Custom properties of the layer.
 		 * @type {PropertyObject} */
 		this.properties = new PropertyObject(options.properties);
+
+		// Set up tile data change events
+		tiles.forEach(tile => {
+			tile.on("data-change", this._tileDataChanged.bind(this));
+		});
 	}
 
 	/**
@@ -49,5 +54,10 @@ export class TileLayer extends TileArea {
 			replacement[key] = this[key];
 		}
 		return replacement;
+	}
+
+	_tileDataChanged(e) {
+		const index = this.tiles.indexOf(e.tile);
+		this.emit("tile-change", [index].concat(e.data));
 	}
 }
