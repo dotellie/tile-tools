@@ -25,10 +25,10 @@ export class EventEmitter {
 		});
 	}
 
-	emit(event) {
+	emit(event, argument) {
 		this._listeners.forEach(ev => {
 			if (ev[0] === event) {
-				ev[1]();
+				ev[1](argument);
 			}
 		});
 	}

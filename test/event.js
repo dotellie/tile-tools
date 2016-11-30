@@ -33,11 +33,13 @@ describe("EventEmitter", () => {
 		});
 	});
 	describe("emit", () => {
-		it("fires an event properly", done => {
-			ee.on("event", () => {
+		it("fires an event with arguements properly", done => {
+			ee.on("event", e => {
+				e.value.should.equal(456);
+				e.something.should.equal("hi");
 				done();
 			});
-			ee.emit("event");
+			ee.emit("event", { value: 456, something: "hi" });
 		});
 	});
 });
