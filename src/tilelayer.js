@@ -39,6 +39,9 @@ export class TileLayer extends TileArea {
 		this.properties = new PropertyObject(options.properties);
 	}
 
+	/**
+	 * Returns an object to be serialized by JSON.stringify.
+	 */
 	toJSON() {
 		const replacement = {};
 		for (let key in this) {
