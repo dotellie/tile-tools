@@ -130,6 +130,7 @@ describe("TileArea", () => {
 		});
 	});
 
+	/** @test {TileArea#resize} */
 	describe("TileArea#resize", () => {
 		let newWidth, newHeight;
 
