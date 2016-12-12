@@ -209,5 +209,9 @@ describe("TileArea", () => {
 			tileArea.fillAt(0, 0, fillTileArea);
 			tileArea.tiles[10].tileId.should.not.equal(2);
 		});
+		it("doesn't end up in a loop", () => {
+			const otherFillTileArea = new TileArea(1, 1, [new Tile("0:0")]);
+			tileArea.fillAt(0, 0, otherFillTileArea);
+		});
 	});
 });

@@ -127,9 +127,17 @@ export class TileArea extends EventEmitter {
 			}
 		};
 
+		const appliedPositions = new Set();
+		const positionToIndex = pos => pos.y * this.width + pos.x;
+
 		do {
 			const seed = seeds[0];
 			let { x: lx, y: ly } = seed;
+
+			if (appliedPositions.has(positionToIndex(seed))) {
+				seeds.splice(0, 1);
+				continue;
+			};
 
 			do {
 				positions.push({ x: lx, y: ly });
@@ -149,6 +157,8 @@ export class TileArea extends EventEmitter {
 
 			seeds.splice(0, 1);
 			positions.forEach(position => {
+				appliedPositions.add(positionToIndex(position));
+
 				const { tileId, tilesetId } = getTilingTileData(
 					x, y, position.x, position.y, tileArea
 				);
