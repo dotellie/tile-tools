@@ -154,6 +154,7 @@ export class TileArea extends EventEmitter {
 				);
 				getTile(position.x, position.y).setData(tileId, tilesetId);
 			});
+			positions = [];
 		} while (seeds.length > 0);
 	}
 
