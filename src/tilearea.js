@@ -102,6 +102,62 @@ export class TileArea extends EventEmitter {
 	}
 
 	/**
+	 * Fills an area (think bucket tool in GIMP).
+	 *
+	 * @param {number} x - The x coordinate of where to fill from.
+	 * @param {number} y - The y coordinate of where to fill from.
+	 * @param {TileArea} tileArea - The TileAre to fill with (tiling).
+	 */
+	fillAt(x, y, tileArea) {
+		let positions = [];
+
+		const getTile = (x, y) => this.tiles[this.getTileIndex(x, y)];
+		const fillTile = getTile(x, y).clone();
+		const seeds = [{ x, y }];
+
+		const testSeed = (x, y, verticalModifier) => {
+			const newY = y + verticalModifier;
+			if (newY >= 0 && newY < this.height &&
+				getTile(x, newY).tileId === fillTile.tileId) {
+				if (x <= 0 ||
+					getTile(x - 1, newY).tileId !== fillTile.tileId ||
+					getTile(x - 1, y).tileId !== fillTile.tileId) {
+					seeds.push({ x, y: newY });
+				}
+			}
+		};
+
+		do {
+			const seed = seeds[0];
+			let { x: lx, y: ly } = seed;
+
+			do {
+				positions.push({ x: lx, y: ly });
+				testSeed(lx, ly, 1);
+				testSeed(lx, ly, -1);
+				lx++;
+			} while (lx < this.width && getTile(lx, ly).tileId === fillTile.tileId);
+
+			lx = seed.x;
+			ly = seed.y;
+			while (lx > 0 && getTile(lx - 1, ly).tileId === fillTile.tileId) {
+				lx--;
+				positions.push({ x: lx, y: ly });
+				testSeed(lx, ly, 1);
+				testSeed(lx, ly, -1);
+			}
+
+			seeds.splice(0, 1);
+			positions.forEach(position => {
+				const { tileId, tilesetId } = getTilingTileData(
+					x, y, position.x, position.y, tileArea
+				);
+				getTile(position.x, position.y).setData(tileId, tilesetId);
+			});
+		} while (seeds.length > 0);
+	}
+
+	/**
 	 * Resizes the TileArea, inserting empty tiles if grown and removing tiles if shrunk.
 	 *
 	 * Keep in mind that this function is currently really slow. It works, but it's just
@@ -155,4 +211,15 @@ export class TileArea extends EventEmitter {
 			height <= 0 || y + height > this.height
 		);
 	}
+}
+
+function getTilingTileData(originX, originY, x, y, tilingTileArea) {
+	const { width, height } = tilingTileArea;
+
+	const tileX = Math.abs((x - originX) % width);
+	const tileY = Math.abs((y - originY) % height);
+
+	const tile = tilingTileArea.tiles[tilingTileArea.getTileIndex(tileX, tileY)];
+
+	return tile.clone();
 }

@@ -175,4 +175,39 @@ describe("TileArea", () => {
 			tileArea.tiles[tileArea.getTileIndex(newWidth - 1, newHeight - 1)].tileId.should.equal(-1);
 		});
 	});
+
+	/** @test {TileArea#fillAt} */
+	describe("#fillAt", () => {
+		const fillTileArea = new TileArea(2, 2, [
+			new Tile("2:0"), new Tile("3:0"),
+			new Tile("3:0"), new Tile("2:0")
+		]);
+
+		beforeEach(() => {
+			tileArea.tiles.forEach(tile => {
+				tile.setData(0, 0);
+			});
+			tileArea.tiles[10].setData(1, 0);
+			tileArea.tiles[20].setData(0, 1);
+		});
+
+		it("fills correctly", () => {
+			tileArea.fillAt(2, 2, fillTileArea);
+			tileArea.tiles[0].tileId.should.equal(2);
+			tileArea.tiles[2].tileId.should.equal(2);
+		});
+		it("tiles correctly", () => {
+			tileArea.fillAt(2, 2, fillTileArea);
+			tileArea.tiles[1].tileId.should.equal(3);
+			tileArea.tiles[3].tileId.should.equal(3);
+		});
+		it("doesn't overwrite anything it shouldn't", () => {
+			tileArea.fillAt(0, 0, fillTileArea);
+			tileArea.tiles[10].tileId.should.not.equal(2);
+		});
+		it("respects tileset ID's", () => {
+			tileArea.fillAt(0, 0, fillTileArea);
+			tileArea.tiles[10].tileId.should.not.equal(2);
+		});
+	});
 });
