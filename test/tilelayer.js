@@ -4,9 +4,9 @@ import { TileLayer } from "../src";
 
 const should = chaiShould();
 
-/** @test {TileArea} */
-describe("TileArea", () => {
-	/** @test {toJSON} */
+/** @test {TileLayer} */
+describe("TileLayer", () => {
+	/** @test {TileLayer#toJSON} */
 	describe("#toJSON", () => {
 		it("doesn't keep width and height from TileArea", () => {
 			const tileLayer = new TileLayer({

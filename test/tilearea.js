@@ -131,7 +131,7 @@ describe("TileArea", () => {
 	});
 
 	/** @test {TileArea#resize} */
-	describe("TileArea#resize", () => {
+	describe("#resize", () => {
 		let newWidth, newHeight;
 
 		const shrink = () => {
