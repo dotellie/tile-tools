@@ -445,6 +445,32 @@
       
     </td>
   </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-method-takeDataBuffer">takeDataBuffer</a></span></span><span data-ice="signature">(): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Empties the data buffer.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
 </tbody>
 </table>
 </div>
@@ -592,7 +618,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber65">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber67">source</a></span></span>
     </span>
   </h3>
 
@@ -879,7 +905,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber60">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber62">source</a></span></span>
     </span>
   </h3>
 
@@ -923,7 +949,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber108">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber116">source</a></span></span>
     </span>
   </h3>
 
@@ -991,7 +1017,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber95">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber97">source</a></span></span>
     </span>
   </h3>
 
@@ -1059,7 +1085,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber118">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber138">source</a></span></span>
     </span>
   </h3>
 
@@ -1099,7 +1125,7 @@
     <h4>Test:</h4>
     <ul>
       
-    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber86">TileMap #getJSON</a></span></li>
+    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber109">TileMap #getJSON</a></span></li>
 </ul>
   </div>
 
@@ -1117,7 +1143,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber79">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber81">source</a></span></span>
     </span>
   </h3>
 
@@ -1174,6 +1200,65 @@ this on just 4 150x150 layers...</p>
     <ul>
       
     <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber67">TileMap #resize</a></span></li>
+</ul>
+  </div>
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-takeDataBuffer">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">takeDataBuffer</span><span data-ice="signature">(): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber127">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Empties the data buffer. This is supposed to be used with undo/redo
+functionality.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-desc" data-ice="returnDescription"><p>The emptied data buffer as an Array. [layerId, tileId, [previousId, previousTilesetId], [newId, newTilesetId]]</p>
+</td>
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div data-ice="tests">
+    <h4>Test:</h4>
+    <ul>
+      
+    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber86">TileMap #takeDataBuffer</a></span></li>
 </ul>
   </div>
 

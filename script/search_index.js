@@ -366,6 +366,60 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "eventemitter eventemitter,eventemitter",
+    "test-file/test/event.js.html#lineNumber8",
+    "EventEmitter",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/event.js.html#lineNumber35",
+    "EventEmitter emit",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/event.js.html#lineNumber36",
+    "EventEmitter emit fires an event with arguements properly",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/event.js.html#lineNumber27",
+    "EventEmitter off",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/event.js.html#lineNumber28",
+    "EventEmitter off removes an event listener",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/event.js.html#lineNumber11",
+    "EventEmitter on",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/event.js.html#lineNumber12",
+    "EventEmitter on adds an event listener",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/event.js.html#lineNumber21",
+    "EventEmitter on doesn't accept anything but functions as listeners",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/event.js.html#lineNumber16",
+    "EventEmitter on doesn't accept anything but strings as event names",
+    "test"
+  ],
+  [
     "propertyobject src/propertyobject.js~propertyobject,propertyobject",
     "test-file/test/propertyObject.js.html#lineNumber8",
     "PropertyObject",
@@ -588,6 +642,42 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
+    "tilearea#fillat src/tilearea.js~tilearea#fillat,tilearea#fillat",
+    "test-file/test/tilearea.js.html#lineNumber201",
+    "TileArea #fillAt",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber233",
+    "TileArea #fillAt doesn't end up in a loop",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber225",
+    "TileArea #fillAt doesn't overwrite anything it shouldn't",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber215",
+    "TileArea #fillAt fills correctly",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber229",
+    "TileArea #fillAt respects tileset ID's",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber220",
+    "TileArea #fillAt tiles correctly",
+    "test"
+  ],
+  [
     "tilearea#gettilearea src/tilearea.js~tilearea#gettilearea,tilearea#gettilearea",
     "test-file/test/tilearea.js.html#lineNumber57",
     "TileArea #getTileArea",
@@ -636,57 +726,99 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
-    "tilearea#inserttilearea src/tilearea.js~tilearea#inserttilearea,tilearea#inserttilearea",
+    "tilearea#gettilingtiledata src/tilearea.js~tilearea#gettilingtiledata,tilearea#gettilingtiledata",
     "test-file/test/tilearea.js.html#lineNumber91",
+    "TileArea #getTilingTileData",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber97",
+    "TileArea #getTilingTileData gets the right tile backwards",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber102",
+    "TileArea #getTilingTileData gets the right tile far backwards",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber92",
+    "TileArea #getTilingTileData gets the right tile forward",
+    "test"
+  ],
+  [
+    "tilearea#inserttilearea src/tilearea.js~tilearea#inserttilearea,tilearea#inserttilearea",
+    "test-file/test/tilearea.js.html#lineNumber112",
     "TileArea #insertTileArea",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber113",
+    "test-file/test/tilearea.js.html#lineNumber134",
     "TileArea #insertTileArea can skip empty (-1) tiles",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber122",
+    "test-file/test/tilearea.js.html#lineNumber143",
     "TileArea #insertTileArea doesn't crash when going out of bounds",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber105",
+    "test-file/test/tilearea.js.html#lineNumber126",
     "TileArea #insertTileArea inserts a tile area correctly",
     "test"
   ],
   [
-    "",
-    "test-file/test/tilearea.js.html#lineNumber133",
-    "TileArea TileArea#resize",
+    "tilearea#resize src/tilearea.js~tilearea#resize,tilearea#resize",
+    "test-file/test/tilearea.js.html#lineNumber155",
+    "TileArea #resize",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber172",
-    "TileArea TileArea#resize adds empty tiles when growing",
+    "test-file/test/tilearea.js.html#lineNumber194",
+    "TileArea #resize adds empty tiles when growing",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber156",
-    "TileArea TileArea#resize can grow dimmensions",
+    "test-file/test/tilearea.js.html#lineNumber178",
+    "TileArea #resize can grow dimmensions",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber151",
-    "TileArea TileArea#resize can shrink dimmensions",
+    "test-file/test/tilearea.js.html#lineNumber173",
+    "TileArea #resize can shrink dimmensions",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber161",
-    "TileArea TileArea#resize keeps tiles intact",
+    "test-file/test/tilearea.js.html#lineNumber183",
+    "TileArea #resize keeps tiles intact",
+    "test"
+  ],
+  [
+    "tilelayer src/tilelayer.js~tilelayer,tilelayer",
+    "test-file/test/tilelayer.js.html#lineNumber8",
+    "TileLayer",
+    "test"
+  ],
+  [
+    "tilelayer#tojson src/tilelayer.js~tilelayer#tojson,tilelayer#tojson",
+    "test-file/test/tilelayer.js.html#lineNumber10",
+    "TileLayer #toJSON",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilelayer.js.html#lineNumber11",
+    "TileLayer #toJSON doesn't keep width and height from TileArea",
     "test"
   ],
   [
@@ -745,31 +877,31 @@ window.esdocSearchIndex = [
   ],
   [
     "tilemap#getjson src/tilemap.js~tilemap#getjson,tilemap#getjson",
-    "test-file/test/tilemap.js.html#lineNumber86",
+    "test-file/test/tilemap.js.html#lineNumber109",
     "TileMap #getJSON",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber94",
+    "test-file/test/tilemap.js.html#lineNumber117",
     "TileMap #getJSON can be parsed back to a map object",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber90",
+    "test-file/test/tilemap.js.html#lineNumber113",
     "TileMap #getJSON doesn't parse private properties",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber87",
+    "test-file/test/tilemap.js.html#lineNumber110",
     "TileMap #getJSON returns a valid JSON string",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber100",
+    "test-file/test/tilemap.js.html#lineNumber123",
     "TileMap #getJSON still has width and height properties after parsing",
     "test"
   ],
@@ -789,6 +921,30 @@ window.esdocSearchIndex = [
     "",
     "test-file/test/tilemap.js.html#lineNumber73",
     "TileMap #resize changes the size of the map",
+    "test"
+  ],
+  [
+    "tilemap#takedatabuffer src/tilemap.js~tilemap#takedatabuffer,tilemap#takedatabuffer",
+    "test-file/test/tilemap.js.html#lineNumber86",
+    "TileMap #takeDataBuffer",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilemap.js.html#lineNumber101",
+    "TileMap #takeDataBuffer empties data buffer when taken",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilemap.js.html#lineNumber90",
+    "TileMap #takeDataBuffer returns both new and old values",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilemap.js.html#lineNumber87",
+    "TileMap #takeDataBuffer returns empty array when no change has happened",
     "test"
   ],
   [
@@ -886,6 +1042,12 @@ window.esdocSearchIndex = [
     "test-file/test/tileset.js.html#lineNumber101",
     "TileSet #hasTileProperties fails if argument isn't a number",
     "test"
+  ],
+  [
+    "src/event.js",
+    "file/src/event.js.html",
+    "src/event.js",
+    "file"
   ],
   [
     "src/index.js",
@@ -996,6 +1158,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/tilearea.js~tilearea#fillat",
+    "class/src/tilearea.js~TileArea.html#instance-method-fillAt",
+    "src/tilearea.js~TileArea#fillAt",
+    "method"
+  ],
+  [
     "src/tilearea.js~tilearea#gettilearea",
     "class/src/tilearea.js~TileArea.html#instance-method-getTileArea",
     "src/tilearea.js~TileArea#getTileArea",
@@ -1005,6 +1173,12 @@ window.esdocSearchIndex = [
     "src/tilearea.js~tilearea#gettileindex",
     "class/src/tilearea.js~TileArea.html#instance-method-getTileIndex",
     "src/tilearea.js~TileArea#getTileIndex",
+    "method"
+  ],
+  [
+    "src/tilearea.js~tilearea#gettilingtiledata",
+    "class/src/tilearea.js~TileArea.html#instance-method-getTilingTileData",
+    "src/tilearea.js~TileArea#getTilingTileData",
     "method"
   ],
   [
@@ -1128,6 +1302,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/tilemap.js~tilemap#takedatabuffer",
+    "class/src/tilemap.js~TileMap.html#instance-method-takeDataBuffer",
+    "src/tilemap.js~TileMap#takeDataBuffer",
+    "method"
+  ],
+  [
     "src/tilemap.js~tilemap#tileheight",
     "class/src/tilemap.js~TileMap.html#instance-member-tileHeight",
     "src/tilemap.js~TileMap#tileHeight",
@@ -1212,6 +1392,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "test/event.js",
+    "test-file/test/event.js.html",
+    "test/event.js",
+    "testFile"
+  ],
+  [
     "test/propertyobject.js",
     "test-file/test/propertyObject.js.html",
     "test/propertyObject.js",
@@ -1227,6 +1413,12 @@ window.esdocSearchIndex = [
     "test/tilearea.js",
     "test-file/test/tilearea.js.html",
     "test/tilearea.js",
+    "testFile"
+  ],
+  [
+    "test/tilelayer.js",
+    "test-file/test/tilelayer.js.html",
+    "test/tilelayer.js",
     "testFile"
   ],
   [

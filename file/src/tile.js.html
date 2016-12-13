@@ -44,11 +44,12 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/tile.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { PropertyObject } from &quot;./propertyObject&quot;;
+import { EventEmitter } from &quot;./event&quot;;
 
 /**
  * A tile object containing tile ID, tileset ID and custom properties.
  */
-export class Tile {
+export class Tile extends EventEmitter {
 	/**
 	 * Tile constructor.
 	 *
@@ -58,6 +59,8 @@ export class Tile {
 	 * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}
 	 */
 	constructor(options = { tileId: -1, tilesetId: -1 }) {
+		super();
+
 		/** The tile ID of the tile.
 		 * @type {number} */
 		this.tileId = undefined;
@@ -88,12 +91,19 @@ export class Tile {
 	 * @param {boolean} [replaceEmpty] - Should values less than 0 (-1) be handled (true) or ignored (false).
 	 */
 	setData(tileId, tilesetId, replaceEmpty) {
+		const before = [this.tileId, this.tilesetId];
+
 		if (tileId &gt;= 0 || replaceEmpty) {
 			this.tileId = Math.max(tileId, -1);
 		}
 		if (tilesetId != null &amp;&amp; (tilesetId &gt;= 0 || replaceEmpty)) {
 			this.tilesetId = Math.max(tilesetId, -1);
 		}
+
+		this.emit(&quot;data-change&quot;, {
+			data: [[before[0], before[1]], [this.tileId, this.tilesetId]],
+			tile: this
+		});
 	}
 
 	/**

@@ -132,6 +132,27 @@ describe(&quot;TileArea&quot;, () =&gt; {
 		});
 	});
 
+	/** @test {TileArea#getTilingTileData} */
+	describe(&quot;#getTilingTileData&quot;, () =&gt; {
+		it(&quot;gets the right tile forward&quot;, () =&gt; {
+			const v = Math.floor(Math.random() * areaWidth);
+			const vTile = tileArea.tiles[tileArea.getTileIndex(v, v)];
+			tileArea.getTilingTileData(0, 0, areaWidth + v, v).should.deep.equal(vTile);
+		});
+		it(&quot;gets the right tile backwards&quot;, () =&gt; {
+			const v = Math.floor(Math.random() * areaWidth);
+			const vTile = tileArea.tiles[tileArea.getTileIndex(v, v)];
+			tileArea.getTilingTileData(0, 0, v - areaWidth, v).should.deep.equal(vTile);
+		});
+		it(&quot;gets the right tile far backwards&quot;, () =&gt; {
+			// Note: getting backwards usually causes trouble, so this is for my
+			// own sanity - Ellie
+			const v = Math.floor(Math.random() * areaWidth);
+			const vTile = tileArea.tiles[tileArea.getTileIndex(v, v)];
+			tileArea.getTilingTileData(0, 0, v - areaWidth * 100, v).should.deep.equal(vTile);
+		});
+	});
+
 	/** @test {TileArea#insertTileArea} */
 	describe(&quot;#insertTileArea&quot;, () =&gt; {
 		const smallAreaWidth = 3, smallAreaHeight = 3;
@@ -175,7 +196,8 @@ describe(&quot;TileArea&quot;, () =&gt; {
 		});
 	});
 
-	describe(&quot;TileArea#resize&quot;, () =&gt; {
+	/** @test {TileArea#resize} */
+	describe(&quot;#resize&quot;, () =&gt; {
 		let newWidth, newHeight;
 
 		const shrink = () =&gt; {
@@ -217,6 +239,45 @@ describe(&quot;TileArea&quot;, () =&gt; {
 		it(&quot;adds empty tiles when growing&quot;, () =&gt; {
 			grow();
 			tileArea.tiles[tileArea.getTileIndex(newWidth - 1, newHeight - 1)].tileId.should.equal(-1);
+		});
+	});
+
+	/** @test {TileArea#fillAt} */
+	describe(&quot;#fillAt&quot;, () =&gt; {
+		const fillTileArea = new TileArea(2, 2, [
+			new Tile(&quot;2:0&quot;), new Tile(&quot;3:0&quot;),
+			new Tile(&quot;3:0&quot;), new Tile(&quot;2:0&quot;)
+		]);
+
+		beforeEach(() =&gt; {
+			tileArea.tiles.forEach(tile =&gt; {
+				tile.setData(0, 0);
+			});
+			tileArea.tiles[10].setData(1, 0);
+			tileArea.tiles[20].setData(0, 1);
+		});
+
+		it(&quot;fills correctly&quot;, () =&gt; {
+			tileArea.fillAt(2, 2, fillTileArea);
+			tileArea.tiles[0].tileId.should.equal(2);
+			tileArea.tiles[2].tileId.should.equal(2);
+		});
+		it(&quot;tiles correctly&quot;, () =&gt; {
+			tileArea.fillAt(2, 2, fillTileArea);
+			tileArea.tiles[1].tileId.should.equal(3);
+			tileArea.tiles[3].tileId.should.equal(3);
+		});
+		it(&quot;doesn&apos;t overwrite anything it shouldn&apos;t&quot;, () =&gt; {
+			tileArea.fillAt(0, 0, fillTileArea);
+			tileArea.tiles[10].tileId.should.not.equal(2);
+		});
+		it(&quot;respects tileset ID&apos;s&quot;, () =&gt; {
+			tileArea.fillAt(0, 0, fillTileArea);
+			tileArea.tiles[10].tileId.should.not.equal(2);
+		});
+		it(&quot;doesn&apos;t end up in a loop&quot;, () =&gt; {
+			const otherFillTileArea = new TileArea(1, 1, [new Tile(&quot;0:0&quot;)]);
+			tileArea.fillAt(0, 0, otherFillTileArea);
 		});
 	});
 });

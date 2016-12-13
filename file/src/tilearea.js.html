@@ -45,10 +45,12 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/tilearea.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { Tile } from &quot;./tile&quot;;
 
+import { EventEmitter } from &quot;./event&quot;;
+
 /**
  * A tile area object with a size and tiles.
  */
-export class TileArea {
+export class TileArea extends EventEmitter {
 	/**
 	 * TileArea constructor.
 	 *
@@ -57,6 +59,8 @@ export class TileArea {
 	 * @param {Tile[]} tiles - {@link TileArea#tiles}
 	 */
 	constructor(width, height, tiles) {
+		super();
+
 		/** The width of the tile area.
 		 * @type {number} */
 		this.width = width;
@@ -117,6 +121,29 @@ export class TileArea {
 	}
 
 	/**
+	 * Gets tiling data from this TileArea.
+	 *
+	 * Most of the time when mapping tilemaps, having the pen be &quot;tiling&quot; is more
+	 * useful than having it overwrite everywhere. This function is meant to provide
+	 * that kind of functionallity.
+	 *
+	 * @param {number} originX - The x coordinate to tile from.
+	 * @param {number} originY - The y coordinate to tile from.
+	 * @param {number} x - The x coordinate to get data from.
+	 * @param {number} y - The y coordinate to get data from.
+	 *
+	 * @returns {Tile} The calculated tile.
+	 */
+	getTilingTileData(originX, originY, x, y) {
+		const tileX = ((x - originX) % this.width + this.width) % this.width;
+		const tileY = ((y - originY) % this.height + this.height) % this.height;
+
+		const tile = this.tiles[this.getTileIndex(tileX, tileY)];
+
+		return tile.clone();
+	}
+
+	/**
 	 * Inserts a TileArea into this TileArea.
 	 *
 	 * This isertion does not fail if it goes outside of the TileArea.
@@ -140,6 +167,73 @@ export class TileArea {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Fills an area (think bucket tool in GIMP).
+	 *
+	 * @param {number} x - The x coordinate of where to fill from.
+	 * @param {number} y - The y coordinate of where to fill from.
+	 * @param {TileArea} tileArea - The TileAre to fill with (tiling).
+	 */
+	fillAt(x, y, tileArea) {
+		let positions = [];
+
+		const getTile = (x, y) =&gt; this.tiles[this.getTileIndex(x, y)];
+		const fillTile = getTile(x, y).clone();
+		const seeds = [{ x, y }];
+
+		const testSeed = (x, y, verticalModifier) =&gt; {
+			const newY = y + verticalModifier;
+			if (newY &gt;= 0 &amp;&amp; newY &lt; this.height &amp;&amp;
+				getTile(x, newY).tileId === fillTile.tileId) {
+				if (x &lt;= 0 ||
+					getTile(x - 1, newY).tileId !== fillTile.tileId ||
+					getTile(x - 1, y).tileId !== fillTile.tileId) {
+					seeds.push({ x, y: newY });
+				}
+			}
+		};
+
+		const appliedPositions = new Set();
+		const positionToIndex = pos =&gt; pos.y * this.width + pos.x;
+
+		do {
+			const seed = seeds[0];
+			let { x: lx, y: ly } = seed;
+
+			if (appliedPositions.has(positionToIndex(seed))) {
+				seeds.splice(0, 1);
+				continue;
+			};
+
+			do {
+				positions.push({ x: lx, y: ly });
+				testSeed(lx, ly, 1);
+				testSeed(lx, ly, -1);
+				lx++;
+			} while (lx &lt; this.width &amp;&amp; getTile(lx, ly).tileId === fillTile.tileId);
+
+			lx = seed.x;
+			ly = seed.y;
+			while (lx &gt; 0 &amp;&amp; getTile(lx - 1, ly).tileId === fillTile.tileId) {
+				lx--;
+				positions.push({ x: lx, y: ly });
+				testSeed(lx, ly, 1);
+				testSeed(lx, ly, -1);
+			}
+
+			seeds.splice(0, 1);
+			positions.forEach(position =&gt; {
+				appliedPositions.add(positionToIndex(position));
+
+				const { tileId, tilesetId } = tileArea.getTilingTileData(
+					x, y, position.x, position.y
+				);
+				getTile(position.x, position.y).setData(tileId, tilesetId);
+			});
+			positions = [];
+		} while (seeds.length &gt; 0);
 	}
 
 	/**
