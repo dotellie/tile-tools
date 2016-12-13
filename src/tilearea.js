@@ -76,6 +76,29 @@ export class TileArea extends EventEmitter {
 	}
 
 	/**
+	 * Gets tiling data from this TileArea.
+	 *
+	 * Most of the time when mapping tilemaps, having the pen be "tiling" is more
+	 * useful than having it overwrite everywhere. This function is meant to provide
+	 * that kind of functionallity.
+	 *
+	 * @param {number} originX - The x coordinate to tile from.
+	 * @param {number} originY - The y coordinate to tile from.
+	 * @param {number} x - The x coordinate to get data from.
+	 * @param {number} y - The y coordinate to get data from.
+	 *
+	 * @returns {Tile} The calculated tile.
+	 */
+	getTilingTileData(originX, originY, x, y) {
+		const tileX = ((x - originX) % this.width + this.width) % this.width;
+		const tileY = ((y - originY) % this.height + this.height) % this.height;
+
+		const tile = this.tiles[this.getTileIndex(tileX, tileY)];
+
+		return tile.clone();
+	}
+
+	/**
 	 * Inserts a TileArea into this TileArea.
 	 *
 	 * This isertion does not fail if it goes outside of the TileArea.
@@ -159,8 +182,8 @@ export class TileArea extends EventEmitter {
 			positions.forEach(position => {
 				appliedPositions.add(positionToIndex(position));
 
-				const { tileId, tilesetId } = getTilingTileData(
-					x, y, position.x, position.y, tileArea
+				const { tileId, tilesetId } = tileArea.getTilingTileData(
+					x, y, position.x, position.y
 				);
 				getTile(position.x, position.y).setData(tileId, tilesetId);
 			});
@@ -222,15 +245,4 @@ export class TileArea extends EventEmitter {
 			height <= 0 || y + height > this.height
 		);
 	}
-}
-
-function getTilingTileData(originX, originY, x, y, tilingTileArea) {
-	const { width, height } = tilingTileArea;
-
-	const tileX = Math.abs((x - originX) % width);
-	const tileY = Math.abs((y - originY) % height);
-
-	const tile = tilingTileArea.tiles[tilingTileArea.getTileIndex(tileX, tileY)];
-
-	return tile.clone();
 }

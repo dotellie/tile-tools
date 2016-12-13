@@ -87,6 +87,27 @@ describe("TileArea", () => {
 		});
 	});
 
+	/** @test {TileArea#getTilingTileData} */
+	describe("#getTilingTileData", () => {
+		it("gets the right tile forward", () => {
+			const v = Math.floor(Math.random() * areaWidth);
+			const vTile = tileArea.tiles[tileArea.getTileIndex(v, v)];
+			tileArea.getTilingTileData(0, 0, areaWidth + v, v).should.deep.equal(vTile);
+		});
+		it("gets the right tile backwards", () => {
+			const v = Math.floor(Math.random() * areaWidth);
+			const vTile = tileArea.tiles[tileArea.getTileIndex(v, v)];
+			tileArea.getTilingTileData(0, 0, v - areaWidth, v).should.deep.equal(vTile);
+		});
+		it("gets the right tile far backwards", () => {
+			// Note: getting backwards usually causes trouble, so this is for my
+			// own sanity - Ellie
+			const v = Math.floor(Math.random() * areaWidth);
+			const vTile = tileArea.tiles[tileArea.getTileIndex(v, v)];
+			tileArea.getTilingTileData(0, 0, v - areaWidth * 100, v).should.deep.equal(vTile);
+		});
+	});
+
 	/** @test {TileArea#insertTileArea} */
 	describe("#insertTileArea", () => {
 		const smallAreaWidth = 3, smallAreaHeight = 3;
