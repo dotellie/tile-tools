@@ -81,7 +81,7 @@ export class TileArea extends EventEmitter {
 		const tiles = [];
 		for (let ly = y; ly < y + height; ly++) {
 			for (let lx = x; lx < x + width; lx++) {
-				tiles.push(this.tiles[this.getTileIndex(lx, ly)]);
+				tiles.push(this.getTile(lx, ly));
 			}
 		}
 		return new TileArea(width, height, tiles);
@@ -105,9 +105,7 @@ export class TileArea extends EventEmitter {
 		const tileX = ((x - originX) % this.width + this.width) % this.width;
 		const tileY = ((y - originY) % this.height + this.height) % this.height;
 
-		const tile = this.tiles[this.getTileIndex(tileX, tileY)];
-
-		return tile.clone();
+		return this.getTile(tileX, tileY).clone();
 	}
 
 	/**
@@ -124,11 +122,10 @@ export class TileArea extends EventEmitter {
 		for (let lx = x; lx < x + tileArea.width; lx++) {
 			for (let ly = y; ly < y + tileArea.height; ly++) {
 				try {
-					const newTile = tileArea.tiles[tileArea.getTileIndex(lx - x, ly - y)];
+					const newTile = tileArea.getTile(lx - x, ly - y);
 					if (skipEmpty && newTile.tileId === -1) continue;
 
-					this.tiles[this.getTileIndex(lx, ly)]
-						.setData(newTile.tileId, newTile.tilesetId);
+					this.getTile(lx, ly).setData(newTile.tileId, newTile.tilesetId);
 				} catch (e) {
 					if (e instanceof RangeError) continue; else throw e;
 				}
@@ -146,17 +143,16 @@ export class TileArea extends EventEmitter {
 	fillAt(x, y, tileArea) {
 		let positions = [];
 
-		const getTile = (x, y) => this.tiles[this.getTileIndex(x, y)];
-		const fillTile = getTile(x, y).clone();
+		const fillTile = this.getTile(x, y).clone();
 		const seeds = [{ x, y }];
 
 		const testSeed = (x, y, verticalModifier) => {
 			const newY = y + verticalModifier;
 			if (newY >= 0 && newY < this.height &&
-				getTile(x, newY).tileId === fillTile.tileId) {
+				this.getTile(x, newY).tileId === fillTile.tileId) {
 				if (x <= 0 ||
-					getTile(x - 1, newY).tileId !== fillTile.tileId ||
-					getTile(x - 1, y).tileId !== fillTile.tileId) {
+					this.getTile(x - 1, newY).tileId !== fillTile.tileId ||
+					this.getTile(x - 1, y).tileId !== fillTile.tileId) {
 					seeds.push({ x, y: newY });
 				}
 			}
@@ -179,11 +175,11 @@ export class TileArea extends EventEmitter {
 				testSeed(lx, ly, 1);
 				testSeed(lx, ly, -1);
 				lx++;
-			} while (lx < this.width && getTile(lx, ly).tileId === fillTile.tileId);
+			} while (lx < this.width && this.getTile(lx, ly).tileId === fillTile.tileId);
 
 			lx = seed.x;
 			ly = seed.y;
-			while (lx > 0 && getTile(lx - 1, ly).tileId === fillTile.tileId) {
+			while (lx > 0 && this.getTile(lx - 1, ly).tileId === fillTile.tileId) {
 				lx--;
 				positions.push({ x: lx, y: ly });
 				testSeed(lx, ly, 1);
@@ -197,7 +193,7 @@ export class TileArea extends EventEmitter {
 				const { tileId, tilesetId } = tileArea.getTilingTileData(
 					x, y, position.x, position.y
 				);
-				getTile(position.x, position.y).setData(tileId, tilesetId);
+				this.getTile(position.x, position.y).setData(tileId, tilesetId);
 			});
 			positions = [];
 		} while (seeds.length > 0);
