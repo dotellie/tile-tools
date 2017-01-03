@@ -53,6 +53,18 @@ export class TileArea extends EventEmitter {
 	}
 
 	/**
+	 * Gets the tile at a position.
+	 *
+	 * @param {number} x - The x coordinate of the tile.
+	 * @param {number} y - The y coordinate of the tile.
+	 *
+	 * @returns {Tile} The tile at the provided position.
+	 */
+	getTile(x, y) {
+		return this.tiles[this.getTileIndex(x, y)];
+	}
+
+	/**
 	 * Gets an area of tiles.
 	 *
 	 * @param {number} x - The x coordinate of the tile area.

@@ -53,6 +53,21 @@ describe("TileArea", () => {
 		});
 	});
 
+	/** @test {TileArea#getTile} */
+	describe("#getTile", () => {
+		it("returns the correct tile", () => {
+			tileArea.getTile(10, 13).should.equal(tileArea.tiles[400]);
+		});
+		it("crashes if out of bounds", () => {
+			(() => {
+				tileArea.getTile(-1, 0);
+			}).should.throw(RangeError);
+			(() => {
+				tileArea.getTile(0, areaWidth);
+			}).should.throw(RangeError);
+		});
+	});
+
 	/** @test {TileArea#getTileArea} */
 	describe("#getTileArea", () => {
 		it("returns the correct tiles", () => {
