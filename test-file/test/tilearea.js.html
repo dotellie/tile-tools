@@ -98,6 +98,21 @@ describe(&quot;TileArea&quot;, () =&gt; {
 		});
 	});
 
+	/** @test {TileArea#getTile} */
+	describe(&quot;#getTile&quot;, () =&gt; {
+		it(&quot;returns the correct tile&quot;, () =&gt; {
+			tileArea.getTile(10, 13).should.equal(tileArea.tiles[400]);
+		});
+		it(&quot;crashes if out of bounds&quot;, () =&gt; {
+			(() =&gt; {
+				tileArea.getTile(-1, 0);
+			}).should.throw(RangeError);
+			(() =&gt; {
+				tileArea.getTile(0, areaWidth);
+			}).should.throw(RangeError);
+		});
+	});
+
 	/** @test {TileArea#getTileArea} */
 	describe(&quot;#getTileArea&quot;, () =&gt; {
 		it(&quot;returns the correct tiles&quot;, () =&gt; {

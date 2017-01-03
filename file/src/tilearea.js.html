@@ -98,6 +98,18 @@ export class TileArea extends EventEmitter {
 	}
 
 	/**
+	 * Gets the tile at a position.
+	 *
+	 * @param {number} x - The x coordinate of the tile.
+	 * @param {number} y - The y coordinate of the tile.
+	 *
+	 * @returns {Tile} The tile at the provided position.
+	 */
+	getTile(x, y) {
+		return this.tiles[this.getTileIndex(x, y)];
+	}
+
+	/**
 	 * Gets an area of tiles.
 	 *
 	 * @param {number} x - The x coordinate of the tile area.
@@ -114,7 +126,7 @@ export class TileArea extends EventEmitter {
 		const tiles = [];
 		for (let ly = y; ly &lt; y + height; ly++) {
 			for (let lx = x; lx &lt; x + width; lx++) {
-				tiles.push(this.tiles[this.getTileIndex(lx, ly)]);
+				tiles.push(this.getTile(lx, ly));
 			}
 		}
 		return new TileArea(width, height, tiles);
@@ -138,9 +150,7 @@ export class TileArea extends EventEmitter {
 		const tileX = ((x - originX) % this.width + this.width) % this.width;
 		const tileY = ((y - originY) % this.height + this.height) % this.height;
 
-		const tile = this.tiles[this.getTileIndex(tileX, tileY)];
-
-		return tile.clone();
+		return this.getTile(tileX, tileY).clone();
 	}
 
 	/**
@@ -157,11 +167,10 @@ export class TileArea extends EventEmitter {
 		for (let lx = x; lx &lt; x + tileArea.width; lx++) {
 			for (let ly = y; ly &lt; y + tileArea.height; ly++) {
 				try {
-					const newTile = tileArea.tiles[tileArea.getTileIndex(lx - x, ly - y)];
+					const newTile = tileArea.getTile(lx - x, ly - y);
 					if (skipEmpty &amp;&amp; newTile.tileId === -1) continue;
 
-					this.tiles[this.getTileIndex(lx, ly)]
-						.setData(newTile.tileId, newTile.tilesetId);
+					this.getTile(lx, ly).setData(newTile.tileId, newTile.tilesetId);
 				} catch (e) {
 					if (e instanceof RangeError) continue; else throw e;
 				}
@@ -179,17 +188,16 @@ export class TileArea extends EventEmitter {
 	fillAt(x, y, tileArea) {
 		let positions = [];
 
-		const getTile = (x, y) =&gt; this.tiles[this.getTileIndex(x, y)];
-		const fillTile = getTile(x, y).clone();
+		const fillTile = this.getTile(x, y).clone();
 		const seeds = [{ x, y }];
 
 		const testSeed = (x, y, verticalModifier) =&gt; {
 			const newY = y + verticalModifier;
 			if (newY &gt;= 0 &amp;&amp; newY &lt; this.height &amp;&amp;
-				getTile(x, newY).tileId === fillTile.tileId) {
+				this.getTile(x, newY).tileId === fillTile.tileId) {
 				if (x &lt;= 0 ||
-					getTile(x - 1, newY).tileId !== fillTile.tileId ||
-					getTile(x - 1, y).tileId !== fillTile.tileId) {
+					this.getTile(x - 1, newY).tileId !== fillTile.tileId ||
+					this.getTile(x - 1, y).tileId !== fillTile.tileId) {
 					seeds.push({ x, y: newY });
 				}
 			}
@@ -212,11 +220,11 @@ export class TileArea extends EventEmitter {
 				testSeed(lx, ly, 1);
 				testSeed(lx, ly, -1);
 				lx++;
-			} while (lx &lt; this.width &amp;&amp; getTile(lx, ly).tileId === fillTile.tileId);
+			} while (lx &lt; this.width &amp;&amp; this.getTile(lx, ly).tileId === fillTile.tileId);
 
 			lx = seed.x;
 			ly = seed.y;
-			while (lx &gt; 0 &amp;&amp; getTile(lx - 1, ly).tileId === fillTile.tileId) {
+			while (lx &gt; 0 &amp;&amp; this.getTile(lx - 1, ly).tileId === fillTile.tileId) {
 				lx--;
 				positions.push({ x: lx, y: ly });
 				testSeed(lx, ly, 1);
@@ -230,7 +238,7 @@ export class TileArea extends EventEmitter {
 				const { tileId, tilesetId } = tileArea.getTilingTileData(
 					x, y, position.x, position.y
 				);
-				getTile(position.x, position.y).setData(tileId, tilesetId);
+				this.getTile(position.x, position.y).setData(tileId, tilesetId);
 			});
 			positions = [];
 		} while (seeds.length &gt; 0);

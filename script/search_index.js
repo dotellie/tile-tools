@@ -643,67 +643,85 @@ window.esdocSearchIndex = [
   ],
   [
     "tilearea#fillat src/tilearea.js~tilearea#fillat,tilearea#fillat",
-    "test-file/test/tilearea.js.html#lineNumber201",
+    "test-file/test/tilearea.js.html#lineNumber216",
     "TileArea #fillAt",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber233",
+    "test-file/test/tilearea.js.html#lineNumber248",
     "TileArea #fillAt doesn't end up in a loop",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber225",
+    "test-file/test/tilearea.js.html#lineNumber240",
     "TileArea #fillAt doesn't overwrite anything it shouldn't",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber215",
+    "test-file/test/tilearea.js.html#lineNumber230",
     "TileArea #fillAt fills correctly",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber229",
+    "test-file/test/tilearea.js.html#lineNumber244",
     "TileArea #fillAt respects tileset ID's",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber220",
+    "test-file/test/tilearea.js.html#lineNumber235",
     "TileArea #fillAt tiles correctly",
     "test"
   ],
   [
-    "tilearea#gettilearea src/tilearea.js~tilearea#gettilearea,tilearea#gettilearea",
+    "tilearea#gettile src/tilearea.js~tilearea#gettile,tilearea#gettile",
     "test-file/test/tilearea.js.html#lineNumber57",
-    "TileArea #getTileArea",
+    "TileArea #getTile",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber72",
-    "TileArea #getTileArea crashes if out of bounds",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tilearea.js.html#lineNumber80",
-    "TileArea #getTileArea crashes if rectangle is invalid",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/tilearea.js.html#lineNumber67",
-    "TileArea #getTileArea returns the correct dimmensions",
+    "test-file/test/tilearea.js.html#lineNumber61",
+    "TileArea #getTile crashes if out of bounds",
     "test"
   ],
   [
     "",
     "test-file/test/tilearea.js.html#lineNumber58",
+    "TileArea #getTile returns the correct tile",
+    "test"
+  ],
+  [
+    "tilearea#gettilearea src/tilearea.js~tilearea#gettilearea,tilearea#gettilearea",
+    "test-file/test/tilearea.js.html#lineNumber72",
+    "TileArea #getTileArea",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber87",
+    "TileArea #getTileArea crashes if out of bounds",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber95",
+    "TileArea #getTileArea crashes if rectangle is invalid",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber82",
+    "TileArea #getTileArea returns the correct dimmensions",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilearea.js.html#lineNumber73",
     "TileArea #getTileArea returns the correct tiles",
     "test"
   ],
@@ -727,79 +745,79 @@ window.esdocSearchIndex = [
   ],
   [
     "tilearea#gettilingtiledata src/tilearea.js~tilearea#gettilingtiledata,tilearea#gettilingtiledata",
-    "test-file/test/tilearea.js.html#lineNumber91",
+    "test-file/test/tilearea.js.html#lineNumber106",
     "TileArea #getTilingTileData",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber97",
+    "test-file/test/tilearea.js.html#lineNumber112",
     "TileArea #getTilingTileData gets the right tile backwards",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber102",
+    "test-file/test/tilearea.js.html#lineNumber117",
     "TileArea #getTilingTileData gets the right tile far backwards",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber92",
+    "test-file/test/tilearea.js.html#lineNumber107",
     "TileArea #getTilingTileData gets the right tile forward",
     "test"
   ],
   [
     "tilearea#inserttilearea src/tilearea.js~tilearea#inserttilearea,tilearea#inserttilearea",
-    "test-file/test/tilearea.js.html#lineNumber112",
+    "test-file/test/tilearea.js.html#lineNumber127",
     "TileArea #insertTileArea",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber134",
+    "test-file/test/tilearea.js.html#lineNumber149",
     "TileArea #insertTileArea can skip empty (-1) tiles",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber143",
+    "test-file/test/tilearea.js.html#lineNumber158",
     "TileArea #insertTileArea doesn't crash when going out of bounds",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber126",
+    "test-file/test/tilearea.js.html#lineNumber141",
     "TileArea #insertTileArea inserts a tile area correctly",
     "test"
   ],
   [
     "tilearea#resize src/tilearea.js~tilearea#resize,tilearea#resize",
-    "test-file/test/tilearea.js.html#lineNumber155",
+    "test-file/test/tilearea.js.html#lineNumber170",
     "TileArea #resize",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber194",
+    "test-file/test/tilearea.js.html#lineNumber209",
     "TileArea #resize adds empty tiles when growing",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber178",
+    "test-file/test/tilearea.js.html#lineNumber193",
     "TileArea #resize can grow dimmensions",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber173",
+    "test-file/test/tilearea.js.html#lineNumber188",
     "TileArea #resize can shrink dimmensions",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea.js.html#lineNumber183",
+    "test-file/test/tilearea.js.html#lineNumber198",
     "TileArea #resize keeps tiles intact",
     "test"
   ],
@@ -1161,6 +1179,12 @@ window.esdocSearchIndex = [
     "src/tilearea.js~tilearea#fillat",
     "class/src/tilearea.js~TileArea.html#instance-method-fillAt",
     "src/tilearea.js~TileArea#fillAt",
+    "method"
+  ],
+  [
+    "src/tilearea.js~tilearea#gettile",
+    "class/src/tilearea.js~TileArea.html#instance-method-getTile",
+    "src/tilearea.js~TileArea#getTile",
     "method"
   ],
   [
