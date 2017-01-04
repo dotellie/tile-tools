@@ -90,6 +90,10 @@ describe("PropertyObject", () => {
 				properties.set("test6", { anObject: "with a value" });
 			}).should.not.throw(TypeError);
 		});
+		it("ignores empty keys", () => {
+			properties.set("", "hi");
+			properties.getAll().length.should.equal(2);
+		});
 	});
 
 	/** @test {PropertyObject#toJSON} */

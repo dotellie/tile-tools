@@ -79,6 +79,7 @@ export class PropertyObject {
 	 */
 	set(key, value) {
 		if (typeof key === "string" && JSON.stringify(value)) {
+			if (key === "") return;
 			this._map.set(key, value);
 		} else {
 			throw TypeError("Invalid key or value");
