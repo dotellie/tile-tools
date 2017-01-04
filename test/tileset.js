@@ -104,4 +104,12 @@ describe("TileSet", () => {
 			}).should.throw(TypeError);
 		});
 	});
+
+	/** @test {TileSet#toJSON} */
+	describe("#toJSON", () => {
+		it("doesn't have a virtualPath property", () => {
+			const jsonObject = new TileSet({}).toJSON();
+			should.not.exist(jsonObject.virtualPath);
+		});
+	});
 });

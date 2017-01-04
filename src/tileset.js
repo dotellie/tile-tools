@@ -109,4 +109,16 @@ export class TileSet {
 		}
 		return typeof this._tileProperties[id] !== "undefined";
 	}
+
+	/**
+	 * Returns an object to be serialized by JSON.stringify.
+	 */
+	toJSON() {
+		const replacement = {};
+		for (let key in this) {
+			if (key === "virtualPath") continue;
+			replacement[key] = this[key];
+		}
+		return replacement;
+	}
 }
