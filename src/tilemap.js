@@ -21,47 +21,45 @@ export class TileMap {
      * @param {tilesetOption[]} [options.tilesets=[]] - Same structure as options in {@link TileSet#constructor}
 	 * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}
      */
-	constructor(options) {
+	constructor({ name = "Tilemap", width, height, tileWidth, tileHeight,
+		layers = [], objects = [], tilesets = [], properties }) {
 		/** The name of the tilemap.
 		 * @type {string} */
-		this.name = options.name || "Tilemap";
+		this.name = name;
 
-		this._width = options.width;
-		this._height = options.height;
+		this._width = width;
+		this._height = height;
 
 		/** The width of a tile for the tilemap.
 		 * @type {number} */
-		this.tileWidth = options.tileWidth;
+		this.tileWidth = tileWidth;
 		/** The height of a tile for the tilemap.
 		 * @type {number} */
-		this.tileHeight = options.tileHeight;
+		this.tileHeight = tileHeight;
 
 		/** All layers of the tilemap
 		 *  @type {TileLayer[]} */
 		this.layers = [];
-		options.layers = options.layers || [];
-		for (let layerData of options.layers) {
+		for (let layerData of layers) {
 			this.createLayer(layerData);
 		}
 
-		options.objects = options.objects || [];
 		/** All objects of the tilemap
 		 * @type {MapObject[]} */
-		this.objects = options.objects.map(object => {
+		this.objects = objects.map(object => {
 			return new MapObject(object);
 		});
 
 		/** The tilesets the tilemap consists of.
 		 * @type {TileSet[]} */
 		this.tilesets = [];
-		options.tilesets = options.tilesets || [];
-		for (let tileset of options.tilesets) {
+		for (let tileset of tilesets) {
 			this.addTileset(new TileSet(tileset));
 		}
 
 		/** Custom properties of the tilemap.
 		 * @type {PropertyObject} */
-		this.properties = new PropertyObject(options.properties);
+		this.properties = new PropertyObject(properties);
 
 		this._dataBuffer = [];
 	}
