@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "dtile-tilemap/src/mapobject.js~mapobject",
+    "class/src/mapObject.js~MapObject.html",
+    "<span>MapObject</span> <span class=\"search-result-import-path\">dtile-tilemap/src/mapObject.js</span>",
+    "class"
+  ],
+  [
     "dtile-tilemap/src/propertyobject.js~propertyobject",
     "class/src/propertyObject.js~PropertyObject.html",
     "<span>PropertyObject</span> <span class=\"search-result-import-path\">dtile-tilemap/src/propertyObject.js</span>",
@@ -420,6 +426,48 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
+    "mapobject src/mapobject.js~mapobject,mapobject",
+    "test-file/test/mapObject.js.html#lineNumber9",
+    "MapObject",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/mapObject.js.html#lineNumber42",
+    "MapObject accepts any kind of location",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/mapObject.js.html#lineNumber64",
+    "MapObject can be cloned",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/mapObject.js.html#lineNumber32",
+    "MapObject can take properties from an object",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/mapObject.js.html#lineNumber49",
+    "MapObject checks it's a valid rectangle",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/mapObject.js.html#lineNumber60",
+    "MapObject has a PropertyObject",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/mapObject.js.html#lineNumber23",
+    "MapObject has default properties after being created",
+    "test"
+  ],
+  [
     "propertyobject src/propertyobject.js~propertyobject,propertyobject",
     "test-file/test/propertyObject.js.html#lineNumber8",
     "PropertyObject",
@@ -493,6 +541,12 @@ window.esdocSearchIndex = [
   ],
   [
     "",
+    "test-file/test/propertyObject.js.html#lineNumber93",
+    "PropertyObject #set ignores empty keys",
+    "test"
+  ],
+  [
+    "",
     "test-file/test/propertyObject.js.html#lineNumber76",
     "PropertyObject #set rejects keys of invalid types",
     "test"
@@ -511,13 +565,13 @@ window.esdocSearchIndex = [
   ],
   [
     "propertyobject#tojson src/propertyobject.js~propertyobject#tojson,propertyobject#tojson",
-    "test-file/test/propertyObject.js.html#lineNumber96",
+    "test-file/test/propertyObject.js.html#lineNumber100",
     "PropertyObject #toJSON",
     "test"
   ],
   [
     "",
-    "test-file/test/propertyObject.js.html#lineNumber97",
+    "test-file/test/propertyObject.js.html#lineNumber101",
     "PropertyObject #toJSON serializes correctly",
     "test"
   ],
@@ -847,121 +901,127 @@ window.esdocSearchIndex = [
   ],
   [
     "tilemap#constructor src/tilemap.js~tilemap#constructor,tilemap#constructor",
-    "test-file/test/tilemap.js.html#lineNumber33",
+    "test-file/test/tilemap.js.html#lineNumber38",
     "TileMap #constructor",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber34",
+    "test-file/test/tilemap.js.html#lineNumber70",
+    "TileMap #constructor can take map objects as input",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tilemap.js.html#lineNumber39",
     "TileMap #constructor has a name",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber59",
+    "test-file/test/tilemap.js.html#lineNumber64",
     "TileMap #constructor has correct default values",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber37",
+    "test-file/test/tilemap.js.html#lineNumber42",
     "TileMap #constructor has dimmensions",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber48",
+    "test-file/test/tilemap.js.html#lineNumber53",
     "TileMap #constructor has layers",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber51",
+    "test-file/test/tilemap.js.html#lineNumber56",
     "TileMap #constructor has properties for layers",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber44",
+    "test-file/test/tilemap.js.html#lineNumber49",
     "TileMap #constructor has tile size",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber54",
+    "test-file/test/tilemap.js.html#lineNumber59",
     "TileMap #constructor reads a valid tilemap JSON",
     "test"
   ],
   [
     "tilemap#getjson src/tilemap.js~tilemap#getjson,tilemap#getjson",
-    "test-file/test/tilemap.js.html#lineNumber109",
+    "test-file/test/tilemap.js.html#lineNumber119",
     "TileMap #getJSON",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber117",
+    "test-file/test/tilemap.js.html#lineNumber127",
     "TileMap #getJSON can be parsed back to a map object",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber113",
+    "test-file/test/tilemap.js.html#lineNumber123",
     "TileMap #getJSON doesn't parse private properties",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber110",
+    "test-file/test/tilemap.js.html#lineNumber120",
     "TileMap #getJSON returns a valid JSON string",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber123",
+    "test-file/test/tilemap.js.html#lineNumber133",
     "TileMap #getJSON still has width and height properties after parsing",
     "test"
   ],
   [
     "tilemap#resize src/tilemap.js~tilemap#resize,tilemap#resize",
-    "test-file/test/tilemap.js.html#lineNumber67",
+    "test-file/test/tilemap.js.html#lineNumber77",
     "TileMap #resize",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber77",
+    "test-file/test/tilemap.js.html#lineNumber87",
     "TileMap #resize changes the size of all layers",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber73",
+    "test-file/test/tilemap.js.html#lineNumber83",
     "TileMap #resize changes the size of the map",
     "test"
   ],
   [
     "tilemap#takedatabuffer src/tilemap.js~tilemap#takedatabuffer,tilemap#takedatabuffer",
-    "test-file/test/tilemap.js.html#lineNumber86",
+    "test-file/test/tilemap.js.html#lineNumber96",
     "TileMap #takeDataBuffer",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber101",
+    "test-file/test/tilemap.js.html#lineNumber111",
     "TileMap #takeDataBuffer empties data buffer when taken",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber90",
+    "test-file/test/tilemap.js.html#lineNumber100",
     "TileMap #takeDataBuffer returns both new and old values",
     "test"
   ],
   [
     "",
-    "test-file/test/tilemap.js.html#lineNumber87",
+    "test-file/test/tilemap.js.html#lineNumber97",
     "TileMap #takeDataBuffer returns empty array when no change has happened",
     "test"
   ],
@@ -1062,6 +1122,18 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
+    "tileset#tojson src/tileset.js~tileset#tojson,tileset#tojson",
+    "test-file/test/tileset.js.html#lineNumber109",
+    "TileSet #toJSON",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/tileset.js.html#lineNumber110",
+    "TileSet #toJSON doesn't have a virtualPath property",
+    "test"
+  ],
+  [
     "src/event.js",
     "file/src/event.js.html",
     "src/event.js",
@@ -1072,6 +1144,60 @@ window.esdocSearchIndex = [
     "file/src/index.js.html",
     "src/index.js",
     "file"
+  ],
+  [
+    "src/mapobject.js",
+    "file/src/mapObject.js.html",
+    "src/mapObject.js",
+    "file"
+  ],
+  [
+    "src/mapobject.js~mapobject#clone",
+    "class/src/mapObject.js~MapObject.html#instance-method-clone",
+    "src/mapObject.js~MapObject#clone",
+    "method"
+  ],
+  [
+    "src/mapobject.js~mapobject#constructor",
+    "class/src/mapObject.js~MapObject.html#instance-constructor-constructor",
+    "src/mapObject.js~MapObject#constructor",
+    "method"
+  ],
+  [
+    "src/mapobject.js~mapobject#height",
+    "class/src/mapObject.js~MapObject.html#instance-member-height",
+    "src/mapObject.js~MapObject#height",
+    "member"
+  ],
+  [
+    "src/mapobject.js~mapobject#name",
+    "class/src/mapObject.js~MapObject.html#instance-member-name",
+    "src/mapObject.js~MapObject#name",
+    "member"
+  ],
+  [
+    "src/mapobject.js~mapobject#properties",
+    "class/src/mapObject.js~MapObject.html#instance-member-properties",
+    "src/mapObject.js~MapObject#properties",
+    "member"
+  ],
+  [
+    "src/mapobject.js~mapobject#width",
+    "class/src/mapObject.js~MapObject.html#instance-member-width",
+    "src/mapObject.js~MapObject#width",
+    "member"
+  ],
+  [
+    "src/mapobject.js~mapobject#x",
+    "class/src/mapObject.js~MapObject.html#instance-member-x",
+    "src/mapObject.js~MapObject#x",
+    "member"
+  ],
+  [
+    "src/mapobject.js~mapobject#y",
+    "class/src/mapObject.js~MapObject.html#instance-member-y",
+    "src/mapObject.js~MapObject#y",
+    "member"
   ],
   [
     "src/propertyobject.js",
@@ -1314,6 +1440,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/tilemap.js~tilemap#objects",
+    "class/src/tilemap.js~TileMap.html#instance-member-objects",
+    "src/tilemap.js~TileMap#objects",
+    "member"
+  ],
+  [
     "src/tilemap.js~tilemap#properties",
     "class/src/tilemap.js~TileMap.html#instance-member-properties",
     "src/tilemap.js~TileMap#properties",
@@ -1404,6 +1536,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/tileset.js~tileset#tojson",
+    "class/src/tileset.js~TileSet.html#instance-method-toJSON",
+    "src/tileset.js~TileSet#toJSON",
+    "method"
+  ],
+  [
     "src/tileset.js~tileset#type",
     "class/src/tileset.js~TileSet.html#instance-member-type",
     "src/tileset.js~TileSet#type",
@@ -1419,6 +1557,12 @@ window.esdocSearchIndex = [
     "test/event.js",
     "test-file/test/event.js.html",
     "test/event.js",
+    "testFile"
+  ],
+  [
+    "test/mapobject.js",
+    "test-file/test/mapObject.js.html",
+    "test/mapObject.js",
     "testFile"
   ],
   [

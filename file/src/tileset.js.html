@@ -10,6 +10,7 @@
   
   
   <script src="script/manual.js"></script>
+<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
@@ -32,7 +33,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mapObject.js~MapObject.html">MapObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
@@ -153,6 +155,18 @@ export class TileSet {
 			throw new TypeError(&quot;ID has to be a number&quot;);
 		}
 		return typeof this._tileProperties[id] !== &quot;undefined&quot;;
+	}
+
+	/**
+	 * Returns an object to be serialized by JSON.stringify.
+	 */
+	toJSON() {
+		const replacement = {};
+		for (let key in this) {
+			if (key === &quot;virtualPath&quot;) continue;
+			replacement[key] = this[key];
+		}
+		return replacement;
 	}
 }
 </code></pre>

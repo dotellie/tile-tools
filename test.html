@@ -10,6 +10,7 @@
   
   
   <script src="script/manual.js"></script>
+<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
@@ -32,7 +33,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mapObject.js~MapObject.html">MapObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
@@ -120,10 +122,55 @@
 
 
 <tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span class="toggle closed"></span><span><a href="test-file/test/mapObject.js.html#lineNumber9"><p>MapObject</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/mapObject.js~MapObject.html">MapObject</a></span></td>
+  <td data-ice="testCount">6</td>
+</tr>
+
+<tr data-ice="testIt" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/test/mapObject.js.html#lineNumber23"><p>has default properties after being created</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/test/mapObject.js.html#lineNumber32"><p>can take properties from an object</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/test/mapObject.js.html#lineNumber42"><p>accepts any kind of location</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/test/mapObject.js.html#lineNumber49"><p>checks it&apos;s a valid rectangle</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/test/mapObject.js.html#lineNumber60"><p>has a PropertyObject</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/test/mapObject.js.html#lineNumber64"><p>can be cloned</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+
+
+<tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="0">
   <td data-ice="testDescription" style="padding-left: 10px"><span class="toggle closed"></span><span><a href="test-file/test/propertyObject.js.html#lineNumber8"><p>PropertyObject</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></td>
-  <td data-ice="testCount">11</td>
+  <td data-ice="testCount">12</td>
 </tr>
 
 
@@ -201,7 +248,7 @@
   <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/propertyObject.js.html#lineNumber71"><p>#set</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target"><span><a href="class/src/propertyObject.js~PropertyObject.html#instance-method-set">PropertyObject#set</a></span></td>
-  <td data-ice="testCount">3</td>
+  <td data-ice="testCount">4</td>
 </tr>
 
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
@@ -222,17 +269,23 @@
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/propertyObject.js.html#lineNumber93"><p>ignores empty keys</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
 
 
 <tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
-  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/propertyObject.js.html#lineNumber96"><p>#toJSON</p>
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/propertyObject.js.html#lineNumber100"><p>#toJSON</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target"><span><a href="class/src/propertyObject.js~PropertyObject.html#instance-method-toJSON">PropertyObject#toJSON</a></span></td>
   <td data-ice="testCount">1</td>
 </tr>
 
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/propertyObject.js.html#lineNumber97"><p>serializes correctly</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/propertyObject.js.html#lineNumber101"><p>serializes correctly</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
@@ -609,56 +662,62 @@
   <td data-ice="testDescription" style="padding-left: 10px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber9"><p>TileMap</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilemap.js~TileMap.html">TileMap</a></span></td>
-  <td data-ice="testCount">16</td>
+  <td data-ice="testCount">17</td>
 </tr>
 
 
 
 <tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
-  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber33"><p>#constructor</p>
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber38"><p>#constructor</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilemap.js~TileMap.html#instance-constructor-constructor">TileMap#constructor</a></span></td>
-  <td data-ice="testCount">7</td>
+  <td data-ice="testCount">8</td>
 </tr>
 
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber34"><p>has a name</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber39"><p>has a name</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber37"><p>has dimmensions</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber42"><p>has dimmensions</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber44"><p>has tile size</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber49"><p>has tile size</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber48"><p>has layers</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber53"><p>has layers</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber51"><p>has properties for layers</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber56"><p>has properties for layers</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber54"><p>reads a valid tilemap JSON</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber59"><p>reads a valid tilemap JSON</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber59"><p>has correct default values</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber64"><p>has correct default values</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber70"><p>can take map objects as input</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
@@ -666,20 +725,20 @@
 
 
 <tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
-  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber67"><p>#resize</p>
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber77"><p>#resize</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilemap.js~TileMap.html#instance-method-resize">TileMap#resize</a></span></td>
   <td data-ice="testCount">2</td>
 </tr>
 
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber73"><p>changes the size of the map</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber83"><p>changes the size of the map</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber77"><p>changes the size of all layers</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber87"><p>changes the size of all layers</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
@@ -687,26 +746,26 @@
 
 
 <tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
-  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber86"><p>#takeDataBuffer</p>
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber96"><p>#takeDataBuffer</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilemap.js~TileMap.html#instance-method-takeDataBuffer">TileMap#takeDataBuffer</a></span></td>
   <td data-ice="testCount">3</td>
 </tr>
 
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber87"><p>returns empty array when no change has happened</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber97"><p>returns empty array when no change has happened</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber90"><p>returns both new and old values</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber100"><p>returns both new and old values</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber101"><p>empties data buffer when taken</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber111"><p>empties data buffer when taken</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
@@ -714,32 +773,32 @@
 
 
 <tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
-  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber109"><p>#getJSON</p>
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tilemap.js.html#lineNumber119"><p>#getJSON</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target"><span><a href="class/src/tilemap.js~TileMap.html#instance-method-getJSON">TileMap#getJSON</a></span></td>
   <td data-ice="testCount">4</td>
 </tr>
 
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber110"><p>returns a valid JSON string</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber120"><p>returns a valid JSON string</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber113"><p>doesn&apos;t parse private properties</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber123"><p>doesn&apos;t parse private properties</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber117"><p>can be parsed back to a map object</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber127"><p>can be parsed back to a map object</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
-  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber123"><p>still has width and height properties after parsing</p>
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tilemap.js.html#lineNumber133"><p>still has width and height properties after parsing</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>
@@ -750,7 +809,7 @@
   <td data-ice="testDescription" style="padding-left: 10px"><span class="toggle closed"></span><span><a href="test-file/test/tileset.js.html#lineNumber8"><p>TileSet</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target"><span><a href="class/src/tileset.js~TileSet.html">TileSet</a></span></td>
-  <td data-ice="testCount">11</td>
+  <td data-ice="testCount">12</td>
 </tr>
 
 
@@ -851,6 +910,21 @@
 </tr>
 <tr data-ice="testIt" style="display: none;" data-test-depth="2">
   <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tileset.js.html#lineNumber101"><p>fails if argument isn&apos;t a number</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+  <td></td>
+</tr>
+
+
+<tr class="test-describe" data-ice="testDescribe" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span class="toggle closed"></span><span><a href="test-file/test/tileset.js.html#lineNumber109"><p>#toJSON</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target"><span><a href="class/src/tileset.js~TileSet.html#instance-method-toJSON">TileSet#toJSON</a></span></td>
+  <td data-ice="testCount">1</td>
+</tr>
+
+<tr data-ice="testIt" style="display: none;" data-test-depth="2">
+  <td data-ice="testDescription" style="padding-left: 30px"><span><a href="test-file/test/tileset.js.html#lineNumber110"><p>doesn&apos;t have a virtualPath property</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
   <td></td>

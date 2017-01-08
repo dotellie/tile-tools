@@ -1,8 +1,13 @@
 {
   "coverage": "100%",
-  "expectCount": 57,
-  "actualCount": 57,
+  "expectCount": 68,
+  "actualCount": 68,
   "files": {
+    "src/mapObject.js": {
+      "expectCount": 9,
+      "actualCount": 9,
+      "undocumentLines": []
+    },
     "src/propertyObject.js": {
       "expectCount": 7,
       "actualCount": 7,
@@ -24,13 +29,13 @@
       "undocumentLines": []
     },
     "src/tilemap.js": {
-      "expectCount": 15,
-      "actualCount": 15,
+      "expectCount": 16,
+      "actualCount": 16,
       "undocumentLines": []
     },
     "src/tileset.js": {
-      "expectCount": 10,
-      "actualCount": 10,
+      "expectCount": 11,
+      "actualCount": 11,
       "undocumentLines": []
     }
   }

@@ -10,6 +10,7 @@
   
   
   <script src="script/manual.js"></script>
+<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
@@ -32,7 +33,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/mapObject.js~MapObject.html">MapObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/propertyObject.js~PropertyObject.html">PropertyObject</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tile.js~Tile.html">Tile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilearea.js~TileArea.html">TileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tilelayer.js~TileLayer.html">TileLayer</a></span></span></li>
@@ -43,13 +45,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {TileMap} from &apos;<span><a href="file/src/tilemap.js.html#lineNumber8">dtile-tilemap/src/tilemap.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {TileMap} from &apos;<span><a href="file/src/tilemap.js.html#lineNumber9">dtile-tilemap/src/tilemap.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/tilemap.js.html#lineNumber8">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/tilemap.js.html#lineNumber9">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -196,6 +198,32 @@
         
         
         <div data-ice="description"><p>The name of the tilemap.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/tilemap.js~TileMap.html#instance-member-objects">objects</a></span></span><span data-ice="signature">: <span><span><a href="class/src/mapObject.js~MapObject.html">MapObject</a></span><span>[]</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>All objects of the tilemap</p>
 </div>
       </div>
     </td>
@@ -492,7 +520,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber22">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber24">source</a></span></span>
     </span>
   </h3>
 
@@ -564,6 +592,13 @@
 </td>
     </tr>
 <tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.objects</td>
+      <td data-ice="type"><span><span>objectOption</span><span>[]</span></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>Same structure as options in <span><a href="class/src/mapObject.js~MapObject.html#instance-constructor-constructor">MapObject#constructor</a></span></p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
       <td data-ice="name" data-depth="1">options.tilesets</td>
       <td data-ice="type"><span><span>tilesetOption</span><span>[]</span></span></td>
       <td data-ice="appendix"><ul><li>optional</li>
@@ -597,7 +632,7 @@
     <h4>Test:</h4>
     <ul>
       
-    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber33">TileMap #constructor</a></span></li>
+    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber38">TileMap #constructor</a></span></li>
 </ul>
   </div>
 
@@ -618,7 +653,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber67">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber68">source</a></span></span>
     </span>
   </h3>
 
@@ -659,7 +694,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber39">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
@@ -700,7 +735,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber25">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber28">source</a></span></span>
     </span>
   </h3>
 
@@ -708,6 +743,47 @@
   
   
   <div data-ice="description"><p>The name of the tilemap.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-objects">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">objects</span><span data-ice="signature">: <span><span><a href="class/src/mapObject.js~MapObject.html">MapObject</a></span><span>[]</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber47">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>All objects of the tilemap</p>
 </div>
 
   
@@ -741,7 +817,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber55">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber56">source</a></span></span>
     </span>
   </h3>
 
@@ -782,7 +858,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber35">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber38">source</a></span></span>
     </span>
   </h3>
 
@@ -823,7 +899,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber32">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber35">source</a></span></span>
     </span>
   </h3>
 
@@ -864,7 +940,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber47">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber51">source</a></span></span>
     </span>
   </h3>
 
@@ -905,7 +981,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber62">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber63">source</a></span></span>
     </span>
   </h3>
 
@@ -949,7 +1025,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber116">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber117">source</a></span></span>
     </span>
   </h3>
 
@@ -1017,7 +1093,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber97">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber98">source</a></span></span>
     </span>
   </h3>
 
@@ -1085,7 +1161,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber138">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber139">source</a></span></span>
     </span>
   </h3>
 
@@ -1125,7 +1201,7 @@
     <h4>Test:</h4>
     <ul>
       
-    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber109">TileMap #getJSON</a></span></li>
+    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber119">TileMap #getJSON</a></span></li>
 </ul>
   </div>
 
@@ -1143,7 +1219,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber81">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber82">source</a></span></span>
     </span>
   </h3>
 
@@ -1199,7 +1275,7 @@ this on just 4 150x150 layers...</p>
     <h4>Test:</h4>
     <ul>
       
-    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber67">TileMap #resize</a></span></li>
+    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber77">TileMap #resize</a></span></li>
 </ul>
   </div>
 
@@ -1217,7 +1293,7 @@ this on just 4 150x150 layers...</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber127">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tilemap.js.html#lineNumber128">source</a></span></span>
     </span>
   </h3>
 
@@ -1258,7 +1334,7 @@ functionality.</p>
     <h4>Test:</h4>
     <ul>
       
-    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber86">TileMap #takeDataBuffer</a></span></li>
+    <li data-ice="test"><span><a href="test-file/test/tilemap.js.html#lineNumber96">TileMap #takeDataBuffer</a></span></li>
 </ul>
   </div>
 
