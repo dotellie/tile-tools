@@ -40,22 +40,16 @@ export class TileMap {
 		/** All layers of the tilemap
 		 *  @type {TileLayer[]} */
 		this.layers = [];
-		for (let layerData of layers) {
-			this.createLayer(layerData);
-		}
+		layers.forEach(layer => this.createLayer(layer));
 
 		/** All objects of the tilemap
 		 * @type {MapObject[]} */
-		this.objects = objects.map(object => {
-			return new MapObject(object);
-		});
+		this.objects = objects.map(object => new MapObject(object));
 
 		/** The tilesets the tilemap consists of.
 		 * @type {TileSet[]} */
 		this.tilesets = [];
-		for (let tileset of tilesets) {
-			this.addTileset(new TileSet(tileset));
-		}
+		tilesets.forEach(tileset => this.addTileset(new TileSet(tileset)));
 
 		/** Custom properties of the tilemap.
 		 * @type {PropertyObject} */
