@@ -25,6 +25,11 @@ describe("TileMap", () => {
 
 			layers: [
 				{}, {}, {}
+			],
+
+			objects: [
+				{ name: "an object" },
+				{}
 			]
 		});
 	});
@@ -60,6 +65,11 @@ describe("TileMap", () => {
 			const tilemap = new TileMap({});
 			tilemap.name.should.be.a("string");
 			tilemap.layers.should.be.an("array");
+			tilemap.objects.should.be.an("array");
+		});
+		it("can take map objects as input", () => {
+			tilemap.objects.length.should.equal(2);
+			tilemap.objects[0].name.should.equal("an object");
 		});
 	});
 

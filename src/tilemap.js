@@ -1,5 +1,6 @@
 import { TileLayer } from "./tilelayer";
 import { TileSet } from "./tileset";
+import { MapObject } from "./mapObject";
 import { PropertyObject } from "./propertyObject";
 
 /**
@@ -16,6 +17,7 @@ export class TileMap {
      * @param {number} options.tileWidth - {@link TileMap#tileWidth}
      * @param {number} options.tileHeight - {@link TileMap#tileHeight}
      * @param {layerOption[]} [options.layers=[]] - Same structure as options in {@link TileLayer#constructor}
+	 * @param {objectOption[]} [options.objects] - Same structure as options in {@link MapObject#constructor}
      * @param {tilesetOption[]} [options.tilesets=[]] - Same structure as options in {@link TileSet#constructor}
 	 * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}
      */
@@ -41,6 +43,13 @@ export class TileMap {
 		for (let layerData of options.layers) {
 			this.createLayer(layerData);
 		}
+
+		options.objects = options.objects || [];
+		/** All objects of the tilemap
+		 * @type {MapObject[]} */
+		this.objects = options.objects.map(object => {
+			return new MapObject(object);
+		});
 
 		/** The tilesets the tilemap consists of.
 		 * @type {TileSet[]} */
