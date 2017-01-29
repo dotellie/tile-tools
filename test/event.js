@@ -8,7 +8,7 @@ chaiShould();
 describe("EventEmitter", () => {
 	let ee = new EventEmitter();
 
-	describe("on", () => {
+	describe("#on", () => {
 		it("adds an event listener", () => {
 			ee.on("event", () => {});
 			ee._listeners.length.should.equal(1);
@@ -24,7 +24,7 @@ describe("EventEmitter", () => {
 			}).should.throw(TypeError);
 		});
 	});
-	describe("off", () => {
+	describe("#off", () => {
 		it("removes an event listener", () => {
 			const listener = () => {};
 			ee.on("event", listener);
@@ -32,7 +32,7 @@ describe("EventEmitter", () => {
 			ee._listeners.length.should.equal(1);
 		});
 	});
-	describe("emit", () => {
+	describe("#emit", () => {
 		it("fires an event with arguements properly", done => {
 			ee.on("event", e => {
 				e.value.should.equal(456);
