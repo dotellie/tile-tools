@@ -2,7 +2,7 @@ import { should as chaiShould } from "chai";
 
 import { PropertyObject } from "../src/propertyObject";
 
-chaiShould();
+const should = chaiShould();
 
 /** @test {PropertyObject} */
 describe("PropertyObject", () => {
@@ -93,6 +93,14 @@ describe("PropertyObject", () => {
 		it("ignores empty keys", () => {
 			properties.set("", "hi");
 			properties.getAll().length.should.equal(2);
+		});
+	});
+
+	/** @test {PropertyObject#remove} */
+	describe("#remove", () => {
+		it("removes a property correctly", () => {
+			properties.remove("test1");
+			should.not.exist(properties.get("test1"));
 		});
 	});
 

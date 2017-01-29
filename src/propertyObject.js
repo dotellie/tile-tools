@@ -87,6 +87,15 @@ export class PropertyObject {
 	}
 
 	/**
+	 * Removes a property from the properties.
+	 *
+	 * @param {string} key - The key of the property to remove.
+	 */
+	remove(key) {
+		this._map.delete(key);
+	}
+
+	/**
 	 * Generates a JSON compatible value from this object.
 	 *
 	 * @returns An array to represent this object.
