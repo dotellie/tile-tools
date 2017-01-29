@@ -32,4 +32,8 @@ export class EventEmitter {
 			}
 		});
 	}
+
+	forward(from, event) {
+		from.on(event, e => this.emit(event, e));
+	}
 }

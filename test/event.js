@@ -42,4 +42,23 @@ describe("EventEmitter", () => {
 			ee.emit("event", { value: 456, something: "hi" });
 		});
 	});
+	describe("#forward", () => {
+		it("starts forwarding a specified event", done => {
+			const thing = new class extends EventEmitter {
+				constructor() {
+					super();
+
+					this.forward(ee, "an-event");
+				}
+			}();
+
+			thing.on("an-event", e => {
+				e.should.equal("some data");
+
+				done();
+			});
+
+			ee.emit("an-event", "some data");
+		});
+	});
 });
