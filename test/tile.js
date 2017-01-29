@@ -28,8 +28,8 @@ describe("Tile", () => {
 		});
 	});
 
-	/** @test {Tile#setTile} */
-	describe("#setTile", () => {
+	/** @test {Tile#setData} */
+	describe("#setData", () => {
 		let tile;
 		beforeEach(() => {
 			tile = new Tile("10:8");
