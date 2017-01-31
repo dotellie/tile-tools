@@ -32,6 +32,15 @@ describe("EventEmitter", () => {
 			ee._listeners.length.should.equal(1);
 		});
 	});
+	describe("#offAll", () => {
+		it("removes all event listeners of a type", () => {
+			ee.on("event", () => {});
+			ee.on("event", () => {});
+			ee.on("another-event", () => {});
+			ee.offAll("event");
+			ee._listeners.should.have.a.lengthOf(1);
+		});
+	});
 	describe("#emit", () => {
 		it("fires an event with arguements properly", done => {
 			ee.on("event", e => {

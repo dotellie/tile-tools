@@ -25,6 +25,10 @@ export class EventEmitter {
 		});
 	}
 
+	offAll(event) {
+		this._listeners = this._listeners.filter(([fevent, _]) => event !== fevent);
+	}
+
 	emit(event, argument) {
 		this._listeners.forEach(ev => {
 			if (ev[0] === event) {
