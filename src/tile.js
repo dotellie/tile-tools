@@ -39,6 +39,22 @@ export class Tile extends EventEmitter {
 	}
 
 	/**
+	 * Whether the tile should emit events at all.
+	 */
+	set emitEvents(shouldEmit) {
+		this._emitEvents = shouldEmit;
+
+		this.properties.offAll("property-change");
+
+		if (shouldEmit) {
+			this.properties.on("property-change", e => {
+				e.tile = this;
+				this.emit("property-change", e);
+			});
+		}
+	}
+
+	/**
 	 * Sets the data for this tile.
 	 *
 	 * @param {number} tileId - The ID to assign to the tile.
@@ -55,10 +71,12 @@ export class Tile extends EventEmitter {
 			this.tilesetId = Math.max(tilesetId, -1);
 		}
 
-		this.emit("data-change", {
-			data: [[before[0], before[1]], [this.tileId, this.tilesetId]],
-			tile: this
-		});
+		if (this._emitEvents) {
+			this.emit("data-change", {
+				data: [[before[0], before[1]], [this.tileId, this.tilesetId]],
+				tile: this
+			});
+		}
 	}
 
 	/**

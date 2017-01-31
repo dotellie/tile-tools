@@ -1,7 +1,9 @@
+import { EventEmitter } from "./event.js";
+
 /**
  * An object representing generic properties most things in a TileMap can have.
  */
-export class PropertyObject {
+export class PropertyObject extends EventEmitter {
 	/**
 	 * PropertyObject constructor.
 	 *
@@ -18,6 +20,8 @@ export class PropertyObject {
 	 * );
 	 */
 	constructor(properties) {
+		super();
+
 		this._map = new Map();
 
 		if (!properties) return;
@@ -80,7 +84,13 @@ export class PropertyObject {
 	set(key, value) {
 		if (typeof key === "string" && JSON.stringify(value)) {
 			if (key === "") return;
+			const before = [key, this._map.get(key)];
 			this._map.set(key, value);
+
+			this.emit("property-change", {
+				data: [before, [key, value]],
+				object: this
+			});
 		} else {
 			throw TypeError("Invalid key or value");
 		}
@@ -92,7 +102,14 @@ export class PropertyObject {
 	 * @param {string} key - The key of the property to remove.
 	 */
 	remove(key) {
+		const before = [key, this._map.get(key)];
+
 		this._map.delete(key);
+
+		this.emit("property-change", {
+			data: [before, [undefined, undefined]],
+			object: this
+		});
 	}
 
 	/**

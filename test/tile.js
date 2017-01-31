@@ -28,6 +28,42 @@ describe("Tile", () => {
 		});
 	});
 
+	/** @test {Tile#emitEvents} */
+	describe("#emitEvents", () => {
+		it("starts fowarding data events when set", done => {
+			const tile = new Tile();
+			tile.emitEvents = true;
+			tile.on("data-change", () => {
+				done();
+			});
+			tile.setData(0, 0);
+		});
+		it("starts fowarding property events when set", done => {
+			const tile = new Tile();
+			tile.emitEvents = true;
+			tile.on("property-change", () => {
+				console.log("hi");
+				done();
+			});
+			tile.properties.set("is", "something");
+		});
+		it("doesn't forward anything when not set", () => {
+			const tile = new Tile();
+
+			tile.emitEvents = true;
+			tile.emitEvents = false;
+
+			tile.on("data-change", () => {
+				throw new Error();
+			});
+			tile.on("property-change", () => {
+				throw new Error();
+			});
+			tile.setData(0, 0);
+			tile.properties.set("is", "something");
+		});
+	});
+
 	/** @test {Tile#setData} */
 	describe("#setData", () => {
 		let tile;

@@ -40,6 +40,7 @@ export class TileLayer extends TileArea {
 
 		// Set up tile data change events
 		tiles.forEach(tile => {
+			tile.emitEvents = true;
 			tile.on("data-change", this._tileDataChanged.bind(this));
 		});
 	}

@@ -94,6 +94,14 @@ describe("PropertyObject", () => {
 			properties.set("", "hi");
 			properties.getAll().length.should.equal(2);
 		});
+		it("fires a changed event correctly", done => {
+			properties.on("property-change", change => {
+				change.data.should.deep.equal([["test1", true], ["test1", "hello"]]);
+				change.object.should.equal(properties);
+				done();
+			});
+			properties.set("test1", "hello");
+		});
 	});
 
 	/** @test {PropertyObject#remove} */
@@ -101,6 +109,14 @@ describe("PropertyObject", () => {
 		it("removes a property correctly", () => {
 			properties.remove("test1");
 			should.not.exist(properties.get("test1"));
+		});
+		it("fires a changed event correctly", done => {
+			properties.on("property-change", change => {
+				change.data.should.deep.equal([["test1", true], [undefined, undefined]]);
+				change.object.should.equal(properties);
+				done();
+			});
+			properties.remove("test1");
 		});
 	});
 
