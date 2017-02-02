@@ -84,11 +84,13 @@ export class PropertyObject extends EventEmitter {
 	set(key, value) {
 		if (typeof key === "string" && JSON.stringify(value)) {
 			if (key === "") return;
-			const before = [key, this._map.get(key)];
+			const before = this._map.get(key);
 			this._map.set(key, value);
 
 			this.emit("property-change", {
-				data: [before, [key, value]],
+				key,
+				old: before,
+				new: value,
 				object: this
 			});
 		} else {

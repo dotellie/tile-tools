@@ -96,7 +96,9 @@ describe("PropertyObject", () => {
 		});
 		it("fires a changed event correctly", done => {
 			properties.on("property-change", change => {
-				change.data.should.deep.equal([["test1", true], ["test1", "hello"]]);
+				change.key.should.deep.equal("test1");
+				change.old.should.deep.equal(true);
+				change.new.should.deep.equal("hello");
 				change.object.should.equal(properties);
 				done();
 			});
