@@ -42,7 +42,6 @@ describe("Tile", () => {
 			const tile = new Tile();
 			tile.emitEvents = true;
 			tile.on("property-change", () => {
-				console.log("hi");
 				done();
 			});
 			tile.properties.set("is", "something");
