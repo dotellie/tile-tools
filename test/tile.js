@@ -90,6 +90,18 @@ describe("Tile", () => {
 			tile.tileId.should.equal(-1);
 			tile.tilesetId.should.equal(-1);
 		});
+		it("fires a change event when called if emitEvents is enabled", done => {
+			tile.emitEvents = true;
+			tile.on("data-change", data => {
+				data.old.tileId.should.equal(10);
+				data.old.tilesetId.should.equal(8);
+				data.new.tileId.should.equal(3);
+				data.new.tilesetId.should.equal(45);
+				data.object.should.equal(tile);
+				done();
+			});
+			tile.setData(3, 45);
+		});
 	});
 
 	/** @test {Tile#toJSON} */

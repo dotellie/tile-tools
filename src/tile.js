@@ -62,7 +62,9 @@ export class Tile extends EventEmitter {
 	 * @param {boolean} [replaceEmpty] - Should values less than 0 (-1) be handled (true) or ignored (false).
 	 */
 	setData(tileId, tilesetId, replaceEmpty) {
-		const before = [this.tileId, this.tilesetId];
+		const before = {
+			tileId: this.tileId, tilesetId: this.tilesetId
+		};
 
 		if (tileId >= 0 || replaceEmpty) {
 			this.tileId = Math.max(tileId, -1);
@@ -73,8 +75,11 @@ export class Tile extends EventEmitter {
 
 		if (this._emitEvents) {
 			this.emit("data-change", {
-				data: [[before[0], before[1]], [this.tileId, this.tilesetId]],
-				tile: this
+				old: before,
+				new: {
+					tileId: this.tileId, tilesetId: this.tilesetId
+				},
+				object: this
 			});
 		}
 	}
