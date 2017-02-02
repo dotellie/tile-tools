@@ -99,8 +99,23 @@ export class TileMap {
 		const layer = new TileLayer(this, options);
 
 		const layerIndex = this.layers.length;
-		layer.on("tile-change", data => {
-			this._dataBuffer.push([layerIndex].concat(data));
+		layer.on("tile-data-change", data => {
+			this._dataBuffer.push({
+				layer: layerIndex,
+				id: data.tileId,
+				old: data.old,
+				new: data.new
+			});
+		});
+		layer.on("property-change", data => {
+			const eventObject = {
+				layer: layerIndex,
+				id: data.tileId,
+				key: data.key,
+				new: data.new
+			};
+			if (data.old) eventObject.old = data.old;
+			this._dataBuffer.push(eventObject);
 		});
 
 		this.layers.push(layer);

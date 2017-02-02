@@ -97,15 +97,26 @@ describe("TileMap", () => {
 		it("returns empty array when no change has happened", () => {
 			tilemap.takeDataBuffer().should.deep.equal([]);
 		});
-		it("returns both new and old values", () => {
+		it("returns both new and old data values", () => {
 			tilemap.layers[0].tiles[10].setData(5, 10);
 			tilemap.layers[1].tiles[20].setData(10, 20);
 			tilemap.layers[2].tiles[30].setData(20, 40);
 
 			tilemap.takeDataBuffer().should.deep.equal([
-				[0, 10, [-1, 0], [5, 10]],
-				[1, 20, [-1, 0], [10, 20]],
-				[2, 30, [-1, 0], [20, 40]]
+				{ layer: 0, id: 10, old: { tileId: -1, tilesetId: 0 }, new: { tileId: 5, tilesetId: 10 } },
+				{ layer: 1, id: 20, old: { tileId: -1, tilesetId: 0 }, new: { tileId: 10, tilesetId: 20 } },
+				{ layer: 2, id: 30, old: { tileId: -1, tilesetId: 0 }, new: { tileId: 20, tilesetId: 40 } }
+			]);
+		});
+		it("returns both new and old property values when setting", () => {
+			tilemap.layers[0].tiles[5].properties.set("hi", "hello");
+			tilemap.takeDataBuffer().should.deep.equal([
+				{ layer: 0, id: 5, key: "hi", new: "hello" }
+			]);
+
+			tilemap.layers[0].tiles[5].properties.set("hi", "something");
+			tilemap.takeDataBuffer().should.deep.equal([
+				{ layer: 0, id: 5, key: "hi", old: "hello", new: "something" }
 			]);
 		});
 		it("empties data buffer when taken", () => {
