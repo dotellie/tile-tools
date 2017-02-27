@@ -21,6 +21,16 @@ describe("ObservableArray", () => {
 			count.should.equal(1);
 			array.length.should.equal(1);
 		});
+		it("inserts at correct index even after multiple pushes", () => {
+			array = new ObservableArray();
+			const object1 = { on() {} }, object2 = { on() {} };
+			array.push(object1);
+			array.push(object2);
+			array.push(object1);
+			array[0].should.equal(object1);
+			array[1].should.equal(object2);
+			array[2].should.equal(object1);
+		});
 	});
 
 	describe("#splice", () => {
