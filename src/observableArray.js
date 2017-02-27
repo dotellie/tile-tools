@@ -30,7 +30,7 @@ export class ObservableArray extends Array {
 	 * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push|MDN}
 	 */
 	push(...items) {
-		this.splice(this.length - 1, 0, ...items);
+		this.splice(this.length, 0, ...items);
 	}
 
 	/**
