@@ -21,6 +21,8 @@ export class ObservableArray extends Array {
 
 		this._eventName = eventName;
 		this._callback = callback;
+
+		this._callbacks = new Map();
 	}
 
 	/**
@@ -37,14 +39,25 @@ export class ObservableArray extends Array {
 	 * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice|MDN}
 	 */
 	splice(index, howMany, ...items) {
-		for (let item of items) {
-			item.on(this._eventName, this._callback);
-		}
-
 		for (let i = index; i < index + howMany; i++) {
-			this[i].off(this._eventName, this._callback);
+			const item = this[i];
+			item.off(this._eventName, this._callbacks.get(item));
+			this._callbacks.delete(item);
 		}
 
 		super.splice(index, howMany, ...items);
+
+		items.forEach(item => {
+			const callback = e => {
+				const index = this.indexOf(item);
+				const event = {
+					model: { item, index },
+					detail: e
+				};
+				this._callback(event);
+			};
+			this._callbacks.set(item, callback);
+			item.on(this._eventName, callback);
+		});
 	}
 }
