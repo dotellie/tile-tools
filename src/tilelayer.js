@@ -38,6 +38,9 @@ export class TileLayer extends TileArea {
 		 * @type {PropertyObject} */
 		this.properties = new PropertyObject(options.properties);
 
+		// Property Events
+		this.forward(this.properties, "property-change");
+
 		// Set up tile data change events
 		tiles.forEach((tile, index) => {
 			tile.emitEvents = true;

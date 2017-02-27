@@ -1,6 +1,6 @@
 import { should as chaiShould } from "chai";
 
-import { TileMap } from "../src";
+import { TileMap, MapObject } from "../src";
 import testmap from "./testmap";
 
 const should = chaiShould();
@@ -22,6 +22,10 @@ describe("TileMap", () => {
 			height: mapHeight,
 			tileWidth,
 			tileHeight,
+
+			tilesets: [
+				{}
+			],
 
 			layers: [
 				{}, {}, {}
@@ -113,10 +117,52 @@ describe("TileMap", () => {
 			tilemap.takeDataBuffer().should.deep.equal([
 				{ layer: 0, id: 5, key: "hi", new: "hello" }
 			]);
-
 			tilemap.layers[0].tiles[5].properties.set("hi", "something");
 			tilemap.takeDataBuffer().should.deep.equal([
 				{ layer: 0, id: 5, key: "hi", old: "hello", new: "something" }
+			]);
+
+			tilemap.layers[0].properties.set("layer", "property");
+			tilemap.takeDataBuffer().should.deep.equal([
+				{ layer: 0, key: "layer", new: "property" }
+			]);
+			tilemap.layers[0].properties.set("layer", "again");
+			tilemap.takeDataBuffer().should.deep.equal([
+				{ layer: 0, key: "layer", old: "property", new: "again" }
+			]);
+
+			tilemap.objects[0].properties.set("objects", "yup");
+			tilemap.takeDataBuffer().should.deep.equal([
+				{ object: 0, key: "objects", new: "yup" }
+			]);
+			tilemap.objects[0].properties.set("objects", "again");
+			tilemap.takeDataBuffer().should.deep.equal([
+				{ object: 0, key: "objects", old: "yup", new: "again" }
+			]);
+
+			tilemap.tilesets[0].properties.set("tilesets", "even");
+			tilemap.takeDataBuffer().should.deep.equal([
+				{ tileset: 0, key: "tilesets", new: "even" }
+			]);
+			tilemap.tilesets[0].properties.set("tilesets", "again");
+			tilemap.takeDataBuffer().should.deep.equal([
+				{ tileset: 0, key: "tilesets", old: "even", new: "again" }
+			]);
+
+			tilemap.properties.set("map", "too");
+			tilemap.takeDataBuffer().should.deep.equal([
+				{ key: "map", new: "too" }
+			]);
+			tilemap.properties.set("map", "again");
+			tilemap.takeDataBuffer().should.deep.equal([
+				{ key: "map", old: "too", new: "again" }
+			]);
+		});
+		it("still adds entries after complex operations", () => {
+			tilemap.objects.push(new MapObject());
+			tilemap.objects[1].properties.set("hi", "yo");
+			tilemap.takeDataBuffer().should.deep.equal([
+				{ object: 1, key: "hi", new: "yo" }
 			]);
 		});
 		it("empties data buffer when taken", () => {

@@ -3,6 +3,8 @@ import { TileSet } from "./tileset";
 import { MapObject } from "./mapObject";
 import { PropertyObject } from "./propertyObject";
 
+import { ObservableArray } from "./observableArray";
+
 /**
  * A tilemap object with name, sizes and layers.
  */
@@ -37,23 +39,38 @@ export class TileMap {
 		 * @type {number} */
 		this.tileHeight = tileHeight;
 
+		const propertyChangeForwarder = ({ model, detail }, indexKey) => {
+			detail[indexKey] = model.index;
+			this._registerPropertyChange(detail, indexKey);
+		};
+
 		/** All layers of the tilemap
 		 *  @type {TileLayer[]} */
-		this.layers = [];
+		this.layers = new ObservableArray("property-change",
+			e => propertyChangeForwarder(e, "layer"));
 		layers.forEach(layer => this.createLayer(layer));
 
 		/** All objects of the tilemap
 		 * @type {MapObject[]} */
-		this.objects = objects.map(object => new MapObject(object));
+		this.objects = new ObservableArray("property-change",
+			e => propertyChangeForwarder(e, "object"));
+		this.objects.push(...(objects.map(object => new MapObject(object))));
 
 		/** The tilesets the tilemap consists of.
 		 * @type {TileSet[]} */
-		this.tilesets = [];
+		this.tilesets = new ObservableArray("property-change",
+			e => propertyChangeForwarder(e, "tileset"));
 		tilesets.forEach(tileset => this.addTileset(new TileSet(tileset)));
 
 		/** Custom properties of the tilemap.
 		 * @type {PropertyObject} */
 		this.properties = new PropertyObject(properties);
+
+		this.properties.on("property-change", e => {
+			const d = { key: e.key, new: e.new };
+			if (e.old) d.old = e.old;
+			this._dataBuffer.push(d);
+		});
 
 		this._dataBuffer = [];
 	}
@@ -106,16 +123,6 @@ export class TileMap {
 				old: data.old,
 				new: data.new
 			});
-		});
-		layer.on("property-change", data => {
-			const eventObject = {
-				layer: layerIndex,
-				id: data.tileId,
-				key: data.key,
-				new: data.new
-			};
-			if (data.old) eventObject.old = data.old;
-			this._dataBuffer.push(eventObject);
 		});
 
 		this.layers.push(layer);
@@ -173,5 +180,16 @@ export class TileMap {
 			}
 			return value;
 		});
+	}
+
+	_registerPropertyChange(e, indexKey) {
+		const eventObject = {
+			key: e.key,
+			new: e.new
+		};
+		eventObject[indexKey] = e[indexKey];
+		if (e.old) eventObject.old = e.old;
+		if (e.tileId) eventObject.id = e.tileId;
+		this._dataBuffer.push(eventObject);
 	}
 }

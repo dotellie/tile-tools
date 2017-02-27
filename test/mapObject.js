@@ -64,6 +64,8 @@ describe("MapObject", () => {
 	it("can be cloned", () => {
 		const cloned = mapObject.clone();
 		cloned.should.not.equal(mapObject);
+		delete cloned.properties._listeners;
+		delete mapObject.properties._listeners;
 		cloned.should.deep.equal(mapObject);
 	});
 });

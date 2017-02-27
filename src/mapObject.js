@@ -1,9 +1,10 @@
 import { PropertyObject } from "./propertyObject";
+import { EventEmitter } from "./event.js";
 
 /**
  * An object with properties that's not bound to a tilemap's grid.
  */
-export class MapObject {
+export class MapObject extends EventEmitter {
 	/**
 	 * MapObject constructor.
 	 *
@@ -16,6 +17,8 @@ export class MapObject {
 	 * @param {string[][]} [options.properties] - {@link PropertyObject#constructor}
 	 */
 	constructor({ name = "", x = 0, y = 0, width = 1, height = 1, properties } = {}) {
+		super();
+
 		/** The name for the MapObject.
 		 * @type {string} */
 		this.name = name;
@@ -37,6 +40,9 @@ export class MapObject {
 		/** Custom properties of the MapObject.
 		 * @type {PropertyObject} */
 		this.properties = new PropertyObject(properties);
+
+		// Property Events
+		this.forward(this.properties, "property-change");
 	}
 
 	/**

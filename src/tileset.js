@@ -1,9 +1,10 @@
 import { PropertyObject } from "./propertyObject";
+import { EventEmitter } from "./event.js";
 
 /**
  * A tileset object for storing arbitrary information about tilesets.
  */
-export class TileSet {
+export class TileSet extends EventEmitter {
 	/**
 	 * TileSet constructor.
 	 *
@@ -22,6 +23,8 @@ export class TileSet {
 		properties,
 		tileProperties = {}
 	}) {
+		super();
+
 		/** The name of the tileset.
 		 * @type {string} */
 		this.name = name;
@@ -42,6 +45,9 @@ export class TileSet {
 		/** Custom properties of the tilemap.
 		 * @type {PropertyObject} */
 		this.properties = new PropertyObject(properties);
+
+		// Property Events
+		this.forward(this.properties, "property-change");
 
 		this._tileProperties = {};
 		for (let key of Object.keys(tileProperties)) {
