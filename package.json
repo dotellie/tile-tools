@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint ./src ./test",
-    "test": "npm run lint && nyc --reporter=text mocha --compilers js:babel-register",
+    "test": "nyc --reporter=text mocha --compilers js:babel-register",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "doc": "esdoc -c ./esdoc.json"
   },
@@ -27,7 +27,7 @@
   },
   "homepage": "https://magnonellie.github.io/dtile-tilemap/",
   "devDependencies": {
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-env": "^2.4.1",
     "babel-register": "^6.18.0",
     "chai": "^3.5.0",
     "coveralls": "^2.11.15",
