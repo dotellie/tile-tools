@@ -3,7 +3,7 @@
   "version": "0.8.0",
   "description": "A representation of a tilemap with very basic functionality.",
   "main": "out/js/build.js",
-  "jsnext:main": "out/js/build.es6.js",
+  "module": "out/js/build.esm.js",
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint ./src ./test",
