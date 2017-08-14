@@ -1,10 +1,10 @@
 {
-	"source": "./src",
-	"destination": "./out/esdoc",
-	"styles": ["./doc/style.css"],
-	"test": {
-		"type": "mocha",
-		"source": "./test",
-		"includes":["\\.js"]
-	}
+    "source": "./src",
+    "destination": "./out/esdoc",
+    "styles": ["./doc/style.css"],
+    "test": {
+        "type": "mocha",
+        "source": "./test",
+        "includes":["\\.js"]
+    }
 }
