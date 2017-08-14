@@ -1,9 +1,22 @@
 {
     "source": "./src",
     "destination": "./out/esdoc",
-    "test": {
-        "type": "mocha",
-        "source": "./test",
-        "includes":["\\.js"]
-    }
+    "plugins": [
+        {
+            "name": "esdoc-standard-plugin",
+            "option": {
+                "test": {
+                    "type": "mocha",
+                    "source": "./test",
+                    "includes":["\\.js"]
+                }
+            }
+        },
+        {
+            "name": "esdoc-ecmascript-proposal-plugin",
+            "option": {
+                "objectRestSpread": true
+            }
+        }
+    ]
 }
