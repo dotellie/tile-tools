@@ -105,8 +105,8 @@ export function getTilingTileData(area, originX, originY, x, y) {
  *
  * The merge does not fail if it goes outside of the tile area.
  *
- * @param {Object} area - The tile area to use as the base.
- * @param {Object} area - The tile area to put on top of the first tile area.
+ * @param {Object} area1 - The tile area to use as the base.
+ * @param {Object} area2 - The tile area to put on top of the first tile area.
  * @param {number} x - The x coordinate of where to put the second area relative to the first area.
  * @param {number} y - The y coordinate of where to put the second area relative to the first area.
  * @param {boolean} skipEmpty - If the insertion should skip empty (-1) tiles.
@@ -138,7 +138,7 @@ export function mergeTileAreas(area1, area2, x, y, skipEmpty) {
  * @param {Object} area - The tile area to execute the operation on.
  * @param {number} x - The x coordinate of where to fill from.
  * @param {number} y - The y coordinate of where to fill from.
- * @param {Object} tileArea - The tile area to use for the fill.
+ * @param {Object} fillArea - The tile area to use for the fill.
  */
 export function fillTileAreaAt(area, x, y, fillArea) {
     let positions = [];
