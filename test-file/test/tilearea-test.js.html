@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">test/tilearea-test.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <a data-ice="repoURL" href="https://github.com/magnonellie/tile-tools" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  </ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">test/tilearea-test.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { expect } from &quot;chai&quot;;
+
+import * as TileArea from &quot;../src/index.js&quot;;
+
+describe(&quot;tilearea&quot;, () =&gt; {
+    const areaWidth = 30, areaHeight = 30;
+    let area, tiles;
+
+    beforeEach(() =&gt; {
+        tiles = [];
+        for (let i = 0; i &lt; areaWidth * areaHeight; i++) {
+            tiles.push({
+                tileId: parseInt(Math.random() * 100)
+            });
+        }
+
+        area = TileArea.createTileArea(areaWidth, areaHeight, tiles);
+    });
+
+    /** @test {createTileArea} */
+    describe(&quot;createTileArea&quot;, () =&gt; {
+        it(&quot;requires width and height to equal amount of tiles&quot;, () =&gt; {
+            expect(() =&gt; {
+                TileArea.createTileArea(0, 0, [{}]);
+            }).to.throw(RangeError);
+
+            expect(TileArea.createTileArea(1, 2, [{}, {}])).to.be.ok;
+        });
+    });
+
+    /** @test {TileArea#getTileIndex} */
+    describe(&quot;getTileIndex&quot;, () =&gt; {
+        it(&quot;returns the right index&quot;, () =&gt; {
+            expect(TileArea.getTileIndex(area, 16, 20)).to.equal(616);
+            expect(TileArea.getTileIndex(area, 5, 26)).to.equal(785);
+        });
+        it(&quot;crashes if out of bounds&quot;, () =&gt; {
+            expect(() =&gt; {
+                TileArea.getTileIndex(area, areaWidth, 0);
+            }).to.throw(RangeError);
+            expect(() =&gt; {
+                TileArea.getTileIndex(area, -1, 0);
+            }).to.throw(RangeError);
+        });
+    });
+
+    /** @test {getTile} */
+    describe(&quot;getTile&quot;, () =&gt; {
+        it(&quot;returns the correct tile&quot;, () =&gt; {
+            expect(TileArea.getTile(area, 10, 13)).to.deep.equal(area.tiles[400]);
+        });
+        it(&quot;crashes if out of bounds&quot;, () =&gt; {
+            expect(() =&gt; {
+                TileArea.getTile(area, -1, 0);
+            }).to.throw(RangeError);
+            expect(() =&gt; {
+                TileArea.getTile(area, 0, areaWidth);
+            }).to.throw(RangeError);
+        });
+    });
+
+    /** @test {getTileAreaSlice} */
+    describe(&quot;getTileAreaSlice&quot;, () =&gt; {
+        it(&quot;returns the correct tiles&quot;, () =&gt; {
+            const tileAreaSlice = TileArea.getTileAreaSlice(area, 0, 0, 2, 2);
+            for (let x = 0; x &lt; tileAreaSlice.width; x++) {
+                for (let y = 0; y &lt; tileAreaSlice.width; y++) {
+                    expect(tileAreaSlice.tiles[TileArea.getTileIndex(tileAreaSlice, x, y)].tileId)
+                        .to.equal(tiles[x + y * areaWidth].tileId);
+                }
+            }
+        });
+        it(&quot;returns the correct dimmensions&quot;, () =&gt; {
+            const tileAreaSlice = TileArea.getTileAreaSlice(area, 0, 5, 3, 2);
+            expect(tileAreaSlice.width).to.equal(3);
+            expect(tileAreaSlice.height).to.equal(2);
+        });
+        it(&quot;returns empty tiles when going out of bounds&quot;, () =&gt; {
+            expect(TileArea.getTileAreaSlice(area, areaWidth, 0, 50, 10).tiles[areaWidth + 1].tileId).to.equal(-1);
+            expect(TileArea.getTileAreaSlice(area, 0, -5, 2, 2).tiles[0].tileId).to.equal(-1);
+        });
+        it(&quot;crashes if rectangle is invalid&quot;, () =&gt; {
+            expect(() =&gt; {
+                TileArea.getTileAreaSlice(area, 0, 0, -1, 1);
+            }).to.throw(RangeError);
+            expect(() =&gt; {
+                TileArea.getTileAreaSlice(area, 0, 0, 1, 0);
+            }).to.throw(RangeError);
+        });
+    });
+
+    /** @test {getTilingTileData} */
+    describe(&quot;getTilingTileData&quot;, () =&gt; {
+        it(&quot;gets the right tile forward&quot;, () =&gt; {
+            const v = Math.floor(Math.random() * areaWidth);
+            const vTile = area.tiles[TileArea.getTileIndex(area, v, v)];
+            expect(TileArea.getTilingTileData(area, 0, 0, areaWidth + v, v)).to.deep.equal(vTile);
+        });
+        it(&quot;gets the right tile backwards&quot;, () =&gt; {
+            const v = Math.floor(Math.random() * areaWidth);
+            const vTile = area.tiles[TileArea.getTileIndex(area, v, v)];
+            expect(TileArea.getTilingTileData(area, 0, 0, v - areaWidth, v)).to.deep.equal(vTile);
+        });
+        it(&quot;gets the right tile far backwards&quot;, () =&gt; {
+            // Note: getting backwards usually causes trouble, so this is for my
+            // own sanity - Ellie
+            const v = Math.floor(Math.random() * areaWidth);
+            const vTile = area.tiles[TileArea.getTileIndex(area, v, v)];
+            expect(TileArea.getTilingTileData(area, 0, 0, v - areaWidth * 100, v)).to.deep.equal(vTile);
+        });
+    });
+
+    /** @test {mergeTileAreas} */
+    describe(&quot;mergeTileAreas&quot;, () =&gt; {
+        const smallAreaWidth = 3, smallAreaHeight = 3;
+        let smallArea;
+
+        beforeEach(() =&gt; {
+            const tiles = [];
+            for (let i = 0; i &lt; smallAreaWidth * smallAreaHeight; i++) {
+                tiles.push({
+                    tileId: parseInt(Math.random() * 100)
+                });
+            }
+            smallArea = TileArea.createTileArea(smallAreaWidth, smallAreaHeight, tiles);
+        });
+
+        it(&quot;inserts a tile area correctly&quot;, () =&gt; {
+            const x = parseInt((areaWidth - smallAreaWidth) / 2);
+            const y = parseInt((areaHeight - smallAreaHeight) / 2);
+            const newArea = TileArea.mergeTileAreas(area, smallArea, x, y);
+
+            expect(TileArea.getTileAreaSlice(newArea, x, y, smallAreaWidth, smallAreaHeight))
+                .to.deep.equal(smallArea);
+        });
+        it(&quot;can skip empty (-1) tiles&quot;, () =&gt; {
+            const newArea = TileArea.mergeTileAreas(
+                area,
+                TileArea.createTileArea(1, 1, [{ tileId: -1, tilesetId: -1 }]),
+                0, 0,
+                true
+            );
+
+            expect(TileArea.getTileAreaSlice(newArea, 0, 0, 1, 1).tiles[0].tileId).to.not.equal(-1);
+        });
+        it(&quot;doesn&apos;t crash when going out of bounds&quot;, () =&gt; {
+            const x = -smallAreaWidth + 1;
+            const y = -smallAreaHeight + 1;
+            const newArea = TileArea.mergeTileAreas(area, smallArea, x, y);
+
+            expect(TileArea.getTileAreaSlice(newArea, 0, 0, 1, 1).tiles[0].tileId).to.deep.equal(
+                smallArea.tiles[smallArea.tiles.length - 1].tileId
+            );
+        });
+        it(&quot;throws errors like normal&quot;, () =&gt; {
+            expect(() =&gt; {
+                TileArea.mergeTileAreas(area, { width: 1, height: 1 }, 0, 0);
+            }).to.throw();
+        });
+    });
+
+    /** @test {fillTileAreaAt} */
+    describe(&quot;fillTileAreaAt&quot;, () =&gt; {
+        const fillTileArea = TileArea.createTileArea(2, 2, [
+            { tileId: 2, tilesetId: 0 }, { tileId: 3, tilesetId: 0 },
+            { tileId: 3, tilesetId: 0 }, { tileId: 2, tilesetId: 0 }
+        ]);
+
+        beforeEach(() =&gt; {
+            area.tiles.forEach(tile =&gt; {
+                tile.tileId = 0;
+                tile.tilesetId = 0;
+            });
+            area.tiles[10] = { tileId: 1, tilesetId: 0 };
+            area.tiles[20] = { tileId: 0, tilesetId: 1 };
+        });
+
+        it(&quot;fills correctly&quot;, () =&gt; {
+            const newArea = TileArea.fillTileAreaAt(area, 2, 2, fillTileArea);
+            expect(newArea.tiles[0].tileId).to.equal(2);
+            expect(newArea.tiles[2].tileId).to.equal(2);
+        });
+        it(&quot;tiles correctly&quot;, () =&gt; {
+            const newArea = TileArea.fillTileAreaAt(area, 2, 2, fillTileArea);
+            expect(newArea.tiles[1].tileId).to.equal(3);
+            expect(newArea.tiles[3].tileId).to.equal(3);
+        });
+        it(&quot;doesn&apos;t overwrite anything it shouldn&apos;t&quot;, () =&gt; {
+            const newArea = TileArea.fillTileAreaAt(area, 0, 0, fillTileArea);
+            expect(newArea.tiles[10].tileId).to.not.equal(2);
+        });
+        it(&quot;respects tileset ID&apos;s&quot;, () =&gt; {
+            const newArea = TileArea.fillTileAreaAt(area, 0, 0, fillTileArea);
+            expect(newArea.tiles[20].tileId).to.equal(0);
+        });
+        it(&quot;doesn&apos;t end up in a loop&quot;, () =&gt; {
+            const otherFillTileArea = TileArea.createTileArea(1, 1, [{ tileId: 0, tilesetId: 0 }]);
+            TileArea.fillTileAreaAt(area, 0, 0, otherFillTileArea);
+        });
+    });
+});
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

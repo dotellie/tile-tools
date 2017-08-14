@@ -1,19 +1,20 @@
 {
-  "name": "dtile-tilemap",
-  "version": "0.8.0",
-  "description": "A representation of a tilemap with very basic functionality.",
+  "name": "tile-tools",
+  "version": "0.9.0",
+  "description": "Easily create and modify tiles in an immutable way",
   "main": "out/js/build.js",
-  "jsnext:main": "out/js/build.es6.js",
+  "module": "out/js/build.esm.js",
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint ./src ./test",
     "test": "npm run lint && nyc --reporter=text mocha --compilers js:babel-register",
+    "htmlCoverage": "nyc --reporter=html mocha --compilers js:babel-register",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "doc": "esdoc -c ./esdoc.json"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/magnonellie/dtile-tilemap.git"
+    "url": "git+https://github.com/magnonellie/tile-tools.git"
   },
   "keywords": [
     "game",
@@ -23,18 +24,20 @@
   "author": "magnonellie",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/magnonellie/dtile-tilemap/issues"
+    "url": "https://github.com/magnonellie/tile-tools/issues"
   },
-  "homepage": "https://magnonellie.github.io/dtile-tilemap/",
+  "homepage": "https://magnonellie.github.io/tile-tools/",
   "devDependencies": {
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-env": "^2.4.1",
+    "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.18.0",
-    "chai": "^3.5.0",
+    "chai": "^4.1.1",
     "coveralls": "^2.11.15",
     "esdoc": "^0.4.8",
     "eslint": "^3.13.0",
     "mocha": "^3.2.0",
     "nyc": "^9.0.1",
-    "rollup": "^0.36.4"
+    "rollup": "^0.36.4",
+    "rollup-plugin-babel": "^3.0.1"
   }
 }
