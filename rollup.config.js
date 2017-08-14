@@ -17,7 +17,7 @@ export default {
         {
             dest: pkg.main,
             format: "umd",
-            moduleName: "dtileTilemap",
+            moduleName: "TileTools",
             sourceMap: true
         },
         {
