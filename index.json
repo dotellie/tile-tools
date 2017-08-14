@@ -1,0 +1,1637 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "/**\n * Creates a vanilla JavaScript object which represents a tile area.\n *\n * @param {number} width - The width of the created tile area.\n * @param {number} height - The height of the created tile area.\n * @param {[]} tiles - The tiles of the tile area in a 1d array.\n *\n * @returns {Object} - The created tile area object.\n * @property {number} width - The width of the created tile area.\n * @property {number} height - The height of the created tile area.\n * @property {[]} tiles - The tiles of the created tile area.\n */\nexport function createTileArea(width, height, tiles) {\n    if (width * height !== tiles.length) {\n        throw new RangeError(\"The width and height doesn't match the amount of tiles given.\");\n    }\n\n    return {\n        width, height, tiles\n    };\n}\n\n/**\n * Gets the index of a tile in the tile array from a position.\n *\n * @param {Object} area - The tile area to execute the operation on.\n * @param {number} x - The x coordinate of the tile.\n * @param {number} y - The y coordinate of the tile.\n *\n * @returns {number} The index of the tile in the main array.\n */\nexport function getTileIndex(area, x, y) {\n    if (!inRange(area, x, y)) throw new RangeError();\n\n    return y * area.width + x;\n}\n\n/**\n * Gets the tile at a position.\n *\n * @param {Object} area - The tile area to execute the operation on.\n * @param {number} x - The x coordinate of the tile.\n * @param {number} y - The y coordinate of the tile.\n *\n * @returns {Object} The tile at the provided position.\n */\nexport function getTile(area, x, y) {\n    return { ...area.tiles[getTileIndex(area, x, y)] };\n}\n\n/**\n * Gets a spliced area from a tile area.\n *\n * If the requested area is outside the tile area, empty tiles will be generated.\n *\n * @param {Object} area - The tile area to execute the operation on.\n * @param {number} x - The x coordinate of the tile area.\n * @param {number} y - The y coordinate of the tile area.\n * @param {number} width - The width of the tile area.\n * @param {number} height - The height of the tile area.\n *\n * @returns {Object} - The tile area requested as a plain object.\n * @property {number} width - The width of the requested tile area.\n * @property {number} height - The height of the requested tile area.\n * @property {[]} tiles - The tiles of the requested tile area.\n */\nexport function getTileAreaSlice(area, x, y, width, height) {\n    if (width <= 0 || height <= 0) throw new RangeError();\n\n    const tiles = [];\n    for (let ly = y; ly < y + height; ly++) {\n        for (let lx = x; lx < x + width; lx++) {\n            if (!inRange(area, x, y, width, height)) tiles.push(emptyTile());\n            else tiles.push(getTile(area, lx, ly));\n        }\n    }\n    return createTileArea(width, height, tiles);\n}\n\n/**\n * Gets tiling data from a tile area.\n *\n * Most of the time when mapping tilemaps, having the pen be \"tiling\" is more\n * useful than having it overwrite everywhere. This function provides\n * that kind of functionallity.\n *\n * @param {Object} area - The tile area to execute the operation on.\n * @param {number} originX - The x coordinate to tile from.\n * @param {number} originY - The y coordinate to tile from.\n * @param {number} x - The x coordinate to get data from.\n * @param {number} y - The y coordinate to get data from.\n *\n * @returns {Object} The calculated tile.\n */\nexport function getTilingTileData(area, originX, originY, x, y) {\n    const { width, height } = area;\n    const tileX = ((x - originX) % width + width) % width;\n    const tileY = ((y - originY) % height + height) % height;\n\n    return { ...getTile(area, tileX, tileY) };\n}\n\n/**\n * Merges two tile areas together, putting the second one on top of the first one.\n *\n * The merge does not fail if it goes outside of the tile area.\n *\n * @param {Object} area1 - The tile area to use as the base.\n * @param {Object} area2 - The tile area to put on top of the first tile area.\n * @param {number} x - The x coordinate of where to put the second area relative to the first area.\n * @param {number} y - The y coordinate of where to put the second area relative to the first area.\n * @param {boolean} skipEmpty - If the insertion should skip empty (-1) tiles.\n */\nexport function mergeTileAreas(area1, area2, x, y, skipEmpty) {\n    const newTiles = [...area1.tiles];\n\n    for (let lx = x; lx < x + area2.width; lx++) {\n        for (let ly = y; ly < y + area2.height; ly++) {\n            try {\n                const newTile = getTile(area2, lx - x, ly - y);\n                if (skipEmpty && newTile.tileId === -1) continue;\n\n                const index = getTileIndex(area1, lx, ly);\n                newTiles[index] = { ...newTile };\n            } catch (e) {\n                if (e instanceof RangeError) continue;\n                else throw e;\n            }\n        }\n    }\n\n    return createTileArea(area1.width, area1.height, newTiles);\n}\n\n/**\n * Fills an area (think bucket tool in an image manipulation program).\n *\n * @param {Object} area - The tile area to execute the operation on.\n * @param {number} x - The x coordinate of where to fill from.\n * @param {number} y - The y coordinate of where to fill from.\n * @param {Object} fillArea - The tile area to use for the fill.\n */\nexport function fillTileAreaAt(area, x, y, fillArea) {\n    let positions = [];\n\n    const fillTile = { ...getTile(area, x, y) };\n    const seeds = [{ x, y }];\n\n    const equal = (tile1, tile2) =>\n        tile1.tileId === tile2.tileId &&\n        tile1.tilesetId === tile2.tilesetId;\n\n    const testSeed = (x, y, verticalModifier) => {\n        const newY = y + verticalModifier;\n        if (newY >= 0 && newY < area.height &&\n            equal(getTile(area, x, newY), fillTile)) {\n            if (x <= 0 ||\n                !equal(getTile(area, x - 1, newY), fillTile) ||\n                !equal(getTile(area, x - 1, y), fillTile)) {\n                seeds.push({ x, y: newY });\n            }\n        }\n    };\n\n    const appliedPositions = new Set();\n    const positionToIndex = pos => pos.y * area.width + pos.x;\n\n    const newTiles = [...area.tiles];\n\n    do {\n        const seed = seeds[0];\n        let { x: lx, y: ly } = seed;\n\n        if (appliedPositions.has(positionToIndex(seed))) {\n            seeds.splice(0, 1);\n            continue;\n        };\n\n        do {\n            positions.push({ x: lx, y: ly });\n            testSeed(lx, ly, 1);\n            testSeed(lx, ly, -1);\n            lx++;\n        } while (lx < area.width && equal(getTile(area, lx, ly), fillTile));\n\n        lx = seed.x;\n        ly = seed.y;\n        while (lx > 0 && equal(getTile(area, lx - 1, ly), fillTile)) {\n            lx--;\n            positions.push({ x: lx, y: ly });\n            testSeed(lx, ly, 1);\n            testSeed(lx, ly, -1);\n        }\n\n        seeds.splice(0, 1);\n        positions.forEach(position => {\n            appliedPositions.add(positionToIndex(position));\n\n            const newTile = getTilingTileData(\n                fillArea, x, y, position.x, position.y\n            );\n            const index = getTileIndex(area, position.x, position.y);\n            newTiles[index] = { ...newTile };\n        });\n        positions = [];\n    } while (seeds.length > 0);\n\n    return createTileArea(area.width, area.height, newTiles);\n}\n\nfunction inRange(area, x, y, width = 1, height = 1) {\n    return !(x < 0 || x >= area.width ||\n        y < 0 || y > area.height ||\n        width <= 0 || x + width > area.width ||\n        height <= 0 || y + height > area.height\n    );\n}\n\nfunction emptyTile() {\n    return {\n        tileId: -1, tilesetId: -1\n    };\n}\n",
+    "static": true,
+    "longname": "/home/travis/build/magnonellie/tile-tools/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "function",
+    "name": "createTileArea",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~createTileArea",
+    "access": "public",
+    "export": true,
+    "importPath": "tile-tools/src/index.js",
+    "importStyle": "{createTileArea}",
+    "description": "Creates a vanilla JavaScript object which represents a tile area.",
+    "lineNumber": 13,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} - The created tile area object."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "width",
+        "description": "The width of the created tile area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "height",
+        "description": "The height of the created tile area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tiles",
+        "description": "The tiles of the tile area in a 1d array."
+      }
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "width",
+        "description": "The width of the created tile area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "height",
+        "description": "The height of the created tile area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tiles",
+        "description": "The tiles of the created tile area."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "The created tile area object."
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "function",
+    "name": "getTileIndex",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~getTileIndex",
+    "access": "public",
+    "export": true,
+    "importPath": "tile-tools/src/index.js",
+    "importStyle": "{getTileIndex}",
+    "description": "Gets the index of a tile in the tile array from a position.",
+    "lineNumber": 32,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{number} The index of the tile in the main array."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "area",
+        "description": "The tile area to execute the operation on."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "x",
+        "description": "The x coordinate of the tile."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "y",
+        "description": "The y coordinate of the tile."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The index of the tile in the main array."
+    }
+  },
+  {
+    "__docId__": 51,
+    "kind": "function",
+    "name": "getTile",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~getTile",
+    "access": "public",
+    "export": true,
+    "importPath": "tile-tools/src/index.js",
+    "importStyle": "{getTile}",
+    "description": "Gets the tile at a position.",
+    "lineNumber": 47,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} The tile at the provided position."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "area",
+        "description": "The tile area to execute the operation on."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "x",
+        "description": "The x coordinate of the tile."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "y",
+        "description": "The y coordinate of the tile."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "The tile at the provided position."
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "function",
+    "name": "getTileAreaSlice",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~getTileAreaSlice",
+    "access": "public",
+    "export": true,
+    "importPath": "tile-tools/src/index.js",
+    "importStyle": "{getTileAreaSlice}",
+    "description": "Gets a spliced area from a tile area.\n\nIf the requested area is outside the tile area, empty tiles will be generated.",
+    "lineNumber": 67,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} - The tile area requested as a plain object."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "area",
+        "description": "The tile area to execute the operation on."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "x",
+        "description": "The x coordinate of the tile area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "y",
+        "description": "The y coordinate of the tile area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "width",
+        "description": "The width of the tile area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "height",
+        "description": "The height of the tile area."
+      }
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "width",
+        "description": "The width of the requested tile area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "height",
+        "description": "The height of the requested tile area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tiles",
+        "description": "The tiles of the requested tile area."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "The tile area requested as a plain object."
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "function",
+    "name": "getTilingTileData",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~getTilingTileData",
+    "access": "public",
+    "export": true,
+    "importPath": "tile-tools/src/index.js",
+    "importStyle": "{getTilingTileData}",
+    "description": "Gets tiling data from a tile area.\n\nMost of the time when mapping tilemaps, having the pen be \"tiling\" is more\nuseful than having it overwrite everywhere. This function provides\nthat kind of functionallity.",
+    "lineNumber": 95,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} The calculated tile."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "area",
+        "description": "The tile area to execute the operation on."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "originX",
+        "description": "The x coordinate to tile from."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "originY",
+        "description": "The y coordinate to tile from."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "x",
+        "description": "The x coordinate to get data from."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "y",
+        "description": "The y coordinate to get data from."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "The calculated tile."
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "function",
+    "name": "mergeTileAreas",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~mergeTileAreas",
+    "access": "public",
+    "export": true,
+    "importPath": "tile-tools/src/index.js",
+    "importStyle": "{mergeTileAreas}",
+    "description": "Merges two tile areas together, putting the second one on top of the first one.\n\nThe merge does not fail if it goes outside of the tile area.",
+    "lineNumber": 114,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "area1",
+        "description": "The tile area to use as the base."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "area2",
+        "description": "The tile area to put on top of the first tile area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "x",
+        "description": "The x coordinate of where to put the second area relative to the first area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "y",
+        "description": "The y coordinate of where to put the second area relative to the first area."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "skipEmpty",
+        "description": "If the insertion should skip empty (-1) tiles."
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "function",
+    "name": "fillTileAreaAt",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~fillTileAreaAt",
+    "access": "public",
+    "export": true,
+    "importPath": "tile-tools/src/index.js",
+    "importStyle": "{fillTileAreaAt}",
+    "description": "Fills an area (think bucket tool in an image manipulation program).",
+    "lineNumber": 143,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "area",
+        "description": "The tile area to execute the operation on."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "x",
+        "description": "The x coordinate of where to fill from."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "y",
+        "description": "The y coordinate of where to fill from."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fillArea",
+        "description": "The tile area to use for the fill."
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "function",
+    "name": "inRange",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~inRange",
+    "access": "public",
+    "export": false,
+    "importPath": "tile-tools/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 211,
+    "undocument": true,
+    "params": [
+      {
+        "name": "area",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "x",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "y",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "width",
+        "optional": true,
+        "types": [
+          "number"
+        ],
+        "defaultRaw": 1,
+        "defaultValue": "1"
+      },
+      {
+        "name": "height",
+        "optional": true,
+        "types": [
+          "number"
+        ],
+        "defaultRaw": 1,
+        "defaultValue": "1"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 57,
+    "kind": "function",
+    "name": "emptyTile",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~emptyTile",
+    "access": "public",
+    "export": false,
+    "importPath": "tile-tools/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 219,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "{\"tileId\": *, \"tilesetId\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "kind": "index",
+    "content": "# Tile Tools\n[![Build Status](https://travis-ci.org/magnonellie/tile-tools.svg?branch=master)](https://travis-ci.org/magnonellie/tile-tools)\n[![Documentation](https://magnonellie.github.io/tile-tools/badge.svg)](https://magnonellie.github.io/tile-tools/)\n[![devDependencies Status](https://david-dm.org/magnonellie/tile-tools/dev-status.svg)](https://david-dm.org/magnonellie/tile-tools?type=dev)\n[![Coverage Status](https://coveralls.io/repos/github/magnonellie/tile-tools/badge.svg?branch=master)](https://coveralls.io/github/magnonellie/tile-tools?branch=master)\n\nCreate and modify tiles in an immutable way. Made to be compatible with Redux.\n\n## The Basics\nThis library makes use of tile areas which are very general and doesn't have any\nspecific requirements except for being an object looking something along the\nlines of this:\n\n```js\n{\n    width: Number,\n    height: Number,\n    tiles: [<Object>]\n}\n```\n\nOther than that, you can add any property you want and put anything you want in\nyour tiles. For some operations however, Tile.tileId and Tile.tilesetId are used.\nThis includes the skipEmpty option for mergeTileAreas and the entire\nfillTileAreaAt function.\n\nIt should also be noted that this library makes use of the immutable and\nno side-effects patterns, meaning that you always get back the same output for\nthe same input and that input parameters are never modified.\n\n## [Documentation](https://magnonellie.github.io/tile-tools/)\nDocumentation is generated by [ESDoc](https://github.com/esdoc/esdoc).\nYou can find the documentation\n[here](https://magnonellie.github.io/tile-tools/).\n\n## ES2015 Required\nThis library makes use of some of the new features in ES2015 without transpiling\nthem first. This means your environment needs to support ES2015. For node, that\nis 6.0 or higher. If you want to run in browsers, Chrome and some others already\nsupport ES2015, but if you want to make it compatible with older browsers,\nyou'll have to transpile it yourself using babel or equivalent.\n\n## License\nThis project is licensed under the MIT license.\n",
+    "longname": "/home/travis/build/magnonellie/tile-tools/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"tile-tools\",\n  \"version\": \"0.9.1\",\n  \"description\": \"Easily create and modify tiles in an immutable way\",\n  \"main\": \"out/js/build.js\",\n  \"module\": \"out/js/build.esm.js\",\n  \"scripts\": {\n    \"build\": \"rollup -c\",\n    \"lint\": \"eslint ./src ./test\",\n    \"test\": \"npm run lint && nyc --reporter=text mocha --compilers js:babel-register\",\n    \"htmlCoverage\": \"nyc --reporter=html mocha --compilers js:babel-register\",\n    \"coverage\": \"nyc report --reporter=text-lcov | coveralls\",\n    \"doc\": \"esdoc -c ./esdoc.json\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/magnonellie/tile-tools.git\"\n  },\n  \"keywords\": [\n    \"game\",\n    \"tilemap\",\n    \"tile\"\n  ],\n  \"author\": \"magnonellie\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/magnonellie/tile-tools/issues\"\n  },\n  \"homepage\": \"https://magnonellie.github.io/tile-tools/\",\n  \"devDependencies\": {\n    \"babel-env\": \"^2.4.1\",\n    \"babel-preset-stage-3\": \"^6.24.1\",\n    \"babel-register\": \"^6.18.0\",\n    \"chai\": \"^4.1.1\",\n    \"coveralls\": \"^2.11.15\",\n    \"esdoc\": \"^1.0.1\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^4.4.1\",\n    \"mocha\": \"^3.2.0\",\n    \"nyc\": \"^11.1.0\",\n    \"rollup\": \"^0.47.4\",\n    \"rollup-plugin-babel\": \"^3.0.1\"\n  }\n}\n",
+    "longname": "/home/travis/build/magnonellie/tile-tools/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "__docId__": 58,
+    "kind": "testFile",
+    "name": "test/tilearea-test.js",
+    "content": "import { expect } from \"chai\";\n\nimport * as TileArea from \"../src/index.js\";\n\ndescribe(\"tilearea\", () => {\n    const areaWidth = 30, areaHeight = 30;\n    let area, tiles;\n\n    beforeEach(() => {\n        tiles = [];\n        for (let i = 0; i < areaWidth * areaHeight; i++) {\n            tiles.push({\n                tileId: parseInt(Math.random() * 100)\n            });\n        }\n\n        area = TileArea.createTileArea(areaWidth, areaHeight, tiles);\n    });\n\n    /** @test {createTileArea} */\n    describe(\"createTileArea\", () => {\n        it(\"requires width and height to equal amount of tiles\", () => {\n            expect(() => {\n                TileArea.createTileArea(0, 0, [{}]);\n            }).to.throw(RangeError);\n\n            expect(TileArea.createTileArea(1, 2, [{}, {}])).to.be.ok;\n        });\n    });\n\n    /** @test {TileArea#getTileIndex} */\n    describe(\"getTileIndex\", () => {\n        it(\"returns the right index\", () => {\n            expect(TileArea.getTileIndex(area, 16, 20)).to.equal(616);\n            expect(TileArea.getTileIndex(area, 5, 26)).to.equal(785);\n        });\n        it(\"crashes if out of bounds\", () => {\n            expect(() => {\n                TileArea.getTileIndex(area, areaWidth, 0);\n            }).to.throw(RangeError);\n            expect(() => {\n                TileArea.getTileIndex(area, -1, 0);\n            }).to.throw(RangeError);\n        });\n    });\n\n    /** @test {getTile} */\n    describe(\"getTile\", () => {\n        it(\"returns the correct tile\", () => {\n            expect(TileArea.getTile(area, 10, 13)).to.deep.equal(area.tiles[400]);\n        });\n        it(\"crashes if out of bounds\", () => {\n            expect(() => {\n                TileArea.getTile(area, -1, 0);\n            }).to.throw(RangeError);\n            expect(() => {\n                TileArea.getTile(area, 0, areaWidth);\n            }).to.throw(RangeError);\n        });\n    });\n\n    /** @test {getTileAreaSlice} */\n    describe(\"getTileAreaSlice\", () => {\n        it(\"returns the correct tiles\", () => {\n            const tileAreaSlice = TileArea.getTileAreaSlice(area, 0, 0, 2, 2);\n            for (let x = 0; x < tileAreaSlice.width; x++) {\n                for (let y = 0; y < tileAreaSlice.width; y++) {\n                    expect(tileAreaSlice.tiles[TileArea.getTileIndex(tileAreaSlice, x, y)].tileId)\n                        .to.equal(tiles[x + y * areaWidth].tileId);\n                }\n            }\n        });\n        it(\"returns the correct dimmensions\", () => {\n            const tileAreaSlice = TileArea.getTileAreaSlice(area, 0, 5, 3, 2);\n            expect(tileAreaSlice.width).to.equal(3);\n            expect(tileAreaSlice.height).to.equal(2);\n        });\n        it(\"returns empty tiles when going out of bounds\", () => {\n            expect(TileArea.getTileAreaSlice(area, areaWidth, 0, 50, 10).tiles[areaWidth + 1].tileId).to.equal(-1);\n            expect(TileArea.getTileAreaSlice(area, 0, -5, 2, 2).tiles[0].tileId).to.equal(-1);\n        });\n        it(\"crashes if rectangle is invalid\", () => {\n            expect(() => {\n                TileArea.getTileAreaSlice(area, 0, 0, -1, 1);\n            }).to.throw(RangeError);\n            expect(() => {\n                TileArea.getTileAreaSlice(area, 0, 0, 1, 0);\n            }).to.throw(RangeError);\n        });\n    });\n\n    /** @test {getTilingTileData} */\n    describe(\"getTilingTileData\", () => {\n        it(\"gets the right tile forward\", () => {\n            const v = Math.floor(Math.random() * areaWidth);\n            const vTile = area.tiles[TileArea.getTileIndex(area, v, v)];\n            expect(TileArea.getTilingTileData(area, 0, 0, areaWidth + v, v)).to.deep.equal(vTile);\n        });\n        it(\"gets the right tile backwards\", () => {\n            const v = Math.floor(Math.random() * areaWidth);\n            const vTile = area.tiles[TileArea.getTileIndex(area, v, v)];\n            expect(TileArea.getTilingTileData(area, 0, 0, v - areaWidth, v)).to.deep.equal(vTile);\n        });\n        it(\"gets the right tile far backwards\", () => {\n            // Note: getting backwards usually causes trouble, so this is for my\n            // own sanity - Ellie\n            const v = Math.floor(Math.random() * areaWidth);\n            const vTile = area.tiles[TileArea.getTileIndex(area, v, v)];\n            expect(TileArea.getTilingTileData(area, 0, 0, v - areaWidth * 100, v)).to.deep.equal(vTile);\n        });\n    });\n\n    /** @test {mergeTileAreas} */\n    describe(\"mergeTileAreas\", () => {\n        const smallAreaWidth = 3, smallAreaHeight = 3;\n        let smallArea;\n\n        beforeEach(() => {\n            const tiles = [];\n            for (let i = 0; i < smallAreaWidth * smallAreaHeight; i++) {\n                tiles.push({\n                    tileId: parseInt(Math.random() * 100)\n                });\n            }\n            smallArea = TileArea.createTileArea(smallAreaWidth, smallAreaHeight, tiles);\n        });\n\n        it(\"inserts a tile area correctly\", () => {\n            const x = parseInt((areaWidth - smallAreaWidth) / 2);\n            const y = parseInt((areaHeight - smallAreaHeight) / 2);\n            const newArea = TileArea.mergeTileAreas(area, smallArea, x, y);\n\n            expect(TileArea.getTileAreaSlice(newArea, x, y, smallAreaWidth, smallAreaHeight))\n                .to.deep.equal(smallArea);\n        });\n        it(\"can skip empty (-1) tiles\", () => {\n            const newArea = TileArea.mergeTileAreas(\n                area,\n                TileArea.createTileArea(1, 1, [{ tileId: -1, tilesetId: -1 }]),\n                0, 0,\n                true\n            );\n\n            expect(TileArea.getTileAreaSlice(newArea, 0, 0, 1, 1).tiles[0].tileId).to.not.equal(-1);\n        });\n        it(\"doesn't crash when going out of bounds\", () => {\n            const x = -smallAreaWidth + 1;\n            const y = -smallAreaHeight + 1;\n            const newArea = TileArea.mergeTileAreas(area, smallArea, x, y);\n\n            expect(TileArea.getTileAreaSlice(newArea, 0, 0, 1, 1).tiles[0].tileId).to.deep.equal(\n                smallArea.tiles[smallArea.tiles.length - 1].tileId\n            );\n        });\n        it(\"throws errors like normal\", () => {\n            expect(() => {\n                TileArea.mergeTileAreas(area, { width: 1, height: 1 }, 0, 0);\n            }).to.throw();\n        });\n    });\n\n    /** @test {fillTileAreaAt} */\n    describe(\"fillTileAreaAt\", () => {\n        const fillTileArea = TileArea.createTileArea(2, 2, [\n            { tileId: 2, tilesetId: 0 }, { tileId: 3, tilesetId: 0 },\n            { tileId: 3, tilesetId: 0 }, { tileId: 2, tilesetId: 0 }\n        ]);\n\n        beforeEach(() => {\n            area.tiles.forEach(tile => {\n                tile.tileId = 0;\n                tile.tilesetId = 0;\n            });\n            area.tiles[10] = { tileId: 1, tilesetId: 0 };\n            area.tiles[20] = { tileId: 0, tilesetId: 1 };\n        });\n\n        it(\"fills correctly\", () => {\n            const newArea = TileArea.fillTileAreaAt(area, 2, 2, fillTileArea);\n            expect(newArea.tiles[0].tileId).to.equal(2);\n            expect(newArea.tiles[2].tileId).to.equal(2);\n        });\n        it(\"tiles correctly\", () => {\n            const newArea = TileArea.fillTileAreaAt(area, 2, 2, fillTileArea);\n            expect(newArea.tiles[1].tileId).to.equal(3);\n            expect(newArea.tiles[3].tileId).to.equal(3);\n        });\n        it(\"doesn't overwrite anything it shouldn't\", () => {\n            const newArea = TileArea.fillTileAreaAt(area, 0, 0, fillTileArea);\n            expect(newArea.tiles[10].tileId).to.not.equal(2);\n        });\n        it(\"respects tileset ID's\", () => {\n            const newArea = TileArea.fillTileAreaAt(area, 0, 0, fillTileArea);\n            expect(newArea.tiles[20].tileId).to.equal(0);\n        });\n        it(\"doesn't end up in a loop\", () => {\n            const otherFillTileArea = TileArea.createTileArea(1, 1, [{ tileId: 0, tilesetId: 0 }]);\n            TileArea.fillTileAreaAt(area, 0, 0, otherFillTileArea);\n        });\n    });\n});\n",
+    "static": true,
+    "longname": "/home/travis/build/magnonellie/tile-tools/test/tilearea-test.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 59,
+    "kind": "test",
+    "name": "describe0",
+    "testId": 0,
+    "memberof": "test/tilearea-test.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0",
+    "access": null,
+    "description": "tilearea",
+    "lineNumber": 5
+  },
+  {
+    "__docId__": 60,
+    "kind": "test",
+    "name": "describe1",
+    "testId": 1,
+    "memberof": "test/tilearea-test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe1",
+    "access": null,
+    "description": "createTileArea",
+    "lineNumber": 21,
+    "testTargets": [
+      "createTileArea"
+    ]
+  },
+  {
+    "__docId__": 61,
+    "kind": "test",
+    "name": "it2",
+    "testId": 2,
+    "memberof": "test/tilearea-test.js~describe0.describe1",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe1.it2",
+    "access": null,
+    "description": "requires width and height to equal amount of tiles",
+    "lineNumber": 22
+  },
+  {
+    "__docId__": 62,
+    "kind": "test",
+    "name": "describe3",
+    "testId": 3,
+    "memberof": "test/tilearea-test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe3",
+    "access": null,
+    "description": "getTileIndex",
+    "lineNumber": 32,
+    "testTargets": [
+      "TileArea#getTileIndex"
+    ]
+  },
+  {
+    "__docId__": 63,
+    "kind": "test",
+    "name": "it4",
+    "testId": 4,
+    "memberof": "test/tilearea-test.js~describe0.describe3",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe3.it4",
+    "access": null,
+    "description": "returns the right index",
+    "lineNumber": 33
+  },
+  {
+    "__docId__": 64,
+    "kind": "test",
+    "name": "it5",
+    "testId": 5,
+    "memberof": "test/tilearea-test.js~describe0.describe3",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe3.it5",
+    "access": null,
+    "description": "crashes if out of bounds",
+    "lineNumber": 37
+  },
+  {
+    "__docId__": 65,
+    "kind": "test",
+    "name": "describe6",
+    "testId": 6,
+    "memberof": "test/tilearea-test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe6",
+    "access": null,
+    "description": "getTile",
+    "lineNumber": 48,
+    "testTargets": [
+      "getTile"
+    ]
+  },
+  {
+    "__docId__": 66,
+    "kind": "test",
+    "name": "it7",
+    "testId": 7,
+    "memberof": "test/tilearea-test.js~describe0.describe6",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe6.it7",
+    "access": null,
+    "description": "returns the correct tile",
+    "lineNumber": 49
+  },
+  {
+    "__docId__": 67,
+    "kind": "test",
+    "name": "it8",
+    "testId": 8,
+    "memberof": "test/tilearea-test.js~describe0.describe6",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe6.it8",
+    "access": null,
+    "description": "crashes if out of bounds",
+    "lineNumber": 52
+  },
+  {
+    "__docId__": 68,
+    "kind": "test",
+    "name": "describe9",
+    "testId": 9,
+    "memberof": "test/tilearea-test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe9",
+    "access": null,
+    "description": "getTileAreaSlice",
+    "lineNumber": 63,
+    "testTargets": [
+      "getTileAreaSlice"
+    ]
+  },
+  {
+    "__docId__": 69,
+    "kind": "test",
+    "name": "it10",
+    "testId": 10,
+    "memberof": "test/tilearea-test.js~describe0.describe9",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe9.it10",
+    "access": null,
+    "description": "returns the correct tiles",
+    "lineNumber": 64
+  },
+  {
+    "__docId__": 70,
+    "kind": "test",
+    "name": "it11",
+    "testId": 11,
+    "memberof": "test/tilearea-test.js~describe0.describe9",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe9.it11",
+    "access": null,
+    "description": "returns the correct dimmensions",
+    "lineNumber": 73
+  },
+  {
+    "__docId__": 71,
+    "kind": "test",
+    "name": "it12",
+    "testId": 12,
+    "memberof": "test/tilearea-test.js~describe0.describe9",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe9.it12",
+    "access": null,
+    "description": "returns empty tiles when going out of bounds",
+    "lineNumber": 78
+  },
+  {
+    "__docId__": 72,
+    "kind": "test",
+    "name": "it13",
+    "testId": 13,
+    "memberof": "test/tilearea-test.js~describe0.describe9",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe9.it13",
+    "access": null,
+    "description": "crashes if rectangle is invalid",
+    "lineNumber": 82
+  },
+  {
+    "__docId__": 73,
+    "kind": "test",
+    "name": "describe14",
+    "testId": 14,
+    "memberof": "test/tilearea-test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe14",
+    "access": null,
+    "description": "getTilingTileData",
+    "lineNumber": 93,
+    "testTargets": [
+      "getTilingTileData"
+    ]
+  },
+  {
+    "__docId__": 74,
+    "kind": "test",
+    "name": "it15",
+    "testId": 15,
+    "memberof": "test/tilearea-test.js~describe0.describe14",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe14.it15",
+    "access": null,
+    "description": "gets the right tile forward",
+    "lineNumber": 94
+  },
+  {
+    "__docId__": 75,
+    "kind": "test",
+    "name": "it16",
+    "testId": 16,
+    "memberof": "test/tilearea-test.js~describe0.describe14",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe14.it16",
+    "access": null,
+    "description": "gets the right tile backwards",
+    "lineNumber": 99
+  },
+  {
+    "__docId__": 76,
+    "kind": "test",
+    "name": "it17",
+    "testId": 17,
+    "memberof": "test/tilearea-test.js~describe0.describe14",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe14.it17",
+    "access": null,
+    "description": "gets the right tile far backwards",
+    "lineNumber": 104
+  },
+  {
+    "__docId__": 77,
+    "kind": "test",
+    "name": "describe18",
+    "testId": 18,
+    "memberof": "test/tilearea-test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe18",
+    "access": null,
+    "description": "mergeTileAreas",
+    "lineNumber": 114,
+    "testTargets": [
+      "mergeTileAreas"
+    ]
+  },
+  {
+    "__docId__": 78,
+    "kind": "test",
+    "name": "it19",
+    "testId": 19,
+    "memberof": "test/tilearea-test.js~describe0.describe18",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe18.it19",
+    "access": null,
+    "description": "inserts a tile area correctly",
+    "lineNumber": 128
+  },
+  {
+    "__docId__": 79,
+    "kind": "test",
+    "name": "it20",
+    "testId": 20,
+    "memberof": "test/tilearea-test.js~describe0.describe18",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe18.it20",
+    "access": null,
+    "description": "can skip empty (-1) tiles",
+    "lineNumber": 136
+  },
+  {
+    "__docId__": 80,
+    "kind": "test",
+    "name": "it21",
+    "testId": 21,
+    "memberof": "test/tilearea-test.js~describe0.describe18",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe18.it21",
+    "access": null,
+    "description": "doesn't crash when going out of bounds",
+    "lineNumber": 146
+  },
+  {
+    "__docId__": 81,
+    "kind": "test",
+    "name": "it22",
+    "testId": 22,
+    "memberof": "test/tilearea-test.js~describe0.describe18",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe18.it22",
+    "access": null,
+    "description": "throws errors like normal",
+    "lineNumber": 155
+  },
+  {
+    "__docId__": 82,
+    "kind": "test",
+    "name": "describe23",
+    "testId": 23,
+    "memberof": "test/tilearea-test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe23",
+    "access": null,
+    "description": "fillTileAreaAt",
+    "lineNumber": 163,
+    "testTargets": [
+      "fillTileAreaAt"
+    ]
+  },
+  {
+    "__docId__": 83,
+    "kind": "test",
+    "name": "it24",
+    "testId": 24,
+    "memberof": "test/tilearea-test.js~describe0.describe23",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe23.it24",
+    "access": null,
+    "description": "fills correctly",
+    "lineNumber": 178
+  },
+  {
+    "__docId__": 84,
+    "kind": "test",
+    "name": "it25",
+    "testId": 25,
+    "memberof": "test/tilearea-test.js~describe0.describe23",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe23.it25",
+    "access": null,
+    "description": "tiles correctly",
+    "lineNumber": 183
+  },
+  {
+    "__docId__": 85,
+    "kind": "test",
+    "name": "it26",
+    "testId": 26,
+    "memberof": "test/tilearea-test.js~describe0.describe23",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe23.it26",
+    "access": null,
+    "description": "doesn't overwrite anything it shouldn't",
+    "lineNumber": 188
+  },
+  {
+    "__docId__": 86,
+    "kind": "test",
+    "name": "it27",
+    "testId": 27,
+    "memberof": "test/tilearea-test.js~describe0.describe23",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe23.it27",
+    "access": null,
+    "description": "respects tileset ID's",
+    "lineNumber": 192
+  },
+  {
+    "__docId__": 87,
+    "kind": "test",
+    "name": "it28",
+    "testId": 28,
+    "memberof": "test/tilearea-test.js~describe0.describe23",
+    "testDepth": 2,
+    "static": true,
+    "longname": "test/tilearea-test.js~describe0.describe23.it28",
+    "access": null,
+    "description": "doesn't end up in a loop",
+    "lineNumber": 196
+  }
+]
