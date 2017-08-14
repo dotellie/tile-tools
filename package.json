@@ -1,6 +1,6 @@
 {
   "name": "tile-tools",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Easily create and modify tiles in an immutable way",
   "main": "out/js/build.js",
   "module": "out/js/build.esm.js",
