@@ -39,7 +39,7 @@
     "eslint": "^4.4.1",
     "mocha": "^3.2.0",
     "nyc": "^11.1.0",
-    "rollup": "^0.36.4",
+    "rollup": "^0.47.4",
     "rollup-plugin-babel": "^3.0.1"
   }
 }
