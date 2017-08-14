@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/magnonellie/dtile-tilemap.git"
+    "url": "git+https://github.com/magnonellie/tile-tools.git"
   },
   "keywords": [
     "game",
@@ -24,9 +24,9 @@
   "author": "magnonellie",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/magnonellie/dtile-tilemap/issues"
+    "url": "https://github.com/magnonellie/tile-tools/issues"
   },
-  "homepage": "https://magnonellie.github.io/dtile-tilemap/",
+  "homepage": "https://magnonellie.github.io/tile-tools/",
   "devDependencies": {
     "babel-env": "^2.4.1",
     "babel-preset-stage-3": "^6.24.1",
