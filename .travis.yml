@@ -6,7 +6,7 @@ node_js:
 env:
     global:
       - ENCRYPTION_LABEL="7fcdedc5f15b"
-      - COMMIT_AUTHOR_EMAIL="realmagnon@gmail.com"
+      - COMMIT_AUTHOR_EMAIL="ellie@magnon.net"
 
 script:
   - "npm run build"
@@ -18,7 +18,7 @@ after_success:
   - "bash ./deployDocumentation.sh"
 deploy:
     provider: npm
-    email: "fagerberg.tobias@gmail.com"
+    email: "ellie@magnon.net"
     skip_cleanup: true
     api_key:
         secure: "r6/zC+dxxQDLdxBPzQPN+CylD1rL5VX/49LdDuyl8gKAEZIy6/aPZISSVY22RpKF2BUStzgsfRTFeQNkI4yZDC+oUYrpoBqavI19KN+uy1YkBc8LrUUNP3RSBi0JThhGH0yS97ebSDih/6EGAVeoGcf4n4mq1sgo920Y66j6puxg3hiJFQAM+ySSaYfcL7SUcP6nrlLs9P7IPYIHaibr0ebQXcRkoracT182YFpIJQhNcDdKeU3AK1bl0k58lCcqgcQRAzTMYs9+WlVJaA0QnCOkWw6XfEBlBA3uI8wueqTKwhswW5uFp6dCAZ0MPzoBAnhdeypZzRRh4Kd0f1r1VtHh4yqU2glDUPvPnznpXif/sT/87ZIVNYsGzIlsOWWctZFCD1XWNTHKFmeGk/cyBTI3JBxJhz+nQKqqQnHilDPjl2dqS+jY0RrypfCoWNHRoLhXToAEfFGoAN/vnedA+Yx1PtxFcEH/wChRqpyqEqN2PzuJWISl8b0i3T0JhMwunkBmqhWiWYsWwZ6mRFk/hdRzfkTjW3JyLmNJDBAO6Ab9RI85y6eXgeonA16Qc3cukcxHbT87B94HLC6ta0DPvlJ27nKRJbpI+KANaaYLlhR/2rUmxi/mDFtw8Rld9id3F7Tn+YC+VSH5xj7rUySOMluXMNz1WjyPt2RjY8/pecU="
