@@ -5,7 +5,13 @@ const pkg = require("./package.json");
 export default {
     entry: "src/index.js",
     plugins: [
-        rollupBabel()
+        rollupBabel({
+            babelrc: false,
+            presets: [
+                ["env", { modules: false }],
+                "stage-3"
+            ]
+        })
     ],
     targets: [
         {
