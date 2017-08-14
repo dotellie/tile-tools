@@ -1,7 +1,7 @@
 {
-  "name": "dtile-tilemap",
+  "name": "tile-tools",
   "version": "0.8.0",
-  "description": "A representation of a tilemap with very basic functionality.",
+  "description": "Easily create and modify tiles in an immutable way",
   "main": "out/js/build.js",
   "module": "out/js/build.esm.js",
   "scripts": {
