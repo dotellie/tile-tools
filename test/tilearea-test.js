@@ -79,6 +79,10 @@ describe("tilearea", () => {
             expect(TileArea.getTileAreaSlice(area, areaWidth, 0, 50, 10).tiles[areaWidth + 1].tileId).to.equal(-1);
             expect(TileArea.getTileAreaSlice(area, 0, -5, 2, 2).tiles[0].tileId).to.equal(-1);
         });
+        it("still has old tiles when going out of bounds", () => {
+            console.log(TileArea.getTileAreaSlice(area, 0, -1, 2, 2).tiles);
+            expect(TileArea.getTileAreaSlice(area, 0, -1, 2, 2).tiles[2].tileId).to.equal(area.tiles[0].tileId);
+        });
         it("crashes if rectangle is invalid", () => {
             expect(() => {
                 TileArea.getTileAreaSlice(area, 0, 0, -1, 1);

@@ -70,7 +70,7 @@ export function getTileAreaSlice(area, x, y, width, height) {
     const tiles = [];
     for (let ly = y; ly < y + height; ly++) {
         for (let lx = x; lx < x + width; lx++) {
-            if (!inRange(area, x, y, width, height)) tiles.push(emptyTile());
+            if (!inRange(area, lx, ly, 1, 1)) tiles.push(emptyTile());
             else tiles.push(getTile(area, lx, ly));
         }
     }
