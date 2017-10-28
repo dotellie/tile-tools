@@ -355,37 +355,37 @@ window.esdocSearchIndex = [
   ],
   [
     "filltileareaat src/index.js~filltileareaat,filltileareaat",
-    "test-file/test/tilearea-test.js.html#lineNumber163",
+    "test-file/test/tilearea-test.js.html#lineNumber167",
     "tilearea fillTileAreaAt",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea-test.js.html#lineNumber196",
+    "test-file/test/tilearea-test.js.html#lineNumber200",
     "tilearea fillTileAreaAt doesn't end up in a loop",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea-test.js.html#lineNumber188",
+    "test-file/test/tilearea-test.js.html#lineNumber192",
     "tilearea fillTileAreaAt doesn't overwrite anything it shouldn't",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea-test.js.html#lineNumber178",
+    "test-file/test/tilearea-test.js.html#lineNumber182",
     "tilearea fillTileAreaAt fills correctly",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea-test.js.html#lineNumber192",
+    "test-file/test/tilearea-test.js.html#lineNumber196",
     "tilearea fillTileAreaAt respects tileset ID's",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea-test.js.html#lineNumber183",
+    "test-file/test/tilearea-test.js.html#lineNumber187",
     "tilearea fillTileAreaAt tiles correctly",
     "test"
   ],
@@ -415,7 +415,7 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/tilearea-test.js.html#lineNumber82",
+    "test-file/test/tilearea-test.js.html#lineNumber86",
     "tilearea getTileAreaSlice crashes if rectangle is invalid",
     "test"
   ],
@@ -438,6 +438,12 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
+    "",
+    "test-file/test/tilearea-test.js.html#lineNumber82",
+    "tilearea getTileAreaSlice still has old tiles when going out of bounds",
+    "test"
+  ],
+  [
     "tilearea#gettileindex tilearea#gettileindex,tilearea#gettileindex",
     "test-file/test/tilearea-test.js.html#lineNumber32",
     "tilearea getTileIndex",
@@ -457,55 +463,55 @@ window.esdocSearchIndex = [
   ],
   [
     "gettilingtiledata src/index.js~gettilingtiledata,gettilingtiledata",
-    "test-file/test/tilearea-test.js.html#lineNumber93",
+    "test-file/test/tilearea-test.js.html#lineNumber97",
     "tilearea getTilingTileData",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea-test.js.html#lineNumber99",
+    "test-file/test/tilearea-test.js.html#lineNumber103",
     "tilearea getTilingTileData gets the right tile backwards",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea-test.js.html#lineNumber104",
+    "test-file/test/tilearea-test.js.html#lineNumber108",
     "tilearea getTilingTileData gets the right tile far backwards",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea-test.js.html#lineNumber94",
+    "test-file/test/tilearea-test.js.html#lineNumber98",
     "tilearea getTilingTileData gets the right tile forward",
     "test"
   ],
   [
     "mergetileareas src/index.js~mergetileareas,mergetileareas",
-    "test-file/test/tilearea-test.js.html#lineNumber114",
+    "test-file/test/tilearea-test.js.html#lineNumber118",
     "tilearea mergeTileAreas",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea-test.js.html#lineNumber136",
+    "test-file/test/tilearea-test.js.html#lineNumber140",
     "tilearea mergeTileAreas can skip empty (-1) tiles",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea-test.js.html#lineNumber146",
+    "test-file/test/tilearea-test.js.html#lineNumber150",
     "tilearea mergeTileAreas doesn't crash when going out of bounds",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea-test.js.html#lineNumber128",
+    "test-file/test/tilearea-test.js.html#lineNumber132",
     "tilearea mergeTileAreas inserts a tile area correctly",
     "test"
   ],
   [
     "",
-    "test-file/test/tilearea-test.js.html#lineNumber155",
+    "test-file/test/tilearea-test.js.html#lineNumber159",
     "tilearea mergeTileAreas throws errors like normal",
     "test"
   ]
